@@ -108,6 +108,12 @@ function App() {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-17243978314');
+              
+              // Track page views
+              gtag('event', 'page_view', {
+                page_title: document.title,
+                page_location: window.location.href
+              });
             `,
           }}
         />
@@ -126,6 +132,56 @@ function App() {
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '675636214954539');
               fbq('track', 'PageView');
+              
+              // Track custom events
+              fbq('track', 'ViewContent', {
+                content_name: 'Al Marjan Island Investment',
+                content_category: 'Real Estate',
+                value: 200000,
+                currency: 'USD'
+              });
+            `,
+          }}
+        />
+        
+        {/* Enhanced tracking for user interactions */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Track scroll depth
+              let maxScroll = 0;
+              window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercent > maxScroll) {
+                  maxScroll = scrollPercent;
+                  if (maxScroll >= 25 && maxScroll < 50) {
+                    gtag('event', 'scroll', { percent_scrolled: 25 });
+                    fbq('track', 'ViewContent', { content_name: '25% Page Scroll' });
+                  } else if (maxScroll >= 50 && maxScroll < 75) {
+                    gtag('event', 'scroll', { percent_scrolled: 50 });
+                    fbq('track', 'ViewContent', { content_name: '50% Page Scroll' });
+                  } else if (maxScroll >= 75) {
+                    gtag('event', 'scroll', { percent_scrolled: 75 });
+                    fbq('track', 'ViewContent', { content_name: '75% Page Scroll' });
+                  }
+                }
+              });
+              
+              // Track time on page
+              let timeOnPage = 0;
+              setInterval(function() {
+                timeOnPage += 30;
+                if (timeOnPage === 30) {
+                  gtag('event', 'timing_complete', { name: 'time_on_page', value: 30 });
+                  fbq('track', 'ViewContent', { content_name: '30 seconds on page' });
+                } else if (timeOnPage === 60) {
+                  gtag('event', 'timing_complete', { name: 'time_on_page', value: 60 });
+                  fbq('track', 'ViewContent', { content_name: '1 minute on page' });
+                } else if (timeOnPage === 120) {
+                  gtag('event', 'timing_complete', { name: 'time_on_page', value: 120 });
+                  fbq('track', 'ViewContent', { content_name: '2 minutes on page' });
+                }
+              }, 30000);
             `,
           }}
         />

@@ -46,10 +46,44 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
 
           {/* Tesla-style CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up">
-            <a href="#contact" className="tesla-btn-primary">
+            <a 
+              href="#contact" 
+              className="tesla-btn-primary"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Hero Primary CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'InitiateCheckout', {
+                    content_name: 'Investment Interest',
+                    value: 200000,
+                    currency: 'USD'
+                  });
+                }
+              }}
+            >
               {t.hero.cta.primary}
             </a>
-            <a href="#opportunity" className="tesla-btn-secondary-white">
+            <a 
+              href="#opportunity" 
+              className="tesla-btn-secondary-white"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Hero Secondary CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'ViewContent', {
+                    content_name: 'Investment Opportunity'
+                  });
+                }
+              }}
+            >
               {t.hero.cta.secondary}
             </a>
           </div>

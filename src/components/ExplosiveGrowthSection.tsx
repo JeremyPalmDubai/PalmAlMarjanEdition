@@ -102,7 +102,25 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
         {/* Tesla-style CTA section */}
         <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contact" className="tesla-btn-primary">
+            <a 
+              href="#contact" 
+              className="tesla-btn-primary"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Secure Investment CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'InitiateCheckout', {
+                    content_name: 'Secure Investment',
+                    value: 200000,
+                    currency: 'USD'
+                  });
+                }
+              }}
+            >
               Secure Your Investment
             </a>
             <a 
@@ -110,6 +128,19 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
               target="_blank"
               rel="noopener noreferrer"
               className="tesla-btn-secondary"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'WhatsApp CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'Contact', {
+                    content_name: 'WhatsApp Inquiry'
+                  });
+                }
+              }}
             >
               WhatsApp Now
             </a>
