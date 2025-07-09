@@ -24,7 +24,7 @@ export const LifestyleSection: React.FC<LifestyleSectionProps> = ({ currentLangu
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="animate-slide-in">
             <img
-              src="https://palmalmarjan.com/public/assets/img/wrapper-bg.png"
+              src="https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Paradise beaches of Al Marjan Island"
               className="w-full h-96 lg:h-[500px] object-cover tesla-shadow"
             />

@@ -15,7 +15,7 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
           {/* Image side */}
           <div className="animate-slide-in">
             <img
-              src="src/assets/965e6c245a_almarjancasino.webp"
+              src="https://images.pexels.com/photos/1134181/pexels-photo-1134181.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Wynn Resort Al Marjan Island"
               className="w-full h-96 lg:h-[500px] object-cover tesla-shadow"
             />
