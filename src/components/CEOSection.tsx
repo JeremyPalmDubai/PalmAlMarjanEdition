@@ -75,11 +75,11 @@ export const CEOSection: React.FC<CEOSectionProps> = ({ currentLanguage }) => {
           <div className="animate-slide-in">
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="src/assets/6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103 copy.png"
                 alt="Gabriella Magalhaes, CEO & Founder of Palm Signature Real Estate"
                 className="w-full h-96 lg:h-[600px] object-cover object-center tesla-shadow"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
             </div>
           </div>
         </div>
