@@ -31,7 +31,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       image: "https://palmdubai.fr/uploads/posts/2025-07/52e2ed0048_lamazzoni.webp",
       description: "Sophisticated waterfront residences with Italian-inspired luxury and contemporary design.",
       price: null,
-      availability: null
+      availability: "Almost Sold Out",
+      availabilityColor: "text-orange-600"
     },
     {
       name: "Playa Viva",
@@ -39,7 +40,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       image: "https://palmdubai.fr/uploads/posts/2025-07/c5791afbd9_playaviva.webp",
       description: "Vibrant beachfront living with modern amenities and stunning ocean views.",
       price: "800,000 AED",
-      availability: "Ready Q1 2026"
+      availability: "Phase 2 On Sale",
+      availabilityColor: "text-green-600"
     },
     {
       name: "Clé d'Or by Arthouse",
@@ -55,7 +57,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       image: "https://palmdubai.fr/uploads/posts/2025-07/cb748b46fa_babolex.webp",
       description: "Contemporary living spaces with innovative design and premium finishes.",
       price: null,
-      availability: null
+      availability: "SOLD OUT",
+      availabilityColor: "text-red-600"
     },
     {
       name: "Manta Bay Residences",
@@ -63,7 +66,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       image: "https://palmdubai.fr/uploads/posts/2025-07/0384c0f122_mantabay.webp",
       description: "Waterfront luxury living with panoramic views and exclusive amenities.",
       price: "1,200,000 AED",
-      availability: null
+      availability: "Almost Sold Out",
+      availabilityColor: "text-orange-600"
     },
     {
       name: "Trio Isle Octa",
@@ -79,7 +83,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       image: "https://palmdubai.fr/uploads/posts/2025-07/e5ce326e37_parkbeach.webp",
       description: "Beachfront luxury with pristine white sand beaches and crystal-clear waters.",
       price: "1,000,000 AED",
-      availability: null
+      availability: "SOLD OUT",
+      availabilityColor: "text-red-600"
     },
     {
       name: "Ola Residences",
@@ -95,7 +100,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       image: "https://palmdubai.fr/uploads/posts/2025-07/b1ea8562fb_costamareellington.webp",
       description: "Elegant coastal residences with contemporary design and luxury finishes.",
       price: null,
-      availability: null
+      availability: "SOLD OUT",
+      availabilityColor: "text-red-600"
     },
     {
       name: "Oystra Zaha Hadid",
@@ -111,7 +117,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       image: "https://palmdubai.fr/uploads/posts/2025-07/38a4475d18_emaaraddressresidences.webp",
       description: "Premium residences with Emaar's signature luxury and world-class amenities.",
       price: null,
-      availability: null
+      availability: "SOLD OUT",
+      availabilityColor: "text-red-600"
     },
   ];
 
@@ -182,8 +189,10 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                     )}
                     {development.availability && (
                       <div className="flex items-center">
-                        <span className="text-xs font-medium text-green-600 tracking-wider uppercase mr-2">Status:</span>
-                        <span className="text-sm font-medium text-green-600">{development.availability}</span>
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">Status:</span>
+                        <span className={`text-sm font-medium ${development.availabilityColor || 'text-green-600'}`}>
+                          {development.availability}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -238,8 +247,15 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       )}
                       {development.availability && (
                         <div className="flex items-center">
-                          <span className="text-sm font-medium text-red-600 tracking-wider uppercase mr-3">Status:</span>
-                          <span className="text-lg font-bold text-red-600 bg-red-50 px-3 py-1 rounded-full">{development.availability}</span>
+                          <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Status:</span>
+                          <span className={`text-lg font-bold px-3 py-1 rounded-full ${
+                            development.availabilityColor === 'text-red-600' ? 'text-red-600 bg-red-50' :
+                            development.availabilityColor === 'text-orange-600' ? 'text-orange-600 bg-orange-50' :
+                            development.availabilityColor === 'text-green-600' ? 'text-green-600 bg-green-50' :
+                            'text-red-600 bg-red-50'
+                          }`}>
+                            {development.availability}
+                          </span>
                         </div>
                       )}
                       {development.deliveryDate && (
@@ -252,10 +268,18 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   )}
                   
                   <div className="flex justify-center lg:justify-start">
-                    {development.availability === "SOLD OUT" ? (
+                    {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
                       <div className="tesla-btn-primary opacity-50 cursor-not-allowed">
                         SOLD OUT
                       </div>
+                    ) : development.availabilityColor === 'text-orange-600' ? (
+                      <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700">
+                        Last Units Available
+                      </a>
+                    ) : development.availabilityColor === 'text-green-600' ? (
+                      <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700">
+                        {t.developments.learnMore}
+                      </a>
                     ) : (
                       <a href="#contact" className="tesla-btn-primary">
                         {t.developments.learnMore}

@@ -170,6 +170,7 @@ export const translations = {
       title: 'Luxury Developments',
       description: 'Discover world-class developments by renowned international developers, each offering unique luxury living experiences.',
       learnMore: 'Learn More',
+      lastUnits: 'Last Units Available',
       trustedPartners: 'Trusted Development Partners'
     },
     lifestyle: {
@@ -458,6 +459,7 @@ export const translations = {
       title: 'Développements de Luxe',
       description: 'Découvrez des développements de classe mondiale par des promoteurs internationaux renommés, chacun offrant des expériences de vie luxueuses uniques.',
       learnMore: 'En Savoir Plus',
+      lastUnits: 'Dernières Unités Disponibles',
       trustedPartners: 'Partenaires de Développement de Confiance'
     },
     lifestyle: {
@@ -746,6 +748,7 @@ export const translations = {
       title: 'Desarrollos de Lujo',
       description: 'Descubre desarrollos de clase mundial por desarrolladores internacionales reconocidos, cada uno ofreciendo experiencias de vida de lujo únicas.',
       learnMore: 'Saber Más',
+      lastUnits: 'Últimas Unidades Disponibles',
       trustedPartners: 'Socios de Desarrollo de Confianza'
     },
     lifestyle: {
@@ -1034,6 +1037,7 @@ export const translations = {
       title: 'Luxe Ontwikkelingen',
       description: 'Ontdek wereldklasse ontwikkelingen door gerenommeerde internationale ontwikkelaars, elk met unieke luxe woon-ervaringen.',
       learnMore: 'Meer Weten',
+      lastUnits: 'Laatste Units Beschikbaar',
       trustedPartners: 'Vertrouwde Ontwikkelingspartners'
     },
     lifestyle: {
