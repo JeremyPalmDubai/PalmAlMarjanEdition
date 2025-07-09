@@ -14,84 +14,112 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       developer: "Marriott International",
       image: "https://palmdubai.fr/uploads/posts/2025-07/1178d03d12_w.webp",
       description: "Luxury beachfront resort with world-class amenities and stunning Arabian Gulf views.",
+      price: null,
+      availability: null
     },
     {
       name: "Hilton Al Marjan Island",
       developer: "Hilton Worldwide",
       image: "https://palmdubai.fr/uploads/posts/2025-07/f2b6bf1feb_hilton.webp",
       description: "Premium hospitality experience with exceptional service and luxury accommodations.",
+      price: null,
+      availability: null
     },
     {
       name: "La Mazzoni",
       developer: "Mazzoni Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/52e2ed0048_lamazzoni.webp",
       description: "Sophisticated waterfront residences with Italian-inspired luxury and contemporary design.",
+      price: null,
+      availability: null
     },
     {
       name: "Playa Viva",
       developer: "Viva Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/c5791afbd9_playaviva.webp",
       description: "Vibrant beachfront living with modern amenities and stunning ocean views.",
+      price: "800,000 AED",
+      availability: "Ready Q1 2026"
     },
     {
       name: "Clé d'Or by Arthouse",
       developer: "Arthouse Residences",
       image: "https://palmdubai.fr/uploads/posts/2025-07/f8834d1461_cledorbyarthouse.webp",
       description: "Artistic luxury residences with innovative architecture and premium finishes.",
+      price: null,
+      availability: null
     },
     {
       name: "Oystra by Richmind",
       developer: "Richmind Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/622e87aec2_oystrabyrichmind.webp",
       description: "Elegant coastal living with contemporary design and luxury amenities.",
+      price: null,
+      availability: null
     },
     {
       name: "Babolex Residences",
       developer: "Babolex Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/cb748b46fa_babolex.webp",
       description: "Contemporary living spaces with innovative design and premium finishes.",
+      price: null,
+      availability: null
     },
     {
       name: "Manta Bay Residences",
       developer: "Manta Bay Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/0384c0f122_mantabay.webp",
       description: "Waterfront luxury living with panoramic views and exclusive amenities.",
+      price: "1,200,000 AED",
+      availability: null
     },
     {
       name: "Trio Isle Octa",
       developer: "Trio Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/90007331f0_trioisleocta.webp",
       description: "Innovative architectural design with premium coastal living experiences.",
+      price: "1,000,000 AED",
+      availability: null
     },
     {
       name: "Park Beach Residences",
       developer: "Park Beach Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/e5ce326e37_parkbeach.webp",
       description: "Beachfront luxury with pristine white sand beaches and crystal-clear waters.",
+      price: "1,000,000 AED",
+      availability: null
     },
     {
       name: "Ola Residences",
       developer: "Ola Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/a9d4e40639_ola.webp",
       description: "Modern waterfront living with sophisticated design and premium amenities.",
+      price: null,
+      availability: null
     },
     {
       name: "Costa Mare by Ellington",
       developer: "Ellington Properties",
       image: "https://palmdubai.fr/uploads/posts/2025-07/b1ea8562fb_costamareellington.webp",
       description: "Elegant coastal residences with contemporary design and luxury finishes.",
+      price: null,
+      availability: null
     },
     {
       name: "Oystra Zaha Hadid",
       developer: "Zaha Hadid Architects",
       image: "https://palmdubai.fr/uploads/posts/2025-07/7089d298f4_oystrazahahadid.webp",
       description: "Iconic architecture by Zaha Hadid with revolutionary design and luxury living.",
+      price: null,
+      availability: null
     },
     {
       name: "Emaar Address Residences",
       developer: "Emaar Properties",
       image: "https://palmdubai.fr/uploads/posts/2025-07/38a4475d18_emaaraddressresidences.webp",
       description: "Premium residences with Emaar's signature luxury and world-class amenities.",
+      price: null,
+      availability: null
     },
   ];
 
@@ -101,12 +129,16 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       developer: "Elie Saab",
       image: "https://palmdubai.fr/uploads/posts/2025-07/87baf2aac8_lamerbyeliesaab.webp",
       description: "Haute couture-inspired residences with unparalleled luxury and elegance.",
+      price: null,
+      availability: null
     },
     {
       name: "The Unexpected",
       developer: "The Unexpected Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/168ac67004_theunexpected.webp",
       description: "Extraordinary architectural masterpiece redefining luxury waterfront living.",
+      price: null,
+      availability: null
     },
   ];
 
@@ -141,6 +173,24 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
                 <p className="tesla-subheading text-sm leading-relaxed mb-6">{development.description}</p>
                 
+                {/* Pricing and Availability */}
+                {(development.price || development.availability) && (
+                  <div className="mb-6 space-y-2">
+                    {development.price && (
+                      <div className="flex items-center">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">From:</span>
+                        <span className="text-lg font-semibold text-black">{development.price}</span>
+                      </div>
+                    )}
+                    {development.availability && (
+                      <div className="flex items-center">
+                        <span className="text-xs font-medium text-green-600 tracking-wider uppercase mr-2">Status:</span>
+                        <span className="text-sm font-medium text-green-600">{development.availability}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+                
                 <div className="flex justify-center">
                   <a href="#contact" className="tesla-btn-primary">
                     {t.developments.learnMore}
@@ -169,6 +219,24 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   </div>
                   <h3 className="text-3xl tesla-heading mb-6">{development.name}</h3>
                   <p className="tesla-subheading text-base leading-relaxed mb-8">{development.description}</p>
+                  
+                  {/* Pricing and Availability for Featured */}
+                  {(development.price || development.availability) && (
+                    <div className="mb-8 space-y-3">
+                      {development.price && (
+                        <div className="flex items-center">
+                          <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Starting from:</span>
+                          <span className="text-2xl font-semibold text-black">{development.price}</span>
+                        </div>
+                      )}
+                      {development.availability && (
+                        <div className="flex items-center">
+                          <span className="text-sm font-medium text-green-600 tracking-wider uppercase mr-3">Availability:</span>
+                          <span className="text-lg font-medium text-green-600">{development.availability}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
                   
                   <div className="flex justify-center lg:justify-start">
                     <a href="#contact" className="tesla-btn-primary">
