@@ -56,21 +56,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     
     <!-- Tally Form Script -->
-    <script>
-      // Load Tally script asynchronously
-      (function() {
-        var script = document.createElement('script');
-        script.src = 'https://tally.so/widgets/embed.js';
-        script.async = true;
-        script.onload = function() {
-          // Tally is loaded, initialize embeds
-          if (window.Tally) {
-            window.Tally.loadEmbeds();
-          }
-        };
-        document.head.appendChild(script);
-      })();
-    </script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
     
     <!-- Structured Data -->
     <script type="application/ld+json">

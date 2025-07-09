@@ -153,7 +153,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               
               <div className="w-full px-4" style={{ minHeight: '404px' }}>
                 <iframe
-                  data-tally-src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                   loading="lazy"
                   width="100%"
                   height="404"
@@ -166,6 +166,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                     border: 'none',
                     minHeight: '404px',
                     backgroundColor: 'transparent'
+                  }}
+                  onLoad={() => {
+                    // Track form view
+                    if (typeof gtag !== 'undefined') {
+                      gtag('event', 'form_view', { form_name: 'Lead Form' });
+                    }
+                    if (typeof fbq !== 'undefined') {
+                      fbq('track', 'ViewContent', { content_name: 'Lead Form' });
+                    }
                   }}
                 ></iframe>
               </div>
