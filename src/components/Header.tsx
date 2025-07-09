@@ -18,19 +18,13 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const heroHeight = window.innerHeight; // Hauteur du viewport = hauteur du hero
+      const heroHeight = window.innerHeight * 0.9; // Un peu avant la fin du hero
       
-      // Afficher la navbar après le hero
+      // Logique simplifiée : afficher après le hero, cacher si scroll rapide vers le bas
       if (currentScrollY > heroHeight) {
-        // Si on scroll vers le bas après le hero, cacher la navbar
-        if (currentScrollY > lastScrollY && currentScrollY > heroHeight + 100) {
-          setIsVisible(false);
-        } else {
-          // Si on scroll vers le haut ou qu'on vient de passer le hero, afficher la navbar
-          setIsVisible(true);
-        }
+        setIsVisible(true);
       } else {
-        // Dans le hero, toujours cacher la navbar
+        // Dans le hero, cacher la navbar
         setIsVisible(false);
       }
       
@@ -38,13 +32,26 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
     };
 
     // Écouter le scroll
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    const throttledHandleScroll = throttle(handleScroll, 16); // 60fps
+    window.addEventListener('scroll', throttledHandleScroll, { passive: true });
     
     // Vérifier la position initiale
     handleScroll();
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', throttledHandleScroll);
   }, [lastScrollY]);
+
+  // Fonction throttle pour optimiser les performances
+  const throttle = (func: Function, limit: number) => {
+    let inThrottle: boolean;
+    return function(this: any, ...args: any[]) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    }
+  };
 
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
