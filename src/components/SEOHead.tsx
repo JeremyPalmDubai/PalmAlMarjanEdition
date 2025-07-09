@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { translations } from '../data/translations';
 
 interface SEOHeadProps {
@@ -56,87 +57,93 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
 
   const hrefLangUrls = getHrefLangUrls();
 
-  React.useEffect(() => {
-    // Update document title
-    document.title = getPageTitle();
+  const localeMap = {
+    en: 'en_US',
+    fr: 'fr_FR',
+    es: 'es_ES',
+    nl: 'nl_NL'
+  };
 
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', getPageDescription());
-    }
-
-    // Update canonical URL
-    const canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (canonicalLink) {
-      canonicalLink.setAttribute('href', getCanonicalUrl());
-    }
-
-    // Update hreflang tags
-    const existingHrefLangs = document.querySelectorAll('link[hreflang]');
-    existingHrefLangs.forEach(link => link.remove());
-
-    // Add new hreflang tags
-    Object.entries(hrefLangUrls).forEach(([lang, url]) => {
-      const link = document.createElement('link');
-      link.rel = 'alternate';
-      link.hreflang = lang;
-      link.href = url;
-      document.head.appendChild(link);
-    });
-
-    // Add x-default hreflang
-    const defaultLink = document.createElement('link');
-    defaultLink.rel = 'alternate';
-    defaultLink.hreflang = 'x-default';
-    defaultLink.href = hrefLangUrls.en;
-    document.head.appendChild(defaultLink);
-
-    // Update Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute('content', getPageTitle());
-    }
-
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute('content', getPageDescription());
-    }
-
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) {
-      ogUrl.setAttribute('content', getCanonicalUrl());
-    }
-
-    const ogLocale = document.querySelector('meta[property="og:locale"]');
-    if (ogLocale) {
-      const localeMap = {
-        en: 'en_US',
-        fr: 'fr_FR',
-        es: 'es_ES',
-        nl: 'nl_NL'
-      };
-      ogLocale.setAttribute('content', localeMap[currentLanguage] || 'en_US');
-    }
-
-    // Update Twitter Card tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute('content', getPageTitle());
-    }
-
-    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDescription) {
-      twitterDescription.setAttribute('content', getPageDescription());
-    }
-
-    // Update keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', t.seo.keywords);
-    }
-
-  }, [currentLanguage, currentPage]);
-
-  return null;
+  return (
+    <Helmet>
+      {/* Basic Meta Tags */}
+      <title>{getPageTitle()}</title>
+      <meta name="description" content={getPageDescription()} />
+      <meta name="keywords" content={t.seo.keywords} />
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="Palm Signature Real Estate" />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={getCanonicalUrl()} />
+      
+      {/* Hreflang Tags */}
+      {Object.entries(hrefLangUrls).map(([lang, url]) => (
+        <link key={lang} rel="alternate" hreflang={lang} href={url} />
+      ))}
+      <link rel="alternate" hreflang="x-default" href={hrefLangUrls.en} />
+      
+      {/* Open Graph Tags */}
+      <meta property="og:title" content={getPageTitle()} />
+      <meta property="og:description" content={getPageDescription()} />
+      <meta property="og:url" content={getCanonicalUrl()} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Palm Signature Real Estate" />
+      <meta property="og:locale" content={localeMap[currentLanguage] || 'en_US'} />
+      <meta property="og:image" content="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630" />
+      
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={getPageTitle()} />
+      <meta name="twitter:description" content={getPageDescription()} />
+      <meta name="twitter:image" content="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630" />
+      
+      {/* Performance Hints */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://palmdubai.fr" />
+      <link rel="preconnect" href="https://images.pexels.com" />
+      
+      {/* DNS Prefetch */}
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="//connect.facebook.net" />
+      <link rel="dns-prefetch" href="//tally.so" />
+      
+      {/* Preload Critical Resources */}
+      <link 
+        rel="preload" 
+        href="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp" 
+        as="image" 
+        type="image/webp"
+      />
+      
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "RealEstateAgent",
+          "name": "Palm Signature Real Estate",
+          "url": getCanonicalUrl(),
+          "description": getPageDescription(),
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Al Marjan Island, Ras Al Khaimah",
+            "addressCountry": "UAE"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+971-58-247-4950",
+            "email": "hello@palmsignature.ae",
+            "contactType": "customer service",
+            "availableLanguage": ["en", "fr", "es", "nl"]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127",
+            "bestRating": "5"
+          }
+        })}
+      </script>
+    </Helmet>
+  );
 };

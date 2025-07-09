@@ -651,3 +651,143 @@ html {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Loading bar animation */
+@keyframes loading-bar {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 2s ease-in-out infinite;
+}
+
+/* Optimized animations with GPU acceleration */
+.animate-fade-in-up,
+.animate-slide-in,
+.animate-scale-in {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-fade-in-up,
+  .animate-slide-in,
+  .animate-scale-in,
+  .animate-bounce,
+  .animate-pulse,
+  .tesla-float,
+  .animate-loading-bar {
+    animation: none !important;
+  }
+}
+
+/* Optimized image loading */
+img {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 200px;
+}
+
+/* Critical CSS inlining optimization */
+.critical-above-fold {
+  contain: layout style paint;
+}
+
+/* Intersection Observer optimizations */
+.lazy-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced mobile performance */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  .tesla-hover:hover {
+    transform: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Optimize touch interactions */
+  .ios26-tab-item,
+  .ios26-contact-btn,
+  .tesla-btn-primary,
+  .tesla-btn-secondary,
+  .tesla-btn-secondary-white {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Reduce backdrop blur on older devices */
+  @supports not (backdrop-filter: blur(50px)) {
+    .ios26-tabbar-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: none;
+    }
+    
+    .tesla-nav {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: none;
+    }
+  }
+}
+
+/* Preload critical fonts */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+}
+
+/* Critical path CSS */
+.hero-section,
+.tesla-nav,
+.ios26-tabbar {
+  contain: layout style paint;
+}
+
+/* Optimize scroll performance */
+.tesla-section {
+  contain: layout style;
+}
+
+/* Battery and performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .ios26-contact-btn {
+    animation: none;
+  }
+  
+  .liquidShimmer,
+  .liquidGlassActivate,
+  .contactFloat {
+    animation: none;
+  }
+}
+
+/* Network-aware optimizations */
+@media (max-width: 768px) and (max-resolution: 1.5dppx) {
+  /* Lower quality images for slower connections */
+  img {
+    image-rendering: optimizeSpeed;
+  }
+}

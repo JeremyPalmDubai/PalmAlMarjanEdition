@@ -17,6 +17,7 @@ import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { NavigationProvider } from './components/NavigationProvider';
 import { SEOHead } from './components/SEOHead';
+import { PerformanceMonitor } from './components/PerformanceMonitor';
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
@@ -153,6 +154,7 @@ function App() {
   return (
     <NavigationProvider onNavigate={handleNavigation}>
       <div className="min-h-screen bg-white">
+        <PerformanceMonitor />
         <SEOHead currentLanguage={currentLanguage} currentPage={currentPage} />
         
         {/* Google Tag Manager */}
