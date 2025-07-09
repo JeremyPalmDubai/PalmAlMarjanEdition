@@ -50,14 +50,6 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       availability: null
     },
     {
-      name: "Oystra by Richmind",
-      developer: "Richmind Development",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/622e87aec2_oystrabyrichmind.webp",
-      description: "Elegant coastal living with contemporary design and luxury amenities.",
-      price: null,
-      availability: null
-    },
-    {
       name: "Babolex Residences",
       developer: "Babolex Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/cb748b46fa_babolex.webp",
