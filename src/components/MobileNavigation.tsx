@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home, TrendingUp, Building, DollarSign, MapPin, MessageSquare } from 'lucide-react';
+import { TrendingUp, Building, DollarSign, MapPin, MessageSquare } from 'lucide-react';
 import { useNavigation } from './NavigationProvider';
 
 interface MobileNavigationProps {
@@ -12,7 +12,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLangu
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['opportunity', 'wynn-effect', 'roi-metrics', 'developments', 'lifestyle', 'contact'];
+      const sections = ['opportunity', 'wynn-effect', 'roi-metrics', 'developments', 'lifestyle'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -54,28 +54,40 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLangu
   };
 
   const navItems = [
-    { id: 'opportunity', icon: Home, label: 'Home' },
     { id: 'wynn-effect', icon: TrendingUp, label: 'Wynn' },
     { id: 'roi-metrics', icon: DollarSign, label: 'ROI' },
     { id: 'developments', icon: Building, label: 'Properties' },
-    { id: 'lifestyle', icon: MapPin, label: 'Lifestyle' },
-    { id: 'contact', icon: MessageSquare, label: 'Contact' }
+    { id: 'lifestyle', icon: MapPin, label: 'Lifestyle' }
   ];
 
   return (
-    <nav className="ios26-tabbar">
-      <div className="ios26-tabbar-container">
-        {navItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => scrollToSection(item.id)}
-            className={`ios26-tab-item ${activeSection === item.id ? 'active' : ''}`}
-          >
-            <item.icon className="tab-icon" />
-            <span className="tab-label">{item.label}</span>
-          </button>
-        ))}
+    <>
+      {/* Main Navigation */}
+      <nav className="ios26-tabbar">
+        <div className="ios26-tabbar-container">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`ios26-tab-item ${activeSection === item.id ? 'active' : ''}`}
+            >
+              <item.icon className="tab-icon" />
+              <span className="tab-label">{item.label}</span>
+            </button>
+          ))}
+        </div>
+      </nav>
+
+      {/* Contact Bubble - Separate floating button */}
+      <div className="contact-bubble">
+        <button
+          onClick={() => scrollToSection('contact')}
+          className="contact-bubble-btn"
+          aria-label="Contact"
+        >
+          <MessageSquare className="contact-icon" />
+        </button>
       </div>
-    </nav>
+    </>
   );
 };
