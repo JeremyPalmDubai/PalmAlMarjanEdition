@@ -107,11 +107,11 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     },
     {
       name: "Oystra Zaha Hadid",
-      developer: "Zaha Hadid Architects",
+      developer: "Richmind Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/7089d298f4_oystrazahahadid.webp",
-      description: "Iconic architecture by Zaha Hadid with revolutionary design and luxury living.",
-      price: null,
-      availability: null
+      description: "Designed by Zaha Hadid. Iconic architecture with revolutionary design and luxury living, featuring the legendary architect's signature fluid forms and innovative spatial concepts.",
+      price: "2,800,000 AED",
+      availability: "Ready 2029"
     },
     {
       name: "Emaar Address Residences",
