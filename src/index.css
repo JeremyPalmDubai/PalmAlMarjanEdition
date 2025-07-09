@@ -273,6 +273,36 @@ html {
   .tesla-metric {
     @apply text-3xl md:text-4xl;
   }
+  
+  /* Hero section mobile optimizations */
+  .hero-section {
+    @apply min-h-screen flex items-center justify-center;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+  }
+  
+  /* Responsive button sizing */
+  .tesla-btn-primary,
+  .tesla-btn-secondary,
+  .tesla-btn-secondary-white {
+    @apply px-6 py-3 text-sm;
+  }
+  
+  @media (min-width: 640px) {
+    .tesla-btn-primary,
+    .tesla-btn-secondary,
+    .tesla-btn-secondary-white {
+      @apply px-8 py-3;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .tesla-btn-primary,
+    .tesla-btn-secondary,
+    .tesla-btn-secondary-white {
+      @apply px-12 py-4;
+    }
+  }
 }
 
 /* Mobile navigation styles */
