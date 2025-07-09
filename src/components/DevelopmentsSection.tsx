@@ -180,9 +180,6 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
               )}
               
               {/* Featured badge */}
-              <div className="absolute top-4 right-4 z-10 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                FEATURED
-              </div>
               
               <div className="grid lg:grid-cols-2 gap-8">
                 <div className="h-80 lg:h-96 overflow-hidden">
@@ -266,7 +263,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           <div className="lg:hidden absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent z-10 pointer-events-none"></div>
           
           {/* Show fewer developments on mobile, more on desktop */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="developments-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {developments.slice(0, window.innerWidth < 1024 ? 6 : developments.length).map((development, index) => (
               <div key={index} className="bg-white tesla-hover animate-fade-in-up">
                 <div className="h-64 overflow-hidden">
@@ -333,14 +330,20 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
             <button 
               onClick={() => {
                 // Show all developments by removing the slice limit
-                const hiddenDevelopments = document.querySelectorAll('.development-hidden');
-                hiddenDevelopments.forEach(dev => dev.classList.remove('hidden'));
+                const container = document.querySelector('.developments-grid');
+                if (container) {
+                  container.innerHTML = '';
+                  developments.forEach((development, index) => {
+                    const devElement = createDevelopmentElement(development, index);
+                    container.appendChild(devElement);
+                  });
+                }
                 // Hide the button
                 (event.target as HTMLElement).style.display = 'none';
               }}
-              className="tesla-btn-secondary"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-none font-medium text-sm tracking-wide transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-lg"
             >
-              Voir Plus de Projets ({developments.length - 6} restants)
+              🔍 Voir Plus de Projets ({developments.length - 6} restants)
             </button>
           </div>
         </div>
