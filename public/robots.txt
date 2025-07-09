@@ -1,0 +1,44 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /api/
+Allow: /
+
+# Sitemap
+Sitemap: https://palmsignature.ae/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+User-agent: Bingbot
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+User-agent: Slurp
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+User-agent: DuckDuckBot
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+User-agent: facebookexternalhit
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+User-agent: Twitterbot
+Disallow: /admin/
+Disallow: /private/
+Allow: /
