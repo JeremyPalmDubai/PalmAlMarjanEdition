@@ -75,7 +75,7 @@ export const CEOSection: React.FC<CEOSectionProps> = ({ currentLanguage }) => {
           <div className="animate-slide-in">
             <div className="relative">
               <img
-                src="src/assets/6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103 copy.png"
+                src="https://palmdubai.fr/uploads/posts/2025-07/dfa9bb9dcd_6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103.webp"
                 alt="Gabriella Magalhaes, CEO & Founder of Palm Signature Real Estate"
                 className="w-full h-96 lg:h-[600px] object-contain object-center tesla-shadow bg-black"
               />

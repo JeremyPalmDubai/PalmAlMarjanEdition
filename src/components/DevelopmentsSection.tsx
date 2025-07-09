@@ -12,7 +12,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     {
       name: "W Al Marjan Island",
       developer: "Marriott International",
-      image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/1178d03d12_w.webp",
       description: "Luxury beachfront resort with world-class amenities and stunning Arabian Gulf views.",
     },
     {
@@ -24,13 +24,13 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     {
       name: "La Mazzoni",
       developer: "Mazzoni Development",
-      image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/52e2ed0048_lamazzoni.webp",
       description: "Sophisticated waterfront residences with Italian-inspired luxury and contemporary design.",
     },
     {
       name: "Playa Viva",
       developer: "Viva Development",
-      image: "https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/c5791afbd9_playaviva.webp",
       description: "Vibrant beachfront living with modern amenities and stunning ocean views.",
     },
     {
@@ -42,7 +42,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     {
       name: "Oystra by Richmind",
       developer: "Richmind Development",
-      image: "https://images.pexels.com/photos/1134169/pexels-photo-1134169.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/622e87aec2_oystrabyrichmind.webp",
       description: "Elegant coastal living with contemporary design and luxury amenities.",
     },
     {
@@ -90,7 +90,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     {
       name: "Emaar Address Residences",
       developer: "Emaar Properties",
-      image: "https://images.pexels.com/photos/1134178/pexels-photo-1134178.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/38a4475d18_emaaraddressresidences.webp",
       description: "Premium residences with Emaar's signature luxury and world-class amenities.",
     },
   ];
