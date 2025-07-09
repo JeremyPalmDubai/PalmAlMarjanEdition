@@ -306,255 +306,163 @@ html {
 }
 
 /* Mobile navigation styles */
-.mobile-nav-item {
-  @apply flex flex-col items-center justify-center p-2 text-gray-600 hover:text-black transition-all duration-300 relative;
+/* ===== iOS 26 Liquid Glass TabBar ===== */
+.ios26-tabbar {
+  @apply fixed bottom-0 left-0 right-0 z-50 lg:hidden;
+  padding: 8px 16px 20px 16px;
 }
 
-.mobile-nav-item.active {
-  @apply text-black;
-}
-
-/* Liquid Glass Active Effect */
-.mobile-nav-item.active::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  z-index: -1;
-  animation: liquidGlassExpand 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.ios26-tabbar-container {
+  @apply flex justify-center items-center;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 8px 12px;
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  max-width: 380px;
+  margin: 0 auto;
 }
 
-/* Liquid Glass Hover Effect */
-.mobile-nav-item:not(.active):hover::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.08);
+.ios26-tab-item {
+  @apply flex flex-col items-center justify-center relative;
+  padding: 8px 12px;
+  margin: 0 2px;
+  border: none;
+  background: transparent;
+  color: #666;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 16px;
+  min-width: 52px;
+  cursor: pointer;
+}
+
+/* Active State - Bleu Apple avec Liquid Glass */
+.ios26-tab-item.active {
+  color: #007AFF;
+  background: rgba(0, 122, 255, 0.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  box-shadow: 
+    0 4px 16px rgba(0, 122, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 122, 255, 0.1);
+  transform: scale(1.05);
+}
+
+/* Hover Effect */
+.ios26-tab-item:not(.active):hover {
+  color: #333;
+  background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  z-index: -1;
-  animation: liquidGlassHover 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(1.02);
 }
 
-/* Liquid Glass Animations */
-@keyframes liquidGlassExpand {
+/* Active Animation */
+.ios26-tab-item.active {
+  animation: liquidGlassActivate 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes liquidGlassActivate {
   0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
+    transform: scale(1);
+    background: rgba(0, 122, 255, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.15);
   }
   50% {
-    opacity: 0.8;
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: scale(1.08);
+    background: rgba(0, 122, 255, 0.15);
+    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.3);
   }
   100% {
-    width: 60px;
-    height: 60px;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1.05);
+    background: rgba(0, 122, 255, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.25);
   }
 }
 
-@keyframes liquidGlassHover {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
-  }
-  100% {
-    width: 50px;
-    height: 50px;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
+/* Touch Feedback */
+.ios26-tab-item:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
 }
 
-/* Enhanced Mobile Navigation Container */
-.mobile-nav-container {
-  @apply fixed bottom-0 left-0 right-0 z-50 lg:hidden;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+.ios26-tab-item.active:active {
+  transform: scale(1.0);
 }
 
-/* Liquid Glass Active Effect */
-.mobile-nav-item.active::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  z-index: -1;
-  animation: liquidGlassExpand 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+/* Icon Styles */
+.ios26-tab-item .tab-icon {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 2px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  stroke-width: 1.8;
 }
 
-/* Liquid Glass Hover Effect */
-.mobile-nav-item:not(.active):hover::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  z-index: -1;
-  animation: liquidGlassHover 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.ios26-tab-item.active .tab-icon {
+  stroke-width: 2.2;
+  filter: drop-shadow(0 1px 2px rgba(0, 122, 255, 0.3));
 }
 
-/* Liquid Glass Animations */
-@keyframes liquidGlassExpand {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
+/* Label Styles */
+.ios26-tab-item .tab-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ios26-tab-item.active .tab-label {
+  font-weight: 600;
+  text-shadow: 0 0.5px 1px rgba(0, 122, 255, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 375px) {
+  .ios26-tabbar-container {
+    padding: 6px 8px;
+    border-radius: 20px;
   }
-  50% {
-    opacity: 0.8;
-    transform: translate(-50%, -50%) scale(1.1);
+  
+  .ios26-tab-item {
+    padding: 6px 8px;
+    min-width: 44px;
   }
-  100% {
-    width: 60px;
-    height: 60px;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+  
+  .ios26-tab-item .tab-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .ios26-tab-item .tab-label {
+    font-size: 9px;
   }
 }
 
-@keyframes liquidGlassHover {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
+@media (min-width: 414px) {
+  .ios26-tabbar-container {
+    padding: 10px 16px;
+    border-radius: 28px;
   }
-  100% {
-    width: 50px;
-    height: 50px;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+  
+  .ios26-tab-item {
+    padding: 10px 16px;
+    min-width: 56px;
   }
-}
-
-/* Enhanced Mobile Navigation Container */
-.mobile-nav-container {
-  @apply fixed bottom-0 left-0 right-0 z-50 lg:hidden;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.mobile-nav-item .nav-icon {
-  @apply w-5 h-5 mb-1 transition-all duration-300;
-}
-
-.mobile-nav-item.active .nav-icon {
-  @apply transform scale-110;
-}
-
-.mobile-nav-item.active .nav-icon {
-  @apply transform scale-110;
-}
-
-.mobile-nav-item .nav-label {
-  @apply text-xs font-medium transition-all duration-300;
-}
-
-.mobile-nav-item.active .nav-label {
-  @apply font-semibold;
-}
-
-/* Ripple Effect on Touch */
-.mobile-nav-item:active::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  animation: ripple 0.6s ease-out;
-  z-index: -2;
-}
-
-@keyframes ripple {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0.8;
+  
+  .ios26-tab-item .tab-icon {
+    width: 24px;
+    height: 24px;
   }
-  100% {
-    width: 80px;
-    height: 80px;
-    opacity: 0;
-  }
-}
-
-.mobile-nav-item.active .nav-label {
-  @apply font-semibold;
-}
-
-/* Ripple Effect on Touch */
-.mobile-nav-item:active::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  animation: ripple 0.6s ease-out;
-  z-index: -2;
-}
-
-@keyframes ripple {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0.8;
-  }
-  100% {
-    width: 80px;
-    height: 80px;
-    opacity: 0;
+  
+  .ios26-tab-item .tab-label {
+    font-size: 11px;
   }
 }
 

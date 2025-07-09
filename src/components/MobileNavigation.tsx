@@ -63,16 +63,16 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLangu
   ];
 
   return (
-    <nav className="mobile-nav-container">
-      <div className="flex justify-around items-center py-2">
+    <nav className="ios26-tabbar">
+      <div className="ios26-tabbar-container">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
-            className={`mobile-nav-item ${activeSection === item.id ? 'active' : ''}`}
+            className={`ios26-tab-item ${activeSection === item.id ? 'active' : ''}`}
           >
-            <item.icon className="nav-icon" />
-            <span className="nav-label">{item.label}</span>
+            <item.icon className="tab-icon" />
+            <span className="tab-label">{item.label}</span>
           </button>
         ))}
       </div>
