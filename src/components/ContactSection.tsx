@@ -151,11 +151,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                 {t.contact.form.title}
               </h3>
               
-              <div className="w-full px-4" style={{ minHeight: '600px' }}>
+              <div className="w-full px-4" style={{ minHeight: '404px' }}>
                 <iframe
-                  src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  data-tally-src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  loading="lazy"
                   width="100%"
-                  height="600"
+                  height="404"
                   frameBorder="0"
                   marginHeight={0}
                   marginWidth={0}
@@ -163,24 +164,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                   className="w-full"
                   style={{ 
                     border: 'none',
-                    minHeight: '600px',
+                    minHeight: '404px',
                     backgroundColor: 'transparent'
-                  }}
-                  onLoad={() => {
-                    // Force iframe to show content
-                    const iframe = document.querySelector('iframe[title="Lead Form Palm Signature"]') as HTMLIFrameElement;
-                    if (iframe) {
-                      iframe.style.display = 'block';
-                      iframe.style.visibility = 'visible';
-                      
-                      // Track form view
-                      if (typeof gtag !== 'undefined') {
-                        gtag('event', 'form_view', { form_name: 'Lead Form' });
-                      }
-                      if (typeof fbq !== 'undefined') {
-                        fbq('track', 'ViewContent', { content_name: 'Lead Form' });
-                      }
-                    }
                   }}
                 ></iframe>
               </div>
@@ -189,48 +174,59 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
         </div>
       </div>
       
-      {/* Script pour forcer le chargement du formulaire Tally */}
+      {/* Script Tally avec URL tracking */}
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            // Attendre que Tally soit chargé
-            window.addEventListener('load', function() {
-              setTimeout(function() {
-                const iframe = document.querySelector('iframe[title="Lead Form Palm Signature"]');
-                if (iframe) {
-                  iframe.style.display = 'block';
-                  iframe.style.visibility = 'visible';
-                  iframe.style.opacity = '1';
-                  
-                  // Forcer le rechargement si nécessaire
-                  if (!iframe.contentDocument || iframe.contentDocument.body.innerHTML === '') {
-                    iframe.src = iframe.src;
+            // URL tracking pour Tally
+            const url = new URL(window.location.href);
+            url.searchParams.set("page_url", window.location.href);
+            window.history.replaceState({}, '', url);
+            
+            // Attendre que Tally soit chargé et initialiser
+            document.addEventListener('DOMContentLoaded', function() {
+              // Vérifier si le script Tally est chargé
+              if (typeof window.Tally !== 'undefined') {
+                window.Tally.loadEmbeds();
+                
+                // Track form interactions
+                if (window.Tally.on) {
+                  window.Tally.on('form:submit', function(data) {
+                    if (typeof gtag !== 'undefined') {
+                      gtag('event', 'generate_lead', {
+                        currency: 'USD',
+                        value: 200000
+                      });
+                    }
+                    if (typeof fbq !== 'undefined') {
+                      fbq('track', 'Lead', {
+                        content_name: 'Investment Inquiry',
+                        value: 200000,
+                        currency: 'USD'
+                      });
+                    }
+                  });
+                }
+              } else {
+                // Si Tally n'est pas encore chargé, attendre
+                const checkTally = setInterval(function() {
+                  if (typeof window.Tally !== 'undefined') {
+                    window.Tally.loadEmbeds();
+                    clearInterval(checkTally);
                   }
+                }, 100);
+              }
+              
+              // Track form view
+              setTimeout(function() {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'form_view', { form_name: 'Lead Form' });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'ViewContent', { content_name: 'Lead Form' });
                 }
               }, 1000);
             });
-            
-            // Alternative: utiliser l'API Tally directement
-            if (window.Tally) {
-              window.Tally.loadEmbeds();
-              
-              // Track form interactions
-              window.Tally.on('form:submit', function(data) {
-                if (typeof gtag !== 'undefined') {
-                  gtag('event', 'generate_lead', {
-                    currency: 'USD',
-                    value: 200000
-                  });
-                }
-                if (typeof fbq !== 'undefined') {
-                  fbq('track', 'Lead', {
-                    content_name: 'Investment Inquiry',
-                    value: 200000,
-                    currency: 'USD'
-                  });
-                }
-              });
-            }
           `
         }}
       />
