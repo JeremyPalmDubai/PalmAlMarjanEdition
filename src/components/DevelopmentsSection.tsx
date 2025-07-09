@@ -131,8 +131,12 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       description: "Extraordinary architectural masterpiece redefining luxury waterfront living.",
       price: null,
       availability: "SOLD OUT",
-      deliveryDate: "Livraison 2026",
-      profitBadge: "Clients ont fait x2 plus-value en 1 an"
+      deliveryDate: currentLanguage === 'fr' ? "Livraison 2026" : 
+                   currentLanguage === 'es' ? "Entrega 2026" :
+                   currentLanguage === 'nl' ? "Oplevering 2026" : "Delivery 2026",
+      profitBadge: currentLanguage === 'fr' ? "Clients ont fait x2 plus-value en 1 an" :
+                   currentLanguage === 'es' ? "Clientes obtuvieron x2 plusvalía en 1 año" :
+                   currentLanguage === 'nl' ? "Klanten maakten x2 winst in 1 jaar" : "Clients made x2 profit in 1 year"
     },
   ];
 
@@ -266,35 +270,87 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
 
         {/* Tesla-style developer logos */}
         <div className="text-center">
-          <h3 className="text-2xl tesla-heading mb-12">{t.developments.trustedPartners}</h3>
+          <h3 className="text-3xl md:text-4xl tesla-heading mb-16">{t.developments.trustedPartners}</h3>
           
-          {/* Development Companies */}
-          <div className="mb-12">
-            <h4 className="text-lg tesla-heading mb-8 text-gray-500 uppercase tracking-wider">Development Partners</h4>
-            <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-10 opacity-50">
-              <div className="text-base lg:text-lg font-light text-gray-600">EMAAR</div>
-              <div className="text-base lg:text-lg font-light text-gray-600">DECA</div>
-              <div className="text-base lg:text-lg font-light text-gray-600">DAMAC</div>
-              <div className="text-base lg:text-lg font-light text-gray-600">ELLINGTON</div>
-              <div className="text-base lg:text-lg font-light text-gray-600">MAJOR</div>
-              <div className="text-base lg:text-lg font-light text-gray-600">RICHMIND</div>
-              <div className="text-base lg:text-lg font-light text-gray-600">BNW</div>
-              <div className="text-base lg:text-lg font-light text-gray-600">ONE</div>
-              <div className="text-base lg:text-lg font-light text-gray-600">BABOLEX</div>
-              <div className="text-base lg:text-lg font-light text-gray-600">TRIO</div>
+          {/* Tesla-style grid layout for partners */}
+          <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            
+            {/* Development Companies */}
+            <div className="bg-white p-8 tesla-shadow tesla-hover">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h4 className="text-xl tesla-heading">Development Partners</h4>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">EMAAR</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Premium Developer</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">DECA</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Luxury Projects</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">DAMAC</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Iconic Developments</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">ELLINGTON</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Coastal Living</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">RICHMIND</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Innovative Design</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">BABOLEX</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Contemporary Style</div>
+                </div>
+              </div>
             </div>
-          </div>
-          
-          {/* Prestige Brands */}
-          <div>
-            <h4 className="text-lg tesla-heading mb-8 text-gray-500 uppercase tracking-wider">Prestige Brands</h4>
-            <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-10 opacity-60">
-              <div className="text-lg lg:text-xl font-medium text-gray-700">MARRIOTT</div>
-              <div className="text-lg lg:text-xl font-medium text-gray-700">HILTON</div>
-              <div className="text-lg lg:text-xl font-medium text-gray-700">ELIE SAAB</div>
-              <div className="text-lg lg:text-xl font-medium text-gray-700">NIKKI BEACH</div>
-              <div className="text-lg lg:text-xl font-medium text-gray-700">NOBU</div>
-              <div className="text-lg lg:text-xl font-medium text-gray-700">WYNN</div>
+            
+            {/* Prestige Brands */}
+            <div className="bg-black text-white p-8 tesla-shadow tesla-hover">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-inter font-light">Prestige Brands</h4>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">MARRIOTT</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">W Hotels</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">HILTON</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Luxury Hospitality</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">ELIE SAAB</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Haute Couture</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">WYNN</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Casino Resort</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">NIKKI BEACH</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Beach Club</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">NOBU</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Fine Dining</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
