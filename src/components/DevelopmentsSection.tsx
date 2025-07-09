@@ -179,8 +179,6 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 </div>
               )}
               
-              {/* Featured badge */}
-              
               <div className="grid lg:grid-cols-2 gap-8">
                 <div className="h-80 lg:h-96 overflow-hidden">
                   <img
@@ -257,95 +255,67 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           ))}
         </div>
 
-        {/* Other Developments with Mobile Optimization */}
-        <div className="relative">
-          {/* Gradient overlay for mobile to indicate more content */}
-          <div className="lg:hidden absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent z-10 pointer-events-none"></div>
-          
-          {/* Show fewer developments on mobile, more on desktop */}
-          <div className="developments-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {developments.slice(0, window.innerWidth < 1024 ? 6 : developments.length).map((development, index) => (
-              <div key={index} className="bg-white tesla-hover animate-fade-in-up">
-                <div className="h-64 overflow-hidden">
-                  <img
-                    src={development.image}
-                    alt={development.name}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
+        {/* All Other Developments - Now Always Visible */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {developments.map((development, index) => (
+            <div key={index} className="bg-white tesla-hover animate-fade-in-up">
+              <div className="h-64 overflow-hidden">
+                <img
+                  src={development.image}
+                  alt={development.name}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              
+              <div className="p-8">
+                <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
+                  {development.developer}
                 </div>
+                <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
+                <p className="tesla-subheading text-sm leading-relaxed mb-6">{development.description}</p>
                 
-                <div className="p-8">
-                  <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
-                    {development.developer}
-                  </div>
-                  <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
-                  <p className="tesla-subheading text-sm leading-relaxed mb-6">{development.description}</p>
-                  
-                  {/* Pricing and Availability */}
-                  {(development.price || development.availability) && (
-                    <div className="mb-6 space-y-2">
-                      {development.price && (
-                        <div className="flex items-center">
-                          <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">From:</span>
-                          <span className="text-lg font-semibold text-black">{development.price}</span>
-                        </div>
-                      )}
-                      {development.availability && (
-                        <div className="flex items-center">
-                          <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">Status:</span>
-                          <span className={`text-sm font-medium ${development.availabilityColor || 'text-green-600'}`}>
-                            {development.availability}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  
-                  <div className="flex justify-center">
-                    {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                      <div className="tesla-btn-primary opacity-50 cursor-not-allowed text-sm px-6 py-2">
-                        SOLD OUT
+                {/* Pricing and Availability */}
+                {(development.price || development.availability) && (
+                  <div className="mb-6 space-y-2">
+                    {development.price && (
+                      <div className="flex items-center">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">From:</span>
+                        <span className="text-lg font-semibold text-black">{development.price}</span>
                       </div>
-                    ) : development.availabilityColor === 'text-orange-600' ? (
-                      <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700 text-sm px-6 py-2">
-                        {t.developments.lastUnits}
-                      </a>
-                    ) : development.availabilityColor === 'text-green-600' ? (
-                      <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700 text-sm px-6 py-2">
-                        {t.developments.learnMore}
-                      </a>
-                    ) : (
-                      <a href="#contact" className="tesla-btn-primary text-sm px-6 py-2">
-                        {t.developments.learnMore}
-                      </a>
+                    )}
+                    {development.availability && (
+                      <div className="flex items-center">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">Status:</span>
+                        <span className={`text-sm font-medium ${development.availabilityColor || 'text-green-600'}`}>
+                          {development.availability}
+                        </span>
+                      </div>
                     )}
                   </div>
+                )}
+                
+                <div className="flex justify-center">
+                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                    <div className="tesla-btn-primary opacity-50 cursor-not-allowed text-sm px-6 py-2">
+                      SOLD OUT
+                    </div>
+                  ) : development.availabilityColor === 'text-orange-600' ? (
+                    <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700 text-sm px-6 py-2">
+                      {t.developments.lastUnits}
+                    </a>
+                  ) : development.availabilityColor === 'text-green-600' ? (
+                    <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700 text-sm px-6 py-2">
+                      {t.developments.learnMore}
+                    </a>
+                  ) : (
+                    <a href="#contact" className="tesla-btn-primary text-sm px-6 py-2">
+                      {t.developments.learnMore}
+                    </a>
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Show More Button for Mobile */}
-          <div className="lg:hidden text-center mb-16">
-            <button 
-              onClick={() => {
-                // Show all developments by removing the slice limit
-                const container = document.querySelector('.developments-grid');
-                if (container) {
-                  container.innerHTML = '';
-                  developments.forEach((development, index) => {
-                    const devElement = createDevelopmentElement(development, index);
-                    container.appendChild(devElement);
-                  });
-                }
-                // Hide the button
-                (event.target as HTMLElement).style.display = 'none';
-              }}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-none font-medium text-sm tracking-wide transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-lg"
-            >
-              🔍 Voir Plus de Projets ({developments.length - 6} restants)
-            </button>
-          </div>
+            </div>
+          ))}
         </div>
 
         {/* Tesla-style developer logos */}
