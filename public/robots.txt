@@ -7,7 +7,7 @@ Disallow: /api/
 Allow: /
 
 # Sitemap
-Sitemap: https://palmsignaturealmarjanisland.netlify.app/sitemap.xml
+Sitemap: https://invest-almarjanisland.com/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1
