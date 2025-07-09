@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { MobileNavigation } from './components/MobileNavigation';
 import { HeroSection } from './components/HeroSection';
@@ -16,40 +16,91 @@ import { SitemapPage } from './components/SitemapPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { NavigationProvider } from './components/NavigationProvider';
+import { SEOHead } from './components/SEOHead';
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
   const [currentPage, setCurrentPage] = useState('home');
 
-  // Navigation handler
-  const handleNavigation = (page: string) => {
-    setCurrentPage(page);
-    window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`);
-  };
-
-  // Check URL for current page
-  React.useEffect(() => {
+  // Extract language and page from URL
+  useEffect(() => {
     const path = window.location.pathname;
-    if (path === '/sitemap' || path.includes('sitemap')) {
+    
+    // Language detection from URL
+    if (path.startsWith('/fr')) {
+      setCurrentLanguage('fr');
+    } else if (path.startsWith('/es')) {
+      setCurrentLanguage('es');
+    } else if (path.startsWith('/nl')) {
+      setCurrentLanguage('nl');
+    } else {
+      setCurrentLanguage('en');
+    }
+
+    // Page detection
+    if (path.includes('sitemap')) {
       setCurrentPage('sitemap');
-    } else if (path === '/privacy' || path.includes('privacy')) {
+    } else if (path.includes('privacy')) {
       setCurrentPage('privacy');
-    } else if (path === '/terms' || path.includes('terms')) {
+    } else if (path.includes('terms')) {
       setCurrentPage('terms');
     } else {
       setCurrentPage('home');
     }
   }, []);
 
+  // Navigation handler with language support
+  const handleNavigation = (page: string, lang?: string) => {
+    const language = lang || currentLanguage;
+    let url = '';
+    
+    if (page === 'home') {
+      url = language === 'en' ? '/' : `/${language}`;
+    } else {
+      url = language === 'en' ? `/${page}` : `/${language}/${page}`;
+    }
+    
+    setCurrentPage(page);
+    if (lang) setCurrentLanguage(lang);
+    window.history.pushState({}, '', url);
+  };
+
+  // Language change handler
+  const handleLanguageChange = (lang: string) => {
+    setCurrentLanguage(lang);
+    let url = '';
+    
+    if (currentPage === 'home') {
+      url = lang === 'en' ? '/' : `/${lang}`;
+    } else {
+      url = lang === 'en' ? `/${currentPage}` : `/${lang}/${currentPage}`;
+    }
+    
+    window.history.pushState({}, '', url);
+  };
+
   // Handle browser back/forward buttons
-  React.useEffect(() => {
+  useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname;
-      if (path === '/sitemap' || path.includes('sitemap')) {
+      
+      // Language detection
+      if (path.startsWith('/fr')) {
+        setCurrentLanguage('fr');
+      } else if (path.startsWith('/es')) {
+        setCurrentLanguage('es');
+      } else if (path.startsWith('/nl')) {
+        setCurrentLanguage('nl');
+      } else {
+        setCurrentLanguage('en');
+      }
+
+      // Page detection
+      if (path.includes('sitemap')) {
         setCurrentPage('sitemap');
-      } else if (path === '/privacy' || path.includes('privacy')) {
+      } else if (path.includes('privacy')) {
         setCurrentPage('privacy');
-      } else if (path === '/terms' || path.includes('terms')) {
+      } else if (path.includes('terms')) {
         setCurrentPage('terms');
       } else {
         setCurrentPage('home');
@@ -64,7 +115,8 @@ function App() {
     return (
       <NavigationProvider onNavigate={handleNavigation}>
         <div className="min-h-screen bg-white">
-          <Header currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
+          <SEOHead currentLanguage={currentLanguage} currentPage={currentPage} />
+          <Header currentLanguage={currentLanguage} onLanguageChange={handleLanguageChange} />
           <SitemapPage currentLanguage={currentLanguage} />
           <Footer currentLanguage={currentLanguage} />
         </div>
@@ -76,7 +128,8 @@ function App() {
     return (
       <NavigationProvider onNavigate={handleNavigation}>
         <div className="min-h-screen bg-white">
-          <Header currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
+          <SEOHead currentLanguage={currentLanguage} currentPage={currentPage} />
+          <Header currentLanguage={currentLanguage} onLanguageChange={handleLanguageChange} />
           <PrivacyPolicyPage currentLanguage={currentLanguage} />
           <Footer currentLanguage={currentLanguage} />
         </div>
@@ -88,7 +141,8 @@ function App() {
     return (
       <NavigationProvider onNavigate={handleNavigation}>
         <div className="min-h-screen bg-white">
-          <Header currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
+          <SEOHead currentLanguage={currentLanguage} currentPage={currentPage} />
+          <Header currentLanguage={currentLanguage} onLanguageChange={handleLanguageChange} />
           <TermsOfServicePage currentLanguage={currentLanguage} />
           <Footer currentLanguage={currentLanguage} />
         </div>
@@ -99,6 +153,8 @@ function App() {
   return (
     <NavigationProvider onNavigate={handleNavigation}>
       <div className="min-h-screen bg-white">
+        <SEOHead currentLanguage={currentLanguage} currentPage={currentPage} />
+        
         {/* Google Tag Manager */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17243978314"></script>
         <script
@@ -112,7 +168,8 @@ function App() {
               // Track page views
               gtag('event', 'page_view', {
                 page_title: document.title,
-                page_location: window.location.href
+                page_location: window.location.href,
+                language: '${currentLanguage}'
               });
             `,
           }}
@@ -138,7 +195,8 @@ function App() {
                 content_name: 'Al Marjan Island Investment',
                 content_category: 'Real Estate',
                 value: 200000,
-                currency: 'USD'
+                currency: 'USD',
+                language: '${currentLanguage}'
               });
             `,
           }}
@@ -155,14 +213,14 @@ function App() {
                 if (scrollPercent > maxScroll) {
                   maxScroll = scrollPercent;
                   if (maxScroll >= 25 && maxScroll < 50) {
-                    gtag('event', 'scroll', { percent_scrolled: 25 });
-                    fbq('track', 'ViewContent', { content_name: '25% Page Scroll' });
+                    gtag('event', 'scroll', { percent_scrolled: 25, language: '${currentLanguage}' });
+                    fbq('track', 'ViewContent', { content_name: '25% Page Scroll', language: '${currentLanguage}' });
                   } else if (maxScroll >= 50 && maxScroll < 75) {
-                    gtag('event', 'scroll', { percent_scrolled: 50 });
-                    fbq('track', 'ViewContent', { content_name: '50% Page Scroll' });
+                    gtag('event', 'scroll', { percent_scrolled: 50, language: '${currentLanguage}' });
+                    fbq('track', 'ViewContent', { content_name: '50% Page Scroll', language: '${currentLanguage}' });
                   } else if (maxScroll >= 75) {
-                    gtag('event', 'scroll', { percent_scrolled: 75 });
-                    fbq('track', 'ViewContent', { content_name: '75% Page Scroll' });
+                    gtag('event', 'scroll', { percent_scrolled: 75, language: '${currentLanguage}' });
+                    fbq('track', 'ViewContent', { content_name: '75% Page Scroll', language: '${currentLanguage}' });
                   }
                 }
               });
@@ -172,21 +230,21 @@ function App() {
               setInterval(function() {
                 timeOnPage += 30;
                 if (timeOnPage === 30) {
-                  gtag('event', 'timing_complete', { name: 'time_on_page', value: 30 });
-                  fbq('track', 'ViewContent', { content_name: '30 seconds on page' });
+                  gtag('event', 'timing_complete', { name: 'time_on_page', value: 30, language: '${currentLanguage}' });
+                  fbq('track', 'ViewContent', { content_name: '30 seconds on page', language: '${currentLanguage}' });
                 } else if (timeOnPage === 60) {
-                  gtag('event', 'timing_complete', { name: 'time_on_page', value: 60 });
-                  fbq('track', 'ViewContent', { content_name: '1 minute on page' });
+                  gtag('event', 'timing_complete', { name: 'time_on_page', value: 60, language: '${currentLanguage}' });
+                  fbq('track', 'ViewContent', { content_name: '1 minute on page', language: '${currentLanguage}' });
                 } else if (timeOnPage === 120) {
-                  gtag('event', 'timing_complete', { name: 'time_on_page', value: 120 });
-                  fbq('track', 'ViewContent', { content_name: '2 minutes on page' });
+                  gtag('event', 'timing_complete', { name: 'time_on_page', value: 120, language: '${currentLanguage}' });
+                  fbq('track', 'ViewContent', { content_name: '2 minutes on page', language: '${currentLanguage}' });
                 }
               }, 30000);
             `,
           }}
         />
         
-        <Header currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
+        <Header currentLanguage={currentLanguage} onLanguageChange={handleLanguageChange} />
         <HeroSection currentLanguage={currentLanguage} />
         <OpportunitySection currentLanguage={currentLanguage} />
         <ExplosiveGrowthSection currentLanguage={currentLanguage} />

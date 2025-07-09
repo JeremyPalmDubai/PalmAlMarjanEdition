@@ -1,5 +1,24 @@
 export const translations = {
   en: {
+    seo: {
+      home: {
+        title: 'Al Marjan Island Investment - Unlock Exponential Returns | Palm Signature Real Estate',
+        description: '🏖️ Invest in Al Marjan Island luxury real estate with 5-year interest-free payment plans. 33.3% property appreciation, Wynn Casino opening 2027, 100% tax-free ownership. Highest ROI in UAE. Contact Palm Signature today!'
+      },
+      sitemap: {
+        title: 'Site Map - Al Marjan Island Investment Opportunities',
+        description: 'Navigate through all sections of our Al Marjan Island investment portal. Find luxury developments, ROI metrics, and investment opportunities.'
+      },
+      privacy: {
+        title: 'Privacy Policy - Palm Signature Real Estate',
+        description: 'Privacy policy for Palm Signature Real Estate. Learn how we protect your personal information and investment data.'
+      },
+      terms: {
+        title: 'Terms of Service - Palm Signature Real Estate',
+        description: 'Terms of service for Palm Signature Real Estate investment services. Understand our service terms and conditions.'
+      },
+      keywords: 'Al Marjan Island investment, Wynn Casino 2027, UAE real estate, tax-free property, luxury real estate Dubai, Ras Al Khaimah investment, capital appreciation, rental yields, freehold property UAE, Palm Signature Real Estate, Gabriella Magalhaes, luxury developments UAE, off-plan properties Al Marjan Island, beachfront investment UAE'
+    },
     navigation: {
       opportunity: 'Opportunity',
       wynn: 'Wynn Effect',
@@ -269,6 +288,25 @@ export const translations = {
     }
   },
   fr: {
+    seo: {
+      home: {
+        title: 'Investissement Al Marjan Island - Débloquez des Rendements Exponentiels | Palm Signature Real Estate',
+        description: '🏖️ Investissez dans l\'immobilier de luxe Al Marjan Island avec des plans de paiement sans intérêt sur 5 ans. 33,3% d\'appréciation immobilière, ouverture du Wynn Casino 2027, propriété 100% exonérée d\'impôts. ROI le plus élevé aux EAU.'
+      },
+      sitemap: {
+        title: 'Plan du Site - Opportunités d\'Investissement Al Marjan Island',
+        description: 'Naviguez à travers toutes les sections de notre portail d\'investissement Al Marjan Island. Trouvez des développements de luxe, des métriques ROI et des opportunités d\'investissement.'
+      },
+      privacy: {
+        title: 'Politique de Confidentialité - Palm Signature Real Estate',
+        description: 'Politique de confidentialité pour Palm Signature Real Estate. Découvrez comment nous protégeons vos informations personnelles et données d\'investissement.'
+      },
+      terms: {
+        title: 'Conditions de Service - Palm Signature Real Estate',
+        description: 'Conditions de service pour les services d\'investissement Palm Signature Real Estate. Comprenez nos termes et conditions de service.'
+      },
+      keywords: 'investissement Al Marjan Island, Wynn Casino 2027, immobilier EAU, propriété exonérée d\'impôts, immobilier de luxe Dubai, investissement Ras Al Khaimah, appréciation du capital, rendements locatifs, propriété freehold EAU, Palm Signature Real Estate, Gabriella Magalhaes, développements de luxe EAU, propriétés sur plan Al Marjan Island, investissement front de mer EAU'
+    },
     navigation: {
       opportunity: 'Opportunité',
       wynn: 'Effet Wynn',
@@ -538,6 +576,25 @@ export const translations = {
     }
   },
   es: {
+    seo: {
+      home: {
+        title: 'Inversión Al Marjan Island - Desbloquea Rendimientos Exponenciales | Palm Signature Real Estate',
+        description: '🏖️ Invierte en bienes raíces de lujo Al Marjan Island con planes de pago sin intereses de 5 años. 33,3% apreciación inmobiliaria, apertura Wynn Casino 2027, propiedad 100% libre de impuestos. ROI más alto en EAU.'
+      },
+      sitemap: {
+        title: 'Mapa del Sitio - Oportunidades de Inversión Al Marjan Island',
+        description: 'Navega por todas las secciones de nuestro portal de inversión Al Marjan Island. Encuentra desarrollos de lujo, métricas ROI y oportunidades de inversión.'
+      },
+      privacy: {
+        title: 'Política de Privacidad - Palm Signature Real Estate',
+        description: 'Política de privacidad para Palm Signature Real Estate. Aprende cómo protegemos tu información personal y datos de inversión.'
+      },
+      terms: {
+        title: 'Términos de Servicio - Palm Signature Real Estate',
+        description: 'Términos de servicio para los servicios de inversión Palm Signature Real Estate. Entiende nuestros términos y condiciones de servicio.'
+      },
+      keywords: 'inversión Al Marjan Island, Wynn Casino 2027, bienes raíces EAU, propiedad libre de impuestos, bienes raíces de lujo Dubai, inversión Ras Al Khaimah, apreciación del capital, rendimientos de alquiler, propiedad freehold EAU, Palm Signature Real Estate, Gabriella Magalhaes, desarrollos de lujo EAU, propiedades sobre plano Al Marjan Island, inversión frente al mar EAU'
+    },
     navigation: {
       opportunity: 'Oportunidad',
       wynn: 'Efecto Wynn',
@@ -807,6 +864,25 @@ export const translations = {
     }
   },
   nl: {
+    seo: {
+      home: {
+        title: 'Al Marjan Island Investering - Ontgrendel Exponentiële Rendementen | Palm Signature Real Estate',
+        description: '🏖️ Investeer in Al Marjan Island luxe onroerend goed met 5-jarige rentevrije betalingsplannen. 33,3% waardestijging onroerend goed, Wynn Casino opening 2027, 100% belastingvrije eigendom. Hoogste ROI in VAE.'
+      },
+      sitemap: {
+        title: 'Sitemap - Al Marjan Island Investeringsmogelijkheden',
+        description: 'Navigeer door alle secties van ons Al Marjan Island investeringsportaal. Vind luxe ontwikkelingen, ROI statistieken en investeringsmogelijkheden.'
+      },
+      privacy: {
+        title: 'Privacybeleid - Palm Signature Real Estate',
+        description: 'Privacybeleid voor Palm Signature Real Estate. Leer hoe we uw persoonlijke informatie en investeringsgegevens beschermen.'
+      },
+      terms: {
+        title: 'Servicevoorwaarden - Palm Signature Real Estate',
+        description: 'Servicevoorwaarden voor Palm Signature Real Estate investeringsdiensten. Begrijp onze service voorwaarden en condities.'
+      },
+      keywords: 'Al Marjan Island investering, Wynn Casino 2027, VAE onroerend goed, belastingvrije eigendom, luxe onroerend goed Dubai, Ras Al Khaimah investering, kapitaalwaardering, huurrendementen, eigendomsrecht VAE, Palm Signature Real Estate, Gabriella Magalhaes, luxe ontwikkelingen VAE, off-plan eigendommen Al Marjan Island, kustinvestering VAE'
+    },
     navigation: {
       opportunity: 'Kans',
       wynn: 'Wynn Effect',
