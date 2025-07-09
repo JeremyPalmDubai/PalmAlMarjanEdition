@@ -18,7 +18,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     {
       name: "Hilton Al Marjan Island",
       developer: "Hilton Worldwide",
-      image: "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/f2b6bf1feb_hilton.webp",
       description: "Premium hospitality experience with exceptional service and luxury accommodations.",
     },
     {
@@ -36,7 +36,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     {
       name: "Clé d'Or by Arthouse",
       developer: "Arthouse Residences",
-      image: "https://images.pexels.com/photos/1134168/pexels-photo-1134168.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/f8834d1461_cledorbyarthouse.webp",
       description: "Artistic luxury residences with innovative architecture and premium finishes.",
     },
     {
@@ -48,43 +48,43 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     {
       name: "Babolex Residences",
       developer: "Babolex Development",
-      image: "https://images.pexels.com/photos/1134170/pexels-photo-1134170.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/cb748b46fa_babolex.webp",
       description: "Contemporary living spaces with innovative design and premium finishes.",
     },
     {
       name: "Manta Bay Residences",
       developer: "Manta Bay Development",
-      image: "https://images.pexels.com/photos/1134171/pexels-photo-1134171.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/0384c0f122_mantabay.webp",
       description: "Waterfront luxury living with panoramic views and exclusive amenities.",
     },
     {
       name: "Trio Isle Octa",
       developer: "Trio Development",
-      image: "https://images.pexels.com/photos/1134172/pexels-photo-1134172.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/90007331f0_trioisleocta.webp",
       description: "Innovative architectural design with premium coastal living experiences.",
     },
     {
       name: "Park Beach Residences",
       developer: "Park Beach Development",
-      image: "https://images.pexels.com/photos/1134173/pexels-photo-1134173.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/e5ce326e37_parkbeach.webp",
       description: "Beachfront luxury with pristine white sand beaches and crystal-clear waters.",
     },
     {
       name: "Ola Residences",
       developer: "Ola Development",
-      image: "https://images.pexels.com/photos/1134174/pexels-photo-1134174.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/a9d4e40639_ola.webp",
       description: "Modern waterfront living with sophisticated design and premium amenities.",
     },
     {
       name: "Costa Mare by Ellington",
       developer: "Ellington Properties",
-      image: "https://images.pexels.com/photos/1134175/pexels-photo-1134175.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/b1ea8562fb_costamareellington.webp",
       description: "Elegant coastal residences with contemporary design and luxury finishes.",
     },
     {
       name: "Oystra Zaha Hadid",
       developer: "Zaha Hadid Architects",
-      image: "https://images.pexels.com/photos/1134177/pexels-photo-1134177.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/7089d298f4_oystrazahahadid.webp",
       description: "Iconic architecture by Zaha Hadid with revolutionary design and luxury living.",
     },
     {
@@ -99,13 +99,13 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     {
       name: "La Mer by Elie Saab",
       developer: "Elie Saab",
-      image: "https://images.pexels.com/photos/1134179/pexels-photo-1134179.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/87baf2aac8_lamerbyeliesaab.webp",
       description: "Haute couture-inspired residences with unparalleled luxury and elegance.",
     },
     {
       name: "The Unexpected",
       developer: "The Unexpected Development",
-      image: "https://images.pexels.com/photos/1134180/pexels-photo-1134180.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/168ac67004_theunexpected.webp",
       description: "Extraordinary architectural masterpiece redefining luxury waterfront living.",
     },
   ];
