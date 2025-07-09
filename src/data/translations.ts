@@ -203,9 +203,9 @@ export const translations = {
           description: 'Direct highway access'
         },
         flyingTaxi: {
-          time: '12min',
+          time: '30min',
           title: 'Dubai via Flying Taxi',
-          description: 'Future air mobility (2025)'
+          description: 'Available from 2026'
         }
       }
     },
@@ -492,9 +492,9 @@ export const translations = {
           description: 'Accès direct par autoroute'
         },
         flyingTaxi: {
-          time: '12min',
+          time: '30min',
           title: 'Dubaï via Taxi Volant',
-          description: 'Mobilité aérienne future (2025)'
+          description: 'Disponible à partir de 2026'
         }
       }
     },
@@ -781,9 +781,9 @@ export const translations = {
           description: 'Acceso directo por autopista'
         },
         flyingTaxi: {
-          time: '12min',
+          time: '30min',
           title: 'Dubái vía Taxi Volador',
-          description: 'Movilidad aérea futura (2025)'
+          description: 'Disponible desde 2026'
         }
       }
     },
@@ -1070,9 +1070,9 @@ export const translations = {
           description: 'Directe snelweg toegang'
         },
         flyingTaxi: {
-          time: '12min',
+          time: '30min',
           title: 'Dubai via Vliegende Taxi',
-          description: 'Toekomstige luchtmobiliteit (2025)'
+          description: 'Beschikbaar vanaf 2026'
         }
       }
     },
