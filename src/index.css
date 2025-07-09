@@ -295,14 +295,7 @@ html {
   .tesla-metric {
     @apply text-3xl md:text-4xl;
   }
-  
-  /* Hero section mobile optimizations */
-  .hero-section {
-    @apply min-h-screen flex items-center justify-center;
-    min-height: 100vh;
-    min-height: 100dvh; /* Dynamic viewport height for mobile */
-  }
-  
+
   /* Responsive button sizing */
   .tesla-btn-primary,
   .tesla-btn-secondary,
@@ -324,6 +317,20 @@ html {
     .tesla-btn-secondary-white {
       @apply px-12 py-4;
     }
+  }
+}
+
+/* Hero section styles - Desktop and Mobile */
+.hero-section {
+  @apply min-h-screen flex items-center justify-center;
+  min-height: 100vh;
+}
+
+/* Mobile-specific hero adjustments */
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile only */
   }
 }
 
