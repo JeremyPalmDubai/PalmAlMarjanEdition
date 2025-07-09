@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Globe } from 'lucide-react';
 import { LanguageSelector } from './LanguageSelector';
 import { useNavigation } from './NavigationProvider';
@@ -10,8 +10,41 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChange }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const t = translations[currentLanguage];
   const navigation = useNavigation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const heroHeight = window.innerHeight; // Hauteur du viewport = hauteur du hero
+      
+      // Afficher la navbar après le hero
+      if (currentScrollY > heroHeight) {
+        // Si on scroll vers le bas après le hero, cacher la navbar
+        if (currentScrollY > lastScrollY && currentScrollY > heroHeight + 100) {
+          setIsVisible(false);
+        } else {
+          // Si on scroll vers le haut ou qu'on vient de passer le hero, afficher la navbar
+          setIsVisible(true);
+        }
+      } else {
+        // Dans le hero, toujours cacher la navbar
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    // Écouter le scroll
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Vérifier la position initiale
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -40,7 +73,11 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 tesla-nav">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+      isVisible 
+        ? 'transform translate-y-0 opacity-100' 
+        : 'transform -translate-y-full opacity-0'
+    } tesla-nav`}>
       <div className="tesla-container">
         <div className="flex items-center justify-between h-14 lg:h-16">
           <div className="flex items-center cursor-pointer" onClick={handleLogoClick}>

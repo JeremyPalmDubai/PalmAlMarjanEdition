@@ -156,8 +156,30 @@ html {
 
 /* Tesla-style navigation */
 .tesla-nav {
-  @apply backdrop-blur-md bg-white/90 border-b border-gray-100;
-  transition: all 0.3s ease;
+  @apply backdrop-blur-md bg-white/95 border-b border-gray-100;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Enhanced navbar animations */
+.tesla-nav {
+  transform-origin: top center;
+}
+
+/* Smooth navbar reveal animation */
+@keyframes navbarSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar-visible {
+  animation: navbarSlideDown 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .tesla-nav-item {
