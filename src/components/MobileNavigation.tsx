@@ -61,33 +61,29 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLangu
   ];
 
   return (
-    <>
-      {/* Main Navigation */}
-      <nav className="ios26-tabbar">
-        <div className="ios26-tabbar-container">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`ios26-tab-item ${activeSection === item.id ? 'active' : ''}`}
-            >
-              <item.icon className="tab-icon" />
-              <span className="tab-label">{item.label}</span>
-            </button>
-          ))}
-        </div>
-      </nav>
-
-      {/* Contact Bubble - Separate floating button */}
-      <div className="contact-bubble">
+    <nav className="ios26-tabbar">
+      <div className="ios26-tabbar-container">
+        {/* Navigation Items */}
+        {navItems.map((item) => (
+          <button
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+            className={`ios26-tab-item ${activeSection === item.id ? 'active' : ''}`}
+          >
+            <item.icon className="tab-icon" />
+            <span className="tab-label">{item.label}</span>
+          </button>
+        ))}
+        
+        {/* Contact Button - Remplace la loupe */}
         <button
           onClick={() => scrollToSection('contact')}
-          className="contact-bubble-btn"
+          className="ios26-contact-btn"
           aria-label="Contact"
         >
           <MessageSquare className="contact-icon" />
         </button>
       </div>
-    </>
+    </nav>
   );
 };
