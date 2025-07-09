@@ -166,10 +166,10 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({ currentLanguage }) => 
               <h3 className="text-xl font-medium mb-2">Email Us</h3>
               <p className="text-gray-300 mb-4">Get detailed investment information</p>
               <a
-                href="mailto:info@palmsignature.ae"
+                href="mailto:hello@palmsignature.ae"
                 className="tesla-btn-secondary-white"
               >
-                info@palmsignature.ae
+                hello@palmsignature.ae
               </a>
             </div>
           </div>

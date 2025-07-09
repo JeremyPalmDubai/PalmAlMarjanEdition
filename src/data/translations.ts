@@ -247,7 +247,7 @@ export const translations = {
         },
         email: {
           label: 'Email',
-          value: 'info@palmsignature.ae'
+          value: 'hello@palmsignature.ae'
         }
       },
       whatsapp: {
@@ -535,7 +535,7 @@ export const translations = {
         },
         email: {
           label: 'Email',
-          value: 'info@palmsignature.ae'
+          value: 'hello@palmsignature.ae'
         }
       },
       whatsapp: {
@@ -823,7 +823,7 @@ export const translations = {
         },
         email: {
           label: 'Email',
-          value: 'info@palmsignature.ae'
+          value: 'hello@palmsignature.ae'
         }
       },
       whatsapp: {
@@ -1111,7 +1111,7 @@ export const translations = {
         },
         email: {
           label: 'Email',
-          value: 'info@palmsignature.ae'
+          value: 'hello@palmsignature.ae'
         }
       },
       whatsapp: {

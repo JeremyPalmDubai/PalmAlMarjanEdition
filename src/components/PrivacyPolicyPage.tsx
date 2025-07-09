@@ -103,7 +103,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLan
                   <li>Request data portability</li>
                 </ul>
                 <p>
-                  To exercise these rights, please contact us at info@palmsignature.ae or +971 58 247 4950.
+                  To exercise these rights, please contact us at hello@palmsignature.ae or +971 58 247 4950.
                 </p>
               </div>
             </section>
@@ -156,7 +156,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLan
                 </p>
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <p><strong>Palm Signature Real Estate LLC</strong></p>
-                  <p>Email: info@palmsignature.ae</p>
+                  <p>Email: hello@palmsignature.ae</p>
                   <p>Phone: +971 58 247 4950</p>
                   <p>Address: Al Marjan Island, Ras Al Khaimah, UAE</p>
                 </div>
