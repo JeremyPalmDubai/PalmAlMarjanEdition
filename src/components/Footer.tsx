@@ -66,12 +66,12 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
             </div>
             
             <a
-              href="https://palmsignature.ae"
+              href="https://palmsignaturealmarjanisland.netlify.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-300 font-medium"
             >
-              palmsignature.ae
+              palmsignaturealmarjanisland.netlify.app
             </a>
           </div>
 

@@ -134,12 +134,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               </div>
               
               <a
-                href="https://palmsignature.ae"
+                href="https://palmsignaturealmarjanisland.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-300 font-medium"
               >
-                {t.contact.about.website}
+                palmsignaturealmarjanisland.netlify.app
               </a>
             </div>
           </div>

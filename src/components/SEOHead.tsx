@@ -36,7 +36,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
   };
 
   const getCanonicalUrl = () => {
-    const baseUrl = 'https://palmsignature.ae';
+    const baseUrl = 'https://palmsignaturealmarjanisland.netlify.app';
     if (currentPage === 'home') {
       return currentLanguage === 'en' ? baseUrl : `${baseUrl}/${currentLanguage}`;
     }
@@ -44,7 +44,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
   };
 
   const getHrefLangUrls = () => {
-    const baseUrl = 'https://palmsignature.ae';
+    const baseUrl = 'https://palmsignaturealmarjanisland.netlify.app';
     const urls = {
       en: currentPage === 'home' ? baseUrl : `${baseUrl}/${currentPage}`,
       fr: currentPage === 'home' ? `${baseUrl}/fr` : `${baseUrl}/fr/${currentPage}`,

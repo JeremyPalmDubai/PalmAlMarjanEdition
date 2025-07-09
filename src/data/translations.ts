@@ -259,7 +259,7 @@ export const translations = {
       },
       about: {
         description: 'Leading luxury real estate agency specializing in Al Marjan Island investments with exponential returns and tax-free ownership.',
-        website: 'palmsignature.ae'
+        website: 'palmsignaturealmarjanisland.netlify.app'
       },
       legal: {
         company: 'Palm Signature Real Estate LLC',
@@ -547,7 +547,7 @@ export const translations = {
       },
       about: {
         description: 'Agence immobilière de luxe leader spécialisée dans les investissements Al Marjan Island avec des rendements exponentiels et une propriété exonérée d\'impôts.',
-        website: 'palmsignature.ae'
+        website: 'palmsignaturealmarjanisland.netlify.app'
       },
       legal: {
         company: 'Palm Signature Real Estate LLC',
@@ -835,7 +835,7 @@ export const translations = {
       },
       about: {
         description: 'Agencia inmobiliaria de lujo líder especializada en inversiones Al Marjan Island con rendimientos exponenciales y propiedad libre de impuestos.',
-        website: 'palmsignature.ae'
+        website: 'palmsignaturealmarjanisland.netlify.app'
       },
       legal: {
         company: 'Palm Signature Real Estate LLC',
@@ -1123,7 +1123,7 @@ export const translations = {
       },
       about: {
         description: 'Leidende luxe onroerend goed bureau gespecialiseerd in Al Marjan Island investeringen met exponentiële rendementen en belastingvrije eigendom.',
-        website: 'palmsignature.ae'
+        website: 'palmsignaturealmarjanisland.netlify.app'
       },
       legal: {
         company: 'Palm Signature Real Estate LLC',
