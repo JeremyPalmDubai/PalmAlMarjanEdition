@@ -252,14 +252,35 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
         {/* Tesla-style developer logos */}
         <div className="text-center">
           <h3 className="text-2xl tesla-heading mb-12">{t.developments.trustedPartners}</h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12 opacity-40">
-            <div className="text-lg lg:text-xl font-light text-gray-600">MARRIOTT</div>
-            <div className="text-lg lg:text-xl font-light text-gray-600">HILTON</div>
-            <div className="text-lg lg:text-xl font-light text-gray-600">BABOLEX</div>
-            <div className="text-lg lg:text-xl font-light text-gray-600">MANTA BAY</div>
-            <div className="text-lg lg:text-xl font-light text-gray-600">ELIE SAAB</div>
-            <div className="text-lg lg:text-xl font-light text-gray-600">TRIO</div>
-            <div className="text-lg lg:text-xl font-light text-gray-600">ELLINGTON</div>
+          
+          {/* Development Companies */}
+          <div className="mb-12">
+            <h4 className="text-lg tesla-heading mb-8 text-gray-500 uppercase tracking-wider">Development Partners</h4>
+            <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-10 opacity-50">
+              <div className="text-base lg:text-lg font-light text-gray-600">EMAAR</div>
+              <div className="text-base lg:text-lg font-light text-gray-600">DECA</div>
+              <div className="text-base lg:text-lg font-light text-gray-600">DAMAC</div>
+              <div className="text-base lg:text-lg font-light text-gray-600">ELLINGTON</div>
+              <div className="text-base lg:text-lg font-light text-gray-600">MAJOR</div>
+              <div className="text-base lg:text-lg font-light text-gray-600">RICHMIND</div>
+              <div className="text-base lg:text-lg font-light text-gray-600">BNW</div>
+              <div className="text-base lg:text-lg font-light text-gray-600">ONE</div>
+              <div className="text-base lg:text-lg font-light text-gray-600">BABOLEX</div>
+              <div className="text-base lg:text-lg font-light text-gray-600">TRIO</div>
+            </div>
+          </div>
+          
+          {/* Prestige Brands */}
+          <div>
+            <h4 className="text-lg tesla-heading mb-8 text-gray-500 uppercase tracking-wider">Prestige Brands</h4>
+            <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-10 opacity-60">
+              <div className="text-lg lg:text-xl font-medium text-gray-700">MARRIOTT</div>
+              <div className="text-lg lg:text-xl font-medium text-gray-700">HILTON</div>
+              <div className="text-lg lg:text-xl font-medium text-gray-700">ELIE SAAB</div>
+              <div className="text-lg lg:text-xl font-medium text-gray-700">NIKKI BEACH</div>
+              <div className="text-lg lg:text-xl font-medium text-gray-700">NOBU</div>
+              <div className="text-lg lg:text-xl font-medium text-gray-700">WYNN</div>
+            </div>
           </div>
         </div>
       </div>
