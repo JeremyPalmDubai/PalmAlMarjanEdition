@@ -130,7 +130,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       image: "https://palmdubai.fr/uploads/posts/2025-07/168ac67004_theunexpected.webp",
       description: "Extraordinary architectural masterpiece redefining luxury waterfront living.",
       price: null,
-      availability: null
+      availability: "SOLD OUT",
+      deliveryDate: "Livraison 2026",
+      profitBadge: "Clients ont fait x2 plus-value en 1 an"
     },
   ];
 
@@ -197,6 +199,15 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
         <div className="mb-24 space-y-8">
           {featuredDevelopments.map((development, index) => (
             <div key={index} className="bg-white tesla-hover animate-fade-in-up">
+              {/* Special badge for profit achievement */}
+              {development.profitBadge && (
+                <div className="relative">
+                  <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
+                    🚀 {development.profitBadge}
+                  </div>
+                </div>
+              )}
+              
               <div className="grid lg:grid-cols-2 gap-8">
                 <div className="h-80 lg:h-96 overflow-hidden">
                   <img
@@ -213,7 +224,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   <p className="tesla-subheading text-base leading-relaxed mb-8">{development.description}</p>
                   
                   {/* Pricing and Availability for Featured */}
-                  {(development.price || development.availability) && (
+                  {(development.price || development.availability || development.deliveryDate) && (
                     <div className="mb-8 space-y-3">
                       {development.price && (
                         <div className="flex items-center">
@@ -223,17 +234,29 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       )}
                       {development.availability && (
                         <div className="flex items-center">
-                          <span className="text-sm font-medium text-green-600 tracking-wider uppercase mr-3">Availability:</span>
-                          <span className="text-lg font-medium text-green-600">{development.availability}</span>
+                          <span className="text-sm font-medium text-red-600 tracking-wider uppercase mr-3">Status:</span>
+                          <span className="text-lg font-bold text-red-600 bg-red-50 px-3 py-1 rounded-full">{development.availability}</span>
+                        </div>
+                      )}
+                      {development.deliveryDate && (
+                        <div className="flex items-center">
+                          <span className="text-sm font-medium text-blue-600 tracking-wider uppercase mr-3">Delivery:</span>
+                          <span className="text-lg font-medium text-blue-600">{development.deliveryDate}</span>
                         </div>
                       )}
                     </div>
                   )}
                   
                   <div className="flex justify-center lg:justify-start">
-                    <a href="#contact" className="tesla-btn-primary">
-                      {t.developments.learnMore}
-                    </a>
+                    {development.availability === "SOLD OUT" ? (
+                      <div className="tesla-btn-primary opacity-50 cursor-not-allowed">
+                        SOLD OUT
+                      </div>
+                    ) : (
+                      <a href="#contact" className="tesla-btn-primary">
+                        {t.developments.learnMore}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
