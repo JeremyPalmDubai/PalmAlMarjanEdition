@@ -9,25 +9,43 @@ export const CEOSection: React.FC<CEOSectionProps> = ({ currentLanguage }) => {
   const t = translations[currentLanguage];
 
   return (
-    <section className="tesla-section bg-black text-white">
-      <div className="tesla-container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content side */}
-          <div className="animate-fade-in-up">
-            <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-4">
-              {t.ceoSection.title}
+    <section className="tesla-fullscreen-section relative overflow-hidden">
+      {/* Tesla-style full-screen background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://palmdubai.fr/uploads/posts/2025-07/dfa9bb9dcd_6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103.webp"
+          alt="Gabriella Magalhaes, CEO & Founder of Palm Signature Real Estate"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
+      </div>
+      
+      {/* Tesla-style content overlay */}
+      <div className="relative z-10 flex items-center min-h-screen">
+        <div className="tesla-container">
+          <div className="max-w-2xl text-white">
+            {/* Tesla-style badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-6">
+              <span className="text-white text-xs font-medium tracking-wider uppercase">
+                {t.ceoSection.title}
+              </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-8 tracking-tighter">
+            
+            {/* Tesla-style heading */}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-8 tracking-tighter" id="ceo">
               {t.ceoSection.subtitle}
             </h2>
-            <p className="text-lg text-gray-300 mb-12 leading-relaxed font-light">
+            
+            {/* Tesla-style description */}
+            <p className="text-xl text-white/90 mb-12 leading-relaxed font-light max-w-xl">
               {t.ceoSection.description}
             </p>
             
+            {/* Tesla-style CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#contact" 
-                className="tesla-btn-secondary-white"
+                className="tesla-btn-secondary-hero"
                 onClick={() => {
                   if (typeof gtag !== 'undefined') {
                     gtag('event', 'click', { 
@@ -48,7 +66,7 @@ export const CEOSection: React.FC<CEOSectionProps> = ({ currentLanguage }) => {
                 href="https://www.instagram.com/invest.dubai_property/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tesla-btn-secondary-white flex items-center justify-center"
+                className="tesla-btn-secondary-hero flex items-center justify-center"
                 onClick={() => {
                   if (typeof gtag !== 'undefined') {
                     gtag('event', 'click', { 
@@ -68,17 +86,6 @@ export const CEOSection: React.FC<CEOSectionProps> = ({ currentLanguage }) => {
                 </svg>
                 Follow on Instagram
               </a>
-            </div>
-          </div>
-
-          {/* Image side */}
-          <div className="animate-slide-in">
-            <div className="relative">
-              <img
-                src="https://palmdubai.fr/uploads/posts/2025-07/dfa9bb9dcd_6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103.webp"
-                alt="Gabriella Magalhaes, CEO & Founder of Palm Signature Real Estate"
-                className="w-full h-96 lg:h-[600px] object-contain object-center tesla-shadow bg-black"
-              />
             </div>
           </div>
         </div>
