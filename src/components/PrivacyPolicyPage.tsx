@@ -13,7 +13,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLan
       <div className="tesla-container">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="privacy-policy-title">
               Privacy Policy
             </h1>
             <p className="text-xl tesla-subheading">
@@ -23,7 +23,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLan
 
           <div className="prose prose-lg max-w-none">
             <section className="mb-12">
-              <h2 className="text-3xl tesla-heading mb-6">1. Information We Collect</h2>
+              <h2 className="text-3xl tesla-heading mb-6" id="information-collection">1. Information We Collect</h2>
               <div className="tesla-subheading space-y-4">
                 <p>
                   At Palm Signature Real Estate, we collect information you provide directly to us, such as when you:
@@ -44,7 +44,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLan
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl tesla-heading mb-6">2. How We Use Your Information</h2>
+              <h2 className="text-3xl tesla-heading mb-6" id="information-usage">2. How We Use Your Information</h2>
               <div className="tesla-subheading space-y-4">
                 <p>We use the information we collect to:</p>
                 <ul className="list-disc pl-6 space-y-2">
@@ -59,7 +59,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLan
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl tesla-heading mb-6">3. Information Sharing and Disclosure</h2>
+              <h2 className="text-3xl tesla-heading mb-6" id="information-sharing">3. Information Sharing and Disclosure</h2>
               <div className="tesla-subheading space-y-4">
                 <p>
                   We do not sell, trade, or otherwise transfer your personal information to third parties 

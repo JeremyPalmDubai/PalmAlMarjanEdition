@@ -12,7 +12,7 @@ export const LifestyleSection: React.FC<LifestyleSectionProps> = ({ currentLangu
     <section id="lifestyle" className="tesla-section bg-white">
       <div className="tesla-container">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="luxury-lifestyle">
             {t.lifestyle.title}
           </h2>
           <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
@@ -30,7 +30,7 @@ export const LifestyleSection: React.FC<LifestyleSectionProps> = ({ currentLangu
             />
           </div>
           <div className="animate-fade-in-up">
-            <h3 className="text-3xl md:text-4xl tesla-heading mb-8">
+            <h3 className="text-3xl md:text-4xl tesla-heading mb-8" id="paradise-found">
               {t.lifestyle.paradise.title}
             </h3>
             <p className="text-lg tesla-subheading mb-12 leading-relaxed">
@@ -38,15 +38,15 @@ export const LifestyleSection: React.FC<LifestyleSectionProps> = ({ currentLangu
             </p>
             <div className="space-y-6">
               <div>
-                <h4 className="text-lg font-medium text-black mb-2">{t.lifestyle.amenities.beaches.title}</h4>
+                <h4 className="text-lg font-medium text-black mb-2" id="pristine-beaches">{t.lifestyle.amenities.beaches.title}</h4>
                 <p className="tesla-subheading text-sm">{t.lifestyle.amenities.beaches.description}</p>
               </div>
               <div>
-                <h4 className="text-lg font-medium text-black mb-2">{t.lifestyle.amenities.dining.title}</h4>
+                <h4 className="text-lg font-medium text-black mb-2" id="world-class-dining">{t.lifestyle.amenities.dining.title}</h4>
                 <p className="tesla-subheading text-sm">{t.lifestyle.amenities.dining.description}</p>
               </div>
               <div>
-                <h4 className="text-lg font-medium text-black mb-2">{t.lifestyle.amenities.leisure.title}</h4>
+                <h4 className="text-lg font-medium text-black mb-2" id="luxury-leisure">{t.lifestyle.amenities.leisure.title}</h4>
                 <p className="tesla-subheading text-sm">{t.lifestyle.amenities.leisure.description}</p>
               </div>
             </div>
@@ -56,7 +56,7 @@ export const LifestyleSection: React.FC<LifestyleSectionProps> = ({ currentLangu
         {/* Tesla-style connectivity section */}
         <div className="bg-black text-white px-8 py-16 lg:px-16 lg:py-24">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-inter font-light text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-inter font-light text-center mb-12" id="ultimate-connectivity">
               {t.lifestyle.connectivity.title}
             </h3>
             <p className="text-lg text-gray-300 text-center mb-16 leading-relaxed font-light">

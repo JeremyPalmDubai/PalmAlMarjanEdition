@@ -17,7 +17,7 @@ export const CEOSection: React.FC<CEOSectionProps> = ({ currentLanguage }) => {
             <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-4">
               {t.ceoSection.title}
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-8 tracking-tighter">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-8 tracking-tighter" id="ceo-leadership">
               {t.ceoSection.subtitle}
             </h2>
             <p className="text-lg text-gray-300 mb-12 leading-relaxed font-light">

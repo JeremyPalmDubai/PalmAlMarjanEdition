@@ -18,6 +18,8 @@ import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { NavigationProvider } from './components/NavigationProvider';
 import { SEOHead } from './components/SEOHead';
 import { PerformanceMonitor } from './components/PerformanceMonitor';
+import { AccessibilityProvider } from './components/AccessibilityProvider';
+import { AccessibilityControls } from './components/AccessibilityControls';
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
@@ -152,10 +154,19 @@ function App() {
   }
 
   return (
-    <NavigationProvider onNavigate={handleNavigation}>
-      <div className="min-h-screen bg-white">
-        <PerformanceMonitor />
-        <SEOHead currentLanguage={currentLanguage} currentPage={currentPage} />
+    <AccessibilityProvider>
+      <NavigationProvider onNavigate={handleNavigation}>
+        <div className="min-h-screen bg-white">
+          {/* Skip links for keyboard navigation */}
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          <a href="#navigation" className="skip-link">
+            Skip to navigation
+          </a>
+          
+          <PerformanceMonitor />
+          <SEOHead currentLanguage={currentLanguage} currentPage={currentPage} />
         
         {/* Google Tag Manager */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17243978314"></script>
@@ -247,20 +258,30 @@ function App() {
         />
         
         <Header currentLanguage={currentLanguage} onLanguageChange={handleLanguageChange} />
-        <HeroSection currentLanguage={currentLanguage} />
-        <OpportunitySection currentLanguage={currentLanguage} />
-        <ExplosiveGrowthSection currentLanguage={currentLanguage} />
-        <WynnEffectSection currentLanguage={currentLanguage} />
-        <ROIMetricsSection currentLanguage={currentLanguage} />
-        <DevelopmentsSection currentLanguage={currentLanguage} />
-        <WhyPalmSignatureSection currentLanguage={currentLanguage} />
-        <CEOSection currentLanguage={currentLanguage} />
-        <LifestyleSection currentLanguage={currentLanguage} />
-        <ContactSection currentLanguage={currentLanguage} />
+        
+        <main id="main-content" role="main">
+          <HeroSection currentLanguage={currentLanguage} />
+          <OpportunitySection currentLanguage={currentLanguage} />
+          <ExplosiveGrowthSection currentLanguage={currentLanguage} />
+          <WynnEffectSection currentLanguage={currentLanguage} />
+          <ROIMetricsSection currentLanguage={currentLanguage} />
+          <DevelopmentsSection currentLanguage={currentLanguage} />
+          <WhyPalmSignatureSection currentLanguage={currentLanguage} />
+          <CEOSection currentLanguage={currentLanguage} />
+          <LifestyleSection currentLanguage={currentLanguage} />
+          <ContactSection currentLanguage={currentLanguage} />
+        </main>
+        
         <Footer currentLanguage={currentLanguage} />
-        <MobileNavigation currentLanguage={currentLanguage} />
-      </div>
-    </NavigationProvider>
+        
+        <div id="navigation">
+          <MobileNavigation currentLanguage={currentLanguage} />
+        </div>
+        
+        <AccessibilityControls />
+        </div>
+      </NavigationProvider>
+    </AccessibilityProvider>
   );
 }
 

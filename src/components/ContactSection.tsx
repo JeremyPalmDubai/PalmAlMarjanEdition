@@ -12,7 +12,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
     <section id="contact" className="tesla-section bg-gray-50">
       <div className="tesla-container">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="contact-us">
             {t.contact.title}
           </h2>
           <p className="text-xl tesla-subheading max-w-3xl mx-auto">
@@ -23,7 +23,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <div className="animate-slide-in">
-            <h3 className="text-2xl tesla-heading mb-12">{t.contact.info.title}</h3>
+            <h3 className="text-2xl tesla-heading mb-12" id="contact-information">{t.contact.info.title}</h3>
             
             <div className="space-y-8">
               <div className="flex items-start">
@@ -147,7 +147,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
           {/* Tally Form */}
           <div className="animate-fade-in-up">
             <div className="bg-white tesla-shadow overflow-hidden p-8">
-              <h3 className="text-2xl tesla-heading mb-8 text-center px-4">
+              <h3 className="text-2xl tesla-heading mb-8 text-center px-4" id="investment-form">
                 {t.contact.form.title}
               </h3>
               

@@ -13,7 +13,7 @@ export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = ({ currentL
       <div className="tesla-container">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="terms-of-service-title">
               Terms of Service
             </h1>
             <p className="text-xl tesla-subheading">
@@ -23,7 +23,7 @@ export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = ({ currentL
 
           <div className="prose prose-lg max-w-none">
             <section className="mb-12">
-              <h2 className="text-3xl tesla-heading mb-6">1. Acceptance of Terms</h2>
+              <h2 className="text-3xl tesla-heading mb-6" id="acceptance-of-terms">1. Acceptance of Terms</h2>
               <div className="tesla-subheading space-y-4">
                 <p>
                   By accessing and using the services of Palm Signature Real Estate LLC ("Company", "we", "us", or "our"), 
@@ -34,7 +34,7 @@ export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = ({ currentL
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl tesla-heading mb-6">2. Description of Services</h2>
+              <h2 className="text-3xl tesla-heading mb-6" id="service-description">2. Description of Services</h2>
               <div className="tesla-subheading space-y-4">
                 <p>
                   Palm Signature Real Estate provides luxury real estate investment services, including:

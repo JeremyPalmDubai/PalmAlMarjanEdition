@@ -158,7 +158,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     <section id="developments" className="tesla-section bg-gray-50">
       <div className="tesla-container">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="luxury-developments">
             {t.developments.title}
           </h2>
           <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
@@ -191,7 +191,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
                     {development.developer}
                   </div>
-                  <h3 className="text-3xl tesla-heading mb-6">{development.name}</h3>
+                  <h3 className="text-3xl tesla-heading mb-6" id={`dev-${development.name.toLowerCase().replace(/\s+/g, '-')}`}>{development.name}</h3>
                   <p className="tesla-subheading text-base leading-relaxed mb-8">{development.description}</p>
                   
                   {/* Pricing and Availability for Featured */}
@@ -271,7 +271,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
                   {development.developer}
                 </div>
-                <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
+                <h3 className="text-xl tesla-heading mb-4" id={`dev-${development.name.toLowerCase().replace(/\s+/g, '-')}`}>{development.name}</h3>
                 <p className="tesla-subheading text-sm leading-relaxed mb-6">{development.description}</p>
                 
                 {/* Pricing and Availability */}
@@ -320,7 +320,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
 
         {/* Tesla-style developer logos */}
         <div className="text-center">
-          <h3 className="text-3xl md:text-4xl tesla-heading mb-16">{t.developments.trustedPartners}</h3>
+          <h3 className="text-3xl md:text-4xl tesla-heading mb-16" id="trusted-partners">{t.developments.trustedPartners}</h3>
           
           {/* Tesla-style grid layout for partners */}
           <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
@@ -333,7 +333,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
-                <h4 className="text-xl tesla-heading">Development Partners</h4>
+                <h4 className="text-xl tesla-heading" id="development-partners">Development Partners</h4>
               </div>
               
               <div className="grid grid-cols-2 gap-6">
@@ -372,7 +372,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
                 </div>
-                <h4 className="text-xl font-inter font-light">Prestige Brands</h4>
+                <h4 className="text-xl font-inter font-light" id="prestige-brands">Prestige Brands</h4>
               </div>
               
               <div className="grid grid-cols-2 gap-6">
