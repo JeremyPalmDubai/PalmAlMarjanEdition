@@ -267,17 +267,17 @@ export const translations = {
         website: 'invest-almarjanisland.com'
       },
       legal: {
-        company: 'Palm Signature Real Estate LLC',
-        license: 'RERA License: 12345',
-        rera: 'Registered Real Estate Agent'
+        company: 'Palmera Signature Real Estate LLC',
+        license: 'License No. 1486676',
+        rera: 'Registered with RERA No. 49920'
       }
     },
     footer: {
       description: 'Leading luxury real estate agency specializing in Al Marjan Island investments with exponential returns and tax-free ownership.',
       legal: {
-        company: 'Palm Signature Real Estate LLC',
-        license: 'RERA License: 12345',
-        rera: 'Registered Real Estate Agent'
+        company: 'Palmera Signature Real Estate LLC',
+        license: 'License No. 1486676',
+        rera: 'Registered with RERA No. 49920'
       },
       quickLinks: {
         title: 'Quick Links',
@@ -560,17 +560,17 @@ export const translations = {
         website: 'invest-almarjanisland.com'
       },
       legal: {
-        company: 'Palm Signature Real Estate LLC',
-        license: 'Licence RERA: 12345',
-        rera: 'Agent Immobilier Enregistré'
+        company: 'Palmera Signature Real Estate LLC',
+        license: 'Licence No. 1486676',
+        rera: 'Enregistré avec RERA No. 49920'
       }
     },
     footer: {
       description: 'Agence immobilière de luxe leader spécialisée dans les investissements Al Marjan Island avec des rendements exponentiels et une propriété exonérée d\'impôts.',
       legal: {
-        company: 'Palm Signature Real Estate LLC',
-        license: 'Licence RERA: 12345',
-        rera: 'Agent Immobilier Enregistré'
+        company: 'Palmera Signature Real Estate LLC',
+        license: 'Licence No. 1486676',
+        rera: 'Enregistré avec RERA No. 49920'
       },
       quickLinks: {
         title: 'Liens Rapides',
@@ -853,17 +853,17 @@ export const translations = {
         website: 'invest-almarjanisland.com'
       },
       legal: {
-        company: 'Palm Signature Real Estate LLC',
-        license: 'Licencia RERA: 12345',
-        rera: 'Agente Inmobiliario Registrado'
+        company: 'Palmera Signature Real Estate LLC',
+        license: 'Licencia No. 1486676',
+        rera: 'Registrado con RERA No. 49920'
       }
     },
     footer: {
       description: 'Agencia inmobiliaria de lujo líder especializada en inversiones Al Marjan Island con rendimientos exponenciales y propiedad libre de impuestos.',
       legal: {
-        company: 'Palm Signature Real Estate LLC',
-        license: 'Licencia RERA: 12345',
-        rera: 'Agente Inmobiliario Registrado'
+        company: 'Palmera Signature Real Estate LLC',
+        license: 'Licencia No. 1486676',
+        rera: 'Registrado con RERA No. 49920'
       },
       quickLinks: {
         title: 'Enlaces Rápidos',
@@ -1146,17 +1146,17 @@ export const translations = {
         website: 'invest-almarjanisland.com'
       },
       legal: {
-        company: 'Palm Signature Real Estate LLC',
-        license: 'RERA Licentie: 12345',
-        rera: 'Geregistreerde Makelaar'
+        company: 'Palmera Signature Real Estate LLC',
+        license: 'Licentie No. 1486676',
+        rera: 'Geregistreerd met RERA No. 49920'
       }
     },
     footer: {
       description: 'Leidende luxe onroerend goed bureau gespecialiseerd in Al Marjan Island investeringen met exponentiële rendementen en belastingvrije eigendom.',
       legal: {
-        company: 'Palm Signature Real Estate LLC',
-        license: 'RERA Licentie: 12345',
-        rera: 'Geregistreerde Makelaar'
+        company: 'Palmera Signature Real Estate LLC',
+        license: 'Licentie No. 1486676',
+        rera: 'Geregistreerd met RERA No. 49920'
       },
       quickLinks: {
         title: 'Snelle Links',

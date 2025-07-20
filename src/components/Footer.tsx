@@ -60,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
             
             {/* Legal Information */}
             <div className="text-xs text-gray-400 mb-4 space-y-1">
-              <div>{t.footer.legal.company}</div>
+              <div><strong>{t.footer.legal.company}</strong></div>
               <div>{t.footer.legal.license}</div>
               <div>{t.footer.legal.rera}</div>
             </div>

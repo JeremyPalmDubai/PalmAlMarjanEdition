@@ -90,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
           </div>
           
           {/* Language + Contact */}
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-6 relative z-50">
             <LanguageSelector currentLanguage={currentLanguage} onLanguageChange={onLanguageChange} />
             
             <button
