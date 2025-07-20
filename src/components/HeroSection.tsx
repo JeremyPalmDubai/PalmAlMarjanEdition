@@ -34,6 +34,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
             {t.hero.description}
           </p>
           
+          {/* Key Benefits - Improved for SEO */}
+          <div className="mb-8 sm:mb-12 animate-fade-in-up">
+            <div className="flex flex-wrap justify-center gap-4 text-white/90 text-sm sm:text-base">
+              <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full">
+                <span>✓ 0% Tax on Capital Gains</span>
+              </div>
+              <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full">
+                <span>✓ 100% Freehold Ownership</span>
+              </div>
+              <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full">
+                <span>✓ Wynn Casino 2027</span>
+              </div>
+            </div>
+          </div>
+          
           {/* Pricing and Payment Plan */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center mb-8 sm:mb-12 animate-fade-in-up">
             <div className="bg-white/10 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-lg border border-white/20">

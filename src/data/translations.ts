@@ -31,7 +31,7 @@ export const translations = {
       badge: 'AL MARJAN ISLAND',
       title: 'Unlock Exponential Returns',
       subtitle: 'Al Marjan Island Investment Opportunity',
-      description: 'Invest in luxury real estate on Al Marjan Island with 5-year interest-free payment plans, 33.3% property appreciation, and the upcoming Wynn Casino opening in 2027.',
+      description: 'Invest in luxury real estate on Al Marjan Island. Get 5-year interest-free payment plans. Enjoy 33.3% property appreciation. The Wynn Casino opens in 2027.',
       cta: {
         primary: 'Secure Your Investment',
         secondary: 'Learn More'
@@ -39,23 +39,23 @@ export const translations = {
     },
     opportunity: {
       title: 'The Ultimate Investment Opportunity',
-      description: 'Al Marjan Island represents the pinnacle of luxury real estate investment in the UAE, offering unprecedented growth potential and world-class amenities.',
+      description: 'Al Marjan Island is the top luxury real estate investment in the UAE. It offers amazing growth potential. You get world-class amenities.',
       features: {
         strategic: {
           title: 'Strategic Location',
-          description: 'Located in Ras Al Khaimah, Al Marjan Island offers direct access to pristine beaches, world-class resorts, and the upcoming Wynn Casino.'
+          description: 'Al Marjan Island sits in Ras Al Khaimah. You get direct access to pristine beaches. World-class resorts surround you. The Wynn Casino opens soon.'
         },
         transformation: {
           title: 'Market Transformation',
-          description: 'The island is undergoing a massive transformation with billion-dollar developments, making it the next Palm Jumeirah.'
+          description: 'The island transforms with billion-dollar developments. This makes it the next Palm Jumeirah. Major growth is happening now.'
         },
         infrastructure: {
           title: 'World-Class Infrastructure',
-          description: 'State-of-the-art infrastructure including marinas, golf courses, shopping centers, and luxury hotels.'
+          description: 'You get state-of-the-art infrastructure. This includes marinas and golf courses. Shopping centers and luxury hotels complete the picture.'
         },
         economy: {
           title: 'Economic Growth',
-          description: 'Ras Al Khaimah is experiencing unprecedented economic growth with tax incentives and business-friendly policies.'
+          description: 'Ras Al Khaimah grows fast economically. Tax incentives help investors. Business-friendly policies support growth.'
         }
       },
       highlights: {
@@ -79,7 +79,7 @@ export const translations = {
     },
     explosiveGrowth: {
       title: 'Explosive Growth Trajectory',
-      subtitle: 'Al Marjan Island is set to become the next investment hotspot',
+      subtitle: 'Al Marjan Island becomes the next investment hotspot',
       cta: 'Limited Time Offer - Act Now',
       metrics: {
         visitors: {
@@ -106,7 +106,7 @@ export const translations = {
     wynnEffect: {
       badge: 'WYNN RESORTS',
       title: 'The Wynn Effect',
-      description: 'The upcoming Wynn Resort & Casino will transform Al Marjan Island into the Middle East\'s premier luxury destination, driving unprecedented property value appreciation.',
+      description: 'The Wynn Resort & Casino transforms Al Marjan Island. It becomes the Middle East\'s top luxury destination. Property values will rise dramatically.',
       resort: {
         stats: {
           investment: '$3.9B',
@@ -123,7 +123,7 @@ export const translations = {
     },
     roiMetrics: {
       title: 'Exceptional ROI Metrics',
-      description: 'Al Marjan Island delivers superior returns compared to traditional investment markets worldwide.',
+      description: 'Al Marjan Island beats traditional investment markets worldwide. You get superior returns here.',
       metrics: {
         appreciation: {
           title: 'Property Appreciation',
@@ -168,17 +168,17 @@ export const translations = {
     },
     developments: {
       title: 'Luxury Developments',
-      description: 'Discover world-class developments by renowned international developers, each offering unique luxury living experiences.',
+      description: 'Discover world-class developments by top international developers. Each offers unique luxury living experiences.',
       learnMore: 'Learn More',
       lastUnits: 'Last Units Available',
       trustedPartners: 'Trusted Development Partners'
     },
     lifestyle: {
       title: 'Luxury Lifestyle',
-      description: 'Experience the ultimate in luxury living with world-class amenities, pristine beaches, and exclusive access to the finest dining and entertainment.',
+      description: 'Experience ultimate luxury living. Get world-class amenities and pristine beaches. Enjoy exclusive access to fine dining and entertainment.',
       paradise: {
         title: 'Paradise Found',
-        description: 'Al Marjan Island offers an unparalleled lifestyle with pristine beaches, luxury resorts, and world-class amenities.'
+        description: 'Al Marjan Island offers unmatched lifestyle. You get pristine beaches and luxury resorts. World-class amenities complete your experience.'
       },
       amenities: {
         beaches: {
@@ -211,23 +211,23 @@ export const translations = {
     },
     whyPalmSignature: {
       title: 'Why Choose Palm Signature',
-      description: 'Palm Signature Real Estate is your trusted partner for luxury real estate investment on Al Marjan Island.',
+      description: 'Palm Signature Real Estate is your trusted partner. We specialize in luxury real estate investment on Al Marjan Island.',
       benefits: {
         exclusive: {
           title: 'Exclusive Access',
-          description: 'Direct access to the best properties and pre-launch opportunities on Al Marjan Island'
+          description: 'Get direct access to the best properties. We offer pre-launch opportunities on Al Marjan Island.'
         },
         multilingual: {
           title: 'Multilingual Support',
-          description: 'Professional service in English, French, Spanish, and Dutch'
+          description: 'We provide professional service in four languages. These include English, French, Spanish, and Dutch.'
         },
         market: {
           title: 'Market Expertise',
-          description: 'Deep understanding of the Al Marjan Island market and investment opportunities'
+          description: 'We understand the Al Marjan Island market deeply. Our team knows all investment opportunities.'
         },
         service: {
           title: 'Personalized Service',
-          description: 'Dedicated support throughout your investment journey'
+          description: 'Get dedicated support throughout your investment journey. We stay with you every step.'
         }
       }
     },
@@ -239,7 +239,7 @@ export const translations = {
     },
     contact: {
       title: 'Start Your Investment Journey',
-      description: 'Connect with our expert team to discover exclusive Al Marjan Island investment opportunities.',
+      description: 'Connect with our expert team. Discover exclusive Al Marjan Island investment opportunities.',
       info: {
         title: 'Contact Information',
         phone: {
