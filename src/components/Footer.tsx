@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-medium mb-6" id="footer-quick-links">{t.footer.quickLinks.title}</h4>
+            <h4 className="text-lg font-medium mb-6">{t.footer.quickLinks.title}</h4>
             <ul className="space-y-3">
               <li><a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="text-gray-300 hover:text-white font-light">{t.footer.quickLinks.opportunity}</a></li>
               <li><a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="text-gray-300 hover:text-white font-light">{t.footer.quickLinks.wynn}</a></li>
@@ -90,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
 
           {/* Investment Benefits */}
           <div>
-            <h4 className="text-lg font-medium mb-6" id="footer-investment-advantages">Investment Advantages</h4>
+            <h4 className="text-lg font-medium mb-6">Investment Advantages</h4>
             <div className="space-y-3 text-gray-300 font-light">
               <p>✓ 0% Tax on Capital Gains</p>
               <p>✓ 100% Freehold Ownership</p>

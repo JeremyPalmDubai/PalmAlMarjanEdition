@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TrendingUp, Building, DollarSign, MapPin, MessageSquare } from 'lucide-react';
 import { useNavigation } from './NavigationProvider';
-import { useAccessibility } from './AccessibilityProvider';
 
 interface MobileNavigationProps {
   currentLanguage: string;
@@ -10,7 +9,6 @@ interface MobileNavigationProps {
 export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLanguage }) => {
   const [activeSection, setActiveSection] = useState('');
   const navigation = useNavigation();
-  const { settings } = useAccessibility();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,11 +61,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLangu
   ];
 
   return (
-    <nav 
-      className={`ios26-tabbar ${settings.reducedMotion ? 'reduced-motion' : ''}`}
-      role="navigation"
-      aria-label="Main navigation"
-    >
+    <nav className="ios26-tabbar">
       <div className="ios26-tabbar-container">
         {/* Navigation Items */}
         {navItems.map((item) => (
@@ -75,11 +69,8 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLangu
             key={item.id}
             onClick={() => scrollToSection(item.id)}
             className={`ios26-tab-item ${activeSection === item.id ? 'active' : ''}`}
-            aria-current={activeSection === item.id ? 'page' : undefined}
-            role="tab"
-            tabIndex={0}
           >
-            <item.icon className="tab-icon" aria-hidden="true" />
+            <item.icon className="tab-icon" />
             <span className="tab-label">{item.label}</span>
           </button>
         ))}
@@ -89,10 +80,8 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLangu
           onClick={() => scrollToSection('contact')}
           className="ios26-contact-btn"
           aria-label="Contact"
-          role="tab"
-          tabIndex={0}
         >
-          <MessageSquare className="contact-icon" aria-hidden="true" />
+          <MessageSquare className="contact-icon" />
         </button>
       </div>
     </nav>

@@ -90,7 +90,7 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({ currentLanguage }) => 
     <div className="min-h-screen bg-gray-50 py-24">
       <div className="tesla-container">
         <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="sitemap-title">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
             Site Map
           </h1>
           <p className="text-xl tesla-subheading max-w-3xl mx-auto">
@@ -105,7 +105,7 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({ currentLanguage }) => 
                 <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
                   <section.icon className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-2xl tesla-heading" id={`sitemap-${section.title.toLowerCase().replace(/\s+/g, '-')}`}>{section.title}</h2>
+                <h2 className="text-2xl tesla-heading">{section.title}</h2>
               </div>
               
               <div className="space-y-4">
@@ -140,7 +140,7 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({ currentLanguage }) => 
 
         {/* Contact Information */}
         <div className="mt-20 bg-black text-white rounded-lg p-8 md:p-12">
-          <h2 className="text-3xl font-inter font-light text-center mb-12" id="ready-to-start">
+          <h2 className="text-3xl font-inter font-light text-center mb-12">
             Ready to Start Your Investment Journey?
           </h2>
           
@@ -149,7 +149,7 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({ currentLanguage }) => 
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                 <Phone className="w-8 h-8 text-black" />
               </div>
-              <h3 className="text-xl font-medium mb-2" id="call-now">Call Now</h3>
+              <h3 className="text-xl font-medium mb-2">Call Now</h3>
               <p className="text-gray-300 mb-4">Speak with our investment experts</p>
               <a
                 href="tel:+971582474950"
@@ -163,7 +163,7 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({ currentLanguage }) => 
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mail className="w-8 h-8 text-black" />
               </div>
-              <h3 className="text-xl font-medium mb-2" id="email-us">Email Us</h3>
+              <h3 className="text-xl font-medium mb-2">Email Us</h3>
               <p className="text-gray-300 mb-4">Get detailed investment information</p>
               <a
                 href="mailto:hello@palmsignature.ae"

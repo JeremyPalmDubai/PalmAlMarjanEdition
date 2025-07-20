@@ -51,7 +51,7 @@ export const WhyPalmSignatureSection: React.FC<WhyPalmSignatureSectionProps> = (
     <section className="tesla-section bg-gray-50">
       <div className="tesla-container">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="why-palm-signature">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
             {t.whyPalmSignature.title}
           </h2>
           <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
@@ -66,7 +66,7 @@ export const WhyPalmSignatureSection: React.FC<WhyPalmSignatureSectionProps> = (
                 {benefit.icon}
               </div>
               <div>
-                <h3 className="text-xl tesla-heading mb-4" id={`benefit-${benefit.title.toLowerCase().replace(/\s+/g, '-')}`}>{benefit.title}</h3>
+                <h3 className="text-xl tesla-heading mb-4">{benefit.title}</h3>
                 <p className="tesla-subheading leading-relaxed">{benefit.description}</p>
               </div>
             </div>
