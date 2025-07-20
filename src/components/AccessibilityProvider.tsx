@@ -18,6 +18,7 @@ interface AccessibilityContextType {
 }
 
 const defaultSettings: AccessibilitySettings = {
+  }
   reducedMotion: false,
   highContrast: false,
   fontSize: 'medium',
@@ -130,4 +131,5 @@ export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({ ch
       {children}
     </AccessibilityContext.Provider>
   );
+}
 }
