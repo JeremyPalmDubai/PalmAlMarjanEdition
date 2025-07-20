@@ -10,8 +10,12 @@ export const OpportunitySection: React.FC<OpportunitySectionProps> = ({ currentL
 
   return (
     <section id="opportunity" className="tesla-section bg-white">
-      <div className="tesla-container-tight">
+      <div className="tesla-container">
+        {/* Tesla-style minimal header */}
         <div className="text-center mb-20">
+          <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-4">
+            INVESTMENT OPPORTUNITY
+          </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8 animate-fade-in-up" id="investment-opportunity">
             {t.opportunity.title}
           </h2>
@@ -23,25 +27,25 @@ export const OpportunitySection: React.FC<OpportunitySectionProps> = ({ currentL
         {/* Tesla-style simple grid */}
         <div className="grid md:grid-cols-2 gap-16 lg:gap-24 mb-32">
           <div className="animate-slide-in">
-            <div className="mb-6">
+            <div className="mb-8">
               <h3 className="text-2xl tesla-heading mb-4" id="strategic-location">{t.opportunity.features.strategic.title}</h3>
               <p className="tesla-subheading leading-relaxed">{t.opportunity.features.strategic.description}</p>
             </div>
           </div>
           <div className="animate-slide-in">
-            <div className="mb-6">
+            <div className="mb-8">
               <h3 className="text-2xl tesla-heading mb-4" id="market-transformation">{t.opportunity.features.transformation.title}</h3>
               <p className="tesla-subheading leading-relaxed">{t.opportunity.features.transformation.description}</p>
             </div>
           </div>
           <div className="animate-slide-in">
-            <div className="mb-6">
+            <div className="mb-8">
               <h3 className="text-2xl tesla-heading mb-4" id="world-class-infrastructure">{t.opportunity.features.infrastructure.title}</h3>
               <p className="tesla-subheading leading-relaxed">{t.opportunity.features.infrastructure.description}</p>
             </div>
           </div>
           <div className="animate-slide-in">
-            <div className="mb-6">
+            <div className="mb-8">
               <h3 className="text-2xl tesla-heading mb-4" id="economic-growth">{t.opportunity.features.economy.title}</h3>
               <p className="tesla-subheading leading-relaxed">{t.opportunity.features.economy.description}</p>
             </div>

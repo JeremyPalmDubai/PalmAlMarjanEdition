@@ -117,6 +117,36 @@ html {
   background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
 }
 
+/* Tesla-style full-screen sections */
+.tesla-hero-section {
+  @apply min-h-screen flex items-center justify-center relative;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height */
+}
+
+.tesla-fullscreen-section {
+  @apply min-h-screen relative;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height */
+}
+
+/* Tesla-style hero buttons */
+.tesla-btn-primary-hero {
+  @apply bg-white text-black px-12 py-4 rounded-none font-medium text-sm tracking-wide;
+  @apply hover:bg-gray-100 transition-all duration-300;
+  @apply focus:outline-none focus:ring-2 focus:ring-white;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+}
+
+.tesla-btn-secondary-hero {
+  @apply bg-transparent text-white px-12 py-4 rounded-none font-medium text-sm tracking-wide;
+  @apply border border-white/40 hover:bg-white hover:text-black transition-all duration-300;
+  @apply focus:outline-none focus:ring-2 focus:ring-white;
+  backdrop-filter: blur(10px);
+}
+
 /* Tesla-style text gradients */
 .tesla-gradient-text {
   background: linear-gradient(135deg, #000 0%, #333 100%);
@@ -379,6 +409,18 @@ html {
   .hero-section {
     min-height: 100vh;
     min-height: 100dvh; /* Dynamic viewport height for mobile only */
+  }
+  
+  .tesla-hero-section,
+  .tesla-fullscreen-section {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  /* Responsive Tesla buttons */
+  .tesla-btn-primary-hero,
+  .tesla-btn-secondary-hero {
+    @apply px-8 py-3 text-sm w-full sm:w-auto;
   }
 }
 
