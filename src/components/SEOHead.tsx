@@ -193,7 +193,6 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
               }
             }
           ]
-          }
         })}
       </script>
     </Helmet>

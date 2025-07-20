@@ -13,7 +13,7 @@ export const ROIMetricsSection: React.FC<ROIMetricsSectionProps> = ({ currentLan
     <section id="roi-metrics" className="tesla-section bg-white">
       <div className="tesla-container">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="roi-metrics">
             {t.roiMetrics.title}
           </h2>
           <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
@@ -55,7 +55,7 @@ export const ROIMetricsSection: React.FC<ROIMetricsSectionProps> = ({ currentLan
 
         {/* Tesla-style comparison section */}
         <div className="bg-gray-50 px-8 py-16 lg:px-16 lg:py-24">
-          <h3 className="text-3xl md:text-4xl tesla-heading text-center mb-16">
+          <h3 className="text-3xl md:text-4xl tesla-heading text-center mb-16" id="global-comparison">
             {t.roiMetrics.comparison.title}
           </h3>
           <div className="grid md:grid-cols-4 gap-8 text-center">

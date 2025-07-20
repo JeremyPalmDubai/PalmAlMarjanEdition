@@ -46,7 +46,7 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
       <div className="tesla-container">
         {/* Tesla-style header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8 animate-fade-in-up" id="explosive-growth">
             {t.explosiveGrowth.title}
           </h2>
           <p className="text-xl tesla-subheading max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
@@ -74,7 +74,7 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-6">
               <Target className="w-8 h-8 text-white mr-3" />
-              <h3 className="text-2xl md:text-3xl font-inter font-light tracking-tight">
+              <h3 className="text-2xl md:text-3xl font-inter font-light tracking-tight" id="growth-trajectory">
                 {t.explosiveGrowth.metrics.trajectory.title}
               </h3>
             </div>

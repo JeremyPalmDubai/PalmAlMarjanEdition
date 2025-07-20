@@ -26,7 +26,7 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
             <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-4">
               {t.wynnEffect.badge}
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-8 tracking-tighter">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-8 tracking-tighter" id="wynn-effect">
               {t.wynnEffect.title}
             </h2>
             <p className="text-lg text-gray-300 mb-12 leading-relaxed font-light">

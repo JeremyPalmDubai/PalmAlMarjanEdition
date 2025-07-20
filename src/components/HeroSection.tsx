@@ -23,12 +23,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
       {/* Content - Tesla-style minimal and centered */}
       <div className="relative z-10 tesla-container text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter font-light text-white mb-4 sm:mb-6 md:mb-8 tracking-tighter animate-fade-in-up leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter font-light text-white mb-4 sm:mb-6 md:mb-8 tracking-tighter animate-fade-in-up leading-tight" id="main-heading">
             {t.hero.title}
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-inter font-light text-white mb-6 sm:mb-8 md:mb-12 tracking-tight animate-fade-in-up opacity-90 leading-tight">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-inter font-light text-white mb-6 sm:mb-8 md:mb-12 tracking-tight animate-fade-in-up opacity-90 leading-tight" role="banner">
             {t.hero.subtitle}
-          </h2>
+          </p>
           
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed font-inter font-light animate-fade-in-up px-4">
             {t.hero.description}
