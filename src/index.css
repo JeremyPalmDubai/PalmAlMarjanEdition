@@ -248,6 +248,54 @@ html {
   animation: tesla-float 3s ease-in-out infinite;
 }
 
+/* Tesla-style parallax effect */
+.tesla-parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Tesla-style image overlay effects */
+.tesla-image-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.tesla-image-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;
+}
+
+.tesla-image-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Tesla-style connectivity lines */
+.tesla-connectivity-line {
+  position: relative;
+}
+
+.tesla-connectivity-line::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1px;
+  height: 20px;
+  background: #e5e7eb;
+  transform: translateY(-50%);
+}
+
+.tesla-connectivity-line:last-child::after {
+  display: none;
+}
+
 /* Tesla-style loading states */
 .tesla-loading {
   @apply bg-gray-100 animate-pulse;

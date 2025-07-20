@@ -106,6 +106,7 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
           </div>
           
           <nav className="hidden lg:flex items-center space-x-8">
+            <a href="#al-marjan-island" onClick={(e) => handleNavClick(e, 'al-marjan-island')} className="tesla-nav-item">Island</a>
             <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="tesla-nav-item">{t.navigation.opportunity}</a>
             <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="tesla-nav-item">{t.navigation.wynn}</a>
             <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="tesla-nav-item">{t.navigation.roi}</a>

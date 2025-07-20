@@ -54,6 +54,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLangu
   };
 
   const navItems = [
+    { id: 'al-marjan-island', icon: MapPin, label: 'Island' },
     { id: 'wynn-effect', icon: TrendingUp, label: 'Wynn' },
     { id: 'roi-metrics', icon: DollarSign, label: 'ROI' },
     { id: 'developments', icon: Building, label: 'Properties' },

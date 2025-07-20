@@ -62,7 +62,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           {/* Tesla-style CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fade-in-up px-4">
             <a 
-              href="#contact" 
+              href="#al-marjan-island" 
               className="tesla-btn-primary w-full sm:w-auto text-center"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
@@ -80,10 +80,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 }
               }}
             >
-              {t.hero.cta.primary}
+              Discover Al Marjan Island
             </a>
             <a 
-              href="#opportunity" 
+              href="#contact" 
               className="tesla-btn-secondary-white w-full sm:w-auto text-center"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
@@ -99,7 +99,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 }
               }}
             >
-              {t.hero.cta.secondary}
+              {t.hero.cta.primary}
             </a>
           </div>
         </div>

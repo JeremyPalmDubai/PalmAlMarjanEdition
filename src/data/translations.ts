@@ -19,6 +19,10 @@ export const translations = {
       },
       keywords: 'Al Marjan Island investment, Wynn Casino 2027, UAE real estate, tax-free property, luxury real estate Dubai, Ras Al Khaimah investment, capital appreciation, rental yields, freehold property UAE, Palm Signature Real Estate, Gabriella Magalhaes, luxury developments UAE, off-plan properties Al Marjan Island, beachfront investment UAE'
     },
+    alMarjanIsland: {
+      title: 'Al Marjan Island',
+      description: 'Discover the crown jewel of Ras Al Khaimah. Four interconnected coral islands spanning 2.7 million square meters of pristine coastline, designed for luxury living and world-class hospitality.'
+    },
     navigation: {
       opportunity: 'Opportunity',
       wynn: 'Wynn Effect',
@@ -307,6 +311,10 @@ export const translations = {
         description: 'Conditions de service pour les services d\'investissement Palm Signature Real Estate. Comprenez nos termes et conditions de service.'
       },
       keywords: 'investissement Al Marjan Island, Wynn Casino 2027, immobilier EAU, propriété exonérée d\'impôts, immobilier de luxe Dubai, investissement Ras Al Khaimah, appréciation du capital, rendements locatifs, propriété freehold EAU, Palm Signature Real Estate, Gabriella Magalhaes, développements de luxe EAU, propriétés sur plan Al Marjan Island, investissement front de mer EAU'
+    },
+    alMarjanIsland: {
+      title: 'Al Marjan Island',
+      description: 'Découvrez le joyau de Ras Al Khaimah. Quatre îles de corail interconnectées s\'étendant sur 2,7 millions de mètres carrés de littoral immaculé, conçues pour la vie de luxe et l\'hospitalité de classe mondiale.'
     },
     navigation: {
       opportunity: 'Opportunité',
@@ -597,6 +605,10 @@ export const translations = {
       },
       keywords: 'inversión Al Marjan Island, Wynn Casino 2027, bienes raíces EAU, propiedad libre de impuestos, bienes raíces de lujo Dubai, inversión Ras Al Khaimah, apreciación del capital, rendimientos de alquiler, propiedad freehold EAU, Palm Signature Real Estate, Gabriella Magalhaes, desarrollos de lujo EAU, propiedades sobre plano Al Marjan Island, inversión frente al mar EAU'
     },
+    alMarjanIsland: {
+      title: 'Al Marjan Island',
+      description: 'Descubre la joya de la corona de Ras Al Khaimah. Cuatro islas de coral interconectadas que abarcan 2,7 millones de metros cuadrados de costa prístina, diseñadas para la vida de lujo y la hospitalidad de clase mundial.'
+    },
     navigation: {
       opportunity: 'Oportunidad',
       wynn: 'Efecto Wynn',
@@ -885,6 +897,10 @@ export const translations = {
         description: 'Servicevoorwaarden voor Palm Signature Real Estate investeringsdiensten. Begrijp onze service voorwaarden en condities.'
       },
       keywords: 'Al Marjan Island investering, Wynn Casino 2027, VAE onroerend goed, belastingvrije eigendom, luxe onroerend goed Dubai, Ras Al Khaimah investering, kapitaalwaardering, huurrendementen, eigendomsrecht VAE, Palm Signature Real Estate, Gabriella Magalhaes, luxe ontwikkelingen VAE, off-plan eigendommen Al Marjan Island, kustinvestering VAE'
+    },
+    alMarjanIsland: {
+      title: 'Al Marjan Island',
+      description: 'Ontdek het kroonjuweel van Ras Al Khaimah. Vier onderling verbonden koraaleilanden die zich uitstrekken over 2,7 miljoen vierkante meter ongerepte kustlijn, ontworpen voor luxe leven en wereldklasse gastvrijheid.'
     },
     navigation: {
       opportunity: 'Kans',

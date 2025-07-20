@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { MobileNavigation } from './components/MobileNavigation';
 import { HeroSection } from './components/HeroSection';
+import { AlMarjanIslandSection } from './components/AlMarjanIslandSection';
 import { OpportunitySection } from './components/OpportunitySection';
 import { ExplosiveGrowthSection } from './components/ExplosiveGrowthSection';
 import { WynnEffectSection } from './components/WynnEffectSection';
@@ -248,6 +249,7 @@ function App() {
         
         <Header currentLanguage={currentLanguage} onLanguageChange={handleLanguageChange} />
         <HeroSection currentLanguage={currentLanguage} />
+        <AlMarjanIslandSection currentLanguage={currentLanguage} />
         <OpportunitySection currentLanguage={currentLanguage} />
         <ExplosiveGrowthSection currentLanguage={currentLanguage} />
         <WynnEffectSection currentLanguage={currentLanguage} />
