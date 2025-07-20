@@ -18,7 +18,6 @@ interface AccessibilityContextType {
 }
 
 const defaultSettings: AccessibilitySettings = {
-  }
   reducedMotion: false,
   highContrast: false,
   fontSize: 'medium',
