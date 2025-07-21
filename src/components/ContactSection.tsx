@@ -118,15 +118,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                   </div>
                 </div>
               </div>
-              
-              {/* Legal Information */}
-              <div className="pt-6 border-t border-white/20">
-                <div className="text-xs text-white/60 space-y-1">
-                  <div><strong>{t.contact.legal.company}</strong></div>
-                  <div>{t.contact.legal.license}</div>
-                  <div>{t.contact.legal.rera}</div>
-                </div>
-              </div>
 
               {/* Tesla-style CTA */}
               <a 

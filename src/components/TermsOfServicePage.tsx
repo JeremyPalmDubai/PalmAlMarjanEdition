@@ -176,12 +176,11 @@ export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = ({ currentL
                   For questions about these Terms of Service, please contact us:
                 </p>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <p><strong>Palmera Signature Real Estate LLC</strong></p>
+                  <p><strong>Palm Signature Real Estate LLC</strong></p>
                   <p>Email: hello@palmsignature.ae</p>
                   <p>Phone: +971 58 247 4950</p>
                   <p>Address: Al Marjan Island, Ras Al Khaimah, UAE</p>
-                  <p>License No. 1486676</p>
-                  <p>Registered with RERA No. 49920</p>
+                  <p>RERA License: [License Number]</p>
                 </div>
               </div>
             </section>
