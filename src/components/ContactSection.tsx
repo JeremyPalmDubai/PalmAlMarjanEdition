@@ -187,33 +187,61 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            // URL tracking pour Tally
-            const url = new URL(window.location.href);
-            url.searchParams.set("page_url", window.location.href);
-            window.history.replaceState({}, '', url);
-            
-            // Attendre que Tally soit chargé et initialiser
+            // URL tracking pour Tally - Version corrigée
             document.addEventListener('DOMContentLoaded', function() {
+              // Ajouter les paramètres URL au formulaire Tally
+              const currentUrl = window.location.href;
+              const referrer = document.referrer || 'direct';
+              const utmSource = new URLSearchParams(window.location.search).get('utm_source') || 'organic';
+              const utmMedium = new URLSearchParams(window.location.search).get('utm_medium') || 'website';
+              const utmCampaign = new URLSearchParams(window.location.search).get('utm_campaign') || 'al-marjan-investment';
+              
+              // Stocker les données de tracking
+              window.tallyTrackingData = {
+                page_url: currentUrl,
+                referrer: referrer,
+                utm_source: utmSource,
+                utm_medium: utmMedium,
+                utm_campaign: utmCampaign,
+                timestamp: new Date().toISOString(),
+                language: '${currentLanguage}',
+                user_agent: navigator.userAgent
+              };
+              
               // Vérifier si le script Tally est chargé
               if (typeof window.Tally !== 'undefined') {
                 window.Tally.loadEmbeds();
                 
-                // Track form interactions
+                // Configurer le tracking des interactions
                 if (window.Tally.on) {
                   window.Tally.on('form:submit', function(data) {
+                    // Ajouter les données de tracking à la soumission
+                    const trackingData = window.tallyTrackingData || {};
+                    
                     if (typeof gtag !== 'undefined') {
                       gtag('event', 'generate_lead', {
                         currency: 'USD',
-                        value: 200000
+                        value: 200000,
+                        page_url: trackingData.page_url,
+                        referrer: trackingData.referrer,
+                        utm_source: trackingData.utm_source,
+                        utm_medium: trackingData.utm_medium,
+                        utm_campaign: trackingData.utm_campaign,
+                        language: trackingData.language
                       });
                     }
+                    
                     if (typeof fbq !== 'undefined') {
                       fbq('track', 'Lead', {
                         content_name: 'Investment Inquiry',
                         value: 200000,
-                        currency: 'USD'
+                        currency: 'USD',
+                        custom_data: trackingData
                       });
                     }
+                    
+                    // Envoyer les données à votre backend si nécessaire
+                    console.log('Form submitted with tracking data:', trackingData);
                   });
                 }
               } else {
@@ -221,26 +249,65 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                 const checkTally = setInterval(function() {
                   if (typeof window.Tally !== 'undefined') {
                     window.Tally.loadEmbeds();
+                    
+                    // Configurer le tracking une fois Tally chargé
+                    if (window.Tally.on) {
+                      window.Tally.on('form:submit', function(data) {
+                        const trackingData = window.tallyTrackingData || {};
+                        
+                        if (typeof gtag !== 'undefined') {
+                          gtag('event', 'generate_lead', {
+                            currency: 'USD',
+                            value: 200000,
+                            page_url: trackingData.page_url,
+                            referrer: trackingData.referrer,
+                            utm_source: trackingData.utm_source,
+                            utm_medium: trackingData.utm_medium,
+                            utm_campaign: trackingData.utm_campaign,
+                            language: trackingData.language
+                          });
+                        }
+                        
+                        if (typeof fbq !== 'undefined') {
+                          fbq('track', 'Lead', {
+                            content_name: 'Investment Inquiry',
+                            value: 200000,
+                            currency: 'USD',
+                            custom_data: trackingData
+                          });
+                        }
+                        
+                        console.log('Form submitted with tracking data:', trackingData);
+                      });
+                    }
+                    
                     clearInterval(checkTally);
                   }
                 }, 100);
               }
-              
-              // Track form view
+            });
+            
+            // Track form view après chargement
+            window.addEventListener('load', function() {
               setTimeout(function() {
+                const trackingData = window.tallyTrackingData || {};
+                
                 if (typeof gtag !== 'undefined') {
-                  gtag('event', 'form_view', { form_name: 'Lead Form' });
+                  gtag('event', 'form_view', { 
+                    form_name: 'Lead Form',
+                    page_url: trackingData.page_url,
+                    language: trackingData.language
+                  });
                 }
+                
                 if (typeof fbq !== 'undefined') {
-                  fbq('track', 'ViewContent', { content_name: 'Lead Form' });
+                  fbq('track', 'ViewContent', { 
+                    content_name: 'Lead Form',
+                    custom_data: trackingData
+                  });
                 }
               }, 1000);
             });
-            
-            // Script URL tracking simple
-            const url = new URL(window.location.href);
-            url.searchParams.set("page_url", window.location.href);
-            window.history.replaceState({}, '', url);
           `
         }}
       />
