@@ -22,9 +22,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                    currentLanguage === 'es' ? "2028" :
                    currentLanguage === 'nl' ? "2028" : "2028",
       paymentPlan: "60/40",
-      wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
-                   currentLanguage === 'es' ? "5 min del Wynn Casino" :
-                   currentLanguage === 'nl' ? "5 min van Wynn Casino" : "5 mins from Wynn Casino",
+      wynnDistance: currentLanguage === 'fr' ? "5 min " :
+                   currentLanguage === 'es' ? "5 min " :
+                   currentLanguage === 'nl' ? "5 min " : "5 mins ",
       websiteUrl: "https://www.mondrian-almarjan.com/",
       featured: true
     },
@@ -40,9 +40,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                    currentLanguage === 'es' ? "2029" :
                    currentLanguage === 'nl' ? "2029" : "2029",
       websiteUrl: "https://www.oystrabyrichmind.com/",
-      wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
-                   currentLanguage === 'es' ? "5 min del Wynn Casino" :
-                   currentLanguage === 'nl' ? "5 min van Wynn Casino" : "5 mins from Wynn Casino",
+      wynnDistance: currentLanguage === 'fr' ? "5 min " :
+                   currentLanguage === 'es' ? "5 min" :
+                   currentLanguage === 'nl' ? "5 min" : "5 mins ",
       featured: true
     },
     {
@@ -59,8 +59,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       profitBadge: currentLanguage === 'fr' ? "Clients ont fait x2 plus-value en 1 an" :
                    currentLanguage === 'es' ? "Clientes obtuvieron x2 plusvalía en 1 año" :
                    currentLanguage === 'nl' ? "Klanten maakten x2 winst in 1 jaar" : "Clients made x2 profit in 1 year",
-      wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
-                   currentLanguage === 'es' ? "5 min del Wynn Casino" :
+      wynnDistance: currentLanguage === 'fr' ? "5" :
+                   currentLanguage === 'es' ? "5" :
                    currentLanguage === 'nl' ? "5 min van Wynn Casino" : "5 mins from Wynn Casino",
       featured: true
     },
