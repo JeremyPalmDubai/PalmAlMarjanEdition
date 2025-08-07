@@ -194,14 +194,14 @@ body {
 }
 
 /* Tesla-style navigation */
-.tesla-nav {
+.tesla-nav-enhanced {
   @apply backdrop-blur-md bg-white/95 border-b border-gray-100;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* Enhanced navbar animations */
-.tesla-nav {
+.tesla-nav-enhanced {
   transform-origin: top center;
 }
 
@@ -221,18 +221,51 @@ body {
   animation: navbarSlideDown 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.tesla-nav-item {
+/* Enhanced Navigation Items */
+.tesla-nav-item-enhanced {
   @apply text-gray-700 hover:text-black font-medium text-sm tracking-wide;
-  @apply relative transition-all duration-300;
+  @apply relative transition-all duration-300 px-3 py-2 rounded-lg;
+  @apply hover:bg-gray-50;
 }
 
-.tesla-nav-item::after {
-  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300;
+.tesla-nav-item-enhanced .nav-text {
+  @apply relative;
+}
+
+.tesla-nav-item-enhanced::after {
+  @apply absolute bottom-1 left-3 w-0 h-0.5 bg-black transition-all duration-300;
   content: '';
 }
 
-.tesla-nav-item:hover::after {
-  @apply w-full;
+.tesla-nav-item-enhanced:hover::after {
+  @apply w-6;
+}
+
+/* CTA Navigation Item */
+.tesla-nav-cta {
+  @apply bg-black text-white hover:bg-gray-800 hover:text-white;
+}
+
+.tesla-nav-cta::after {
+  display: none;
+}
+
+/* Compact Navigation for Tablet */
+.tesla-nav-item-compact {
+  @apply text-gray-700 hover:text-black font-medium text-xs tracking-wider;
+  @apply relative transition-all duration-300 px-2 py-1 rounded;
+  @apply hover:bg-gray-50 uppercase;
+}
+
+.tesla-nav-cta-compact {
+  @apply bg-black text-white hover:bg-gray-800 hover:text-white;
+  @apply px-4 py-2 rounded-lg;
+}
+
+/* Mobile Navigation */
+.tesla-mobile-nav-item {
+  @apply block py-3 px-4 text-gray-700 hover:text-black hover:bg-gray-50;
+  @apply font-medium text-sm transition-all duration-200 rounded-lg;
 }
 
 /* Tesla-style form elements */
