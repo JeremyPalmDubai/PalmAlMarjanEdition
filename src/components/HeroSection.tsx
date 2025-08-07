@@ -34,32 +34,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
             </div>
 
             {/* Main Headline */}
-            <h1
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-inter font-light text-white mb-8 tracking-tighter leading-tight animate-fade-in-up"
-              style={{ animationDelay: '0.2s' }}
-              id="invest-al-marjan-island"
-              itemProp="headline"
-            >
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-inter font-light text-white mb-8 tracking-tighter leading-tight animate-fade-in-up" 
+                style={{ animationDelay: '0.2s' }}>
               Unlock <span className="text-premium-blue font-medium">Exponential</span>
               <br />
               Returns
             </h1>
-
+            
             {/* Subtitle */}
-            <p
-              className="text-xl sm:text-2xl md:text-3xl font-inter font-light text-white/90 mb-6 tracking-tight leading-relaxed animate-fade-in-up max-w-4xl mx-auto"
-              style={{ animationDelay: '0.4s' }}
-              itemProp="description"
-            >
-              {t.hero.subtitle}
+            <p className="text-xl sm:text-2xl md:text-3xl font-inter font-light text-white/90 mb-6 tracking-tight leading-relaxed animate-fade-in-up max-w-4xl mx-auto" 
+               style={{ animationDelay: '0.4s' }}>
+              Al Marjan Island Investment Opportunity
             </p>
-
-            {/* SEO-optimized short pitch */}
-            <p className="text-sm sm:text-base md:text-lg font-inter font-light text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-              Invest Al Marjan Island luxury real estate with 33.3% appreciation. Al Marjan real estate near Wynn Casino opening 2027.
-              100% freehold ownership, 0% capital gains tax, 5-year payment plans. Invest near Wynn Casino for maximum ROI.
-            </p>
-
+            
             {/* Key Benefits */}
             <div className="flex flex-wrap justify-center gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
               <div className="tesla-card-glass px-4 py-2 text-white text-sm font-medium">
@@ -75,15 +62,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 <span className="tesla-accent">Wynn Casino</span> 2027
               </div>
             </div>
-
+            
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-              <a
-                href="#contact"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up" 
+                 style={{ animationDelay: '0.8s' }}>
+              <a 
+                href="#contact" 
                 className="tesla-btn-primary group w-full sm:w-auto"
                 onClick={() => {
                   if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
+                    gtag('event', 'click', { 
                       event_category: 'CTA',
                       event_label: 'Hero Primary CTA'
                     });
@@ -101,11 +89,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#opportunity"
+                href="#opportunity" 
                 className="tesla-btn-glass w-full sm:w-auto"
                 onClick={() => {
                   if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
+                    gtag('event', 'click', { 
                       event_category: 'CTA',
                       event_label: 'Hero Secondary CTA'
                     });
@@ -120,9 +108,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 {t.hero.cta.primary}
               </a>
             </div>
-
+            
             {/* Trust Indicators */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/70 text-sm animate-fade-in-up" style={{ animationDelay: '1s' }}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/70 text-sm animate-fade-in-up" 
+                 style={{ animationDelay: '1s' }}>
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-premium-blue rounded-full mr-3"></div>
                 <span className="font-medium">100% Freehold Ownership</span>
@@ -135,6 +124,82 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 <div className="w-2 h-2 bg-premium-blue rounded-full mr-3"></div>
                 <span className="font-medium">RERA Licensed</span>
               </div>
+            </div>
+          </div>
+
+          {/* Tesla-style main heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter font-light text-white mb-6 sm:mb-8 tracking-tighter leading-tight" id="invest-al-marjan-island" itemProp="headline">
+            {t.hero.title}
+          </h1>
+          
+          {/* Tesla-style subtitle */}
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-inter font-light text-white/90 mb-8 sm:mb-12 md:mb-16 tracking-tight leading-tight" itemProp="description">
+            {t.hero.subtitle}
+          </p>
+          
+          {/* SEO-optimized description */}
+          <p className="text-sm sm:text-base md:text-lg font-inter font-light text-white/80 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
+            Invest Al Marjan Island luxury real estate with 33.3% appreciation. Al Marjan real estate near Wynn Casino opening 2027. 
+            100% freehold ownership, 0% capital gains tax, 5-year payment plans. Invest near Wynn Casino for maximum ROI.
+          </p>
+          
+          {/* Tesla-style CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
+            <a 
+              href="#contact" 
+              className="tesla-btn-primary-hero w-full sm:w-auto"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Hero Primary CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'InitiateCheckout', {
+                    content_name: 'Investment Interest',
+                    value: 200000,
+                    currency: 'USD'
+                  });
+                }
+              }}
+            >
+              Invest Al Marjan Island
+            </a>
+            <a
+              href="#contact" 
+              className="tesla-btn-secondary-hero w-full sm:w-auto"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Hero Secondary CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'ViewContent', {
+                    content_name: 'Investment Opportunity'
+                  });
+                }
+              }}
+            >
+              {t.hero.cta.primary}
+            </a>
+          </div>
+          
+          {/* Trust indicators */}
+          <div className="mt-8 sm:mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-white/70 text-xs sm:text-sm px-4 sm:px-0">
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              100% Freehold Ownership
+            </div>
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              0% Capital Gains Tax
+            </div>
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              5-Year Payment Plans
             </div>
           </div>
         </div>
