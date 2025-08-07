@@ -182,17 +182,5 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
           </div>
         </div>
       </div>
-      
-      {/* Script exact pour Lead Source */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            const url = new URL(window.location.href);
-            url.searchParams.set("page_url", window.location.href);
-            window.history.replaceState({}, '', url);
-          `
-        }}
-      />
     </section>
   );
-}

@@ -372,5 +372,10 @@
     </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      const url = new URL(window.location.href);
+      url.searchParams.set("page_url", window.location.href);
+      window.history.replaceState({}, '', url);
+    </script>
   </body>
 </html>
