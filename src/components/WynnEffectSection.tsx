@@ -27,18 +27,18 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
             {/* Tesla-style badge */}
             <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-6">
               <span className="text-white text-xs font-medium tracking-wider uppercase">
-                {t.wynnEffect.badge}
+                INVEST NEAR WYNN CASINO
               </span>
             </div>
             
             {/* Tesla-style heading */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-white mb-8 tracking-tighter" id="wynn-effect">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-white mb-8 tracking-tighter" id="invest-near-wynn-casino">
               {t.wynnEffect.title}
             </h2>
             
             {/* Tesla-style description */}
             <p className="text-xl text-white/90 mb-12 leading-relaxed font-light max-w-xl">
-              {t.wynnEffect.description}
+              Invest near Wynn Casino on Al Marjan Island. The Wynn Resort & Casino transforms Al Marjan real estate into the Middle East's premier luxury destination.
             </p>
             
             {/* Tesla-style metrics */}

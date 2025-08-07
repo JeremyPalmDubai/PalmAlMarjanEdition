@@ -31,12 +31,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           </div>
 
           {/* Tesla-style main heading */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-inter font-light text-white mb-8 tracking-tighter leading-tight" id="main-heading">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-inter font-light text-white mb-8 tracking-tighter leading-tight" id="invest-al-marjan-island">
             {t.hero.title}
           </h1>
           
           {/* Tesla-style subtitle */}
-          <p className="text-2xl sm:text-3xl font-inter font-light text-white/90 mb-16 tracking-tight leading-tight" role="banner">
+          <p className="text-2xl sm:text-3xl font-inter font-light text-white/90 mb-16 tracking-tight leading-tight">
             {t.hero.subtitle}
           </p>
           

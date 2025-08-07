@@ -3,7 +3,7 @@ export const translations = {
     seo: {
       home: {
         title: 'Al Marjan Island Investment - Unlock Exponential Returns | Palm Signature Real Estate',
-        description: '🏖️ Invest in Al Marjan Island luxury real estate with 5-year interest-free payment plans. 33.3% property appreciation, Wynn Casino opening 2027, 100% tax-free ownership. Highest ROI in UAE. Contact Palm Signature today!'
+        description: '🏖️ Invest Al Marjan Island luxury real estate near Wynn Casino. Al Marjan real estate with 5-year payment plans. 33.3% appreciation, Wynn Casino 2027, tax-free ownership. Invest Al Marjan Island today!'
       },
       sitemap: {
         title: 'Site Map - Al Marjan Island Investment Opportunities',
@@ -17,7 +17,7 @@ export const translations = {
         title: 'Terms of Service - Palm Signature Real Estate',
         description: 'Terms of service for Palm Signature Real Estate investment services. Understand our service terms and conditions.'
       },
-      keywords: 'Al Marjan Island investment, Wynn Casino 2027, UAE real estate, tax-free property, luxury real estate Dubai, Ras Al Khaimah investment, capital appreciation, rental yields, freehold property UAE, Palm Signature Real Estate, Gabriella Magalhaes, luxury developments UAE, off-plan properties Al Marjan Island, beachfront investment UAE'
+      keywords: 'Invest Al Marjan, Invest Al Marjan Island, Al Marjan real estate, Al Marjan Island real estate, invest near Wynn Casino, Wynn Casino investment, UAE real estate, tax-free property, luxury real estate Dubai, Ras Al Khaimah investment, capital appreciation, rental yields, freehold property UAE, Palm Signature Real Estate, Gabriella Magalhaes, luxury developments UAE, off-plan properties Al Marjan Island, beachfront investment UAE'
     },
     alMarjanIsland: {
       title: 'Al Marjan Island',

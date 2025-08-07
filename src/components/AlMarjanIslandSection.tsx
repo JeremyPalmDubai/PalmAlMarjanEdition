@@ -15,12 +15,12 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         {/* Tesla-style minimal header */}
         <div className="text-center mb-20">
           <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-4">
-            DISCOVER THE ISLAND
+            INVEST AL MARJAN ISLAND
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="al-marjan-island">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="al-marjan-real-estate">
             {t.alMarjanIsland.title}
           </h2>
-          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed" id="al-marjan-island-real-estate">
             {t.alMarjanIsland.description}
           </p>
         </div>
