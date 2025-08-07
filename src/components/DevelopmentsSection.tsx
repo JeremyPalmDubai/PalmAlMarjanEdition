@@ -276,125 +276,122 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           </div>
           
           {/* Premium Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {premiumDevelopments.map((development, index) => (
-            <div key={index} className="bg-white tesla-hover animate-fade-in-up relative overflow-hidden border border-gray-100 hover:border-black transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl">
-              {/* Premium Badge */}
-              <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-black to-gray-800 text-white px-3 py-1 rounded-sm text-xs font-bold shadow-lg tracking-wider uppercase">
-                ◆ Premium
-              </div>
-              
-              {/* Special badge for profit achievement */}
-              {development.profitBadge && (
-                <div className="absolute top-16 left-4 z-10 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-2 py-1 rounded-sm text-xs font-bold shadow-lg">
-                    🚀 {development.profitBadge}
+            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-up">
+              {/* Image Container with Badges */}
+              <div className="relative h-80 overflow-hidden">
+                {/* Badges on Image */}
+                <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
+                  <div className="bg-black/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                    ◆ Premium
+                  </div>
+                  {development.profitBadge && (
+                    <div className="bg-emerald-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                      🚀 {development.profitBadge}
+                    </div>
+                  )}
                 </div>
-              )}
-              
-              <div className="h-48 sm:h-56 lg:h-64 overflow-hidden relative">
+                
+                {/* Status Badge */}
                 {development.availability && (
-                  <div className={`absolute top-4 right-4 z-10 px-3 py-1 rounded-full text-xs font-bold shadow-lg ${
-                    development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
-                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-100 text-orange-600' :
-                    development.availabilityColor === 'text-green-600' ? 'bg-green-100 text-green-600' :
-                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-100 text-blue-600' :
-                    'bg-red-100 text-red-600'
+                  <div className={`absolute top-4 right-4 z-20 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
+                    development.availabilityColor === 'text-red-600' ? 'bg-red-100/90 text-red-600' :
+                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-100/90 text-orange-600' :
+                    development.availabilityColor === 'text-green-600' ? 'bg-green-100/90 text-green-600' :
+                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-100/90 text-blue-600' :
+                    'bg-red-100/90 text-red-600'
                   }`}>
                     {development.availability}
                   </div>
                 )}
-                  <img
-                    src={development.image}
-                    alt={development.name}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                  />
+                
+                <img
+                  src={development.image}
+                  alt={development.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
               
-              <div className="p-4 sm:p-6 lg:p-8 bg-white">
-                <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
+              {/* Content */}
+              <div className="p-6">
+                {/* Header */}
+                <div className="mb-4">
+                  <div className="text-sm font-medium text-gray-500 mb-1">
                     {development.developer}
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl tesla-heading mb-3 sm:mb-4 line-clamp-2 font-medium">{development.name}</h3>
-                <p className="tesla-subheading text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3">{development.description}</p>
-                  
-                {/* Pricing and Info */}
-                {(development.price || development.deliveryDate || development.wynnDistance) && (
-                  <div className="mb-4 sm:mb-6 space-y-2 bg-gray-50 p-4 border-l-4 border-black">
-                      {development.price && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">From:</span>
-                          <span className="text-sm sm:text-lg font-semibold text-black">{development.price}</span>
-                        </div>
-                      )}
-                      {development.paymentPlan && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">Payment:</span>
-                          <span className="text-sm font-medium text-black">{development.paymentPlan}</span>
-                        </div>
-                      )}
-                      {development.deliveryDate && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Handover:</span>
-                          <span className="text-sm font-medium text-gray-700">{development.deliveryDate}</span>
-                        </div>
-                      )}
-                      {development.wynnDistance && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-medium text-black tracking-wider uppercase">Wynn:</span>
-                          <span className="text-sm font-medium text-black font-semibold">{development.wynnDistance}</span>
-                        </div>
-                      )}
                   </div>
-                )}
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{development.name}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">{development.description}</p>
+                </div>
+                
+                {/* Details Grid */}
+                <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                  {development.price && (
+                    <div>
+                      <div className="text-gray-500 mb-1">Starting price</div>
+                      <div className="font-semibold text-gray-900">{development.price}</div>
+                    </div>
+                  )}
+                  {development.deliveryDate && (
+                    <div>
+                      <div className="text-gray-500 mb-1">Handover</div>
+                      <div className="font-semibold text-gray-900">{development.deliveryDate}</div>
+                    </div>
+                  )}
+                  {development.paymentPlan && (
+                    <div>
+                      <div className="text-gray-500 mb-1">Payment Plan</div>
+                      <div className="font-semibold text-gray-900">{development.paymentPlan}</div>
+                    </div>
+                  )}
+                  {development.wynnDistance && (
+                    <div>
+                      <div className="text-gray-500 mb-1">Wynn Distance</div>
+                      <div className="font-semibold text-gray-900">{development.wynnDistance}</div>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Action Button */}
+                <div className="flex gap-3">
+                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                    <button className="flex-1 bg-gray-400 text-white px-6 py-3 rounded-full font-medium cursor-not-allowed">
+                      SOLD OUT
+                    </button>
+                  ) : (
+                    <a 
+                      href="#contact" 
+                      className="flex-1 bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 text-center"
+                    >
+                      Get the details
+                    </a>
+                  )}
                   
-                <div className="flex gap-2">
-                      {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                        <div className="flex-1 bg-gray-400 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium cursor-not-allowed">
-                          SOLD OUT
-                        </div>
-                      ) : development.availabilityColor === 'text-orange-600' ? (
-                        <a href="#contact" className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
-                          {t.developments.lastUnits}
-                        </a>
-                      ) : development.availabilityColor === 'text-green-600' ? (
-                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
-                          {t.developments.learnMore}
-                        </a>
-                      ) : development.availabilityColor === 'text-blue-600' ? (
-                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
-                          {t.developments.learnMore}
-                        </a>
-                      ) : (
-                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
-                          {t.developments.learnMore}
-                        </a>
-                      )}
-                      
-                      {development.websiteUrl && (
-                        <a 
-                          href={development.websiteUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-12 sm:w-14 md:w-16 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 text-xs sm:text-sm py-2 flex items-center justify-center transition-all duration-300"
-                          onClick={() => {
-                            if (typeof gtag !== 'undefined') {
-                              gtag('event', 'click', { 
-                                event_category: 'External Link',
-                                event_label: development.name + ' Website'
-                              });
-                            }
-                            if (typeof fbq !== 'undefined') {
-                              fbq('track', 'ViewContent', {
-                                content_name: development.name + ' Website'
-                              });
-                            }
-                          }}
-                        >
-                          <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      )}
+                  {development.websiteUrl && (
+                    <a 
+                      href={development.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 rounded-full flex items-center justify-center transition-all duration-300"
+                      onClick={() => {
+                        if (typeof gtag !== 'undefined') {
+                          gtag('event', 'click', { 
+                            event_category: 'External Link',
+                            event_label: development.name + ' Website'
+                          });
+                        }
+                        if (typeof fbq !== 'undefined') {
+                          fbq('track', 'ViewContent', {
+                            content_name: development.name + ' Website'
+                          });
+                        }
+                      }}
+                    >
+                      <svg className="w-4 h-4 text-gray-600 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -412,77 +409,76 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
               Quality developments with great investment potential
             </p>
           </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {normalDevelopments.map((development, index) => (
-            <div key={index} className="bg-white tesla-hover animate-fade-in-up">
-              {/* Status badge */}
-              {development.availability && (
-                <div className={`absolute top-2 right-2 z-10 px-2 py-1 rounded-full text-xs font-bold ${
-                  development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
-                  development.availabilityColor === 'text-orange-600' ? 'bg-orange-100 text-orange-600' :
-                  development.availabilityColor === 'text-green-600' ? 'bg-green-100 text-green-600' :
-                  development.availabilityColor === 'text-blue-600' ? 'bg-blue-100 text-blue-600' :
-                  'bg-red-100 text-red-600'
-                }`}>
-                  {development.availability}
-                </div>
-              )}
-              
-              <div className="h-48 sm:h-56 lg:h-64 overflow-hidden">
-                <img
-                  src={development.image}
-                  alt={development.name}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              
-              <div className="p-4 sm:p-6 lg:p-8">
-                <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
-                  {development.developer}
-                </div>
-                <h3 className="text-lg sm:text-xl tesla-heading mb-3 sm:mb-4 line-clamp-2">{development.name}</h3>
-                <p className="tesla-subheading text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3">{development.description}</p>
-                
-                {/* Pricing and Availability */}
-                {(development.price || development.deliveryDate || development.paymentPlan) && (
-                  <div className="mb-4 sm:mb-6 space-y-2">
-                    {development.price && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">From:</span>
-                        <span className="text-sm sm:text-lg font-semibold text-black">{development.price}</span>
-                      </div>
-                    )}
-                    {development.paymentPlan && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">Payment:</span>
-                        <span className="text-sm font-medium text-black">{development.paymentPlan}</span>
-                      </div>
-                    )}
-                    {development.deliveryDate && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-medium text-blue-600 tracking-wider uppercase">Handover:</span>
-                        <span className="text-sm font-medium text-blue-600">{development.deliveryDate}</span>
-                      </div>
-                    )}
+            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-up">
+              {/* Image Container with Badges */}
+              <div className="relative h-80 overflow-hidden">
+                {/* Status Badge */}
+                {development.availability && (
+                  <div className={`absolute top-4 right-4 z-20 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
+                    development.availabilityColor === 'text-red-600' ? 'bg-red-100/90 text-red-600' :
+                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-100/90 text-orange-600' :
+                    development.availabilityColor === 'text-green-600' ? 'bg-green-100/90 text-green-600' :
+                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-100/90 text-blue-600' :
+                    'bg-red-100/90 text-red-600'
+                  }`}>
+                    {development.availability}
                   </div>
                 )}
                 
-                <div className="flex gap-2">
-                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                    <div className="flex-1 tesla-btn-primary opacity-50 cursor-not-allowed text-xs sm:text-sm py-2 text-center">
-                      SOLD OUT
+                <img
+                  src={development.image}
+                  alt={development.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Content */}
+              <div className="p-6">
+                {/* Header */}
+                <div className="mb-4">
+                  <div className="text-sm font-medium text-gray-500 mb-1">
+                    {development.developer}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{development.name}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">{development.description}</p>
+                </div>
+                
+                {/* Details Grid */}
+                <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                  {development.price && (
+                    <div>
+                      <div className="text-gray-500 mb-1">Starting price</div>
+                      <div className="font-semibold text-gray-900">{development.price}</div>
                     </div>
-                  ) : development.availabilityColor === 'text-orange-600' ? (
-                    <a href="#contact" className="flex-1 tesla-btn-primary bg-orange-600 hover:bg-orange-700 text-xs sm:text-sm py-2 text-center">
-                      {t.developments.lastUnits}
-                    </a>
-                  ) : development.availabilityColor === 'text-green-600' ? (
-                    <a href="#contact" className="flex-1 tesla-btn-primary bg-green-600 hover:bg-green-700 text-xs sm:text-sm py-2 text-center">
-                      {t.developments.learnMore}
-                    </a>
+                  )}
+                  {development.deliveryDate && (
+                    <div>
+                      <div className="text-gray-500 mb-1">Handover</div>
+                      <div className="font-semibold text-gray-900">{development.deliveryDate}</div>
+                    </div>
+                  )}
+                  {development.paymentPlan && (
+                    <div>
+                      <div className="text-gray-500 mb-1">Payment Plan</div>
+                      <div className="font-semibold text-gray-900">{development.paymentPlan}</div>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Action Button */}
+                <div className="flex gap-3">
+                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                    <button className="flex-1 bg-gray-400 text-white px-6 py-3 rounded-full font-medium cursor-not-allowed">
+                      SOLD OUT
+                    </button>
                   ) : (
-                    <a href="#contact" className="flex-1 tesla-btn-primary text-xs sm:text-sm py-2 text-center">
-                      {t.developments.learnMore}
+                    <a 
+                      href="#contact" 
+                      className="flex-1 bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 text-center"
+                    >
+                      Get the details
                     </a>
                   )}
                   
@@ -491,7 +487,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       href={development.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 sm:w-14 md:w-16 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 text-xs sm:text-sm py-2 flex items-center justify-center transition-all duration-300"
+                      className="w-12 h-12 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 rounded-full flex items-center justify-center transition-all duration-300"
                       onClick={() => {
                         if (typeof gtag !== 'undefined') {
                           gtag('event', 'click', { 
@@ -506,7 +502,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                         }
                       }}
                     >
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <svg className="w-4 h-4 text-gray-600 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -528,36 +524,164 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
               Previously successful developments - proof of market demand
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {soldOutDevelopments.map((development, index) => (
-              <div key={index} className="bg-white tesla-hover animate-fade-in-up opacity-75">
-                {/* Status badge */}
-                {development.availability && (
-                  <div className={`absolute top-2 right-2 z-10 px-2 py-1 rounded-full text-xs font-bold ${
-                    development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
-                    'bg-red-100 text-red-600'
-                  }`}>
-                    {development.availability}
+              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg opacity-75 animate-fade-in-up">
+                {/* Image Container with Badges */}
+                <div className="relative h-80 overflow-hidden">
+                  {/* Badges on Image */}
+                  <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
+                    {development.profitBadge && (
+                      <div className="bg-emerald-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                        🚀 {development.profitBadge}
+                      </div>
+                    )}
                   </div>
-                )}
-                
-                {/* Special badge for profit achievement */}
-                {development.profitBadge && (
-                  <div className="absolute top-16 left-4 z-10 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-2 py-1 rounded-sm text-xs font-bold shadow-lg">
-                      🚀 {development.profitBadge}
-                  </div>
-                )}
-                
-                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden">
+                  
+                  {/* Status Badge */}
+                  {development.availability && (
+                    <div className="absolute top-4 right-4 z-20 bg-red-100/90 backdrop-blur-sm text-red-600 px-3 py-1 rounded-full text-xs font-medium">
+                      {development.availability}
+                    </div>
+                  )}
+                  
                   <img
                     src={development.image}
                     alt={development.name}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 grayscale"
+                    className="w-full h-full object-cover grayscale"
                   />
                 </div>
                 
-                <div className="p-4 sm:p-6 lg:p-8">
-                  <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
+                {/* Content */}
+                <div className="p-6">
+                  {/* Header */}
+                  <div className="mb-4">
+                    <div className="text-sm font-medium text-gray-400 mb-1">
+                      {development.developer}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-600 mb-2">{development.name}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">{development.description}</p>
+                  </div>
+                  
+                  {/* Details Grid */}
+                  <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                    {development.price && (
+                      <div>
+                        <div className="text-gray-400 mb-1">Was</div>
+                        <div className="font-semibold text-gray-500 line-through">{development.price}</div>
+                      </div>
+                    )}
+                    {development.deliveryDate && (
+                      <div>
+                        <div className="text-gray-400 mb-1">Delivered</div>
+                        <div className="font-semibold text-gray-500">{development.deliveryDate}</div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Action Button */}
+                  <div className="flex gap-3">
+                    <button className="flex-1 bg-gray-400 text-white px-6 py-3 rounded-full font-medium cursor-not-allowed">
+                      SOLD OUT
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tesla-style developer logos */}
+        <div className="text-center">
+          <h3 className="text-3xl md:text-4xl tesla-heading mb-16">{t.developments.trustedPartners}</h3>
+          
+          {/* Tesla-style grid layout for partners */}
+          <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            
+            {/* Development Companies */}
+            <div className="bg-white p-8 tesla-shadow tesla-hover">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h4 className="text-xl tesla-heading">Development Partners</h4>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">EMAAR</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Premium Developer</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">DECA</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Luxury Projects</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">DAMAC</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Iconic Developments</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">ELLINGTON</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Coastal Living</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">RICHMIND</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Innovative Design</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">BABOLEX</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Contemporary Style</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Prestige Brands */}
+            <div className="bg-black text-white p-8 tesla-shadow tesla-hover">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-inter font-light">Prestige Brands</h4>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">MARRIOTT</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">W Hotels</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">HILTON</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Luxury Hospitality</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">ELIE SAAB</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Haute Couture</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">WYNN</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Casino Resort</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">NIKKI BEACH</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Beach Club</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">NOBU</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Fine Dining</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+```
                     {development.developer}
                   </div>
                   <h3 className="text-lg sm:text-xl tesla-heading mb-3 sm:mb-4 line-clamp-2 text-gray-600">{development.name}</h3>
