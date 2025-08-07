@@ -19,6 +19,9 @@ import { NavigationProvider } from './components/NavigationProvider';
 import { SEOHead } from './components/SEOHead';
 import { PerformanceMonitor } from './components/PerformanceMonitor';
 import { ImageSEOAudit } from './components/ImageSEOAudit';
+import { AccessibilityProvider } from './components/AccessibilityProvider';
+import { AccessibilityPanel } from './components/AccessibilityPanel';
+import { SkipLinks } from './components/SkipLinks';
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
@@ -171,7 +174,9 @@ function App() {
   }
 
   return (
-    <NavigationProvider onNavigate={handleNavigation}>
+    <AccessibilityProvider>
+      <NavigationProvider onNavigate={handleNavigation}>
+        <SkipLinks />
       <div className="min-h-screen bg-white">
         <PerformanceMonitor />
         <SEOHead currentLanguage={currentLanguage} currentPage={currentPage} />
@@ -266,7 +271,8 @@ function App() {
         />
         
         <Header currentLanguage={currentLanguage} onLanguageChange={handleLanguageChange} />
-        <HeroSection currentLanguage={currentLanguage} />
+        <main id="main-content" tabIndex={-1}>
+          <HeroSection currentLanguage={currentLanguage} />
         <AlMarjanIslandSection currentLanguage={currentLanguage} />
         <OpportunitySection currentLanguage={currentLanguage} />
         <ExplosiveGrowthSection currentLanguage={currentLanguage} />
@@ -277,17 +283,22 @@ function App() {
         <CEOSection currentLanguage={currentLanguage} />
         <LifestyleSection currentLanguage={currentLanguage} />
         <ContactSection currentLanguage={currentLanguage} />
-        <Footer currentLanguage={currentLanguage} />
+        </main>
+        <Footer currentLanguage={currentLanguage} id="main-footer" />
         
         {/* Image SEO Audit Tool (Development Only) */}
         <ImageSEOAudit />
         
+        {/* Accessibility Panel */}
+        <AccessibilityPanel />
+        
         {/* Mobile Navigation */}
-        <nav className="tesla-mobile-nav lg:hidden">
+        <nav className="tesla-mobile-nav lg:hidden" id="main-navigation" role="navigation" aria-label="Mobile navigation">
           <div className="tesla-mobile-nav-container">
             <button 
               className="tesla-nav-item"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              aria-label="Go to top of page"
             >
               <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -301,6 +312,7 @@ function App() {
                 const element = document.getElementById('wynn-effect');
                 if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
+              aria-label="Go to Wynn Effect section"
             >
               <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -314,6 +326,7 @@ function App() {
                 const element = document.getElementById('roi-metrics');
                 if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
+              aria-label="Go to ROI Metrics section"
             >
               <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -327,6 +340,7 @@ function App() {
                 const element = document.getElementById('developments');
                 if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
+              aria-label="Go to Developments section"
             >
               <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -341,6 +355,7 @@ function App() {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
+              aria-label="Contact us"
             >
               <svg className="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -349,7 +364,8 @@ function App() {
           </div>
         </nav>
       </div>
-    </NavigationProvider>
+      </NavigationProvider>
+    </AccessibilityProvider>
   );
 }
 

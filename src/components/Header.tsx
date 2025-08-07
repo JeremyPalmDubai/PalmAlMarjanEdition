@@ -121,7 +121,8 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
             <a 
               href="#contact" 
               onClick={handleContactClick}
-              className="bg-black text-white px-6 py-2 rounded-full font-medium text-sm tracking-wide hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="bg-black text-white px-6 py-2 rounded-full font-medium text-sm tracking-wide hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="Contact us for investment opportunities"
             >
               {t.navigation.contact}
             </a>

@@ -296,10 +296,14 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
 
         {/* iOS-style Tesla Tabs */}
         <div className="flex justify-center mb-16">
-          <div className="bg-gray-100 p-1 rounded-full inline-flex">
+          <div className="bg-gray-100 p-1 rounded-full inline-flex" role="tablist" aria-label="Development categories">
             <button
               onClick={() => setActiveTab('all')}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              role="tab"
+              aria-selected={activeTab === 'all'}
+              aria-controls="developments-panel"
+              id="tab-all"
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 ${
                 activeTab === 'all'
                   ? 'bg-black text-white'
                   : 'text-gray-600 hover:text-black'
@@ -309,7 +313,11 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
             </button>
             <button
               onClick={() => setActiveTab('available')}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              role="tab"
+              aria-selected={activeTab === 'available'}
+              aria-controls="developments-panel"
+              id="tab-available"
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 ${
                 activeTab === 'available'
                   ? 'bg-black text-white'
                   : 'text-gray-600 hover:text-black'
@@ -319,7 +327,11 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
             </button>
             <button
               onClick={() => setActiveTab('sold-out')}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              role="tab"
+              aria-selected={activeTab === 'sold-out'}
+              aria-controls="developments-panel"
+              id="tab-sold-out"
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 ${
                 activeTab === 'sold-out'
                   ? 'bg-black text-white'
                   : 'text-gray-600 hover:text-black'
@@ -331,13 +343,20 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div 
+          id="developments-panel"
+          role="tabpanel"
+          aria-labelledby={`tab-${activeTab}`}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+        >
           {filteredDevelopments.map((development, index) => (
             <div 
               key={index} 
-              className={`bg-white border border-gray-200 overflow-hidden transition-all duration-300 hover:border-black ${
+              className={`bg-white border border-gray-200 overflow-hidden transition-all duration-300 hover:border-black focus-within:border-black focus-within:ring-2 focus-within:ring-black focus-within:ring-offset-2 ${
                 development.category === 'sold-out' ? 'opacity-75' : ''
               }`}
+              role="article"
+              aria-labelledby={`development-${index}-title`}
             >
               {/* Image Container with Badges */}
               <div className="relative h-80 overflow-hidden">
@@ -366,9 +385,12 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 <img
                   src={development.image}
                   alt={development.name}
+                  title={`${development.name} - ${development.description}`}
                   className={`w-full h-full object-cover ${
                     development.category === 'sold-out' ? 'grayscale' : ''
                   }`}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               
@@ -383,7 +405,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   </div>
                   <h3 className={`text-xl font-bold mb-3 ${
                     development.category === 'sold-out' ? 'text-gray-600' : 'text-gray-900'
-                  }`}>
+                  }`} id={`development-${index}-title`}>
                     {development.name}
                   </h3>
                   <p className={`text-sm leading-relaxed line-clamp-2 ${
