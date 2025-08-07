@@ -120,6 +120,7 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
             </div>
             <p className="tesla-subheading text-lg leading-relaxed mb-12">
               Invest now before the Wynn Casino opens in 2027. Early investors will benefit from the maximum appreciation potential as the resort approaches completion.
+            </p>
             {/* Tesla-style timeline */}
             <div className="space-y-8">
               <div>
@@ -137,7 +138,7 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
             </div>
           </div>
         </div>
-            </p>
+
         {/* Tesla-style CTA section */}
         <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
