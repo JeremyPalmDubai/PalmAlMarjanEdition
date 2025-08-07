@@ -98,7 +98,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: "800,000 AED",
       availability: "Phase 2 On Sale",
       availabilityColor: "text-green-600",
-      wynnDistance: "7 min",
+      deliveryDate: "2026",
+      wynnDistance: "5 min",
       category: "available"
     },
     {
@@ -111,7 +112,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       availabilityColor: "text-green-600",
       deliveryDate: "2028",
       websiteUrl: "https://www.arthouse-almarjan.com/",
-      wynnDistance: "6 min",
+      wynnDistance: "8 min",
       category: "available"
     },
     {
@@ -124,7 +125,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       availabilityColor: "text-green-600",
       deliveryDate: "2027",
       websiteUrl: "https://www.unoluxe-almarjan.com/",
-      wynnDistance: "5 min",
+      wynnDistance: "8 min",
       category: "available"
     },
     {
@@ -135,7 +136,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: null,
       availability: "Almost Sold Out",
       availabilityColor: "text-orange-600",
-      wynnDistance: "6 min",
+      wynnDistance: "8 min",
       category: "available"
     },
     {
@@ -166,7 +167,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       description: "Modern waterfront living with sophisticated design and premium amenities.",
       price: null,
       availability: null,
-      wynnDistance: "6 min",
+      wynnDistance: "8 min",
       category: "available"
     },
     
@@ -218,7 +219,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: null,
       availability: "SOLD OUT",
       availabilityColor: "text-red-600",
-      wynnDistance: "7 min",
+      wynnDistance: "8 min",
       category: "sold-out"
     },
     {
@@ -229,7 +230,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: null,
       availability: "SOLD OUT",
       availabilityColor: "text-red-600",
-      wynnDistance: "6 min",
+      wynnDistance: "8 min",
       category: "sold-out"
     }
   ];
