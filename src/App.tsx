@@ -266,15 +266,13 @@ function App() {
         
         <Header currentLanguage={currentLanguage} onLanguageChange={handleLanguageChange} />
         <HeroSection currentLanguage={currentLanguage} />
-        <AlMarjanIslandSection currentLanguage={currentLanguage} />
         <OpportunitySection currentLanguage={currentLanguage} />
-        <ExplosiveGrowthSection currentLanguage={currentLanguage} />
         <WynnEffectSection currentLanguage={currentLanguage} />
         <ROIMetricsSection currentLanguage={currentLanguage} />
         <DevelopmentsSection currentLanguage={currentLanguage} />
+        <AlMarjanIslandSection currentLanguage={currentLanguage} />
         <WhyPalmSignatureSection currentLanguage={currentLanguage} />
         <CEOSection currentLanguage={currentLanguage} />
-        <LifestyleSection currentLanguage={currentLanguage} />
         <ContactSection currentLanguage={currentLanguage} />
         <Footer currentLanguage={currentLanguage} />
         
