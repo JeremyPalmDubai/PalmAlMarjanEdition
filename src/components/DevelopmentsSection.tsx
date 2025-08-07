@@ -36,6 +36,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: "2,800,000 AED",
       availability: "Ready 2029",
       availabilityColor: "text-blue-600",
+      websiteUrl: "https://www.oystrabyrichmind.com/",
       featured: true
     },
     {
