@@ -26,7 +26,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           {/* Tesla-style badge */}
           <div className="inline-flex items-center px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-12">
             <span className="text-white text-sm font-medium tracking-wider uppercase">
-              {t.hero.badge} • INVEST AL MARJAN
+              {t.hero.badge}
             </span>
           </div>
 
