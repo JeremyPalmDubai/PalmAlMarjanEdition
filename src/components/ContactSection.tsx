@@ -153,22 +153,35 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               
               <div className="w-full" style={{ minHeight: '404px' }}>
                 <iframe
-                  data-tally-src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&source=investalmarjanisland"
+                  loading="lazy"
                   width="100%"
                   height="404"
                   frameBorder="0"
-                frameBorder={0}
-                marginHeight={0}
-                marginWidth={0}
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="Lead Form Palm Signature"
+                  className="w-full"
+                  style={{ 
+                    border: 'none',
+                    minHeight: '404px',
+                    backgroundColor: 'transparent'
+                  }}
+                  onLoad={() => {
+                    // Track form view
+                    if (typeof gtag !== 'undefined') {
+                      gtag('event', 'form_view', { form_name: 'Lead Form' });
+                    }
+                    if (typeof fbq !== 'undefined') {
+                      fbq('track', 'ViewContent', { content_name: 'Lead Form' });
+                    }
+                  }}
                 ></iframe>
-                
-                <script
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
   );
 }
