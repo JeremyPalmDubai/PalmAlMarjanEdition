@@ -220,85 +220,95 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
         </div>
 
         {/* Featured Developments - Priority on Mobile */}
-        <div className="mb-24 space-y-8">
+        <div className="mb-16">
+          <h3 className="text-2xl md:text-3xl tesla-heading text-center mb-8 text-gray-800">
+            Featured Projects
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8">
           {featuredDevelopments.map((development, index) => (
             <div key={index} className="bg-white tesla-hover animate-fade-in-up relative overflow-hidden">
               {/* Special badge for profit achievement */}
               {development.profitBadge && (
-                <div className="relative">
-                  <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
+                <div className="absolute top-2 left-2 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg">
                     🚀 {development.profitBadge}
-                  </div>
                 </div>
               )}
               
-              <div className="grid lg:grid-cols-2 gap-8">
-                <div className="h-80 lg:h-96 overflow-hidden">
+              <div className="h-48 sm:h-56 lg:h-64 overflow-hidden relative">
+                {development.availability && (
+                  <div className={`absolute top-2 right-2 z-10 px-2 py-1 rounded-full text-xs font-bold ${
+                    development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
+                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-100 text-orange-600' :
+                    development.availabilityColor === 'text-green-600' ? 'bg-green-100 text-green-600' :
+                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-100 text-blue-600' :
+                    'bg-red-100 text-red-600'
+                  }`}>
+                    {development.availability}
+                  </div>
+                )}
                   <img
                     src={development.image}
                     alt={development.name}
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
-                </div>
-                <div className="p-8 flex flex-col justify-center">
-                  <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
+              </div>
+              
+              <div className="p-4 sm:p-6 lg:p-8">
+                <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
                     {development.developer}
-                  </div>
-                  <h3 className="text-3xl tesla-heading mb-6">{development.name}</h3>
-                  <p className="tesla-subheading text-base leading-relaxed mb-8">{development.description}</p>
+                </div>
+                <h3 className="text-lg sm:text-xl tesla-heading mb-3 sm:mb-4 line-clamp-2">{development.name}</h3>
+                <p className="tesla-subheading text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3">{development.description}</p>
                   
-                  {/* Pricing and Availability for Featured */}
-                  {(development.price || development.availability || development.deliveryDate) && (
-                    <div className="mb-8 space-y-3">
+                {/* Pricing and Info */}
+                {(development.price || development.deliveryDate || development.wynnDistance) && (
+                  <div className="mb-4 sm:mb-6 space-y-2">
                       {development.price && (
-                        <div className="flex items-center">
-                          <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Starting from:</span>
-                          <span className="text-2xl font-semibold text-black">{development.price}</span>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">From:</span>
+                          <span className="text-sm sm:text-lg font-semibold text-black">{development.price}</span>
                         </div>
                       )}
-                      {development.availability && (
-                        <div className="flex items-center">
-                          <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Status:</span>
-                          <span className={`text-lg font-bold px-3 py-1 rounded-full ${
-                            development.availabilityColor === 'text-red-600' ? 'text-red-600 bg-red-50' :
-                            development.availabilityColor === 'text-orange-600' ? 'text-orange-600 bg-orange-50' :
-                            development.availabilityColor === 'text-green-600' ? 'text-green-600 bg-green-50' :
-                            development.availabilityColor === 'text-blue-600' ? 'text-blue-600 bg-blue-50' :
-                            'text-red-600 bg-red-50'
-                          }`}>
-                            {development.availability}
-                          </span>
+                      {development.paymentPlan && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">Payment:</span>
+                          <span className="text-sm font-medium text-black">{development.paymentPlan}</span>
                         </div>
                       )}
                       {development.deliveryDate && (
-                        <div className="flex items-center">
-                          <span className="text-sm font-medium text-blue-600 tracking-wider uppercase mr-3">Delivery:</span>
-                          <span className="text-lg font-medium text-blue-600">{development.deliveryDate}</span>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-blue-600 tracking-wider uppercase">Delivery:</span>
+                          <span className="text-sm font-medium text-blue-600">{development.deliveryDate}</span>
                         </div>
                       )}
-                    </div>
-                  )}
+                      {development.wynnDistance && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-purple-600 tracking-wider uppercase">Wynn:</span>
+                          <span className="text-sm font-medium text-purple-600">{development.wynnDistance}</span>
+                        </div>
+                      )}
+                  </div>
+                )}
                   
-                  <div className="flex justify-center lg:justify-start">
-                    <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex gap-2">
                       {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                        <div className="tesla-btn-primary opacity-50 cursor-not-allowed">
+                        <div className="flex-1 tesla-btn-primary opacity-50 cursor-not-allowed text-xs sm:text-sm py-2 text-center">
                           SOLD OUT
                         </div>
                       ) : development.availabilityColor === 'text-orange-600' ? (
-                        <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700">
+                        <a href="#contact" className="flex-1 tesla-btn-primary bg-orange-600 hover:bg-orange-700 text-xs sm:text-sm py-2 text-center">
                           {t.developments.lastUnits}
                         </a>
                       ) : development.availabilityColor === 'text-green-600' ? (
-                        <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700">
+                        <a href="#contact" className="flex-1 tesla-btn-primary bg-green-600 hover:bg-green-700 text-xs sm:text-sm py-2 text-center">
                           {t.developments.learnMore}
                         </a>
                       ) : development.availabilityColor === 'text-blue-600' ? (
-                        <a href="#contact" className="tesla-btn-primary bg-blue-600 hover:bg-blue-700">
+                        <a href="#contact" className="flex-1 tesla-btn-primary bg-blue-600 hover:bg-blue-700 text-xs sm:text-sm py-2 text-center">
                           {t.developments.learnMore}
                         </a>
                       ) : (
-                        <a href="#contact" className="tesla-btn-primary">
+                        <a href="#contact" className="flex-1 tesla-btn-primary text-xs sm:text-sm py-2 text-center">
                           {t.developments.learnMore}
                         </a>
                       )}
@@ -308,7 +318,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                           href={development.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="tesla-btn-secondary text-xs sm:text-sm px-3 sm:px-4 py-2 ml-2 flex items-center justify-center gap-1"
+                          className="w-12 sm:w-16 tesla-btn-secondary text-xs sm:text-sm py-2 flex items-center justify-center"
                           onClick={() => {
                             if (typeof gtag !== 'undefined') {
                               gtag('event', 'click', { 
@@ -323,24 +333,39 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                             }
                           }}
                         >
-                          <span className="hidden sm:inline">Visit</span>
-                          <svg className="w-3 h-3 text-black flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
                         </a>
                       )}
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           ))}
+          </div>
         </div>
 
         {/* All Other Developments - Now Always Visible */}
+        <div className="mb-16">
+          <h3 className="text-2xl md:text-3xl tesla-heading text-center mb-8 text-gray-800">
+            All Projects
+          </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
           {developments.map((development, index) => (
             <div key={index} className="bg-white tesla-hover animate-fade-in-up">
+              {/* Status badge */}
+              {development.availability && (
+                <div className={`absolute top-2 right-2 z-10 px-2 py-1 rounded-full text-xs font-bold ${
+                  development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
+                  development.availabilityColor === 'text-orange-600' ? 'bg-orange-100 text-orange-600' :
+                  development.availabilityColor === 'text-green-600' ? 'bg-green-100 text-green-600' :
+                  development.availabilityColor === 'text-blue-600' ? 'bg-blue-100 text-blue-600' :
+                  'bg-red-100 text-red-600'
+                }`}>
+                  {development.availability}
+                </div>
+              )}
+              
               <div className="h-48 sm:h-56 lg:h-64 overflow-hidden">
                 <img
                   src={development.image}
@@ -357,46 +382,44 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 <p className="tesla-subheading text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3">{development.description}</p>
                 
                 {/* Pricing and Availability */}
-                {(development.price || development.availability) && (
+                {(development.price || development.deliveryDate || development.paymentPlan) && (
                   <div className="mb-4 sm:mb-6 space-y-2">
                     {development.price && (
-                      <div className="flex items-center">
-                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">From:</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">From:</span>
                         <span className="text-sm sm:text-lg font-semibold text-black">{development.price}</span>
                       </div>
                     )}
                     {development.paymentPlan && (
-                      <div className="flex items-center">
-                        <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Payment Plan:</span>
-                        <span className="text-sm sm:text-lg font-medium text-black">{development.paymentPlan}</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">Payment:</span>
+                        <span className="text-sm font-medium text-black">{development.paymentPlan}</span>
                       </div>
                     )}
-                    {development.availability && (
-                      <div className="flex items-center">
-                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">Status:</span>
-                        <span className={`text-sm font-medium ${development.availabilityColor || 'text-green-600'}`}>
-                          {development.availability}
-                        </span>
+                    {development.deliveryDate && (
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium text-blue-600 tracking-wider uppercase">Delivery:</span>
+                        <span className="text-sm font-medium text-blue-600">{development.deliveryDate}</span>
                       </div>
                     )}
                   </div>
                 )}
                 
-                <div className="flex justify-center">
+                <div className="flex gap-2">
                   {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                    <div className="tesla-btn-primary opacity-50 cursor-not-allowed text-xs sm:text-sm px-4 sm:px-6 py-2">
+                    <div className="flex-1 tesla-btn-primary opacity-50 cursor-not-allowed text-xs sm:text-sm py-2 text-center">
                       SOLD OUT
                     </div>
                   ) : development.availabilityColor === 'text-orange-600' ? (
-                    <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700 text-xs sm:text-sm px-4 sm:px-6 py-2">
+                    <a href="#contact" className="flex-1 tesla-btn-primary bg-orange-600 hover:bg-orange-700 text-xs sm:text-sm py-2 text-center">
                       {t.developments.lastUnits}
                     </a>
                   ) : development.availabilityColor === 'text-green-600' ? (
-                    <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700 text-xs sm:text-sm px-4 sm:px-6 py-2">
+                    <a href="#contact" className="flex-1 tesla-btn-primary bg-green-600 hover:bg-green-700 text-xs sm:text-sm py-2 text-center">
                       {t.developments.learnMore}
                     </a>
                   ) : (
-                    <a href="#contact" className="tesla-btn-primary text-xs sm:text-sm px-4 sm:px-6 py-2">
+                    <a href="#contact" className="flex-1 tesla-btn-primary text-xs sm:text-sm py-2 text-center">
                       {t.developments.learnMore}
                     </a>
                   )}
@@ -406,7 +429,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       href={development.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="tesla-btn-secondary text-xs sm:text-sm px-3 sm:px-4 py-2 ml-2 flex items-center justify-center"
+                      className="w-12 sm:w-16 tesla-btn-secondary text-xs sm:text-sm py-2 flex items-center justify-center"
                       onClick={() => {
                         if (typeof gtag !== 'undefined') {
                           gtag('event', 'click', { 
@@ -421,7 +444,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                         }
                       }}
                     >
-                      <svg className="w-3 h-3 ml-1 hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -430,6 +453,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
               </div>
             </div>
           ))}
+        </div>
         </div>
 
         {/* Tesla-style developer logos */}
