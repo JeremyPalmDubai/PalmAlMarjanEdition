@@ -73,32 +73,23 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
       isVisible 
         ? 'transform translate-y-0 opacity-100' 
         : 'transform -translate-y-full opacity-0'
-    } bg-white/80 backdrop-blur-xl border-b border-gray-100/50`}>
+    } bg-white/80 backdrop-blur-xl`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo ultra-minimal */}
           <div className="flex items-center cursor-pointer group" onClick={handleLogoClick}>
-            <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3 group-hover:bg-gray-800 transition-colors duration-300">
-              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <div className="hidden sm:block">
-              <div className="text-black font-medium text-sm tracking-tight">
-                Palm Signature
-              </div>
-              <div className="text-gray-500 text-xs font-light">
-                Al Marjan Island
-              </div>
+            <div className="w-6 h-6 bg-black mr-3 group-hover:bg-gray-800 transition-colors duration-300"></div>
+            <div className="text-black font-light text-sm tracking-tight">
+              Palm Signature
             </div>
           </div>
           
           {/* Navigation ultra-minimal */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-12">
             <button 
               onClick={() => {
                 const element = document.getElementById('opportunity');
@@ -129,11 +120,11 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
           </div>
           
           {/* CTA + Language ultra-minimal */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <LanguageSelector currentLanguage={currentLanguage} onLanguageChange={onLanguageChange} />
             <button 
               onClick={handleContactClick}
-              className="bg-black text-white px-6 py-2 text-sm font-medium hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-black/20"
+              className="bg-black text-white px-6 py-2 text-sm font-light hover:bg-gray-800 transition-all duration-300"
             >
               {t.navigation.contact}
             </button>

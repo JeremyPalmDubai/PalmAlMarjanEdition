@@ -17,58 +17,43 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           alt="Al Marjan Island luxury development"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
       </div>
 
       {/* Contenu ultra-minimaliste */}
       <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="text-center max-w-4xl mx-auto px-6">
+        <div className="text-center max-w-5xl mx-auto px-6">
           {/* Badge iOS style */}
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 mb-12">
+          <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 mb-16">
             <span className="text-white text-sm font-light tracking-wide">
               {t.hero.badge} • INVEST AL MARJAN
             </span>
           </div>
 
           {/* Titre ultra-large Apple style */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extralight text-white mb-8 tracking-tighter leading-none" id="invest-al-marjan-island" itemProp="headline">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight text-white mb-12 tracking-tighter leading-none" id="invest-al-marjan-island" itemProp="headline">
             {t.hero.title}
           </h1>
           
           {/* Sous-titre élégant */}
-          <p className="text-xl sm:text-2xl md:text-3xl font-light text-white/90 mb-12 tracking-tight leading-tight max-w-3xl mx-auto" itemProp="description">
+          <p className="text-2xl sm:text-3xl md:text-4xl font-extralight text-white/90 mb-16 tracking-tight leading-tight max-w-4xl mx-auto" itemProp="description">
             {t.hero.subtitle}
           </p>
           
           {/* Description SEO */}
-          <p className="text-base sm:text-lg font-light text-white/70 mb-16 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl font-light text-white/70 mb-20 max-w-4xl mx-auto leading-relaxed">
             Invest Al Marjan Island luxury real estate with 33.3% appreciation. Al Marjan real estate near Wynn Casino opening 2027. 
-            100% freehold ownership, 0% capital gains tax, 5-year payment plans. Invest near Wynn Casino for maximum ROI.
+            100% freehold ownership, 0% capital gains tax, 5-year payment plans.
           </p>
           
           {/* CTA ultra-minimal */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
             <button 
               onClick={() => {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="bg-white text-black px-8 py-4 text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-full sm:w-auto"
-              onClick={() => {
-                if (typeof gtag !== 'undefined') {
-                  gtag('event', 'click', { 
-                    event_category: 'CTA',
-                    event_label: 'Hero Primary CTA'
-                  });
-                }
-                if (typeof fbq !== 'undefined') {
-                  fbq('track', 'InitiateCheckout', {
-                    content_name: 'Investment Interest',
-                    value: 200000,
-                    currency: 'USD'
-                  });
-                }
-              }}
+              className="bg-white text-black px-12 py-4 text-sm font-light hover:bg-gray-100 transition-all duration-300 w-full sm:w-auto"
             >
               Invest Al Marjan Island
             </button>
@@ -77,27 +62,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 const element = document.getElementById('opportunity');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="bg-transparent text-white border border-white/40 px-8 py-4 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 w-full sm:w-auto"
-              onClick={() => {
-                if (typeof gtag !== 'undefined') {
-                  gtag('event', 'click', { 
-                    event_category: 'CTA',
-                    event_label: 'Hero Secondary CTA'
-                  });
-                }
-                if (typeof fbq !== 'undefined') {
-                  fbq('track', 'ViewContent', {
-                    content_name: 'Investment Opportunity'
-                  });
-                }
-              }}
+              className="bg-transparent text-white border border-white/40 px-12 py-4 text-sm font-light hover:bg-white hover:text-black transition-all duration-300 w-full sm:w-auto"
             >
               {t.hero.cta.primary}
             </button>
           </div>
           
           {/* Indicateurs de confiance minimalistes */}
-          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 text-white/60 text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-white/60 text-sm">
             <div className="flex items-center">
               <div className="w-2 h-2 bg-green-400 mr-3"></div>
               100% Freehold Ownership
