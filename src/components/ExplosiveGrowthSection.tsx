@@ -124,25 +124,23 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
               Secure Your Investment
             </a>
             <a 
-              href={`https://wa.me/${t.contact.whatsapp.general.replace(/\D/g, '')}?text=Hello, I'm interested in Al Marjan Island investment opportunities. Can you provide more information?`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="tesla-btn-secondary"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'click', { 
                     event_category: 'CTA',
-                    event_label: 'WhatsApp CTA'
+                    event_label: 'Contact Form CTA'
                   });
                 }
                 if (typeof fbq !== 'undefined') {
-                  fbq('track', 'Contact', {
-                    content_name: 'WhatsApp Inquiry'
+                  fbq('track', 'ViewContent', {
+                    content_name: 'Contact Form'
                   });
                 }
               }}
             >
-              WhatsApp Now
+              Get Information
             </a>
           </div>
         </div>

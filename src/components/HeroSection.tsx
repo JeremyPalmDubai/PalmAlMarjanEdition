@@ -49,7 +49,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           {/* Tesla-style CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
             <a 
-              href="#al-marjan-island" 
+              href="#contact" 
               className="tesla-btn-primary-hero w-full sm:w-auto"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
