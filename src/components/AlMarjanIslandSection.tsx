@@ -15,7 +15,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
       <section className="relative overflow-hidden">
         <div className="h-[80vh] relative">
           <img
-            src="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp"
+            src="https://palmdubai.fr/uploads/posts/2025-08/54b41babe6_2.webp"
             alt="Al Marjan Island aerial view"
             className="w-full h-full object-cover"
           />
