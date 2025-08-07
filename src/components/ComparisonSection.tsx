@@ -1,9 +1,40 @@
 import React, { useState } from 'react';
-import { TrendingUp, DollarSign, Clock, Shield, Award, CheckCircle } from 'lucide-react';
+import { TrendingUp, DollarSign, Clock, Shield, Award, CheckCircle, Plane, Car, MapPin, Anchor } from 'lucide-react';
 
 interface ComparisonSectionProps {
   currentLanguage: string;
 }
+
+const connectivityData = [
+  {
+    icon: Car,
+    time: '45 min',
+    destination: 'Dubai Marina',
+    method: 'Car',
+    color: 'text-blue-500'
+  },
+  {
+    icon: Plane,
+    time: '25 min',
+    destination: 'Dubai Airport',
+    method: 'Car',
+    color: 'text-green-500'
+  },
+  {
+    icon: MapPin,
+    time: '5 min',
+    destination: 'Wynn Casino',
+    method: 'Walk',
+    color: 'text-purple-500'
+  },
+  {
+    icon: Anchor,
+    time: '10 min',
+    destination: 'Marina',
+    method: 'Walk',
+    color: 'text-cyan-500'
+  }
+];
 
 export const ComparisonSection: React.FC<ComparisonSectionProps> = ({ currentLanguage }) => {
   const [activeComparison, setActiveComparison] = useState('roi');
