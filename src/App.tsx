@@ -286,9 +286,6 @@ function App() {
         </main>
         <Footer currentLanguage={currentLanguage} id="main-footer" />
         
-        {/* Image SEO Audit Tool (Development Only) */}
-        <ImageSEOAudit />
-        
         {/* Accessibility Panel */}
         <AccessibilityPanel />
         
