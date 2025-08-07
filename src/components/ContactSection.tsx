@@ -152,6 +152,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               </h3>
               
               <div className="w-full" style={{ minHeight: '404px' }}>
+                <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg">
+                  <div className="flex items-center mb-2">
+                    <svg className="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="font-medium text-green-800">Réponse garantie sous 2h</span>
+                  </div>
+                  <p className="text-sm text-green-700">
+                    Notre équipe d'experts vous contactera dans les 2 heures pour discuter de vos opportunités d'investissement personnalisées.
+                  </p>
+                </div>
                 <iframe
                   src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&source=investalmarjanisland"
                   loading="lazy"

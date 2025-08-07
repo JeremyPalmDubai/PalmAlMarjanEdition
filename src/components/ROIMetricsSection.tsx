@@ -60,6 +60,41 @@ export const ROIMetricsSection: React.FC<ROIMetricsSectionProps> = ({ currentLan
           <h3 className="text-3xl md:text-4xl tesla-heading text-center mb-16" id="global-comparison">
             {t.roiMetrics.comparison.title}
           </h3>
+          
+          {/* Graphique de comparaison visuel */}
+          <div className="mb-12 bg-white p-8 rounded-lg tesla-shadow">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-gray-900">Al Marjan Island</span>
+                <div className="flex-1 mx-4 bg-gray-200 rounded-full h-3 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-pulse" style={{ width: '100%' }}></div>
+                </div>
+                <span className="font-bold text-green-600">12-15%</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-gray-600">London</span>
+                <div className="flex-1 mx-4 bg-gray-200 rounded-full h-3 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gray-400 rounded-full" style={{ width: '25%' }}></div>
+                </div>
+                <span className="font-medium text-gray-600">3-4%</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-gray-600">New York</span>
+                <div className="flex-1 mx-4 bg-gray-200 rounded-full h-3 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gray-400 rounded-full" style={{ width: '33%' }}></div>
+                </div>
+                <span className="font-medium text-gray-600">4-5%</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-gray-600">Paris</span>
+                <div className="flex-1 mx-4 bg-gray-200 rounded-full h-3 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gray-400 rounded-full" style={{ width: '20%' }}></div>
+                </div>
+                <span className="font-medium text-gray-600">2-3%</span>
+              </div>
+            </div>
+          </div>
+          
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="animate-fade-in-up">
               <div className="text-2xl font-light text-black mb-2">{t.roiMetrics.comparison.almarjan.yield}</div>
