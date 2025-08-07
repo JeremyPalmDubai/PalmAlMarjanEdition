@@ -72,7 +72,6 @@ function App() {
 
   // Language change handler
   const handleLanguageChange = (lang: string) => {
-    setCurrentLanguage(lang);
     let url = '';
     
     if (currentPage === 'home') {
@@ -81,10 +80,8 @@ function App() {
       url = lang === 'en' ? `/${currentPage}` : `/${lang}/${currentPage}`;
     }
     
-    window.history.pushState({}, '', url);
-    
-    // Scroll to top when changing language
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Recharger la page avec la nouvelle URL
+    window.location.href = url;
   };
 
   // Handle browser back/forward buttons
