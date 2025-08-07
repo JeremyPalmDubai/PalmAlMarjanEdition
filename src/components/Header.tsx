@@ -106,8 +106,9 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
             {/* Mobile: AL MARJAN text, Desktop: Badge */}
             <div className="ml-3 sm:ml-4 md:ml-6">
               {/* Mobile version */}
-              <div className="sm:hidden text-black font-inter font-bold text-xs tracking-wider uppercase">
-                AL MARJAN
+              <div className="sm:hidden text-black font-inter font-bold text-xs tracking-wider uppercase leading-tight">
+                <div>AL MARJAN</div>
+                <div>ISLAND</div>
               </div>
               {/* Desktop version */}
               <div className="hidden sm:block px-4 py-2 bg-black text-white rounded-full text-xs font-medium tracking-wider">
