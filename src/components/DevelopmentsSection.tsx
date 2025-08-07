@@ -293,7 +293,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       )}
                       {development.deliveryDate && (
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Delivery:</span>
+                          <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Handover:</span>
                           <span className="text-sm font-medium text-gray-700">{development.deliveryDate}</span>
                         </div>
                       )}
@@ -419,7 +419,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                     )}
                     {development.deliveryDate && (
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-medium text-blue-600 tracking-wider uppercase">Delivery:</span>
+                        <span className="text-xs font-medium text-blue-600 tracking-wider uppercase">Handover:</span>
                         <span className="text-sm font-medium text-blue-600">{development.deliveryDate}</span>
                       </div>
                     )}
