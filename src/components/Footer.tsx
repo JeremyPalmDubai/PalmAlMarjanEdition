@@ -224,3 +224,5 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
       </div>
     </footer>
   );
+  )
+}
