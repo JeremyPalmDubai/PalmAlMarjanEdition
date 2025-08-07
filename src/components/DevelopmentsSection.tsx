@@ -8,8 +8,9 @@ interface DevelopmentsSectionProps {
 export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ currentLanguage }) => {
   const t = translations[currentLanguage];
 
-  // Featured developments - shown first on mobile
-  const featuredDevelopments = [
+  // All developments organized by status
+  const allDevelopments = [
+    // PREMIUM PROJECTS (Available/Ready)
     {
       name: "MONDRIAN by ELEVATE",
       developer: "ELEVATE Properties",
@@ -26,7 +27,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                    currentLanguage === 'es' ? "5 min " :
                    currentLanguage === 'nl' ? "5 min " : "5 mins ",
       websiteUrl: "https://www.mondrian-almarjan.com/",
-      featured: true
+      featured: true,
+      category: "premium"
     },
     {
       name: "Oystra Zaha Hadid",
@@ -43,8 +45,142 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       wynnDistance: currentLanguage === 'fr' ? "5 min " :
                    currentLanguage === 'es' ? "5 min" :
                    currentLanguage === 'nl' ? "5 min" : "5 mins ",
-      featured: true
+      featured: true,
+      category: "premium"
     },
+    {
+      name: "La Mer by Elie Saab",
+      developer: "Elie Saab",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/87baf2aac8_lamerbyeliesaab.webp",
+      description: "Haute couture-inspired residences with unparalleled luxury and elegance.",
+      price: null,
+      availability: "Almost Sold Out",
+      availabilityColor: "text-orange-600",
+      deliveryDate: currentLanguage === 'fr' ? "2028" : 
+                   currentLanguage === 'es' ? "2028" :
+                   currentLanguage === 'nl' ? "2028" : "2028",
+      wynnDistance: currentLanguage === 'fr' ? "5 min " :
+                   currentLanguage === 'es' ? "5 min d" :
+                   currentLanguage === 'nl' ? "5 min " : "5 mins ",
+      featured: true,
+      category: "premium"
+    },
+    {
+      name: "JW Marriott Al Marjan Island",
+      developer: "Marriott International",
+      image: "https://www.jwmarriot-almarjan.com/VueCielJWetCasinoenface.jpeg",
+      description: "Luxury beachfront resort with world-class amenities and stunning Arabian Gulf views, just minutes from the upcoming Wynn Casino.",
+      price: "2,900,000 AED",
+      availability: "Available Now",
+      availabilityColor: "text-green-600",
+      deliveryDate: currentLanguage === 'fr' ? "2028" : 
+                   currentLanguage === 'es' ? "2028" :
+                   currentLanguage === 'nl' ? "2028" : "2028",
+      wynnDistance: currentLanguage === 'fr' ? "5 min " :
+                   currentLanguage === 'es' ? "5 min " :
+                   currentLanguage === 'nl' ? "5 min " : "5 mins",
+      websiteUrl: "https://www.jwmarriot-almarjan.com/en",
+      featured: true,
+      category: "premium"
+    },
+    
+    // NORMAL PROJECTS (Available)
+    {
+      name: "W Al Marjan Island",
+      developer: "Marriott International",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/1178d03d12_w.webp",
+      description: "Luxury beachfront resort with world-class amenities and stunning Arabian Gulf views.",
+      price: null,
+      availability: null,
+      category: "normal"
+    },
+    {
+      name: "Hilton Al Marjan Island",
+      developer: "Hilton Worldwide",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/f2b6bf1feb_hilton.webp",
+      description: "Premium hospitality experience with exceptional service and luxury accommodations.",
+      price: null,
+      availability: null,
+      category: "normal"
+    },
+    {
+      name: "Playa Viva",
+      developer: "Viva Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/c5791afbd9_playaviva.webp",
+      description: "Vibrant beachfront living with modern amenities and stunning ocean views.",
+      price: "800,000 AED",
+      availability: "Phase 2 On Sale",
+      availabilityColor: "text-green-600",
+      category: "normal"
+    },
+    {
+      name: "Clé d'Or by Arthouse",
+      developer: "Arthouse Residences",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/f8834d1461_cledorbyarthouse.webp",
+      description: "Artistic luxury residences with innovative architecture and premium finishes.",
+      price: "925,000 AED",
+      availability: "Available Now",
+      availabilityColor: "text-green-600",
+      deliveryDate: currentLanguage === 'fr' ? " 2028" : 
+                   currentLanguage === 'es' ? " 2028" :
+                   currentLanguage === 'nl' ? " 2028" : " 2028",
+      websiteUrl: "https://www.arthouse-almarjan.com/",
+      category: "normal"
+    },
+    {
+      name: "UNO LUXE by WOW",
+      developer: "WOW Development",
+      image: "https://www.unoluxe-almarjan.com/images/uno-luxe-exterior.jpg",
+      description: "UNO-LUXE offers investment tools and lifestyle infrastructure to build, develop and secure a faster and more personalized future.",
+      price: "2,000,000 AED",
+      availability: "Available Now",
+      availabilityColor: "text-green-600",
+      deliveryDate: currentLanguage === 'fr' ? "2027" : 
+                   currentLanguage === 'es' ? "2027" :
+                   currentLanguage === 'nl' ? "2027" : "2027",
+      websiteUrl: "https://www.unoluxe-almarjan.com/",
+      category: "normal"
+    },
+    {
+      name: "La Mazzoni",
+      developer: "Mazzoni Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/52e2ed0048_lamazzoni.webp",
+      description: "Sophisticated waterfront residences with Italian-inspired luxury and contemporary design.",
+      price: null,
+      availability: "Almost Sold Out",
+      availabilityColor: "text-orange-600",
+      category: "normal"
+    },
+    {
+      name: "Manta Bay Residences",
+      developer: "Manta Bay Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/0384c0f122_mantabay.webp",
+      description: "Waterfront luxury living with panoramic views and exclusive amenities.",
+      price: "1,200,000 AED",
+      availability: "Almost Sold Out",
+      availabilityColor: "text-orange-600",
+      category: "normal"
+    },
+    {
+      name: "Trio Isle Octa",
+      developer: "Trio Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/90007331f0_trioisleocta.webp",
+      description: "Innovative architectural design with premium coastal living experiences.",
+      price: "1,000,000 AED",
+      availability: null,
+      category: "normal"
+    },
+    {
+      name: "Ola Residences",
+      developer: "Ola Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/a9d4e40639_ola.webp",
+      description: "Modern waterfront living with sophisticated design and premium amenities.",
+      price: null,
+      availability: null,
+      category: "normal"
+    },
+    
+    // SOLD OUT PROJECTS
     {
       name: "The Unexpected",
       developer: "The Unexpected Development",
@@ -62,102 +198,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       wynnDistance: currentLanguage === 'fr' ? "5 min" :
                    currentLanguage === 'es' ? "5 min " :
                    currentLanguage === 'nl' ? "5 min" : "5 mins ",
-      featured: true
-    },
-    {
-      name: "La Mer by Elie Saab",
-      developer: "Elie Saab",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/87baf2aac8_lamerbyeliesaab.webp",
-      description: "Haute couture-inspired residences with unparalleled luxury and elegance.",
-      price: null,
-      availability: "Almost Sold Out",
-      availabilityColor: "text-orange-600",
-      deliveryDate: currentLanguage === 'fr' ? "2028" : 
-                   currentLanguage === 'es' ? "2028" :
-                   currentLanguage === 'nl' ? "2028" : "2028",
-      wynnDistance: currentLanguage === 'fr' ? "5 min " :
-                   currentLanguage === 'es' ? "5 min d" :
-                   currentLanguage === 'nl' ? "5 min " : "5 mins ",
-      featured: true
-    }
-  ];
-
-  const developments = [
-    {
-      name: "JW Marriott Al Marjan Island",
-      developer: "Marriott International",
-      image: "https://www.jwmarriot-almarjan.com/VueCielJWetCasinoenface.jpeg",
-      description: "Luxury beachfront resort with world-class amenities and stunning Arabian Gulf views, just minutes from the upcoming Wynn Casino.",
-      price: "2,900,000 AED",
-      availability: "Available Now",
-      availabilityColor: "text-green-600",
-      deliveryDate: currentLanguage === 'fr' ? "2028" : 
-                   currentLanguage === 'es' ? "2028" :
-                   currentLanguage === 'nl' ? "2028" : "2028",
-      wynnDistance: currentLanguage === 'fr' ? "5 min " :
-                   currentLanguage === 'es' ? "5 min " :
-                   currentLanguage === 'nl' ? "5 min " : "5 mins",
-      websiteUrl: "https://www.jwmarriot-almarjan.com/en"
-    },
-    {
-      name: "W Al Marjan Island",
-      developer: "Marriott International",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/1178d03d12_w.webp",
-      description: "Luxury beachfront resort with world-class amenities and stunning Arabian Gulf views.",
-      price: null,
-      availability: null
-    },
-    {
-      name: "Hilton Al Marjan Island",
-      developer: "Hilton Worldwide",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/f2b6bf1feb_hilton.webp",
-      description: "Premium hospitality experience with exceptional service and luxury accommodations.",
-      price: null,
-      availability: null
-    },
-    {
-      name: "La Mazzoni",
-      developer: "Mazzoni Development",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/52e2ed0048_lamazzoni.webp",
-      description: "Sophisticated waterfront residences with Italian-inspired luxury and contemporary design.",
-      price: null,
-      availability: "Almost Sold Out",
-      availabilityColor: "text-orange-600"
-    },
-    {
-      name: "Playa Viva",
-      developer: "Viva Development",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/c5791afbd9_playaviva.webp",
-      description: "Vibrant beachfront living with modern amenities and stunning ocean views.",
-      price: "800,000 AED",
-      availability: "Phase 2 On Sale",
-      availabilityColor: "text-green-600"
-    },
-    {
-      name: "Clé d'Or by Arthouse",
-      developer: "Arthouse Residences",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/f8834d1461_cledorbyarthouse.webp",
-      description: "Artistic luxury residences with innovative architecture and premium finishes.",
-      price: "925,000 AED",
-      availability: "Available Now",
-      availabilityColor: "text-green-600",
-      deliveryDate: currentLanguage === 'fr' ? " 2028" : 
-                   currentLanguage === 'es' ? " 2028" :
-                   currentLanguage === 'nl' ? " 2028" : " 2028",
-      websiteUrl: "https://www.arthouse-almarjan.com/"
-    },
-    {
-      name: "UNO LUXE by WOW",
-      developer: "WOW Development",
-      image: "https://www.unoluxe-almarjan.com/images/uno-luxe-exterior.jpg",
-      description: "UNO-LUXE offers investment tools and lifestyle infrastructure to build, develop and secure a faster and more personalized future.",
-      price: "2,000,000 AED",
-      availability: "Available Now",
-      availabilityColor: "text-green-600",
-      deliveryDate: currentLanguage === 'fr' ? "2027" : 
-                   currentLanguage === 'es' ? "2027" :
-                   currentLanguage === 'nl' ? "2027" : "2027",
-      websiteUrl: "https://www.unoluxe-almarjan.com/"
+      featured: true,
+      category: "sold-out"
     },
     {
       name: "Babolex Residences",
@@ -166,24 +208,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       description: "Contemporary living spaces with innovative design and premium finishes.",
       price: null,
       availability: "SOLD OUT",
-      availabilityColor: "text-red-600"
-    },
-    {
-      name: "Manta Bay Residences",
-      developer: "Manta Bay Development",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/0384c0f122_mantabay.webp",
-      description: "Waterfront luxury living with panoramic views and exclusive amenities.",
-      price: "1,200,000 AED",
-      availability: "Almost Sold Out",
-      availabilityColor: "text-orange-600"
-    },
-    {
-      name: "Trio Isle Octa",
-      developer: "Trio Development",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/90007331f0_trioisleocta.webp",
-      description: "Innovative architectural design with premium coastal living experiences.",
-      price: "1,000,000 AED",
-      availability: null
+      availabilityColor: "text-red-600",
+      category: "sold-out"
     },
     {
       name: "Park Beach Residences",
@@ -192,15 +218,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       description: "Beachfront luxury with pristine white sand beaches and crystal-clear waters.",
       price: "1,000,000 AED",
       availability: "SOLD OUT",
-      availabilityColor: "text-red-600"
-    },
-    {
-      name: "Ola Residences",
-      developer: "Ola Development",
-      image: "https://palmdubai.fr/uploads/posts/2025-07/a9d4e40639_ola.webp",
-      description: "Modern waterfront living with sophisticated design and premium amenities.",
-      price: null,
-      availability: null
+      availabilityColor: "text-red-600",
+      category: "sold-out"
     },
     {
       name: "Costa Mare by Ellington",
@@ -209,7 +228,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       description: "Elegant coastal residences with contemporary design and luxury finishes.",
       price: null,
       availability: "SOLD OUT",
-      availabilityColor: "text-red-600"
+      availabilityColor: "text-red-600",
+      category: "sold-out"
     },
     {
       name: "Emaar Address Residences",
@@ -218,9 +238,15 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       description: "Premium residences with Emaar's signature luxury and world-class amenities.",
       price: null,
       availability: "SOLD OUT",
-      availabilityColor: "text-red-600"
+      availabilityColor: "text-red-600",
+      category: "sold-out"
     }
   ];
+
+  // Filter developments by category
+  const premiumDevelopments = allDevelopments.filter(dev => dev.category === "premium");
+  const normalDevelopments = allDevelopments.filter(dev => dev.category === "normal");
+  const soldOutDevelopments = allDevelopments.filter(dev => dev.category === "sold-out");
 
   return (
     <section id="developments" className="tesla-section bg-gray-50">
@@ -234,24 +260,24 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           </p>
         </div>
 
-        {/* Featured Developments - Priority on Mobile */}
+        {/* Premium Developments */}
         <div className="mb-16">
-          {/* Enhanced Featured Projects Header */}
+          {/* Premium Projects Header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-900 to-black text-white rounded-full mb-6 font-medium text-sm tracking-wider uppercase shadow-lg">
               ◆ Premium Selection
             </div>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl tesla-heading mb-6 bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">
-              Featured Projects
+            <h3 className="text-3xl md:text-4xl lg:text-5xl tesla-heading mb-6">
+              Premium Projects
             </h3>
             <p className="text-lg tesla-subheading max-w-3xl mx-auto leading-relaxed">
-              Exclusive luxury developments curated for discerning investors seeking exceptional returns
+              Exclusive luxury developments with immediate availability and exceptional returns
             </p>
           </div>
           
-          {/* Enhanced Featured Grid */}
+          {/* Premium Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8">
-          {featuredDevelopments.map((development, index) => (
+          {premiumDevelopments.map((development, index) => (
             <div key={index} className="bg-white tesla-hover animate-fade-in-up relative overflow-hidden border border-gray-100 hover:border-black transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl">
               {/* Premium Badge */}
               <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-black to-gray-800 text-white px-3 py-1 rounded-sm text-xs font-bold shadow-lg tracking-wider uppercase">
@@ -376,18 +402,18 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           </div>
         </div>
 
-        {/* All Other Developments - Now Always Visible */}
+        {/* Normal Developments */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl tesla-heading mb-4 text-gray-700">
-            All Projects
+            <h3 className="text-2xl md:text-3xl tesla-heading mb-4">
+              Available Projects
             </h3>
             <p className="text-base tesla-subheading max-w-xl mx-auto">
-              Complete portfolio of luxury developments
+              Quality developments with great investment potential
             </p>
           </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
-          {developments.map((development, index) => (
+          {normalDevelopments.map((development, index) => (
             <div key={index} className="bg-white tesla-hover animate-fade-in-up">
               {/* Status badge */}
               {development.availability && (
@@ -490,6 +516,80 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
             </div>
           ))}
         </div>
+        </div>
+
+        {/* Sold Out Developments */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl tesla-heading mb-4 text-gray-600">
+              Sold Out Projects
+            </h3>
+            <p className="text-base tesla-subheading max-w-xl mx-auto text-gray-500">
+              Previously successful developments - proof of market demand
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
+            {soldOutDevelopments.map((development, index) => (
+              <div key={index} className="bg-white tesla-hover animate-fade-in-up opacity-75">
+                {/* Status badge */}
+                {development.availability && (
+                  <div className={`absolute top-2 right-2 z-10 px-2 py-1 rounded-full text-xs font-bold ${
+                    development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
+                    'bg-red-100 text-red-600'
+                  }`}>
+                    {development.availability}
+                  </div>
+                )}
+                
+                {/* Special badge for profit achievement */}
+                {development.profitBadge && (
+                  <div className="absolute top-16 left-4 z-10 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-2 py-1 rounded-sm text-xs font-bold shadow-lg">
+                      🚀 {development.profitBadge}
+                  </div>
+                )}
+                
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden">
+                  <img
+                    src={development.image}
+                    alt={development.name}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 grayscale"
+                  />
+                </div>
+                
+                <div className="p-4 sm:p-6 lg:p-8">
+                  <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
+                    {development.developer}
+                  </div>
+                  <h3 className="text-lg sm:text-xl tesla-heading mb-3 sm:mb-4 line-clamp-2 text-gray-600">{development.name}</h3>
+                  <p className="tesla-subheading text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3 text-gray-500">{development.description}</p>
+                  
+                  {/* Pricing and Availability */}
+                  {(development.price || development.deliveryDate || development.wynnDistance) && (
+                    <div className="mb-4 sm:mb-6 space-y-2 bg-gray-50 p-4 border-l-4 border-gray-400">
+                      {development.price && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Was:</span>
+                          <span className="text-sm sm:text-lg font-semibold text-gray-500 line-through">{development.price}</span>
+                        </div>
+                      )}
+                      {development.deliveryDate && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Delivered:</span>
+                          <span className="text-sm font-medium text-gray-500">{development.deliveryDate}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  
+                  <div className="flex gap-2">
+                    <div className="flex-1 bg-gray-400 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium cursor-not-allowed">
+                      SOLD OUT
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Tesla-style developer logos */}
