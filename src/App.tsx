@@ -26,6 +26,7 @@ function App() {
   // Extract language and page from URL
   useEffect(() => {
     const path = window.location.pathname;
+    console.log('Current path:', path); // Debug log
     
     // Language detection from URL
     if (path.startsWith('/fr')) {
@@ -71,6 +72,7 @@ function App() {
 
   // Language change handler
   const handleLanguageChange = (lang: string) => {
+    console.log('Changing language to:', lang); // Debug log
     let url = '';
     
     if (currentPage === 'home') {
@@ -79,14 +81,19 @@ function App() {
       url = lang === 'en' ? `/${currentPage}` : `/${lang}/${currentPage}`;
     }
     
-    // Recharger la page avec la nouvelle URL
-    window.location.href = url;
+    // Update state and URL without page reload
+    setCurrentLanguage(lang);
+    window.history.pushState({}, '', url);
+    
+    // Update page title and meta tags for new language
+    document.documentElement.lang = lang;
   };
 
   // Handle browser back/forward buttons
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname;
+      console.log('PopState path:', path); // Debug log
       
       // Language detection
       if (path.startsWith('/fr')) {

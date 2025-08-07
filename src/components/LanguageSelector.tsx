@@ -47,6 +47,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
             <button
               key={lang.code}
               onClick={() => {
+                console.log('Language selector clicked:', lang.code); // Debug log
                 onLanguageChange(lang.code);
                 setIsOpen(false);
               }}
