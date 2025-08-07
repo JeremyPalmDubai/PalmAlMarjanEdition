@@ -48,69 +48,360 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     }
   ];
 
+  const developments = [
+    {
+      name: "W Al Marjan Island",
+      developer: "Marriott International",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/1178d03d12_w.webp",
+      description: "Luxury beachfront resort with world-class amenities and stunning Arabian Gulf views.",
+      price: null,
+      availability: null
+    },
+    {
+      name: "Hilton Al Marjan Island",
+      developer: "Hilton Worldwide",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/f2b6bf1feb_hilton.webp",
+      description: "Premium hospitality experience with exceptional service and luxury accommodations.",
+      price: null,
+      availability: null
+    },
+    {
+      name: "La Mazzoni",
+      developer: "Mazzoni Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/52e2ed0048_lamazzoni.webp",
+      description: "Sophisticated waterfront residences with Italian-inspired luxury and contemporary design.",
+      price: null,
+      availability: "Almost Sold Out",
+      availabilityColor: "text-orange-600"
+    },
+    {
+      name: "Playa Viva",
+      developer: "Viva Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/c5791afbd9_playaviva.webp",
+      description: "Vibrant beachfront living with modern amenities and stunning ocean views.",
+      price: "800,000 AED",
+      availability: "Phase 2 On Sale",
+      availabilityColor: "text-green-600"
+    },
+    {
+      name: "Clé d'Or by Arthouse",
+      developer: "Arthouse Residences",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/f8834d1461_cledorbyarthouse.webp",
+      description: "Artistic luxury residences with innovative architecture and premium finishes.",
+      price: null,
+      availability: null
+    },
+    {
+      name: "Babolex Residences",
+      developer: "Babolex Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/cb748b46fa_babolex.webp",
+      description: "Contemporary living spaces with innovative design and premium finishes.",
+      price: null,
+      availability: "SOLD OUT",
+      availabilityColor: "text-red-600"
+    },
+    {
+      name: "Manta Bay Residences",
+      developer: "Manta Bay Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/0384c0f122_mantabay.webp",
+      description: "Waterfront luxury living with panoramic views and exclusive amenities.",
+      price: "1,200,000 AED",
+      availability: "Almost Sold Out",
+      availabilityColor: "text-orange-600"
+    },
+    {
+      name: "Trio Isle Octa",
+      developer: "Trio Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/90007331f0_trioisleocta.webp",
+      description: "Innovative architectural design with premium coastal living experiences.",
+      price: "1,000,000 AED",
+      availability: null
+    },
+    {
+      name: "Park Beach Residences",
+      developer: "Park Beach Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/e5ce326e37_parkbeach.webp",
+      description: "Beachfront luxury with pristine white sand beaches and crystal-clear waters.",
+      price: "1,000,000 AED",
+      availability: "SOLD OUT",
+      availabilityColor: "text-red-600"
+    },
+    {
+      name: "Ola Residences",
+      developer: "Ola Development",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/a9d4e40639_ola.webp",
+      description: "Modern waterfront living with sophisticated design and premium amenities.",
+      price: null,
+      availability: null
+    },
+    {
+      name: "Costa Mare by Ellington",
+      developer: "Ellington Properties",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/b1ea8562fb_costamareellington.webp",
+      description: "Elegant coastal residences with contemporary design and luxury finishes.",
+      price: null,
+      availability: "SOLD OUT",
+      availabilityColor: "text-red-600"
+    },
+    {
+      name: "Emaar Address Residences",
+      developer: "Emaar Properties",
+      image: "https://palmdubai.fr/uploads/posts/2025-07/38a4475d18_emaaraddressresidences.webp",
+      description: "Premium residences with Emaar's signature luxury and world-class amenities.",
+      price: null,
+      availability: "SOLD OUT",
+      availabilityColor: "text-red-600"
+    },
+  ];
+
   return (
-    <section className="tesla-fullscreen-section relative overflow-hidden">
-      {/* Tesla-style full-screen background */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://palmdubai.fr/uploads/posts/2025-07/7089d298f4_oystrazahahadid.webp"
-          alt="Luxury developments on Al Marjan Island"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80"></div>
-      </div>
-      
-      {/* Tesla-style content overlay */}
-      <div className="relative z-10 flex items-center min-h-screen">
-        <div className="tesla-container">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            {/* Tesla-style heading */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-8 tracking-tighter" id="developments">
-              {t.developments.title}
-            </h2>
-            
-            {/* Tesla-style description */}
-            <p className="text-xl text-white/90 mb-16 leading-relaxed font-light max-w-3xl mx-auto">
-              {t.developments.description}
-            </p>
-            
-            {/* Tesla-style featured developments grid */}
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {featuredDevelopments.map((development, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 tesla-hover">
-                  <div className="h-48 mb-4 overflow-hidden rounded">
-                    <img
-                      src={development.image}
-                      alt={development.name}
-                      className="w-full h-full object-cover"
-                    />
+    <section id="developments" className="tesla-section bg-gray-50">
+      <div className="tesla-container">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
+            {t.developments.title}
+          </h2>
+          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
+            {t.developments.description}
+          </p>
+        </div>
+
+        {/* Featured Developments - Priority on Mobile */}
+        <div className="mb-24 space-y-8">
+          {featuredDevelopments.map((development, index) => (
+            <div key={index} className="bg-white tesla-hover animate-fade-in-up relative overflow-hidden">
+              {/* Special badge for profit achievement */}
+              {development.profitBadge && (
+                <div className="relative">
+                  <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
+                    🚀 {development.profitBadge}
                   </div>
-                  
-                  <div className="text-xs text-white/70 tracking-wider uppercase mb-2">
+                </div>
+              )}
+              
+              <div className="grid lg:grid-cols-2 gap-8">
+                <div className="h-80 lg:h-96 overflow-hidden">
+                  <img
+                    src={development.image}
+                    alt={development.name}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="p-8 flex flex-col justify-center">
+                  <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
                     {development.developer}
                   </div>
-                  <h3 className="text-xl font-inter font-light text-white mb-3">{development.name}</h3>
-                  <p className="text-sm text-white/80 mb-4 leading-relaxed">{development.description}</p>
+                  <h3 className="text-3xl tesla-heading mb-6">{development.name}</h3>
+                  <p className="tesla-subheading text-base leading-relaxed mb-8">{development.description}</p>
                   
-                  {development.availability && (
-                    <div className={`text-sm font-medium ${
-                      development.availabilityColor === 'text-red-600' ? 'text-red-400' :
-                      development.availabilityColor === 'text-orange-600' ? 'text-orange-400' :
-                      development.availabilityColor === 'text-green-600' ? 'text-green-400' :
-                      development.availabilityColor === 'text-blue-600' ? 'text-blue-400' :
-                      'text-red-400'
-                    }`}>
-                      {development.availability}
+                  {/* Pricing and Availability for Featured */}
+                  {(development.price || development.availability || development.deliveryDate) && (
+                    <div className="mb-8 space-y-3">
+                      {development.price && (
+                        <div className="flex items-center">
+                          <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Starting from:</span>
+                          <span className="text-2xl font-semibold text-black">{development.price}</span>
+                        </div>
+                      )}
+                      {development.availability && (
+                        <div className="flex items-center">
+                          <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Status:</span>
+                          <span className={`text-lg font-bold px-3 py-1 rounded-full ${
+                            development.availabilityColor === 'text-red-600' ? 'text-red-600 bg-red-50' :
+                            development.availabilityColor === 'text-orange-600' ? 'text-orange-600 bg-orange-50' :
+                            development.availabilityColor === 'text-green-600' ? 'text-green-600 bg-green-50' :
+                            development.availabilityColor === 'text-blue-600' ? 'text-blue-600 bg-blue-50' :
+                            'text-red-600 bg-red-50'
+                          }`}>
+                            {development.availability}
+                          </span>
+                        </div>
+                      )}
+                      {development.deliveryDate && (
+                        <div className="flex items-center">
+                          <span className="text-sm font-medium text-blue-600 tracking-wider uppercase mr-3">Delivery:</span>
+                          <span className="text-lg font-medium text-blue-600">{development.deliveryDate}</span>
+                        </div>
+                      )}
                     </div>
                   )}
+                  
+                  <div className="flex justify-center lg:justify-start">
+                    {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                      <div className="tesla-btn-primary opacity-50 cursor-not-allowed">
+                        SOLD OUT
+                      </div>
+                    ) : development.availabilityColor === 'text-orange-600' ? (
+                      <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700">
+                        {t.developments.lastUnits}
+                      </a>
+                    ) : development.availabilityColor === 'text-green-600' ? (
+                      <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700">
+                        {t.developments.learnMore}
+                      </a>
+                    ) : development.availabilityColor === 'text-blue-600' ? (
+                      <a href="#contact" className="tesla-btn-primary bg-blue-600 hover:bg-blue-700">
+                        {t.developments.learnMore}
+                      </a>
+                    ) : (
+                      <a href="#contact" className="tesla-btn-primary">
+                        {t.developments.learnMore}
+                      </a>
+                    )}
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
+          ))}
+        </div>
 
-            {/* Tesla-style CTA */}
-            <a href="#contact" className="tesla-btn-secondary-hero">
-              Explore All Developments
-            </a>
+        {/* All Other Developments - Now Always Visible */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {developments.map((development, index) => (
+            <div key={index} className="bg-white tesla-hover animate-fade-in-up">
+              <div className="h-64 overflow-hidden">
+                <img
+                  src={development.image}
+                  alt={development.name}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              
+              <div className="p-8">
+                <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
+                  {development.developer}
+                </div>
+                <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
+                <p className="tesla-subheading text-sm leading-relaxed mb-6">{development.description}</p>
+                
+                {/* Pricing and Availability */}
+                {(development.price || development.availability) && (
+                  <div className="mb-6 space-y-2">
+                    {development.price && (
+                      <div className="flex items-center">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">From:</span>
+                        <span className="text-lg font-semibold text-black">{development.price}</span>
+                      </div>
+                    )}
+                    {development.availability && (
+                      <div className="flex items-center">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">Status:</span>
+                        <span className={`text-sm font-medium ${development.availabilityColor || 'text-green-600'}`}>
+                          {development.availability}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
+                
+                <div className="flex justify-center">
+                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                    <div className="tesla-btn-primary opacity-50 cursor-not-allowed text-sm px-6 py-2">
+                      SOLD OUT
+                    </div>
+                  ) : development.availabilityColor === 'text-orange-600' ? (
+                    <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700 text-sm px-6 py-2">
+                      {t.developments.lastUnits}
+                    </a>
+                  ) : development.availabilityColor === 'text-green-600' ? (
+                    <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700 text-sm px-6 py-2">
+                      {t.developments.learnMore}
+                    </a>
+                  ) : (
+                    <a href="#contact" className="tesla-btn-primary text-sm px-6 py-2">
+                      {t.developments.learnMore}
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Tesla-style developer logos */}
+        <div className="text-center">
+          <h3 className="text-3xl md:text-4xl tesla-heading mb-16">{t.developments.trustedPartners}</h3>
+          
+          {/* Tesla-style grid layout for partners */}
+          <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            
+            {/* Development Companies */}
+            <div className="bg-white p-8 tesla-shadow tesla-hover">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h4 className="text-xl tesla-heading">Development Partners</h4>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">EMAAR</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Premium Developer</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">DECA</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Luxury Projects</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">DAMAC</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Iconic Developments</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">ELLINGTON</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Coastal Living</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">RICHMIND</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Innovative Design</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">BABOLEX</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Contemporary Style</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Prestige Brands */}
+            <div className="bg-black text-white p-8 tesla-shadow tesla-hover">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-inter font-light">Prestige Brands</h4>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">MARRIOTT</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">W Hotels</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">HILTON</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Luxury Hospitality</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">ELIE SAAB</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Haute Couture</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">WYNN</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Casino Resort</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">NIKKI BEACH</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Beach Club</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">NOBU</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Fine Dining</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
