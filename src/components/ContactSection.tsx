@@ -154,25 +154,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               <div className="w-full" style={{ minHeight: '404px' }}>
                 <iframe
                   data-tally-src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                  loading="lazy"
+                src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                   width="100%"
                   height="404"
                   frameBorder="0"
-                  marginHeight="0"
-                  marginWidth="0"
-                  title="Lead Form Palm Signature"
+                frameBorder={0}
+                marginHeight={0}
+                marginWidth={0}
                 ></iframe>
                 
                 <script
-                  dangerouslySetInnerHTML={{
-                    __html: `
-                      const url = new URL(window.location.href);
-                      url.searchParams.set("page_url", window.location.href);
-                      window.history.replaceState({}, '', url);
-                    `,
-                  }}
-                />
-              </div>
             </div>
           </div>
         </div>
