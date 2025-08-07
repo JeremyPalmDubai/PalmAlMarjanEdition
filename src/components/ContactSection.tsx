@@ -183,87 +183,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
         </div>
       </div>
       
-      {/* Script Tally avec URL tracking */}
+      {/* Script exact pour Lead Source */}
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            // URL tracking pour Tally - Version simplifiée
-            document.addEventListener('DOMContentLoaded', function() {
-              // Capturer les données de tracking
-              const currentUrl = window.location.href;
-              const referrer = document.referrer || 'direct';
-              const utmSource = new URLSearchParams(window.location.search).get('utm_source') || 'organic';
-              const utmMedium = new URLSearchParams(window.location.search).get('utm_medium') || 'website';
-              const utmCampaign = new URLSearchParams(window.location.search).get('utm_campaign') || 'al-marjan-investment';
-              
-              // Stocker globalement pour utilisation
-              window.tallyTrackingData = {
-                source: 'website',
-                page_url: currentUrl,
-                referrer: referrer,
-                utm_source: utmSource,
-                utm_medium: utmMedium,
-                utm_campaign: utmCampaign,
-                timestamp: new Date().toISOString(),
-                language: '${currentLanguage}',
-                user_agent: navigator.userAgent
-              };
-              
-              // Attendre que Tally soit chargé pour configurer le tracking
-              if (typeof window.Tally !== 'undefined') {
-                setupTallyTracking();
-              } else {
-                // Attendre que Tally se charge
-                const checkTally = setInterval(function() {
-                  if (typeof window.Tally !== 'undefined') {
-                    setupTallyTracking();
-                    clearInterval(checkTally);
-                  }
-                }, 100);
-              }
-              
-              function setupTallyTracking() {
-                if (window.Tally && window.Tally.on) {
-                  window.Tally.on('form:submit', function(data) {
-                    const trackingData = window.tallyTrackingData || {};
-                    
-                    if (typeof gtag !== 'undefined') {
-                      gtag('event', 'generate_lead', {
-                        currency: 'USD',
-                        value: 200000,
-                        custom_data: trackingData
-                      });
-                    }
-                    
-                    if (typeof fbq !== 'undefined') {
-                      fbq('track', 'Lead', {
-                        content_name: 'Investment Inquiry',
-                        value: 200000,
-                        currency: 'USD',
-                        custom_data: trackingData
-                      });
-                    }
-                    
-                    console.log('Form submitted with tracking data:', trackingData);
-                  });
-                }
-              }
-              
-              console.log('Tally Tracking Data initialized:', window.tallyTrackingData);
-            });
-            
-            // Track form view
-            window.addEventListener('load', function() {
-              setTimeout(function() {
-                if (typeof gtag !== 'undefined') {
-                  gtag('event', 'form_view', { form_name: 'Lead Form' });
-                }
-                
-                if (typeof fbq !== 'undefined') {
-                  fbq('track', 'ViewContent', { content_name: 'Lead Form' });
-                }
-              }, 1000);
-            });
+            const url = new URL(window.location.href);
+            url.searchParams.set("page_url", window.location.href);
+            window.history.replaceState({}, '', url);
           `
         }}
       />
