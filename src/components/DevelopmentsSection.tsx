@@ -169,7 +169,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: null,
       availability: "SOLD OUT",
       availabilityColor: "text-red-600"
-    },
+    }
   ];
 
   return (
@@ -296,78 +296,6 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       )}
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* All Other Developments - Now Always Visible */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {developments.map((development, index) => (
-            <div key={index} className="bg-white tesla-hover animate-fade-in-up">
-              <div className="h-64 overflow-hidden">
-                <img
-                  src={development.image}
-                  alt={development.name}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              
-              <div className="p-8">
-                <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
-                  {development.developer}
-                </div>
-                <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
-                <p className="tesla-subheading text-sm leading-relaxed mb-6">{development.description}</p>
-                
-                {/* Pricing and Availability */}
-                {(development.price || development.availability) && (
-                  <div className="mb-6 space-y-2">
-                    {development.price && (
-                      <div className="flex items-center">
-                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">From:</span>
-                        <span className="text-lg font-semibold text-black">{development.price}</span>
-                      </div>
-                    )}
-                    {development.availability && (
-                      <div className="flex items-center">
-                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">Status:</span>
-                        <span className={`text-sm font-medium ${development.availabilityColor || 'text-green-600'}`}>
-                          {development.availability}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                )}
-                
-                <div className="flex justify-center">
-                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                      <div className="tesla-btn-primary opacity-50 cursor-not-allowed">
-                        SOLD OUT
-                      </div>
-                    ) : development.availabilityColor === 'text-orange-600' ? (
-                      <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700">
-                        {t.developments.lastUnits}
-                      </a>
-                    ) : development.availabilityColor === 'text-green-600' ? (
-                      <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700">
-                        {t.developments.learnMore}
-                      </a>
-                    ) : development.availabilityColor === 'text-blue-600' ? (
-                      <a href="#contact" className="tesla-btn-primary bg-blue-600 hover:bg-blue-700">
-                        {t.developments.learnMore}
-                      </a>
-                    ) : (
-                      <a href="#contact" className="tesla-btn-primary">
-                        {t.developments.learnMore}
-                      </a>
-                    )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
                 </div>
               </div>
             </div>
