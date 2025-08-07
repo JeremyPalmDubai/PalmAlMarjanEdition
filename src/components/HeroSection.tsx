@@ -9,8 +9,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
   const t = translations[currentLanguage];
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Image de fond ultra-clean */}
+    <section className="tesla-hero-section relative overflow-hidden">
+      {/* Tesla-style full-screen background */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp"
@@ -20,71 +20,95 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
       </div>
 
-      {/* Contenu ultra-minimaliste */}
+      {/* Tesla-style content overlay */}
       <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="text-center max-w-5xl mx-auto px-6">
-          {/* Badge iOS style */}
-          <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 mb-16">
-            <span className="text-white text-sm font-light tracking-wide">
+        <div className="text-center max-w-3xl mx-auto px-4">
+          {/* Tesla-style badge */}
+          <div className="inline-flex items-center px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-12">
+            <span className="text-white text-sm font-medium tracking-wider uppercase">
               {t.hero.badge} • INVEST AL MARJAN
             </span>
           </div>
 
-          {/* Titre ultra-large Apple style */}
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight text-white mb-12 tracking-tighter leading-none" id="invest-al-marjan-island" itemProp="headline">
+          {/* Tesla-style main heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter font-light text-white mb-6 sm:mb-8 tracking-tighter leading-tight" id="invest-al-marjan-island" itemProp="headline">
             {t.hero.title}
           </h1>
           
-          {/* Sous-titre élégant */}
-          <p className="text-2xl sm:text-3xl md:text-4xl font-extralight text-white/90 mb-16 tracking-tight leading-tight max-w-4xl mx-auto" itemProp="description">
+          {/* Tesla-style subtitle */}
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-inter font-light text-white/90 mb-8 sm:mb-12 md:mb-16 tracking-tight leading-tight" itemProp="description">
             {t.hero.subtitle}
           </p>
           
-          {/* Description SEO */}
-          <p className="text-lg sm:text-xl font-light text-white/70 mb-20 max-w-4xl mx-auto leading-relaxed">
+          {/* SEO-optimized description */}
+          <p className="text-sm sm:text-base md:text-lg font-inter font-light text-white/80 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
             Invest Al Marjan Island luxury real estate with 33.3% appreciation. Al Marjan real estate near Wynn Casino opening 2027. 
-            100% freehold ownership, 0% capital gains tax, 5-year payment plans.
+            100% freehold ownership, 0% capital gains tax, 5-year payment plans. Invest near Wynn Casino for maximum ROI.
           </p>
           
-          {/* CTA ultra-minimal */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
-            <button 
+          {/* Tesla-style CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
+            <a 
+              href="#contact" 
+              className="tesla-btn-primary-hero w-full sm:w-auto"
               onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Hero Primary CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'InitiateCheckout', {
+                    content_name: 'Investment Interest',
+                    value: 200000,
+                    currency: 'USD'
+                  });
+                }
               }}
-              className="bg-white text-black px-12 py-4 text-sm font-light hover:bg-gray-100 transition-all duration-300 w-full sm:w-auto"
             >
               Invest Al Marjan Island
-            </button>
-            <button
+            </a>
+            <a
+              href="#contact" 
+              className="tesla-btn-secondary-hero w-full sm:w-auto"
               onClick={() => {
-                const element = document.getElementById('opportunity');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Hero Secondary CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'ViewContent', {
+                    content_name: 'Investment Opportunity'
+                  });
+                }
               }}
-              className="bg-transparent text-white border border-white/40 px-12 py-4 text-sm font-light hover:bg-white hover:text-black transition-all duration-300 w-full sm:w-auto"
             >
               {t.hero.cta.primary}
-            </button>
+            </a>
           </div>
           
-          {/* Indicateurs de confiance minimalistes */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-white/60 text-sm">
+          {/* Trust indicators */}
+          <div className="mt-8 sm:mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-white/70 text-xs sm:text-sm px-4 sm:px-0">
             <div className="flex items-center">
-              <div className="w-2 h-2 bg-green-400 mr-3"></div>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
               100% Freehold Ownership
             </div>
             <div className="flex items-center">
-              <div className="w-2 h-2 bg-green-400 mr-3"></div>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
               0% Capital Gains Tax
             </div>
             <div className="flex items-center">
-              <div className="w-2 h-2 bg-green-400 mr-3"></div>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
               5-Year Payment Plans
             </div>
           </div>
         </div>
       </div>
+
+
     </section>
   );
 };
