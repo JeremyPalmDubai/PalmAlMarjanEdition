@@ -12,8 +12,6 @@ import { WhyPalmSignatureSection } from './components/WhyPalmSignatureSection';
 import { CEOSection } from './components/CEOSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { InteractiveMapSection } from './components/InteractiveMapSection';
-import { ComparisonSection } from './components/ComparisonSection';
 import { SitemapPage } from './components/SitemapPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
@@ -282,8 +280,6 @@ function App() {
           <ROIMetricsSection currentLanguage={currentLanguage} />
           <DevelopmentsSection currentLanguage={currentLanguage} />
           <LifestyleSection currentLanguage={currentLanguage} />
-          <InteractiveMapSection currentLanguage={currentLanguage} />
-          <ComparisonSection currentLanguage={currentLanguage} />
           <WhyPalmSignatureSection currentLanguage={currentLanguage} />
           <CEOSection currentLanguage={currentLanguage} />
           <ContactSection currentLanguage={currentLanguage} />
