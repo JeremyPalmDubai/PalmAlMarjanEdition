@@ -50,6 +50,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       availability: "Almost Sold Out",
       availabilityColor: "text-orange-600",
       deliveryDate: "2028",
+      websiteUrl: "https://lamerbyeliesaab.com/",
       wynnDistance: "5 min",
       featured: true,
       category: "available"
