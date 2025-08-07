@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
-import { MobileNavigation } from './components/MobileNavigation';
 import { HeroSection } from './components/HeroSection';
 import { AlMarjanIslandSection } from './components/AlMarjanIslandSection';
 import { OpportunitySection } from './components/OpportunitySection';
@@ -266,7 +265,6 @@ function App() {
         <LifestyleSection currentLanguage={currentLanguage} />
         <ContactSection currentLanguage={currentLanguage} />
         <Footer currentLanguage={currentLanguage} />
-        <MobileNavigation currentLanguage={currentLanguage} />
       </div>
     </NavigationProvider>
   );

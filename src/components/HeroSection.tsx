@@ -31,26 +31,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           </div>
 
           {/* Tesla-style main heading */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-inter font-light text-white mb-8 tracking-tighter leading-tight" id="invest-al-marjan-island" itemProp="headline">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter font-light text-white mb-6 sm:mb-8 tracking-tighter leading-tight" id="invest-al-marjan-island" itemProp="headline">
             {t.hero.title}
           </h1>
           
           {/* Tesla-style subtitle */}
-          <p className="text-2xl sm:text-3xl font-inter font-light text-white/90 mb-16 tracking-tight leading-tight" itemProp="description">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-inter font-light text-white/90 mb-8 sm:mb-12 md:mb-16 tracking-tight leading-tight" itemProp="description">
             {t.hero.subtitle}
           </p>
           
           {/* SEO-optimized description */}
-          <p className="text-lg font-inter font-light text-white/80 mb-16 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg font-inter font-light text-white/80 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
             Invest Al Marjan Island luxury real estate with 33.3% appreciation. Al Marjan real estate near Wynn Casino opening 2027. 
             100% freehold ownership, 0% capital gains tax, 5-year payment plans. Invest near Wynn Casino for maximum ROI.
           </p>
           
           {/* Tesla-style CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
             <a 
               href="#al-marjan-island" 
-              className="tesla-btn-primary-hero"
+              className="tesla-btn-primary-hero w-full sm:w-auto"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'click', { 
@@ -71,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
             </a>
             <a
               href="#contact" 
-              className="tesla-btn-secondary-hero"
+              className="tesla-btn-secondary-hero w-full sm:w-auto"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'click', { 
@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           </div>
           
           {/* Trust indicators */}
-          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-white/70 text-sm">
+          <div className="mt-8 sm:mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-white/70 text-xs sm:text-sm px-4 sm:px-0">
             <div className="flex items-center">
               <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
               100% Freehold Ownership
