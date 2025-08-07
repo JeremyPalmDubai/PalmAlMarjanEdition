@@ -130,10 +130,6 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
         <div className="tesla-container">
           <div className="max-w-2xl">
             {/* Tesla-style badge */}
@@ -181,6 +177,7 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
             </a>
           </div>
         </div>
-
+      </div>
+    </section>
   );
 };
