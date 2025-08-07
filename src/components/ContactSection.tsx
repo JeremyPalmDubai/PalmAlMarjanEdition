@@ -236,6 +236,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                 }
               }, 1000);
             });
+            
+            // Script URL tracking simple
+            const url = new URL(window.location.href);
+            url.searchParams.set("page_url", window.location.href);
+            window.history.replaceState({}, '', url);
           `
         }}
       />
