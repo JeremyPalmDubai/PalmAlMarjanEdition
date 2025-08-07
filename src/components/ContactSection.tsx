@@ -153,7 +153,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               
               <div className="w-full" style={{ minHeight: '404px' }}>
                 <iframe
-                  src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&source=Invest-AlMarjanIsland.com"
+                  src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&source=investalmarjanisland"
                   loading="lazy"
                   width="100%"
                   height="404"
