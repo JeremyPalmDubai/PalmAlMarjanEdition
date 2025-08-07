@@ -18,9 +18,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: "2,500,000 AED",
       availability: "Available Now",
       availabilityColor: "text-green-600",
-      deliveryDate: currentLanguage === 'fr' ? "Livraison 2028" : 
-                   currentLanguage === 'es' ? "Entrega 2028" :
-                   currentLanguage === 'nl' ? "Oplevering 2028" : "Handover 2028",
+      deliveryDate: currentLanguage === 'fr' ? "2028" : 
+                   currentLanguage === 'es' ? "2028" :
+                   currentLanguage === 'nl' ? "2028" : "2028",
       paymentPlan: "60/40",
       wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
                    currentLanguage === 'es' ? "5 min del Wynn Casino" :
@@ -36,9 +36,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: "2,800,000 AED",
       availability: "Ready 2029",
       availabilityColor: "text-blue-600",
-      deliveryDate: currentLanguage === 'fr' ? "Livraison 2029" : 
-                   currentLanguage === 'es' ? "Entrega 2029" :
-                   currentLanguage === 'nl' ? "Oplevering 2029" : "Handover 2029",
+      deliveryDate: currentLanguage === 'fr' ? "2029" : 
+                   currentLanguage === 'es' ? "2029" :
+                   currentLanguage === 'nl' ? "2029" : "2029",
       websiteUrl: "https://www.oystrabyrichmind.com/",
       wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
                    currentLanguage === 'es' ? "5 min del Wynn Casino" :
@@ -53,9 +53,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: null,
       availability: "SOLD OUT",
       availabilityColor: "text-red-600",
-      deliveryDate: currentLanguage === 'fr' ? "Livraison 2026" : 
-                   currentLanguage === 'es' ? "Entrega 2026" :
-                   currentLanguage === 'nl' ? "Oplevering 2026" : "Delivery 2026",
+      deliveryDate: currentLanguage === 'fr' ? "2026" : 
+                   currentLanguage === 'es' ? "2026" :
+                   currentLanguage === 'nl' ? "2026" : "2026",
       profitBadge: currentLanguage === 'fr' ? "Clients ont fait x2 plus-value en 1 an" :
                    currentLanguage === 'es' ? "Clientes obtuvieron x2 plusvalía en 1 año" :
                    currentLanguage === 'nl' ? "Klanten maakten x2 winst in 1 jaar" : "Clients made x2 profit in 1 year",
@@ -72,9 +72,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: null,
       availability: "Almost Sold Out",
       availabilityColor: "text-orange-600",
-      deliveryDate: currentLanguage === 'fr' ? "Livraison 2028" : 
-                   currentLanguage === 'es' ? "Entrega 2028" :
-                   currentLanguage === 'nl' ? "Oplevering 2028" : "Handover 2028",
+      deliveryDate: currentLanguage === 'fr' ? "2028" : 
+                   currentLanguage === 'es' ? "2028" :
+                   currentLanguage === 'nl' ? "2028" : "2028",
       wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
                    currentLanguage === 'es' ? "5 min del Wynn Casino" :
                    currentLanguage === 'nl' ? "5 min van Wynn Casino" : "5 mins from Wynn Casino",
@@ -91,9 +91,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: "2,900,000 AED",
       availability: "Available Now",
       availabilityColor: "text-green-600",
-      deliveryDate: currentLanguage === 'fr' ? "Livraison 2028" : 
-                   currentLanguage === 'es' ? "Entrega 2028" :
-                   currentLanguage === 'nl' ? "Oplevering 2028" : "Handover 2028",
+      deliveryDate: currentLanguage === 'fr' ? "2028" : 
+                   currentLanguage === 'es' ? "2028" :
+                   currentLanguage === 'nl' ? "2028" : "2028",
       wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
                    currentLanguage === 'es' ? "5 min del Wynn Casino" :
                    currentLanguage === 'nl' ? "5 min van Wynn Casino" : "5 mins from Wynn Casino",
@@ -154,9 +154,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: "2,000,000 AED",
       availability: "Available Now",
       availabilityColor: "text-green-600",
-      deliveryDate: currentLanguage === 'fr' ? "Livraison 2027" : 
-                   currentLanguage === 'es' ? "Entrega 2027" :
-                   currentLanguage === 'nl' ? "Oplevering 2027" : "Handover 2027",
+      deliveryDate: currentLanguage === 'fr' ? "2027" : 
+                   currentLanguage === 'es' ? "2027" :
+                   currentLanguage === 'nl' ? "2027" : "2027",
       websiteUrl: "https://www.unoluxe-almarjan.com/"
     },
     {
