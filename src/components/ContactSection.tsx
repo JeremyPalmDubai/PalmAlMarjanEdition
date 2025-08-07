@@ -153,7 +153,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               
               <div className="w-full" style={{ minHeight: '404px' }}>
                 <iframe
-                  data-tally-src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&source=website"
+                  src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                   loading="lazy"
                   width="100%"
                   height="404"
@@ -187,17 +187,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            // URL tracking pour Tally - Version corrigée
+            // URL tracking pour Tally - Version simplifiée
             document.addEventListener('DOMContentLoaded', function() {
-              // Ajouter les paramètres URL au formulaire Tally
+              // Capturer les données de tracking
               const currentUrl = window.location.href;
               const referrer = document.referrer || 'direct';
               const utmSource = new URLSearchParams(window.location.search).get('utm_source') || 'organic';
               const utmMedium = new URLSearchParams(window.location.search).get('utm_medium') || 'website';
               const utmCampaign = new URLSearchParams(window.location.search).get('utm_campaign') || 'al-marjan-investment';
               
-              // Stocker les données de tracking
+              // Stocker globalement pour utilisation
               window.tallyTrackingData = {
+                source: 'website',
                 page_url: currentUrl,
                 referrer: referrer,
                 utm_source: utmSource,
@@ -208,26 +209,29 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                 user_agent: navigator.userAgent
               };
               
-              // Vérifier si le script Tally est chargé
+              // Attendre que Tally soit chargé pour configurer le tracking
               if (typeof window.Tally !== 'undefined') {
-                window.Tally.loadEmbeds();
-                
-                // Configurer le tracking des interactions
-                if (window.Tally.on) {
+                setupTallyTracking();
+              } else {
+                // Attendre que Tally se charge
+                const checkTally = setInterval(function() {
+                  if (typeof window.Tally !== 'undefined') {
+                    setupTallyTracking();
+                    clearInterval(checkTally);
+                  }
+                }, 100);
+              }
+              
+              function setupTallyTracking() {
+                if (window.Tally && window.Tally.on) {
                   window.Tally.on('form:submit', function(data) {
-                    // Ajouter les données de tracking à la soumission
                     const trackingData = window.tallyTrackingData || {};
                     
                     if (typeof gtag !== 'undefined') {
                       gtag('event', 'generate_lead', {
                         currency: 'USD',
                         value: 200000,
-                        page_url: trackingData.page_url,
-                        referrer: trackingData.referrer,
-                        utm_source: trackingData.utm_source,
-                        utm_medium: trackingData.utm_medium,
-                        utm_campaign: trackingData.utm_campaign,
-                        language: trackingData.language
+                        custom_data: trackingData
                       });
                     }
                     
@@ -240,103 +244,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                       });
                     }
                     
-                    // Envoyer les données à votre backend si nécessaire
                     console.log('Form submitted with tracking data:', trackingData);
                   });
                 }
-              } else {
-                // Si Tally n'est pas encore chargé, attendre
-                const checkTally = setInterval(function() {
-                  if (typeof window.Tally !== 'undefined') {
-                    window.Tally.loadEmbeds();
-                    
-                    // Configurer le tracking une fois Tally chargé
-                    if (window.Tally.on) {
-                      window.Tally.on('form:submit', function(data) {
-                        const trackingData = window.tallyTrackingData || {};
-                        
-                        if (typeof gtag !== 'undefined') {
-                          gtag('event', 'generate_lead', {
-                            currency: 'USD',
-                            value: 200000,
-                            page_url: trackingData.page_url,
-                            referrer: trackingData.referrer,
-                            utm_source: trackingData.utm_source,
-                            utm_medium: trackingData.utm_medium,
-                            utm_campaign: trackingData.utm_campaign,
-                            language: trackingData.language
-                          });
-                        }
-                        
-                        if (typeof fbq !== 'undefined') {
-                          fbq('track', 'Lead', {
-                            content_name: 'Investment Inquiry',
-                            value: 200000,
-                            currency: 'USD',
-                            custom_data: trackingData
-                          });
-                        }
-                        
-                        console.log('Form submitted with tracking data:', trackingData);
-                      });
-              // Capturer les données de source pour Privyr
-              const trackingData = {
-                source: 'website',
-                page_url: window.location.href,
-                referrer: document.referrer || 'direct',
-                utm_source: new URLSearchParams(window.location.search).get('utm_source') || 'organic',
-                utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || 'website',
-                utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || 'al-marjan-investment',
-                timestamp: new Date().toISOString(),
-                language: '${currentLanguage}',
-                user_agent: navigator.userAgent
-              };
-              
-              // Stocker globalement pour Tally
-              window.tallyTrackingData = trackingData;
-              
-              // Mettre à jour l'iframe Tally avec les paramètres
-              const iframe = document.querySelector('iframe[data-tally-src]');
-              if (iframe) {
-                const baseUrl = iframe.getAttribute('data-tally-src');
-                const urlParams = new URLSearchParams();
-                
-                // Ajouter les paramètres requis pour Privyr
-                urlParams.set('source', trackingData.source);
-                urlParams.set('page_url', trackingData.page_url);
-                urlParams.set('referrer', trackingData.referrer);
-                urlParams.set('utm_source', trackingData.utm_source);
-                urlParams.set('utm_medium', trackingData.utm_medium);
-                urlParams.set('utm_campaign', trackingData.utm_campaign);
-                urlParams.set('language', trackingData.language);
-                
-                // Construire la nouvelle URL
-                const separator = baseUrl.includes('?') ? '&' : '?';
-                const newSrc = baseUrl + separator + urlParams.toString();
-                iframe.src = newSrc;
               }
               
-              console.log('Tally Tracking Data:', trackingData);
+              console.log('Tally Tracking Data initialized:', window.tallyTrackingData);
             });
             
-            // Track form view après chargement
+            // Track form view
             window.addEventListener('load', function() {
               setTimeout(function() {
-                const trackingData = window.tallyTrackingData || {};
-                
                 if (typeof gtag !== 'undefined') {
-                  gtag('event', 'form_view', { 
-                    form_name: 'Lead Form',
-                    page_url: trackingData.page_url,
-                    language: trackingData.language
-                  });
+                  gtag('event', 'form_view', { form_name: 'Lead Form' });
                 }
                 
                 if (typeof fbq !== 'undefined') {
-                  fbq('track', 'ViewContent', { 
-                    content_name: 'Lead Form',
-                    custom_data: trackingData
-                  });
+                  fbq('track', 'ViewContent', { content_name: 'Lead Form' });
                 }
               }, 1000);
             });
