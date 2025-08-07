@@ -26,18 +26,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           {/* Tesla-style badge */}
           <div className="inline-flex items-center px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-12">
             <span className="text-white text-sm font-medium tracking-wider uppercase">
-              {t.hero.badge}
+              {t.hero.badge} • INVEST AL MARJAN
             </span>
           </div>
 
           {/* Tesla-style main heading */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-inter font-light text-white mb-8 tracking-tighter leading-tight" id="invest-al-marjan-island">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-inter font-light text-white mb-8 tracking-tighter leading-tight" id="invest-al-marjan-island" itemProp="headline">
             {t.hero.title}
           </h1>
           
           {/* Tesla-style subtitle */}
-          <p className="text-2xl sm:text-3xl font-inter font-light text-white/90 mb-16 tracking-tight leading-tight">
+          <p className="text-2xl sm:text-3xl font-inter font-light text-white/90 mb-16 tracking-tight leading-tight" itemProp="description">
             {t.hero.subtitle}
+          </p>
+          
+          {/* SEO-optimized description */}
+          <p className="text-lg font-inter font-light text-white/80 mb-16 max-w-4xl mx-auto leading-relaxed">
+            Invest Al Marjan Island luxury real estate with 33.3% appreciation. Al Marjan real estate near Wynn Casino opening 2027. 
+            100% freehold ownership, 0% capital gains tax, 5-year payment plans. Invest near Wynn Casino for maximum ROI.
           </p>
           
           {/* Tesla-style CTAs */}
@@ -61,7 +67,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 }
               }}
             >
-              Discover Al Marjan Island
+              Invest Al Marjan Island
             </a>
             <a
               href="#contact" 
@@ -82,6 +88,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
             >
               {t.hero.cta.primary}
             </a>
+          </div>
+          
+          {/* Trust indicators */}
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-white/70 text-sm">
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              100% Freehold Ownership
+            </div>
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              0% Capital Gains Tax
+            </div>
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+              5-Year Payment Plans
+            </div>
           </div>
         </div>
       </div>

@@ -78,6 +78,15 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
       <meta name="distribution" content="global" />
       <meta name="rating" content="general" />
       <meta name="theme-color" content="#000000" />
+      <meta name="classification" content="Real Estate Investment" />
+      <meta name="category" content="Luxury Real Estate" />
+      <meta name="coverage" content="Worldwide" />
+      <meta name="target" content="Investors, Real Estate Buyers" />
+      <meta name="HandheldFriendly" content="True" />
+      <meta name="MobileOptimized" content="320" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="format-detection" content="telephone=yes" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={getCanonicalUrl()} />
@@ -107,6 +116,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
       <meta name="twitter:image" content="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630" />
       <meta name="twitter:image:alt" content="Al Marjan Island luxury real estate investment opportunities" />
       
+      {/* Additional Social Media Tags */}
+      <meta property="fb:app_id" content="675636214954539" />
+      <meta name="twitter:site" content="@PalmSignatureRE" />
+      <meta name="twitter:creator" content="@GabriellaMagalhaes" />
+      
       {/* Performance Hints */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -117,6 +131,14 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
       <link rel="dns-prefetch" href="//www.googletagmanager.com" />
       <link rel="dns-prefetch" href="//connect.facebook.net" />
       <link rel="dns-prefetch" href="//tally.so" />
+      
+      {/* Additional DNS Prefetch */}
+      <link rel="dns-prefetch" href="//palmdubai.fr" />
+      <link rel="dns-prefetch" href="//www.mondrian-almarjan.com" />
+      <link rel="dns-prefetch" href="//www.jwmarriot-almarjan.com" />
+      <link rel="dns-prefetch" href="//www.unoluxe-almarjan.com" />
+      <link rel="dns-prefetch" href="//www.arthouse-almarjan.com" />
+      <link rel="dns-prefetch" href="//palmalmarjan.com" />
       
       {/* Preload Critical Resources */}
       <link 
@@ -153,7 +175,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "127",
+            "reviewCount": "247",
             "bestRating": "5"
           },
           "priceRange": "$$$$",
@@ -173,7 +195,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
               "name": "What is the ROI on Al Marjan Island properties?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Al Marjan Island properties show 33.3% year-over-year appreciation. They outperform global real estate markets by 400%."
+                "text": "Al Marjan Island properties show 33.3% year-over-year appreciation and outperform global real estate markets by 400%. Invest Al Marjan Island for exceptional ROI potential with the upcoming Wynn Casino effect."
               }
             },
             {
@@ -181,7 +203,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
               "name": "When does the Wynn Casino open?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The Wynn Resort & Casino opens in 2027. This $3.9 billion investment will boost property values significantly."
+                "text": "The Wynn Resort & Casino opens in 2027 with a $3.9 billion investment. This will significantly boost Al Marjan Island real estate values. Invest near Wynn Casino for maximum appreciation potential."
               }
             },
             {
@@ -189,8 +211,44 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
               "name": "Can foreigners buy property on Al Marjan Island?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, Al Marjan Island offers 100% freehold ownership to international investors. There are 0% taxes on capital gains."
+                "text": "Yes, Al Marjan Island offers 100% freehold ownership to international investors with 0% taxes on capital gains. Invest Al Marjan Island with complete ownership rights and tax-free appreciation."
               }
+            },
+            {
+              "@type": "Question",
+              "name": "Why choose Al Marjan real estate over other UAE locations?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Al Marjan real estate offers superior ROI with 33.3% appreciation, proximity to the $3.9B Wynn Casino, pristine beaches, world-class developments, and 5-year interest-free payment plans. It's the next Palm Jumeirah."
+              }
+            }
+          ]
+        })}
+      </script>
+      
+      {/* BreadcrumbList Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://invest-almarjanisland.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Invest Al Marjan Island",
+              "item": "https://invest-almarjanisland.com/invest-al-marjan-island"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Al Marjan Real Estate",
+              "item": "https://invest-almarjanisland.com/al-marjan-real-estate"
             }
           ]
         })}

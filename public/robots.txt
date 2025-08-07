@@ -4,28 +4,39 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /.env
 Disallow: /api/
+Disallow: /temp/
+Disallow: /cache/
 Allow: /
+Allow: /invest-al-marjan
+Allow: /invest-al-marjan-island
+Allow: /al-marjan-real-estate
+Allow: /al-marjan-island-real-estate
+Allow: /invest-near-wynn-casino
 
 # Sitemap
 Sitemap: https://invest-almarjanisland.com/sitemap.xml
+Sitemap: https://invest-almarjanisland.com/sitemap-images.xml
 
 # Crawl delay
-Crawl-delay: 1
+Crawl-delay: 0.5
 
 # Specific instructions for major search engines
 User-agent: Googlebot
 Disallow: /admin/
 Disallow: /private/
+Crawl-delay: 0.2
 Allow: /
 
 User-agent: Bingbot
 Disallow: /admin/
 Disallow: /private/
+Crawl-delay: 0.5
 Allow: /
 
 User-agent: Slurp
 Disallow: /admin/
 Disallow: /private/
+Crawl-delay: 1
 Allow: /
 
 User-agent: DuckDuckBot
@@ -41,4 +52,3 @@ Allow: /
 User-agent: Twitterbot
 Disallow: /admin/
 Disallow: /private/
-Allow: /

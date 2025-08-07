@@ -27,18 +27,20 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
             {/* Tesla-style badge */}
             <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-6">
               <span className="text-white text-xs font-medium tracking-wider uppercase">
-                INVEST NEAR WYNN CASINO
+                INVEST NEAR WYNN CASINO • WYNN CASINO 2027
               </span>
             </div>
             
             {/* Tesla-style heading */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-white mb-8 tracking-tighter" id="invest-near-wynn-casino">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-white mb-8 tracking-tighter" id="invest-near-wynn-casino" itemProp="headline">
               {t.wynnEffect.title}
             </h2>
             
             {/* Tesla-style description */}
-            <p className="text-xl text-white/90 mb-12 leading-relaxed font-light max-w-xl">
-              Invest near Wynn Casino on Al Marjan Island. The Wynn Resort & Casino transforms Al Marjan real estate into the Middle East's premier luxury destination.
+            <p className="text-xl text-white/90 mb-12 leading-relaxed font-light max-w-2xl" itemProp="description">
+              <strong>Invest near Wynn Casino</strong> on Al Marjan Island. The $3.9 billion Wynn Resort & Casino transforms 
+              <strong>Al Marjan real estate</strong> into the Middle East's premier luxury destination. 
+              <strong>Al Marjan Island real estate</strong> values will surge with the Wynn effect in 2027.
             </p>
             
             {/* Tesla-style metrics */}
@@ -62,7 +64,7 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
             </div>
 
             {/* Tesla-style CTA */}
-            <a href="#contact" className="tesla-btn-secondary-hero">
+            <a href="#contact" className="tesla-btn-secondary-hero" aria-label="Invest near Wynn Casino - Contact us">
               {t.wynnEffect.benefits.returns.title}
             </a>
           </div>

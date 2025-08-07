@@ -15,14 +15,24 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         {/* Tesla-style minimal header */}
         <div className="text-center mb-20">
           <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-4">
-            INVEST AL MARJAN ISLAND
+            INVEST AL MARJAN ISLAND • AL MARJAN REAL ESTATE
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="al-marjan-real-estate">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="al-marjan-real-estate" itemProp="name">
             {t.alMarjanIsland.title}
           </h2>
-          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed" id="al-marjan-island-real-estate">
+          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed" id="al-marjan-island-real-estate" itemProp="description">
             {t.alMarjanIsland.description}
           </p>
+          
+          {/* SEO-rich description */}
+          <div className="mt-8 max-w-5xl mx-auto">
+            <p className="text-lg tesla-subheading leading-relaxed">
+              <strong>Invest Al Marjan Island</strong> in the UAE's most promising luxury destination. 
+              <strong>Al Marjan real estate</strong> offers world-class developments by international brands. 
+              <strong>Al Marjan Island real estate</strong> features pristine beaches, luxury amenities, and the upcoming 
+              <strong>Wynn Casino</strong> opening in 2027. <strong>Invest near Wynn Casino</strong> for exceptional appreciation potential.
+            </p>
+          </div>
         </div>
 
         {/* Tesla-style hero image with overlay content */}
