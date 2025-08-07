@@ -252,70 +252,70 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           {/* Enhanced Featured Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {featuredDevelopments.map((development, index) => (
-            <div key={index} className="bg-white relative overflow-hidden border border-[rgba(248,243,235,0.8)] hover:border-[#007aff] transition-colors duration-300 rounded-lg backdrop-blur-sm">
+            <div key={index} className="bg-white relative overflow-hidden border border-gray-100 hover:border-black transition-colors duration-300">
               {/* Premium Badge */}
-              <div className="absolute top-3 left-3 z-20 bg-[rgb(44,44,44)] text-white px-3 py-1 text-xs font-medium tracking-wider uppercase rounded">
+              <div className="absolute top-3 left-3 z-20 bg-black text-white px-2 py-1 text-xs font-medium tracking-wider uppercase">
                 ◆ Premium
               </div>
               
               {/* Special badge for profit achievement */}
               {development.profitBadge && (
-                <div className="absolute top-12 left-3 z-10 bg-[#007aff] text-white px-3 py-1 text-xs font-medium rounded">
+                <div className="absolute top-12 left-3 z-10 bg-green-600 text-white px-2 py-1 text-xs font-medium">
                     🚀 {development.profitBadge}
                 </div>
               )}
               
-              <div className="h-48 overflow-hidden relative rounded-t-lg">
+              <div className="h-48 overflow-hidden relative">
                 {development.availability && (
                   <div className={`absolute top-3 right-3 z-10 px-2 py-1 text-xs font-medium ${
-                    development.availabilityColor === 'text-red-600' ? 'bg-red-50 text-red-600 border border-red-200 rounded' :
-                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-50 text-orange-600 border border-orange-200 rounded' :
-                    development.availabilityColor === 'text-green-600' ? 'bg-green-50 text-green-600 border border-green-200 rounded' :
-                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-50 text-blue-600 border border-blue-200 rounded' :
-                    'bg-red-50 text-red-600 border border-red-200 rounded'
-                  } backdrop-blur-sm`}>
+                    development.availabilityColor === 'text-red-600' ? 'bg-red-50 text-red-600 border border-red-200' :
+                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-50 text-orange-600 border border-orange-200' :
+                    development.availabilityColor === 'text-green-600' ? 'bg-green-50 text-green-600 border border-green-200' :
+                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-50 text-blue-600 border border-blue-200' :
+                    'bg-red-50 text-red-600 border border-red-200'
+                  }`}>
                     {development.availability}
                   </div>
                 )}
                   <img
                     src={development.image}
                     alt={development.name}
-                    className="w-full h-full object-cover rounded-t-lg"
+                    className="w-full h-full object-cover"
                   />
               </div>
               
               <div className="p-4 bg-white">
-                <div className="text-xs font-normal text-[rgb(44,44,44)]/60 tracking-wide uppercase mb-2">
+                <div className="text-xs font-normal text-gray-400 tracking-wide uppercase mb-2">
                     {development.developer}
                 </div>
-                <h3 className="text-lg font-inter font-light text-[rgb(44,44,44)] mb-3 tracking-tight">{development.name}</h3>
-                <p className="font-inter font-normal text-[rgb(44,44,44)]/80 text-sm leading-relaxed mb-4 line-clamp-2">{development.description}</p>
+                <h3 className="text-lg font-inter font-light text-black mb-3 tracking-tight">{development.name}</h3>
+                <p className="font-inter font-normal text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">{development.description}</p>
                   
                 {/* Pricing and Info */}
                 {(development.price || development.deliveryDate || development.wynnDistance) && (
-                  <div className="mb-4 space-y-2 border-t border-[rgba(248,243,235,0.8)] pt-3">
+                  <div className="mb-4 space-y-2 border-t border-gray-100 pt-3">
                       {development.price && (
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-normal text-[rgb(44,44,44)]/60 tracking-wide uppercase">From</span>
-                          <span className="text-sm font-light text-[#007aff] font-bold">{development.price}</span>
+                          <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">From</span>
+                          <span className="text-sm font-light text-black">{development.price}</span>
                         </div>
                       )}
                       {development.paymentPlan && (
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-normal text-[rgb(44,44,44)]/60 tracking-wide uppercase">Payment</span>
-                          <span className="text-xs font-light text-[rgb(44,44,44)]">{development.paymentPlan}</span>
+                          <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Payment</span>
+                          <span className="text-xs font-light text-black">{development.paymentPlan}</span>
                         </div>
                       )}
                       {development.deliveryDate && (
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-normal text-[rgb(44,44,44)]/60 tracking-wide uppercase">Handover</span>
-                          <span className="text-xs font-light text-[rgb(44,44,44)]">{development.deliveryDate}</span>
+                          <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Handover</span>
+                          <span className="text-xs font-light text-black">{development.deliveryDate}</span>
                         </div>
                       )}
                       {development.wynnDistance && (
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-normal text-[rgb(44,44,44)]/60 tracking-wide uppercase">Wynn</span>
-                          <span className="text-xs font-medium text-[#007aff] font-bold">{development.wynnDistance}</span>
+                          <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Wynn</span>
+                          <span className="text-xs font-medium text-black">{development.wynnDistance}</span>
                         </div>
                       )}
                   </div>
@@ -323,38 +323,51 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   
                 <div className="flex gap-2">
                       {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                        <div className="flex-1 bg-[rgba(248,243,235,0.5)] text-[rgb(44,44,44)]/60 px-3 py-2 text-xs text-center font-medium cursor-not-allowed rounded">
+                        <div className="flex-1 bg-gray-100 text-gray-500 px-3 py-2 text-xs text-center font-medium cursor-not-allowed">
                           SOLD OUT
                         </div>
                       ) : development.availabilityColor === 'text-orange-600' ? (
-                        <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300 rounded">
+                        <a href="#contact" className="flex-1 bg-orange-600 hover:bg-orange-700 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
                           {t.developments.lastUnits}
-                        </button>
+                        </a>
                       ) : development.availabilityColor === 'text-green-600' ? (
-                        <button className="flex-1 bg-[#007aff] hover:bg-[#007aff]/90 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300 rounded">
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
                           {t.developments.learnMore}
-                        </button>
+                        </a>
                       ) : development.availabilityColor === 'text-blue-600' ? (
-                        <button className="flex-1 bg-[#007aff] hover:bg-[#007aff]/90 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300 rounded">
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
                           {t.developments.learnMore}
-                        </button>
+                        </a>
                       ) : (
-                        <button className="flex-1 bg-[rgb(44,44,44)] hover:bg-[rgb(44,44,44)]/90 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300 rounded">
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
                           {t.developments.learnMore}
-                        </button>
+                        </a>
                       )}
                       
                       {development.websiteUrl && (
-                        <button 
+                        <a 
                           href={development.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-8 border border-[rgba(248,243,235,0.8)] hover:border-[#007aff] bg-white hover:bg-[rgba(248,243,235,0.3)] py-2 flex items-center justify-center transition-colors duration-300 rounded"
+                          className="w-8 border border-gray-200 hover:border-black bg-white hover:bg-gray-50 py-2 flex items-center justify-center transition-colors duration-300"
+                          onClick={() => {
+                            if (typeof gtag !== 'undefined') {
+                              gtag('event', 'click', { 
+                                event_category: 'External Link',
+                                event_label: development.name + ' Website'
+                              });
+                            }
+                            if (typeof fbq !== 'undefined') {
+                              fbq('track', 'ViewContent', {
+                                content_name: development.name + ' Website'
+                              });
+                            }
+                          }}
                         >
-                          <svg className="w-3 h-3 text-[rgb(44,44,44)]/60 hover:text-[#007aff] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                          <svg className="w-3 h-3 text-gray-400 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
-                        </button>
+                        </a>
                       )}
                 </div>
               </div>
@@ -375,54 +388,54 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {developments.map((development, index) => (
-            <div key={index} className="bg-white border border-[rgba(248,243,235,0.8)] hover:border-[#007aff] transition-colors duration-300 rounded-lg backdrop-blur-sm">
+            <div key={index} className="bg-white border border-gray-100 hover:border-black transition-colors duration-300">
               {/* Status badge */}
               {development.availability && (
                 <div className={`absolute top-3 right-3 z-10 px-2 py-1 text-xs font-medium ${
-                  development.availabilityColor === 'text-red-600' ? 'bg-red-50 text-red-600 border border-red-200 rounded' :
-                  development.availabilityColor === 'text-orange-600' ? 'bg-orange-50 text-orange-600 border border-orange-200 rounded' :
-                  development.availabilityColor === 'text-green-600' ? 'bg-green-50 text-green-600 border border-green-200 rounded' :
-                  development.availabilityColor === 'text-blue-600' ? 'bg-blue-50 text-blue-600 border border-blue-200 rounded' :
-                  'bg-red-50 text-red-600 border border-red-200 rounded'
-                } backdrop-blur-sm`}>
+                  development.availabilityColor === 'text-red-600' ? 'bg-red-50 text-red-600 border border-red-200' :
+                  development.availabilityColor === 'text-orange-600' ? 'bg-orange-50 text-orange-600 border border-orange-200' :
+                  development.availabilityColor === 'text-green-600' ? 'bg-green-50 text-green-600 border border-green-200' :
+                  development.availabilityColor === 'text-blue-600' ? 'bg-blue-50 text-blue-600 border border-blue-200' :
+                  'bg-red-50 text-red-600 border border-red-200'
+                }`}>
                   {development.availability}
                 </div>
               )}
               
-              <div className="h-48 overflow-hidden relative rounded-t-lg">
+              <div className="h-48 overflow-hidden relative">
                 <img
                   src={development.image}
                   alt={development.name}
-                  className="w-full h-full object-cover rounded-t-lg"
+                  className="w-full h-full object-cover"
                 />
               </div>
               
               <div className="p-4">
-                <div className="text-xs font-normal text-[rgb(44,44,44)]/60 tracking-wide uppercase mb-2">
+                <div className="text-xs font-normal text-gray-400 tracking-wide uppercase mb-2">
                   {development.developer}
                 </div>
-                <h3 className="text-lg font-inter font-light text-[rgb(44,44,44)] mb-3 tracking-tight line-clamp-2">{development.name}</h3>
-                <p className="font-inter font-normal text-[rgb(44,44,44)]/80 text-sm leading-relaxed mb-4 line-clamp-2">{development.description}</p>
+                <h3 className="text-lg font-inter font-light text-black mb-3 tracking-tight line-clamp-2">{development.name}</h3>
+                <p className="font-inter font-normal text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">{development.description}</p>
                 
                 {/* Pricing and Availability */}
                 {(development.price || development.deliveryDate || development.paymentPlan) && (
-                  <div className="mb-4 space-y-2 border-t border-[rgba(248,243,235,0.8)] pt-3">
+                  <div className="mb-4 space-y-2 border-t border-gray-100 pt-3">
                     {development.price && (
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-normal text-[rgb(44,44,44)]/60 tracking-wide uppercase">From</span>
-                        <span className="text-sm font-light text-[#007aff] font-bold">{development.price}</span>
+                        <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">From</span>
+                        <span className="text-sm font-light text-black">{development.price}</span>
                       </div>
                     )}
                     {development.paymentPlan && (
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-normal text-[rgb(44,44,44)]/60 tracking-wide uppercase">Payment</span>
-                        <span className="text-xs font-light text-[rgb(44,44,44)]">{development.paymentPlan}</span>
+                        <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Payment</span>
+                        <span className="text-xs font-light text-black">{development.paymentPlan}</span>
                       </div>
                     )}
                     {development.deliveryDate && (
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-normal text-[rgb(44,44,44)]/60 tracking-wide uppercase">Handover</span>
-                        <span className="text-xs font-light text-[rgb(44,44,44)]">{development.deliveryDate}</span>
+                        <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Handover</span>
+                        <span className="text-xs font-light text-black">{development.deliveryDate}</span>
                       </div>
                     )}
                   </div>
@@ -430,34 +443,47 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 
                 <div className="flex gap-2">
                   {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                    <div className="flex-1 bg-[rgba(248,243,235,0.5)] text-[rgb(44,44,44)]/60 px-3 py-2 text-xs text-center font-medium cursor-not-allowed rounded">
+                    <div className="flex-1 bg-gray-100 text-gray-500 px-3 py-2 text-xs text-center font-medium cursor-not-allowed">
                       SOLD OUT
                     </div>
                   ) : development.availabilityColor === 'text-orange-600' ? (
-                    <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300 rounded">
+                    <a href="#contact" className="flex-1 bg-orange-600 hover:bg-orange-700 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
                       {t.developments.lastUnits}
-                    </button>
+                    </a>
                   ) : development.availabilityColor === 'text-green-600' ? (
-                    <button className="flex-1 bg-[#007aff] hover:bg-[#007aff]/90 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300 rounded">
+                    <a href="#contact" className="flex-1 bg-green-600 hover:bg-green-700 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
                       {t.developments.learnMore}
-                    </button>
+                    </a>
                   ) : (
-                    <button className="flex-1 bg-[rgb(44,44,44)] hover:bg-[rgb(44,44,44)]/90 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300 rounded">
+                    <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
                       {t.developments.learnMore}
-                    </button>
+                    </a>
                   )}
                   
                   {development.websiteUrl && (
-                    <button 
+                    <a 
                       href={development.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 border border-[rgba(248,243,235,0.8)] hover:border-[#007aff] bg-white hover:bg-[rgba(248,243,235,0.3)] py-2 flex items-center justify-center transition-colors duration-300 rounded"
+                      className="w-8 border border-gray-200 hover:border-black bg-white hover:bg-gray-50 py-2 flex items-center justify-center transition-colors duration-300"
+                      onClick={() => {
+                        if (typeof gtag !== 'undefined') {
+                          gtag('event', 'click', { 
+                            event_category: 'External Link',
+                            event_label: development.name + ' Website'
+                          });
+                        }
+                        if (typeof fbq !== 'undefined') {
+                          fbq('track', 'ViewContent', {
+                            content_name: development.name + ' Website'
+                          });
+                        }
+                      }}
                     >
-                      <svg className="w-3 h-3 text-[rgb(44,44,44)]/60 hover:text-[#007aff] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <svg className="w-3 h-3 text-gray-400 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                    </button>
+                    </a>
                   )}
                 </div>
               </div>
@@ -504,55 +530,55 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 <div className="text-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
                   <div className="text-lg font-medium text-gray-800 mb-1">RICHMIND</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wide">Innovative Design</div>
-              <div className="w-12 h-12 bg-[#007aff] rounded-lg flex items-center justify-center mr-4">
+                </div>
                 <div className="text-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
                   <div className="text-lg font-medium text-gray-800 mb-1">BABOLEX</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wide">Contemporary Style</div>
                 </div>
-              <h4 className="text-xl font-inter font-light text-[rgb(44,44,44)] tracking-tight">Development <span className="font-bold text-[#007aff]">Partners</span></h4>
+              </div>
             </div>
             
             {/* Prestige Brands */}
             <div className="bg-black text-white p-8">
               <div className="flex items-center justify-center mb-8">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
                 </div>
                 <h4 className="text-xl font-inter font-light">Prestige Brands</h4>
-              <h4 className="text-xl font-inter font-light">Prestige <span className="font-bold text-[rgba(248,243,235,1)]">Brands</span></h4>
+              </div>
               
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
-              <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors rounded">
-                <div className="text-lg font-medium text-[rgb(44,44,44)] mb-1">EMAAR</div>
-                <div className="text-xs text-white/70 uppercase tracking-wide">W Hotels</div>
+                  <div className="text-lg font-medium text-white mb-1">MARRIOTT</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">W Hotels</div>
+                </div>
                 <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
-              <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors rounded">
-                <div className="text-lg font-medium text-[rgb(44,44,44)] mb-1">DECA</div>
-                <div className="text-xs text-white/70 uppercase tracking-wide">Luxury Hospitality</div>
+                  <div className="text-lg font-medium text-white mb-1">HILTON</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Luxury Hospitality</div>
+                </div>
                 <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
-              <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors rounded">
-                <div className="text-lg font-medium text-[rgb(44,44,44)] mb-1">DAMAC</div>
-                <div className="text-xs text-white/70 uppercase tracking-wide">Haute Couture</div>
+                  <div className="text-lg font-medium text-white mb-1">ELIE SAAB</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Haute Couture</div>
+                </div>
                 <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
-              <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors rounded">
-                <div className="text-lg font-medium text-white mb-1"><span className="font-bold text-[rgba(248,243,235,1)]">WYNN</span></div>
-                <div className="text-xs text-white/70 uppercase tracking-wide">Casino Resort</div>
+                  <div className="text-lg font-medium text-white mb-1">WYNN</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Casino Resort</div>
+                </div>
                 <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
-              <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors rounded">
-                <div className="text-lg font-medium text-[rgb(44,44,44)] mb-1">RICHMIND</div>
-                <div className="text-xs text-white/70 uppercase tracking-wide">Beach Club</div>
+                  <div className="text-lg font-medium text-white mb-1">NIKKI BEACH</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Beach Club</div>
+                </div>
                 <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
-              <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors rounded">
-                <div className="text-lg font-medium text-[rgb(44,44,44)] mb-1">BABOLEX</div>
-                <div className="text-xs text-white/70 uppercase tracking-wide">Fine Dining</div>
+                  <div className="text-lg font-medium text-white mb-1">NOBU</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Fine Dining</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-          <div className="bg-gradient-to-br from-[rgb(44,44,44)] to-[rgb(44,44,44)]/90 text-white p-8 rounded-lg backdrop-blur-sm">
+    </section>
   );
 };
