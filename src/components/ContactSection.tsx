@@ -146,12 +146,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
 
           {/* Tally Form */}
           <div className="animate-fade-in-up">
-            <div className="bg-white tesla-shadow overflow-hidden p-8">
-              <h3 className="text-2xl tesla-heading mb-8 text-center px-4">
+            <div className="bg-white tesla-shadow overflow-hidden p-4 sm:p-6 lg:p-8">
+              <h3 className="text-xl sm:text-2xl tesla-heading mb-6 sm:mb-8 text-center">
                 {t.contact.form.title}
               </h3>
               
-              <div className="w-full px-4" style={{ minHeight: '404px' }}>
+              <div className="w-full" style={{ minHeight: '404px' }}>
                 <iframe
                   src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                   loading="lazy"

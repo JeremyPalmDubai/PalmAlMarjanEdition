@@ -757,6 +757,21 @@ img {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   }
   
+  /* Optimize card text truncation */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
   /* Optimize touch interactions */
   .ios26-tab-item,
   .ios26-contact-btn,
