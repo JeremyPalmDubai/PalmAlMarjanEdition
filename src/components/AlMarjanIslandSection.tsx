@@ -258,5 +258,282 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         </div>
       </div>
     </section>
+
+    {/* Tesla-style comprehensive investment section */}
+    <section className="tesla-section bg-gray-50">
+      <div className="tesla-container">
+        {/* Types of Housing */}
+        <div className="mb-32">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="housing-types">
+              Types of Housing in Al Marjan Island
+            </h2>
+            <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
+              Apartments, Villas, and Townhouses
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div className="animate-slide-in">
+              <p className="text-lg tesla-subheading leading-relaxed mb-8">
+                You still have time to <strong>invest in off-plan properties in Al Marjan Island</strong> – the archipelago continues to develop. 
+                But there are also ready-made options available for immediate investment.
+              </p>
+              
+              {/* Tesla-style pricing grid */}
+              <div className="space-y-6">
+                <div className="flex items-center justify-between py-4 border-b border-gray-200">
+                  <div>
+                    <span className="font-medium text-black">Studios</span>
+                    <div className="text-sm tesla-subheading">Compact luxury living</div>
+                  </div>
+                  <span className="text-xl font-light">$150,000</span>
+                </div>
+                <div className="flex items-center justify-between py-4 border-b border-gray-200">
+                  <div>
+                    <span className="font-medium text-black">2BR Apartments</span>
+                    <div className="text-sm tesla-subheading">130-150 m², 3 bathrooms</div>
+                  </div>
+                  <span className="text-xl font-light">$340,000</span>
+                </div>
+                <div className="flex items-center justify-between py-4 border-b border-gray-200">
+                  <div>
+                    <span className="font-medium text-black">Villas</span>
+                    <div className="text-sm tesla-subheading">Private luxury homes</div>
+                  </div>
+                  <span className="text-xl font-light">$800K - $7.5M</span>
+                </div>
+                <div className="flex items-center justify-between py-4 border-b border-gray-200">
+                  <div>
+                    <span className="font-medium text-black">Townhouses</span>
+                    <div className="text-sm tesla-subheading">Family-oriented living</div>
+                  </div>
+                  <span className="text-xl font-light">$740K - $2.8M</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="animate-fade-in-up">
+              <div className="bg-black text-white p-8 lg:p-12">
+                <h3 className="text-2xl font-inter font-light mb-6">Investment Opportunity</h3>
+                <p className="text-gray-300 mb-8 leading-relaxed">
+                  <strong>Off-plan properties Al Marjan Island</strong> offer the best value with flexible payment plans 
+                  and guaranteed appreciation before completion.
+                </p>
+                <div className="grid grid-cols-2 gap-6 text-center">
+                  <div>
+                    <div className="text-2xl font-light mb-2">10%</div>
+                    <div className="text-sm text-gray-300">Down Payment</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-light mb-2">5 Years</div>
+                    <div className="text-sm text-gray-300">Payment Plan</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Benefits of Owning Property */}
+        <div className="mb-32">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl tesla-heading mb-8" id="property-benefits">
+              Benefits of Owning Property in Al Marjan Island
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="animate-fade-in-up">
+              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <h3 className="text-xl tesla-heading mb-4 text-center">Wynn Resort Proximity</h3>
+              <p className="tesla-subheading text-center leading-relaxed">
+                <strong>Properties near Wynn Resort in Al Marjan Island</strong> inevitably increase in price with each passing day. 
+                After the 2027 opening, management plans to attract 5.5 million tourists by 2030.
+              </p>
+            </div>
+            
+            <div className="animate-fade-in-up">
+              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                </svg>
+              </div>
+              <h3 className="text-xl tesla-heading mb-4 text-center">Freehold Ownership</h3>
+              <p className="tesla-subheading text-center leading-relaxed">
+                Foreign investors can <strong>buy Al Marjan Island property</strong> without restrictions. 
+                This freehold zone has no taxes on personal income, maximizing your investment returns.
+              </p>
+            </div>
+            
+            <div className="animate-fade-in-up">
+              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+              <h3 className="text-xl tesla-heading mb-4 text-center">Family-Friendly Living</h3>
+              <p className="tesla-subheading text-center leading-relaxed">
+                <strong>Al Marjan Island luxury homes</strong> occupy most of the coastline with first-class infrastructure 
+                tailored for family vacations and year-round living.
+              </p>
+            </div>
+          </div>
+        {/* Why Buy Property */}
+        <div className="mb-32">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl tesla-heading mb-8" id="why-buy-property">
+              Why Buy a Property in Al Marjan Island
+            </h2>
+            <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
+              Choose <strong>high-ROI properties in Al Marjan Island</strong> for the area's developed resort infrastructure
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div className="animate-slide-in">
+              <h3 className="text-2xl tesla-heading mb-8">Resort Infrastructure</h3>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div>
+                    <span className="font-medium text-black">Water park near Hilton hotel</span>
+                    <p className="tesla-subheading text-sm mt-1">Family entertainment facilities</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div>
+                    <span className="font-medium text-black">Water sports complexes</span>
+                    <p className="tesla-subheading text-sm mt-1">Marine activities and recreation</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div>
+                    <span className="font-medium text-black">Green walking routes and parks</span>
+                    <p className="tesla-subheading text-sm mt-1">Landscaped outdoor spaces</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div>
+                    <span className="font-medium text-black">Bars, restaurants, cafes</span>
+                    <p className="tesla-subheading text-sm mt-1">Diverse dining and entertainment</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div>
+                    <span className="font-medium text-black">8 km of well-maintained beaches</span>
+                    <p className="tesla-subheading text-sm mt-1">Pristine coastline access</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="animate-fade-in-up">
+              <h3 className="text-2xl tesla-heading mb-8">Upcoming Projects</h3>
+              <div className="bg-gray-100 p-8 mb-8">
+                <h4 className="text-lg font-medium text-black mb-4">Major Developments</h4>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="tesla-subheading">Wynn Al Marjan Island Resort</span>
+                    <span className="text-sm font-medium text-black">2027</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="tesla-subheading">Marina for 300 yachts</span>
+                    <span className="text-sm font-medium text-black">2026</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-black text-white p-8">
+                <h4 className="text-lg font-medium mb-4">Existing Amenities</h4>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Al Hamra Mall is an 8-minute drive away. The archipelago already has everything needed for life 
+                  thanks to five-star hotels, including supermarkets, pharmacies, car rentals, and more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        {/* How to Invest */}
+        <div className="bg-black text-white px-8 py-16 lg:px-16 lg:py-24">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-inter font-light mb-8" id="how-to-invest">
+              How to Invest in Al Marjan Island Real Estate
+            </h2>
+            <p className="text-lg text-gray-300 mb-12 leading-relaxed font-light max-w-3xl mx-auto">
+              Contact Palm Signature Real Estate to choose <strong>affordable waterfront housing in Al Marjan Island</strong>. 
+              Our experienced specialists will accompany the transaction from beginning to end.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-12 mb-12">
+              <div className="text-left">
+                <h3 className="text-xl font-medium mb-6">Our Investment Approach</h3>
+                <div className="space-y-4 text-gray-300">
+                  <p className="flex items-start">
+                    <span className="w-2 h-2 bg-white rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    Our main goal is not to sell real estate but to organize profitable investments for all clients
+                  </p>
+                  <p className="flex items-start">
+                    <span className="w-2 h-2 bg-white rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    We select properties carefully so apartments and villas bring high profits to their owners
+                  </p>
+                  <p className="flex items-start">
+                    <span className="w-2 h-2 bg-white rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    Full transaction support from property selection to ownership transfer
+                  </p>
+                </div>
+              </div>
+              
+              <div className="text-left">
+                <h3 className="text-xl font-medium mb-6">Additional Services</h3>
+                <div className="space-y-4 text-gray-300">
+                  <p className="flex items-start">
+                    <span className="w-2 h-2 bg-white rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    Relocation assistance and moving support
+                  </p>
+                  <p className="flex items-start">
+                    <span className="w-2 h-2 bg-white rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    UAE visa application guidance
+                  </p>
+                  <p className="flex items-start">
+                    <span className="w-2 h-2 bg-white rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    Bank account opening assistance
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <a 
+              href="#contact" 
+              className="tesla-btn-secondary-white"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Investment Consultation CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'InitiateCheckout', {
+                    content_name: 'Investment Consultation'
+                  });
+                }
+              }}
+            >
+              Start Your Investment Journey
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
