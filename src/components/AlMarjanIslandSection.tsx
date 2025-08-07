@@ -10,7 +10,8 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
   const t = translations[currentLanguage];
 
   return (
-    <section className="tesla-section bg-white overflow-hidden">
+    <>
+      <section className="tesla-section bg-white overflow-hidden">
       <div className="tesla-container">
         {/* Tesla-style minimal header */}
         <div className="text-center mb-20">
@@ -257,10 +258,10 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
           </div>
         </div>
       </div>
-    </section>
+      </section>
 
-    {/* Tesla-style comprehensive investment section */}
-    <section className="tesla-section bg-gray-50">
+      {/* Tesla-style comprehensive investment section */}
+      <section className="tesla-section bg-gray-50">
       <div className="tesla-container">
         {/* Types of Housing */}
         <div className="mb-32">
@@ -534,6 +535,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
