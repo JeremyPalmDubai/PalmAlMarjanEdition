@@ -123,8 +123,13 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       developer: "Arthouse Residences",
       image: "https://palmdubai.fr/uploads/posts/2025-07/f8834d1461_cledorbyarthouse.webp",
       description: "Artistic luxury residences with innovative architecture and premium finishes.",
-      price: null,
-      availability: null
+      price: "925,000 AED",
+      availability: "Available Now",
+      availabilityColor: "text-green-600",
+      deliveryDate: currentLanguage === 'fr' ? "Livraison 2028" : 
+                   currentLanguage === 'es' ? "Entrega 2028" :
+                   currentLanguage === 'nl' ? "Oplevering 2028" : "Handover 2028",
+      websiteUrl: "https://www.arthouse-almarjan.com/"
     },
     {
       name: "Babolex Residences",
