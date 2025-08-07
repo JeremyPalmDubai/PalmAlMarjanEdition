@@ -153,7 +153,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               
               <div className="w-full" style={{ minHeight: '404px' }}>
                 <iframe
-                  src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  data-tally-src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&source=website"
                   loading="lazy"
                   width="100%"
                   height="404"
@@ -279,12 +279,44 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                         
                         console.log('Form submitted with tracking data:', trackingData);
                       });
-                    }
-                    
-                    clearInterval(checkTally);
-                  }
-                }, 100);
+              // Capturer les données de source pour Privyr
+              const trackingData = {
+                source: 'website',
+                page_url: window.location.href,
+                referrer: document.referrer || 'direct',
+                utm_source: new URLSearchParams(window.location.search).get('utm_source') || 'organic',
+                utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || 'website',
+                utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || 'al-marjan-investment',
+                timestamp: new Date().toISOString(),
+                language: '${currentLanguage}',
+                user_agent: navigator.userAgent
+              };
+              
+              // Stocker globalement pour Tally
+              window.tallyTrackingData = trackingData;
+              
+              // Mettre à jour l'iframe Tally avec les paramètres
+              const iframe = document.querySelector('iframe[data-tally-src]');
+              if (iframe) {
+                const baseUrl = iframe.getAttribute('data-tally-src');
+                const urlParams = new URLSearchParams();
+                
+                // Ajouter les paramètres requis pour Privyr
+                urlParams.set('source', trackingData.source);
+                urlParams.set('page_url', trackingData.page_url);
+                urlParams.set('referrer', trackingData.referrer);
+                urlParams.set('utm_source', trackingData.utm_source);
+                urlParams.set('utm_medium', trackingData.utm_medium);
+                urlParams.set('utm_campaign', trackingData.utm_campaign);
+                urlParams.set('language', trackingData.language);
+                
+                // Construire la nouvelle URL
+                const separator = baseUrl.includes('?') ? '&' : '?';
+                const newSrc = baseUrl + separator + urlParams.toString();
+                iframe.src = newSrc;
               }
+              
+              console.log('Tally Tracking Data:', trackingData);
             });
             
             // Track form view après chargement
