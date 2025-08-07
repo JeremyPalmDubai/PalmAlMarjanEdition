@@ -141,9 +141,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: "925,000 AED",
       availability: "Available Now",
       availabilityColor: "text-green-600",
-      deliveryDate: currentLanguage === 'fr' ? "Livraison 2028" : 
-                   currentLanguage === 'es' ? "Entrega 2028" :
-                   currentLanguage === 'nl' ? "Oplevering 2028" : "Handover 2028",
+      deliveryDate: currentLanguage === 'fr' ? " 2028" : 
+                   currentLanguage === 'es' ? " 2028" :
+                   currentLanguage === 'nl' ? " 2028" : " 2028",
       websiteUrl: "https://www.arthouse-almarjan.com/"
     },
     {
