@@ -22,52 +22,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
 
       {/* Tesla-style content overlay */}
       <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="text-center max-w-4xl mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto px-4">
           {/* Tesla-style badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8">
+          <div className="inline-flex items-center px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-12">
             <span className="text-white text-sm font-medium tracking-wider uppercase">
               {t.hero.badge}
             </span>
           </div>
 
           {/* Tesla-style main heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-inter font-light text-white mb-6 tracking-tighter leading-tight" id="main-heading">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-inter font-light text-white mb-8 tracking-tighter leading-tight" id="main-heading">
             {t.hero.title}
           </h1>
           
           {/* Tesla-style subtitle */}
-          <p className="text-xl sm:text-2xl md:text-3xl font-inter font-light text-white/90 mb-8 tracking-tight leading-tight max-w-3xl mx-auto" role="banner">
+          <p className="text-2xl sm:text-3xl font-inter font-light text-white/90 mb-16 tracking-tight leading-tight" role="banner">
             {t.hero.subtitle}
           </p>
           
-          {/* Tesla-style description */}
-          <p className="text-lg text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-            {t.hero.description}
-          </p>
-          
-          {/* Tesla-style benefits badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-              <span className="text-white text-sm">✓ 0% Tax on Capital Gains</span>
-            </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-              <span className="text-white text-sm">✓ 100% Freehold Ownership</span>
-            </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-              <span className="text-white text-sm">✓ Wynn Casino 2027</span>
-            </div>
-          </div>
-          
-          {/* Tesla-style pricing */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/20">
-              <div className="text-white text-lg font-light">From $200,000</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/20">
-              <div className="text-white text-lg font-light">Payment plan up to 5 years</div>
-            </div>
-          </div>
-
           {/* Tesla-style CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
@@ -91,7 +63,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
             >
               Discover Al Marjan Island
             </a>
-            <a 
+            <a
               href="#contact" 
               className="tesla-btn-secondary-hero"
               onClick={() => {
