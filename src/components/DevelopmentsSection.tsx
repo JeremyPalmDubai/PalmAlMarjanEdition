@@ -353,12 +353,6 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                         <span className="text-lg font-medium text-black">{development.paymentPlan}</span>
                       </div>
                     )}
-                    {development.wynnDistance && (
-                      <div className="flex items-center">
-                        <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Wynn Casino:</span>
-                        <span className="text-lg font-medium text-purple-600">{development.wynnDistance}</span>
-                      </div>
-                    )}
                     {development.availability && (
                       <div className="flex items-center">
                         <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">Status:</span>
