@@ -286,9 +286,6 @@ function App() {
         </main>
         <Footer currentLanguage={currentLanguage} id="main-footer" />
         
-        {/* Accessibility Panel */}
-        <AccessibilityPanel />
-        
         {/* Mobile Navigation */}
         <nav className="tesla-mobile-nav lg:hidden" id="main-navigation" role="navigation" aria-label="Mobile navigation">
           <div className="tesla-mobile-nav-container">
