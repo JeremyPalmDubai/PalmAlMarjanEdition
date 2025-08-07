@@ -57,14 +57,14 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
         {/* Tesla-style metrics grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           {metrics.map((metric, index) => (
-            <div key={index} className="text-center animate-scale-in bg-gray-50 p-8 tesla-hover group cursor-pointer">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-all duration-300 shadow-lg group-hover:shadow-xl">
+            <div key={index} className="text-center animate-scale-in bg-gray-50 p-8 tesla-hover">
+              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
                 <metric.icon className="w-8 h-8 text-white" />
               </div>
-              <div className={`tesla-metric ${metric.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`tesla-metric ${metric.color} mb-4`}>
                 <CounterAnimation end={metric.value} suffix={metric.suffix} />
               </div>
-              <div className="tesla-metric-label mb-2 group-hover:text-black transition-colors duration-300">{metric.label}</div>
+              <div className="tesla-metric-label mb-2">{metric.label}</div>
             </div>
           ))}
         </div>

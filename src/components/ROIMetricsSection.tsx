@@ -25,33 +25,33 @@ export const ROIMetricsSection: React.FC<ROIMetricsSectionProps> = ({ currentLan
 
         {/* Tesla-style metrics grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
-          <div className="text-center animate-scale-in group hover:scale-105 transition-all duration-300 p-6 rounded-lg hover:bg-gray-50 hover:shadow-lg">
+          <div className="text-center animate-scale-in">
             <div className="tesla-metric text-black mb-4">
               <CounterAnimation end={33} suffix="%" />
             </div>
-            <div className="tesla-metric-label mb-2 group-hover:text-black transition-colors">{t.roiMetrics.metrics.appreciation.title}</div>
-            <div className="tesla-subheading text-sm group-hover:text-gray-800 transition-colors">{t.roiMetrics.metrics.appreciation.description}</div>
+            <div className="tesla-metric-label mb-2">{t.roiMetrics.metrics.appreciation.title}</div>
+            <div className="tesla-subheading text-sm">{t.roiMetrics.metrics.appreciation.description}</div>
           </div>
-          <div className="text-center animate-scale-in group hover:scale-105 transition-all duration-300 p-6 rounded-lg hover:bg-gray-50 hover:shadow-lg">
+          <div className="text-center animate-scale-in">
             <div className="tesla-metric text-black mb-4">
               <CounterAnimation end={400} suffix="%" />
             </div>
-            <div className="tesla-metric-label mb-2 group-hover:text-black transition-colors">{t.roiMetrics.metrics.outperformance.title}</div>
-            <div className="tesla-subheading text-sm group-hover:text-gray-800 transition-colors">{t.roiMetrics.metrics.outperformance.description}</div>
+            <div className="tesla-metric-label mb-2">{t.roiMetrics.metrics.outperformance.title}</div>
+            <div className="tesla-subheading text-sm">{t.roiMetrics.metrics.outperformance.description}</div>
           </div>
-          <div className="text-center animate-scale-in group hover:scale-105 transition-all duration-300 p-6 rounded-lg hover:bg-gray-50 hover:shadow-lg">
+          <div className="text-center animate-scale-in">
             <div className="tesla-metric text-black mb-4">
               <CounterAnimation end={2027} suffix="" />
             </div>
-            <div className="tesla-metric-label mb-2 group-hover:text-black transition-colors">{t.roiMetrics.metrics.projection.title}</div>
-            <div className="tesla-subheading text-sm group-hover:text-gray-800 transition-colors">{t.roiMetrics.metrics.projection.description}</div>
+            <div className="tesla-metric-label mb-2">{t.roiMetrics.metrics.projection.title}</div>
+            <div className="tesla-subheading text-sm">{t.roiMetrics.metrics.projection.description}</div>
           </div>
-          <div className="text-center animate-scale-in group hover:scale-105 transition-all duration-300 p-6 rounded-lg hover:bg-gray-50 hover:shadow-lg">
+          <div className="text-center animate-scale-in">
             <div className="tesla-metric text-black mb-4">
               <CounterAnimation end={500} suffix="%" />
             </div>
-            <div className="tesla-metric-label mb-2 group-hover:text-black transition-colors">{t.roiMetrics.metrics.potential.title}</div>
-            <div className="tesla-subheading text-sm group-hover:text-gray-800 transition-colors">{t.roiMetrics.metrics.potential.description}</div>
+            <div className="tesla-metric-label mb-2">{t.roiMetrics.metrics.potential.title}</div>
+            <div className="tesla-subheading text-sm">{t.roiMetrics.metrics.potential.description}</div>
           </div>
         </div>
 
@@ -62,21 +62,19 @@ export const ROIMetricsSection: React.FC<ROIMetricsSectionProps> = ({ currentLan
           </h3>
           
           {/* Graphique de comparaison visuel */}
-          <div className="mb-12 bg-white p-8 rounded-lg tesla-shadow border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-xl">
+          <div className="mb-12 bg-white p-8 rounded-lg tesla-shadow">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <span className="font-medium text-gray-900">Al Marjan Island</span>
                 <div className="flex-1 mx-4 bg-gray-200 rounded-full h-3 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-pulse shadow-lg shadow-green-400/30" style={{ width: '100%' }}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 translate-x-full animate-pulse"></div>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-pulse" style={{ width: '100%' }}></div>
                 </div>
-                <span className="font-bold text-green-600 animate-pulse">12-15%</span>
+                <span className="font-bold text-green-600">12-15%</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-medium text-gray-600">London</span>
                 <div className="flex-1 mx-4 bg-gray-200 rounded-full h-3 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gray-400 rounded-full transition-all duration-1000 hover:bg-gray-500" style={{ width: '25%' }}></div>
+                  <div className="absolute inset-0 bg-gray-400 rounded-full" style={{ width: '25%' }}></div>
                 </div>
                 <span className="font-medium text-gray-600">3-4%</span>
               </div>

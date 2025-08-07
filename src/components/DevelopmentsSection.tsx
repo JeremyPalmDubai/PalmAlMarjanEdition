@@ -352,7 +352,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           {filteredDevelopments.map((development, index) => (
             <div 
               key={index} 
-              className={`group bg-white border border-gray-200 overflow-hidden transition-all duration-500 hover:border-black hover:shadow-2xl hover:-translate-y-2 focus-within:border-black focus-within:ring-2 focus-within:ring-black focus-within:ring-offset-2 ${
+              className={`bg-white border border-gray-200 overflow-hidden transition-all duration-300 hover:border-black focus-within:border-black focus-within:ring-2 focus-within:ring-black focus-within:ring-offset-2 ${
                 development.category === 'sold-out' ? 'opacity-75' : ''
               }`}
               role="article"
@@ -363,7 +363,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 {/* Badges on Image */}
                 <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
                   {development.profitBadge && (
-                    <div className="bg-emerald-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium animate-pulse shadow-lg shadow-emerald-600/30">
+                    <div className="bg-emerald-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
                       🚀 {development.profitBadge}
                     </div>
                   )}
@@ -371,7 +371,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 
                 {/* Status Badge */}
                 {development.availability && (
-                  <div className={`absolute top-4 right-4 z-20 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm shadow-lg ${
+                  <div className={`absolute top-4 right-4 z-20 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
                     development.availabilityColor === 'text-red-600' ? 'bg-red-100/90 text-red-600' :
                     development.availabilityColor === 'text-orange-600' ? 'bg-orange-100/90 text-orange-600' :
                     development.availabilityColor === 'text-green-600' ? 'bg-green-100/90 text-green-600' :
@@ -390,7 +390,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   alt={`${development.name} luxury Al Marjan Island development ${development.category === 'available' ? 'available for investment' : 'sold out project'} near Wynn Casino`}
                   title={`${development.name} Al Marjan Island - ${development.description.substring(0, 60)}...`}
-                  className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${
+                  className={`w-full h-full object-cover ${
                     development.category === 'sold-out' ? 'grayscale' : ''
                   }`}
                   width="800"
@@ -399,9 +399,6 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   decoding="async"
                   data-seo-filename={`${development.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}-al-marjan-island-luxury-development.webp`}
                 />
-                
-                {/* Hover overlay effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
               {/* Content */}
@@ -480,17 +477,15 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 {/* Action Button */}
                 <div className="flex gap-3">
                   {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                    <button className="flex-1 bg-gray-400 text-white px-6 py-3 font-medium cursor-not-allowed relative overflow-hidden">
+                    <button className="flex-1 bg-gray-400 text-white px-6 py-3 font-medium cursor-not-allowed">
                       SOLD OUT
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-full animate-pulse"></div>
                     </button>
                   ) : (
                     <a 
                       href="#contact" 
-                      className="flex-1 bg-black hover:bg-gray-800 text-white px-6 py-3 font-medium transition-all duration-300 text-center relative overflow-hidden group/btn"
+                      className="flex-1 bg-black hover:bg-gray-800 text-white px-6 py-3 font-medium transition-all duration-300 text-center"
                     >
-                      <span className="relative z-10">Get the details</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-600 transform translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300"></div>
+                      Get the details
                     </a>
                   )}
                   
@@ -499,7 +494,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       href={development.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 flex items-center justify-center transition-all duration-300 hover:rotate-12 hover:scale-110"
+                      className="w-12 h-12 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 flex items-center justify-center transition-all duration-300"
                       onClick={() => {
                         if (typeof gtag !== 'undefined') {
                           gtag('event', 'click', { 
@@ -514,7 +509,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                         }
                       }}
                     >
-                      <svg className="w-4 h-4 text-gray-600 hover:text-black transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <svg className="w-4 h-4 text-gray-600 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
