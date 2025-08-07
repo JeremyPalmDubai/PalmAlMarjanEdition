@@ -132,6 +132,19 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       websiteUrl: "https://www.arthouse-almarjan.com/"
     },
     {
+      name: "UNO LUXE by WOW",
+      developer: "WOW Development",
+      image: "https://www.unoluxe-almarjan.com/images/uno-luxe-exterior.jpg",
+      description: "UNO-LUXE offers investment tools and lifestyle infrastructure to build, develop and secure a faster and more personalized future.",
+      price: "2,000,000 AED",
+      availability: "Available Now",
+      availabilityColor: "text-green-600",
+      deliveryDate: currentLanguage === 'fr' ? "Livraison 2027" : 
+                   currentLanguage === 'es' ? "Entrega 2027" :
+                   currentLanguage === 'nl' ? "Oplevering 2027" : "Handover 2027",
+      websiteUrl: "https://www.unoluxe-almarjan.com/"
+    },
+    {
       name: "Babolex Residences",
       developer: "Babolex Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/cb748b46fa_babolex.webp",
