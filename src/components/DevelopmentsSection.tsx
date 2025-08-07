@@ -11,6 +11,24 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
   // Featured developments - shown first on mobile
   const featuredDevelopments = [
     {
+      name: "MONDRIAN by ELEVATE",
+      developer: "ELEVATE Properties",
+      image: "https://www.mondrian-almarjan.com/images/mondrian-hero-render.webp",
+      description: "Beachfront luxury living with private access and world-class amenities, just 5 minutes from the upcoming Wynn Casino.",
+      price: "2,500,000 AED",
+      availability: "Available Now",
+      availabilityColor: "text-green-600",
+      deliveryDate: currentLanguage === 'fr' ? "Livraison 2028" : 
+                   currentLanguage === 'es' ? "Entrega 2028" :
+                   currentLanguage === 'nl' ? "Oplevering 2028" : "Handover 2028",
+      paymentPlan: "60/40",
+      wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
+                   currentLanguage === 'es' ? "5 min del Wynn Casino" :
+                   currentLanguage === 'nl' ? "5 min van Wynn Casino" : "5 mins from Wynn Casino",
+      websiteUrl: "https://www.mondrian-almarjan.com/",
+      featured: true
+    },
+    {
       name: "Oystra Zaha Hadid",
       developer: "Richmind Development",
       image: "https://palmdubai.fr/uploads/posts/2025-07/7089d298f4_oystrazahahadid.webp",
@@ -227,27 +245,56 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   )}
                   
                   <div className="flex justify-center lg:justify-start">
-                    {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                      <div className="tesla-btn-primary opacity-50 cursor-not-allowed">
-                        SOLD OUT
-                      </div>
-                    ) : development.availabilityColor === 'text-orange-600' ? (
-                      <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700">
-                        {t.developments.lastUnits}
-                      </a>
-                    ) : development.availabilityColor === 'text-green-600' ? (
-                      <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700">
-                        {t.developments.learnMore}
-                      </a>
-                    ) : development.availabilityColor === 'text-blue-600' ? (
-                      <a href="#contact" className="tesla-btn-primary bg-blue-600 hover:bg-blue-700">
-                        {t.developments.learnMore}
-                      </a>
-                    ) : (
-                      <a href="#contact" className="tesla-btn-primary">
-                        {t.developments.learnMore}
-                      </a>
-                    )}
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                        <div className="tesla-btn-primary opacity-50 cursor-not-allowed">
+                          SOLD OUT
+                        </div>
+                      ) : development.availabilityColor === 'text-orange-600' ? (
+                        <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700">
+                          {t.developments.lastUnits}
+                        </a>
+                      ) : development.availabilityColor === 'text-green-600' ? (
+                        <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700">
+                          {t.developments.learnMore}
+                        </a>
+                      ) : development.availabilityColor === 'text-blue-600' ? (
+                        <a href="#contact" className="tesla-btn-primary bg-blue-600 hover:bg-blue-700">
+                          {t.developments.learnMore}
+                        </a>
+                      ) : (
+                        <a href="#contact" className="tesla-btn-primary">
+                          {t.developments.learnMore}
+                        </a>
+                      )}
+                      
+                      {development.websiteUrl && (
+                        <a 
+                          href={development.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="tesla-btn-secondary flex items-center justify-center"
+                          onClick={() => {
+                            if (typeof gtag !== 'undefined') {
+                              gtag('event', 'click', { 
+                                event_category: 'External Link',
+                                event_label: development.name + ' Website'
+                              });
+                            }
+                            if (typeof fbq !== 'undefined') {
+                              fbq('track', 'ViewContent', {
+                                content_name: development.name + ' Website'
+                              });
+                            }
+                          }}
+                        >
+                          Visit Website
+                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -281,6 +328,90 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       <div className="flex items-center">
                         <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">From:</span>
                         <span className="text-lg font-semibold text-black">{development.price}</span>
+                      </div>
+                    )}
+                    {development.availability && (
+                      <div className="flex items-center">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">Status:</span>
+                        <span className={`text-sm font-medium ${development.availabilityColor || 'text-green-600'}`}>
+                          {development.availability}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
+                
+                <div className="flex justify-center">
+                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                      <div className="tesla-btn-primary opacity-50 cursor-not-allowed">
+                        SOLD OUT
+                      </div>
+                    ) : development.availabilityColor === 'text-orange-600' ? (
+                      <a href="#contact" className="tesla-btn-primary bg-orange-600 hover:bg-orange-700">
+                        {t.developments.lastUnits}
+                      </a>
+                    ) : development.availabilityColor === 'text-green-600' ? (
+                      <a href="#contact" className="tesla-btn-primary bg-green-600 hover:bg-green-700">
+                        {t.developments.learnMore}
+                      </a>
+                    ) : development.availabilityColor === 'text-blue-600' ? (
+                      <a href="#contact" className="tesla-btn-primary bg-blue-600 hover:bg-blue-700">
+                        {t.developments.learnMore}
+                      </a>
+                    ) : (
+                      <a href="#contact" className="tesla-btn-primary">
+                        {t.developments.learnMore}
+                      </a>
+                    )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* All Other Developments - Now Always Visible */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {developments.map((development, index) => (
+            <div key={index} className="bg-white tesla-hover animate-fade-in-up">
+              <div className="h-64 overflow-hidden">
+                <img
+                  src={development.image}
+                  alt={development.name}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              
+              <div className="p-8">
+                <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
+                  {development.developer}
+                </div>
+                <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
+                <p className="tesla-subheading text-sm leading-relaxed mb-6">{development.description}</p>
+                
+                {/* Pricing and Availability */}
+                {(development.price || development.availability) && (
+                  <div className="mb-6 space-y-2">
+                    {development.price && (
+                      <div className="flex items-center">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase mr-2">From:</span>
+                        <span className="text-lg font-semibold text-black">{development.price}</span>
+                      </div>
+                    )}
+                    {development.paymentPlan && (
+                      <div className="flex items-center">
+                        <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Payment Plan:</span>
+                        <span className="text-lg font-medium text-black">{development.paymentPlan}</span>
+                      </div>
+                    )}
+                    {development.wynnDistance && (
+                      <div className="flex items-center">
+                        <span className="text-sm font-medium text-gray-500 tracking-wider uppercase mr-3">Wynn Casino:</span>
+                        <span className="text-lg font-medium text-purple-600">{development.wynnDistance}</span>
                       </div>
                     )}
                     {development.availability && (
