@@ -33,8 +33,8 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       image: "https://palmdubai.fr/uploads/posts/2025-07/7089d298f4_oystrazahahadid.webp",
       description: "Designed by Zaha Hadid. Iconic architecture with revolutionary design and luxury living, featuring the legendary architect's signature fluid forms and innovative spatial concepts.",
       price: "2,800,000 AED",
-      availability: "Ready 2029",
-      availabilityColor: "text-blue-600",
+      availability: "Available Now",
+      availabilityColor: "text-green-600",
       deliveryDate: "2029",
       websiteUrl: "https://www.oystrabyrichmind.com/",
       wynnDistance: "5 min",
@@ -342,11 +342,6 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
               <div className="relative h-80 overflow-hidden">
                 {/* Badges on Image */}
                 <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
-                  {development.featured && development.category !== 'sold-out' && (
-                    <div className="bg-black/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
-                      ◆ Premium
-                    </div>
-                  )}
                   {development.profitBadge && (
                     <div className="bg-emerald-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
                       🚀 {development.profitBadge}
