@@ -74,11 +74,29 @@ export const CEOSection: React.FC<CEOSectionProps> = ({ currentLanguage }) => {
           {/* Image side */}
           <div className="animate-slide-in">
             <div className="relative">
-              <img
-                src="https://palmdubai.fr/uploads/posts/2025-07/dfa9bb9dcd_6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103.webp"
-                alt="Gabriella Magalhaes, CEO & Founder of Palm Signature Real Estate"
-                className="w-full h-96 lg:h-[600px] object-contain object-center tesla-shadow bg-black"
-              />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet="https://palmdubai.fr/uploads/posts/2025-07/dfa9bb9dcd_6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103.webp?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop 600w"
+                  sizes="100vw"
+                />
+                <source
+                  media="(min-width: 769px)"
+                  srcSet="https://palmdubai.fr/uploads/posts/2025-07/dfa9bb9dcd_6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103.webp?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop 800w,
+                          https://palmdubai.fr/uploads/posts/2025-07/dfa9bb9dcd_6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103.webp?auto=compress&cs=tinysrgb&w=1000&h=1200&fit=crop 1000w"
+                  sizes="50vw"
+                />
+                <img
+                  src="https://palmdubai.fr/uploads/posts/2025-07/dfa9bb9dcd_6d99d58d-001f-4bbd-99fb-f407b9b5504c_173848103.webp?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
+                  alt="Gabriella Magalhaes CEO and Founder of Palm Signature Real Estate, luxury real estate expert specializing in Al Marjan Island investments"
+                  title="Gabriella Magalhaes - CEO Palm Signature Real Estate Al Marjan Island Expert"
+                  className="w-full h-96 lg:h-[600px] object-contain object-center tesla-shadow bg-black"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </div>
         </div>

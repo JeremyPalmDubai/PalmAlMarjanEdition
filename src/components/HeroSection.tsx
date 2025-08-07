@@ -12,11 +12,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
     <section className="tesla-hero-section relative overflow-hidden">
       {/* Tesla-style full-screen background */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp"
-          alt="Al Marjan Island luxury development"
-          className="w-full h-full object-cover"
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w,
+                    https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop 1200w"
+            sizes="100vw"
+          />
+          <source
+            media="(min-width: 769px)"
+            srcSet="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop 1600w,
+                    https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp?auto=compress&cs=tinysrgb&w=2000&h=1125&fit=crop 2000w,
+                    https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp?auto=compress&cs=tinysrgb&w=2400&h=1350&fit=crop 2400w"
+            sizes="100vw"
+          />
+          <img
+            src="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+            alt="Invest Al Marjan Island luxury real estate development aerial view with pristine beaches and world-class resorts"
+            title="Al Marjan Island Investment Opportunity - Luxury Real Estate with Wynn Casino"
+            className="w-full h-full object-cover"
+            width="1920"
+            height="1080"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
       </div>
 

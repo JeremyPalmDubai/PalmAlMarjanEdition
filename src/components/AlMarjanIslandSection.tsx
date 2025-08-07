@@ -39,11 +39,30 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         {/* Tesla-style hero image with overlay content */}
         <div className="relative mb-32">
           <div className="h-[70vh] min-h-[600px] relative overflow-hidden bg-black">
-            <img
-              src="https://palmdubai.fr/uploads/posts/2025-08/5c6f6a92e6_1734349387_0248704.webp"
-              alt="Al Marjan Island aerial view"
-              className="w-full h-full object-cover"
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet="https://palmdubai.fr/uploads/posts/2025-08/5c6f6a92e6_1734349387_0248704.webp?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w,
+                        https://palmdubai.fr/uploads/posts/2025-08/5c6f6a92e6_1734349387_0248704.webp?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop 1200w"
+                sizes="100vw"
+              />
+              <source
+                media="(min-width: 769px)"
+                srcSet="https://palmdubai.fr/uploads/posts/2025-08/5c6f6a92e6_1734349387_0248704.webp?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop 1600w,
+                        https://palmdubai.fr/uploads/posts/2025-08/5c6f6a92e6_1734349387_0248704.webp?auto=compress&cs=tinysrgb&w=2000&h=1125&fit=crop 2000w"
+                sizes="100vw"
+              />
+              <img
+                src="https://palmdubai.fr/uploads/posts/2025-08/5c6f6a92e6_1734349387_0248704.webp?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+                alt="Al Marjan Island aerial view showing four coral islands with luxury developments, pristine beaches, and world-class resorts in Ras Al Khaimah UAE"
+                title="Al Marjan Island Real Estate - Four Coral Islands Luxury Investment Destination"
+                className="w-full h-full object-cover"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <div className="absolute inset-0 bg-black/20"></div>
             
             {/* Tesla-style overlay content */}

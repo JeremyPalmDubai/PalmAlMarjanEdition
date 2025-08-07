@@ -28,11 +28,30 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
         {/* Tesla-style hero image with overlay content */}
         <div className="relative mb-32">
           <div className="h-[70vh] min-h-[600px] relative overflow-hidden bg-black">
-            <img
-              src="https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp"
-              alt="Wynn Resort Al Marjan Island aerial view"
-              className="w-full h-full object-cover"
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet="https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w,
+                        https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop 1200w"
+                sizes="100vw"
+              />
+              <source
+                media="(min-width: 769px)"
+                srcSet="https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop 1600w,
+                        https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp?auto=compress&cs=tinysrgb&w=2000&h=1125&fit=crop 2000w"
+                sizes="100vw"
+              />
+              <img
+                src="https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+                alt="Wynn Resort Casino Al Marjan Island aerial view showing $3.9 billion luxury development with marina estates and beachfront location"
+                title="Invest Near Wynn Casino Al Marjan Island - $3.9B Resort Opening 2027"
+                className="w-full h-full object-cover"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <div className="absolute inset-0 bg-black/20"></div>
             
             {/* Tesla-style overlay content */}

@@ -23,11 +23,29 @@ export const LifestyleSection: React.FC<LifestyleSectionProps> = ({ currentLangu
         {/* Tesla-style split layout */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="animate-slide-in">
-            <img
-              src="https://palmalmarjan.com/public/assets/img/wrapper-bg.png"
-              alt="Paradise beaches of Al Marjan Island"
-              className="w-full h-96 lg:h-[500px] object-cover tesla-shadow"
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet="https://palmalmarjan.com/public/assets/img/wrapper-bg.png?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w"
+                sizes="100vw"
+              />
+              <source
+                media="(min-width: 769px)"
+                srcSet="https://palmalmarjan.com/public/assets/img/wrapper-bg.png?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop 1200w,
+                        https://palmalmarjan.com/public/assets/img/wrapper-bg.png?auto=compress&cs=tinysrgb&w=1600&h=1067&fit=crop 1600w"
+                sizes="50vw"
+              />
+              <img
+                src="https://palmalmarjan.com/public/assets/img/wrapper-bg.png?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+                alt="Paradise beaches Al Marjan Island with crystal clear waters, white sand beaches, and luxury beachfront resorts perfect for family vacations"
+                title="Al Marjan Island Paradise Beaches - Luxury Lifestyle Destination"
+                className="w-full h-96 lg:h-[500px] object-cover tesla-shadow"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
           <div className="animate-fade-in-up">
             <h3 className="text-3xl md:text-4xl tesla-heading mb-8">

@@ -18,6 +18,7 @@ import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { NavigationProvider } from './components/NavigationProvider';
 import { SEOHead } from './components/SEOHead';
 import { PerformanceMonitor } from './components/PerformanceMonitor';
+import { ImageSEOAudit } from './components/ImageSEOAudit';
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
@@ -277,6 +278,9 @@ function App() {
         <LifestyleSection currentLanguage={currentLanguage} />
         <ContactSection currentLanguage={currentLanguage} />
         <Footer currentLanguage={currentLanguage} />
+        
+        {/* Image SEO Audit Tool (Development Only) */}
+        <ImageSEOAudit />
         
         {/* Mobile Navigation */}
         <nav className="tesla-mobile-nav lg:hidden">
