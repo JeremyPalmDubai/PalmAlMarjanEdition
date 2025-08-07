@@ -104,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-center md:text-left font-light">
+          <p className="text-gray-300 mb-6 max-w-md font-light leading-relaxed hover:text-gray-200 transition-colors duration-300">
             &copy; 2025 Palm Signature Real Estate. {t.footer.rights}
           </p>
           
@@ -217,7 +217,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
                 <path d="M966 124.9 l0 -75 49.3 0.3 49.2 0.3 7.6 2.6 c4.2 1.4 10.1 4.3 13.3 6.4 19.2 12.7 26 37.9 15.4 57.7 -3.6 6.7 -13.1 16.1 -20.1 19.8 -2.8 1.5 -4.5 3 -4.2 3.8 0.2 0.7 7.9 14.1 17 29.8 9.1 15.7 16.5 28.7 16.5 29 0 0.2 -8.2 0.4 -18.2 0.4 l-18.3 -0.1 -15 -27.4 -14.9 -27.5 -22.8 0 -22.8 0 0 27.5 0 27.5 -16 0 -16 0 0 -75.1z m96.4 -9.8 c6.9 -3.4 10.6 -9.5 10.6 -17.3 0 -3.2 -0.6 -7.3 -1.4 -9.1 -1.7 -4.3 -7.6 -9.3 -12.3 -10.6 -2.3 -0.7 -15.6 -1.1 -32.5 -1.1 l-28.8 0 0 20.6 0 20.6 29.8 -0.4 c29 -0.3 29.8 -0.4 34.6 -2.7z"></path>
               </g>
             </svg>
-          </a>
+            <div className="ml-3 flex flex-col justify-center h-6 hover:scale-105 transition-transform duration-300">
         </div>
         </div>
       </div>

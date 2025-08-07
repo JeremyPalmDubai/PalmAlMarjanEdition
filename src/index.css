@@ -78,16 +78,50 @@ body {
 /* Tesla-inspired button styles */
 .tesla-btn-primary {
   @apply bg-black text-white px-6 py-3 rounded-none font-medium text-sm tracking-wide;
-  @apply hover:bg-gray-800 transition-all duration-300;
+  @apply hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
   @apply focus:outline-none focus:ring-2 focus:ring-gray-500;
   border: none;
   box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.tesla-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.tesla-btn-primary:hover::before {
+  left: 100%;
 }
 
 .tesla-btn-secondary {
   @apply bg-transparent text-black px-4 py-3 rounded-none font-medium text-sm tracking-wide;
-  @apply border border-black hover:bg-black hover:text-white transition-all duration-300;
+  @apply border border-black hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
   @apply focus:outline-none focus:ring-2 focus:ring-gray-500;
+  position: relative;
+  overflow: hidden;
+}
+
+.tesla-btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.tesla-btn-secondary:hover::before {
+  left: 100%;
 }
 
 .tesla-btn-secondary svg {
@@ -107,8 +141,26 @@ body {
 /* Tesla-style cards */
 .tesla-card {
   @apply bg-white rounded-none shadow-sm border-0;
-  @apply hover:shadow-lg transition-all duration-500;
-  @apply transform hover:-translate-y-1;
+  @apply hover:shadow-xl transition-all duration-500;
+  @apply transform hover:-translate-y-2 hover:scale-102;
+  position: relative;
+  overflow: hidden;
+}
+
+.tesla-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #000, transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.tesla-card:hover::before {
+  transform: translateX(100%);
 }
 
 /* Tesla-style text animations */
@@ -191,13 +243,93 @@ body {
 
 /* Tesla-style minimal shadows */
 .tesla-shadow {
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.tesla-shadow:hover {
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 8px 12px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Tesla-style hover effects */
 .tesla-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.2),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Micro-interactions pour les éléments interactifs */
+.micro-bounce:hover {
+  animation: micro-bounce 0.6s ease-in-out;
+}
+
+@keyframes micro-bounce {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-2px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-1px); }
+}
+
+/* Effet de brillance pour les boutons premium */
+.premium-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.premium-shine:hover::after {
+  left: 100%;
+}
+
+/* Effet de pulsation subtile pour les éléments importants */
+.subtle-pulse {
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+  50% { 
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
+
+/* Effet de typing pour les textes importants */
+.typing-effect {
+  overflow: hidden;
+  border-right: 2px solid #000;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #000; }
 }
 
 /* Tesla-style typography */
@@ -213,9 +345,28 @@ body {
 
 /* Tesla-style navigation */
 .tesla-nav-enhanced {
-  @apply backdrop-blur-md bg-white/95 border-b border-gray-100;
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+  @apply backdrop-blur-xl bg-white/95 border-b border-gray-100;
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 
+    0 2px 20px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.tesla-nav-enhanced::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+  animation: nav-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes nav-shimmer {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 
 /* Enhanced navbar animations */
@@ -536,22 +687,47 @@ body {
 .tesla-mobile-nav {
   @apply fixed bottom-0 left-0 right-0 z-50 lg:hidden;
   padding: 8px 16px 20px 16px;
+  animation: slide-up 0.5s ease-out;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .tesla-mobile-nav-container {
   @apply flex justify-center items-center gap-1;
   /* Tesla Minimalist Glass Effect */
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 16px;
   padding: 6px 12px;
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.12),
-    0 2px 8px rgba(0, 0, 0, 0.08);
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
   max-width: 320px;
   margin: 0 auto;
+  position: relative;
+}
+
+.tesla-mobile-nav-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  border-radius: 16px 16px 0 0;
 }
 
 .tesla-nav-item {
@@ -560,35 +736,55 @@ body {
   border: none;
   background: transparent;
   color: #666;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-radius: 12px;
   min-width: 48px;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.tesla-nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tesla-nav-item:hover::before {
+  opacity: 1;
 }
 
 /* Active State - Tesla Black */
 .tesla-nav-item.active {
   color: #000;
-  background: rgba(0, 0, 0, 0.08);
-  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.12);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Hover Effect */
 .tesla-nav-item:not(.active):hover {
   color: #333;
-  background: rgba(0, 0, 0, 0.04);
-  transform: scale(1.02);
+  background: rgba(0, 0, 0, 0.06);
+  transform: scale(1.05) translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Touch Feedback */
 .tesla-nav-item:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
   transition: transform 0.1s ease;
 }
 
 .tesla-nav-item.active:active {
-  transform: scale(1.0);
+  transform: scale(1.02);
 }
 
 /* Icon Styles */
@@ -596,12 +792,17 @@ body {
   width: 20px;
   height: 20px;
   margin-bottom: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   stroke-width: 1.5;
 }
 
 .tesla-nav-item.active .nav-icon {
   stroke-width: 2;
+  transform: scale(1.1);
+}
+
+.tesla-nav-item:hover .nav-icon {
+  transform: scale(1.05) rotate(5deg);
 }
 
 /* Label Styles */
@@ -609,13 +810,14 @@ body {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   font-family: 'Inter', sans-serif;
   text-transform: uppercase;
 }
 
 .tesla-nav-item.active .nav-label {
   font-weight: 600;
+  transform: scale(1.05);
 }
 
 /* ===== Tesla Contact Button ===== */
@@ -637,22 +839,42 @@ body {
   /* Tesla Black Minimalist */
   background: #000;
   box-shadow: 
-    0 4px 16px rgba(0, 0, 0, 0.2),
-    0 2px 4px rgba(0, 0, 0, 0.1);
+    0 6px 20px rgba(0, 0, 0, 0.25),
+    0 3px 6px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.tesla-contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tesla-contact-btn:hover::before {
+  opacity: 1;
 }
 
 .tesla-contact-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(5deg);
   background: #333;
   box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.25),
-    0 3px 6px rgba(0, 0, 0, 0.15);
+    0 8px 25px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .tesla-contact-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.9);
   transition: transform 0.1s ease;
 }
 
@@ -660,6 +882,12 @@ body {
   @apply w-5 h-5 text-white;
   flex-shrink: 0;
   stroke-width: 1.5;
+  transition: all 0.3s ease;
+}
+
+.tesla-contact-btn:hover .contact-icon {
+  transform: scale(1.1);
+  stroke-width: 2;
 }
 
 /* Responsive Adjustments */

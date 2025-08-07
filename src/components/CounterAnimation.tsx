@@ -54,7 +54,7 @@ export const CounterAnimation: React.FC<CounterAnimationProps> = ({
   }, [isVisible, end, duration]);
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={`${className} inline-block transition-all duration-300 hover:scale-110`}>
       {count.toLocaleString()}{suffix}
     </span>
   );

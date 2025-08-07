@@ -146,15 +146,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
 
           {/* Tally Form */}
           <div className="animate-fade-in-up">
-            <div className="bg-white tesla-shadow overflow-hidden p-4 sm:p-6 lg:p-8">
+            <div className="bg-white tesla-shadow overflow-hidden p-4 sm:p-6 lg:p-8 border border-gray-100 hover:border-gray-200 transition-all duration-300">
               <h3 className="text-xl sm:text-2xl tesla-heading mb-6 sm:mb-8 text-center">
                 {t.contact.form.title}
               </h3>
               
               <div className="w-full" style={{ minHeight: '404px' }}>
-                <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg">
+                <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-blue-400 animate-pulse"></div>
                   <div className="flex items-center mb-2">
-                    <svg className="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-green-600 mr-2 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="font-medium text-green-800">Réponse garantie sous 2h</span>

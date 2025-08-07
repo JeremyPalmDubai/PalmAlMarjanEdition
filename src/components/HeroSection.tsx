@@ -70,10 +70,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           </p>
           
           {/* Tesla-style CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0 animate-fade-in-up">
             <a 
               href="#contact" 
-              className="tesla-btn-primary-hero w-full sm:w-auto group relative overflow-hidden"
+              className="tesla-btn-primary-hero w-full sm:w-auto group relative overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'click', { 
@@ -91,16 +91,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
               }}
             >
               <span className="relative z-10 flex items-center justify-center">
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               Invest Al Marjan Island
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
             </a>
             <a
               href="#contact" 
-              className="tesla-btn-secondary-hero w-full sm:w-auto group"
+              className="tesla-btn-secondary-hero w-full sm:w-auto group transform hover:scale-105 transition-all duration-300 backdrop-blur-md"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'click', { 
@@ -116,7 +117,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
               }}
             >
               <span className="flex items-center justify-center">
-                <svg className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               {t.hero.cta.primary}
@@ -127,15 +128,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           {/* Trust indicators */}
           <div className="mt-8 sm:mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-white/70 text-xs sm:text-sm px-4 sm:px-0 animate-fade-in-up">
             <div className="flex items-center">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse shadow-lg shadow-green-400/50"></span>
               100% Freehold Ownership
             </div>
             <div className="flex items-center">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse shadow-lg shadow-green-400/50"></span>
               0% Capital Gains Tax
             </div>
             <div className="flex items-center">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse shadow-lg shadow-green-400/50"></span>
               5-Year Payment Plans
             </div>
           </div>
