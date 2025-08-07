@@ -395,54 +395,85 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div className="animate-slide-in">
-              <h3 className="text-2xl tesla-heading mb-8">Resort Infrastructure</h3>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                  <div>
-                    <span className="font-medium text-black">Water park near Hilton hotel</span>
-                    <p className="tesla-subheading text-sm mt-1">Family entertainment facilities</p>
-                  </div>
+          {/* Tesla-style 3-column benefits grid */}
+          <div className="grid md:grid-cols-3 gap-16 mb-20">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <h3 className="text-xl tesla-heading mb-4">Wynn Resort Proximity</h3>
+              <p className="tesla-subheading leading-relaxed">
+                <strong>Properties near Wynn Resort in Al Marjan Island</strong> inevitably increase in price with each passing day. 
+                After the 2027 opening, management plans to attract 5.5 million tourists by 2030.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                </svg>
+              </div>
+              <h3 className="text-xl tesla-heading mb-4">Freehold Ownership</h3>
+              <p className="tesla-subheading leading-relaxed">
+                Foreign investors can <strong>buy Al Marjan Island property</strong> without restrictions. 
+                This freehold zone has no taxes on personal income, maximizing your investment returns.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+              <h3 className="text-xl tesla-heading mb-4">Family-Friendly Living</h3>
+              <p className="tesla-subheading leading-relaxed">
+                <strong>Al Marjan Island luxury homes</strong> occupy most of the coastline with first-class infrastructure 
+                tailored for family vacations and year-round living.
+              </p>
+            </div>
+          </div>
+          
+          {/* Tesla-style infrastructure section */}
+          <div className="text-center mb-20">
+            <h3 className="text-2xl tesla-heading mb-12">Choose <strong>high-ROI properties in Al Marjan Island</strong> for the area's developed resort infrastructure</h3>
+          </div>
+          
+          {/* Tesla-style clean grid */}
+          <div className="grid md:grid-cols-2 gap-16 mb-20">
+            <div>
+              <div className="space-y-8">
+                <div className="border-b border-gray-200 pb-6">
+                  <div className="font-medium text-black mb-2">Family entertainment facilities</div>
+                  <div className="tesla-subheading text-sm">Water park near Hilton hotel</div>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                  <div>
-                    <span className="font-medium text-black">Water sports complexes</span>
-                    <p className="tesla-subheading text-sm mt-1">Marine activities and recreation</p>
-                  </div>
+                <div className="border-b border-gray-200 pb-6">
+                  <div className="font-medium text-black mb-2">Marine activities and recreation</div>
+                  <div className="tesla-subheading text-sm">Water sports complexes</div>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                  <div>
-                    <span className="font-medium text-black">Green walking routes and parks</span>
-                    <p className="tesla-subheading text-sm mt-1">Landscaped outdoor spaces</p>
-                  </div>
+                <div className="border-b border-gray-200 pb-6">
+                  <div className="font-medium text-black mb-2">Landscaped outdoor spaces</div>
+                  <div className="tesla-subheading text-sm">Green walking routes and parks</div>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                  <div>
-                    <span className="font-medium text-black">Bars, restaurants, cafes</span>
-                    <p className="tesla-subheading text-sm mt-1">Diverse dining and entertainment</p>
-                  </div>
+                <div className="border-b border-gray-200 pb-6">
+                  <div className="font-medium text-black mb-2">Diverse dining and entertainment</div>
+                  <div className="tesla-subheading text-sm">Bars, restaurants, cafes</div>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                  <div>
-                    <span className="font-medium text-black">8 km of well-maintained beaches</span>
-                    <p className="tesla-subheading text-sm mt-1">Pristine coastline access</p>
-                  </div>
+                <div>
+                  <div className="font-medium text-black mb-2">Pristine coastline access</div>
+                  <div className="tesla-subheading text-sm">8 km of well-maintained beaches</div>
                 </div>
               </div>
             </div>
             
-            <div className="animate-fade-in-up">
-              <h3 className="text-2xl tesla-heading mb-8">Upcoming Projects</h3>
-              <div className="bg-gray-100 p-8 mb-8">
-                <h4 className="text-lg font-medium text-black mb-4">Major Developments</h4>
+            <div>
+              <div className="bg-gray-50 p-8 mb-8">
+                <h4 className="text-lg font-medium text-black mb-6">Major Developments</h4>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between border-b border-gray-200 pb-4">
                     <span className="tesla-subheading">Wynn Al Marjan Island Resort</span>
                     <span className="text-sm font-medium text-black">2027</span>
                   </div>
