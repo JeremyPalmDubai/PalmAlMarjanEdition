@@ -145,6 +145,83 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
           </div>
         </div>
 
+        {/* Tesla-style archipelago investment section */}
+        <div className="mb-32">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl tesla-heading mb-8" id="artificial-archipelago">
+              An Artificial Archipelago with Unique Investment Prospects
+            </h3>
+            <div className="text-lg tesla-subheading leading-relaxed space-y-6">
+              <p>
+                The Al Marjan Island archipelago, consisting of four artificial islands, is part of the Emirate of Ras Al Khaimah – a 45-minute drive from Dubai. It is an elite resort with plenty of entertainment facilities, impeccable white-sand beaches, and breathtaking views of the azure sea.
+              </p>
+              <p>
+                However, the main reason <strong>investment properties in Al Marjan Island</strong> are in high demand among local and foreign buyers is the construction of <strong>Wynn Resorts</strong>, the first casino resort in the UAE. This groundbreaking development transforms <strong>Al Marjan real estate</strong> into the most sought-after investment destination in the region.
+              </p>
+              <p>
+                <strong>Invest Al Marjan Island</strong> today to capitalize on this unprecedented opportunity. With <strong>Al Marjan Island real estate</strong> showing exceptional growth potential and the upcoming <strong>Wynn Casino opening in 2027</strong>, early investors are positioned for extraordinary returns.
+              </p>
+            </div>
+            
+            {/* Tesla-style key highlights */}
+            <div className="grid md:grid-cols-3 gap-8 mt-16">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-medium text-black mb-2">Four Artificial Islands</h4>
+                <p className="tesla-subheading text-sm">Interconnected coral islands spanning 2.7M sqm</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-medium text-black mb-2">Strategic Location</h4>
+                <p className="tesla-subheading text-sm">45 minutes from Dubai, Ras Al Khaimah</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-medium text-black mb-2">First UAE Casino</h4>
+                <p className="tesla-subheading text-sm">Wynn Resorts opening 2027</p>
+              </div>
+            </div>
+            
+            {/* Tesla-style CTA */}
+            <div className="mt-16">
+              <a 
+                href="#contact" 
+                className="tesla-btn-primary"
+                onClick={() => {
+                  if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', { 
+                      event_category: 'CTA',
+                      event_label: 'Archipelago Investment CTA'
+                    });
+                  }
+                  if (typeof fbq !== 'undefined') {
+                    fbq('track', 'InitiateCheckout', {
+                      content_name: 'Archipelago Investment'
+                    });
+                  }
+                }}
+              >
+                Discover Investment Opportunities
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Tesla-style vision section */}
         <div className="bg-black text-white px-8 py-16 lg:px-16 lg:py-24">
           <div className="max-w-4xl mx-auto text-center">
