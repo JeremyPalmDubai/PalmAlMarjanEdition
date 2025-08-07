@@ -36,6 +36,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: "2,800,000 AED",
       availability: "Ready 2029",
       availabilityColor: "text-blue-600",
+      deliveryDate: currentLanguage === 'fr' ? "Livraison 2029" : 
+                   currentLanguage === 'es' ? "Entrega 2029" :
+                   currentLanguage === 'nl' ? "Oplevering 2029" : "Handover 2029",
       websiteUrl: "https://www.oystrabyrichmind.com/",
       featured: true
     },
