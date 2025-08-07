@@ -48,33 +48,33 @@ export const WhyPalmSignatureSection: React.FC<WhyPalmSignatureSectionProps> = (
   ];
 
   return (
-    <section className="tesla-section bg-gray-50">
-      <div className="tesla-container">
+    <section className="section-feature">
+      <div className="container-minimal">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
+          <h2 className="text-display mb-8">
             {t.whyPalmSignature.title}
           </h2>
-          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
+          <p className="text-body max-w-4xl mx-auto">
             {t.whyPalmSignature.description}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid-minimal grid-2">
           {benefits.map((benefit, index) => (
-            <div key={index} className="flex items-start space-x-6 animate-fade-in-up">
-              <div className="flex-shrink-0 w-16 h-16 bg-white rounded-full flex items-center justify-center tesla-shadow">
+            <div key={index} className="card-minimal flex items-start space-x-6 animate-fade-in-up">
+              <div className="flex-shrink-0 w-16 h-16 glass-dark rounded-2xl flex items-center justify-center">
                 {benefit.icon}
               </div>
               <div>
-                <h3 className="text-xl tesla-heading mb-4">{benefit.title}</h3>
-                <p className="tesla-subheading leading-relaxed">{benefit.description}</p>
+                <h3 className="text-title mb-4">{benefit.title}</h3>
+                <p className="text-body">{benefit.description}</p>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-16">
-          <a href="#contact" className="tesla-btn-primary">
+          <a href="#contact" className="btn-primary">
             {t.contact.title}
           </a>
         </div>

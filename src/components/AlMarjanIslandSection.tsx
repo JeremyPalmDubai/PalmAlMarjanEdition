@@ -11,23 +11,23 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
 
   return (
     <>
-      <section className="tesla-section bg-white overflow-hidden">
-      <div className="tesla-container">
+      <section className="section-minimal overflow-hidden">
+      <div className="container-minimal">
         {/* Tesla-style minimal header */}
         <div className="text-center mb-20">
-          <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-4">
+          <div className="text-label text-[#86868b] mb-6">
             INVEST AL MARJAN ISLAND • AL MARJAN REAL ESTATE
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="al-marjan-real-estate" itemProp="name">
+          <h2 className="text-display mb-8" id="al-marjan-real-estate" itemProp="name">
             {t.alMarjanIsland.title}
           </h2>
-          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed" id="al-marjan-island-real-estate" itemProp="description">
+          <p className="text-body max-w-5xl mx-auto" id="al-marjan-island-real-estate" itemProp="description">
             {t.alMarjanIsland.description}
           </p>
           
           {/* SEO-rich description */}
           <div className="mt-8 max-w-5xl mx-auto">
-            <p className="text-lg tesla-subheading leading-relaxed">
+            <p className="text-body">
               <strong>Invest Al Marjan Island</strong> in the UAE's most promising luxury destination. 
               <strong>Al Marjan real estate</strong> offers world-class developments by international brands. 
               <strong>Al Marjan Island real estate</strong> features pristine beaches, luxury amenities, and the upcoming 
@@ -38,32 +38,32 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
 
         {/* Tesla-style hero image with overlay content */}
         <div className="relative mb-32">
-          <div className="h-[70vh] min-h-[600px] relative overflow-hidden bg-black">
+          <div className="h-[70vh] min-h-[600px] relative overflow-hidden rounded-3xl">
             <img
               src="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp"
               alt="Al Marjan Island aerial view"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover image-hero"
             />
             <div className="absolute inset-0 bg-black/20"></div>
             
             {/* Tesla-style overlay content */}
             <div className="absolute inset-0 flex items-end">
               <div className="w-full p-8 lg:p-16">
-                <div className="max-w-2xl">
-                  <h3 className="text-3xl md:text-4xl font-inter font-light text-white mb-6 tracking-tight">
+                <div className="max-w-3xl glass-dark p-8 rounded-2xl">
+                  <h3 className="text-headline text-white mb-6">
                     Four Coral Islands Connected
                   </h3>
-                  <p className="text-lg text-white/90 mb-8 font-light leading-relaxed">
+                  <p className="text-body text-white/90 mb-8">
                     Al Marjan Island consists of four man-made coral islands spanning 2.7 million square meters of pristine coastline in Ras Al Khaimah.
                   </p>
                   <div className="grid grid-cols-2 gap-6 text-white">
                     <div>
-                      <div className="text-2xl font-light mb-1">2.7M</div>
-                      <div className="text-sm text-white/70">Square Meters</div>
+                      <div className="text-title mb-1">2.7M</div>
+                      <div className="text-caption text-white/70">Square Meters</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-light mb-1">23km</div>
-                      <div className="text-sm text-white/70">Coastline</div>
+                      <div className="text-title mb-1">23km</div>
+                      <div className="text-caption text-white/70">Coastline</div>
                     </div>
                   </div>
                 </div>
@@ -73,74 +73,74 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         </div>
 
         {/* Tesla-style features grid */}
-        <div className="grid lg:grid-cols-2 gap-24 mb-32">
+        <div className="grid-minimal grid-2 mb-32">
           {/* Location & Connectivity */}
-          <div className="animate-slide-in">
+          <div className="card-feature animate-slide-in">
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 glass-dark rounded-xl flex items-center justify-center mr-4">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl tesla-heading" id="strategic-location">Strategic Location</h3>
+              <h3 className="text-title" id="strategic-location">Strategic Location</h3>
             </div>
-            <p className="tesla-subheading text-lg leading-relaxed mb-12">
+            <p className="text-body mb-12">
               Perfectly positioned in Ras Al Khaimah, Al Marjan Island offers unparalleled access to the UAE's major business and leisure destinations.
             </p>
             
             {/* Tesla-style connectivity metrics */}
             <div className="space-y-6">
-              <div className="flex items-center justify-between py-4 border-b border-gray-100">
+              <div className="flex items-center justify-between py-4 border-b border-white/20">
                 <div className="flex items-center">
-                  <Plane className="w-5 h-5 text-gray-400 mr-3" />
-                  <span className="tesla-subheading">Dubai International Airport</span>
+                  <Plane className="w-5 h-5 text-[#86868b] mr-3" />
+                  <span className="text-body">Dubai International Airport</span>
                 </div>
-                <span className="text-xl font-light">45 min</span>
+                <span className="text-title">45 min</span>
               </div>
-              <div className="flex items-center justify-between py-4 border-b border-gray-100">
+              <div className="flex items-center justify-between py-4 border-b border-white/20">
                 <div className="flex items-center">
-                  <Car className="w-5 h-5 text-gray-400 mr-3" />
-                  <span className="tesla-subheading">Dubai City Center</span>
+                  <Car className="w-5 h-5 text-[#86868b] mr-3" />
+                  <span className="text-body">Dubai City Center</span>
                 </div>
-                <span className="text-xl font-light">45 min</span>
+                <span className="text-title">45 min</span>
               </div>
-              <div className="flex items-center justify-between py-4 border-b border-gray-100">
+              <div className="flex items-center justify-between py-4 border-b border-white/20">
                 <div className="flex items-center">
-                  <Ship className="w-5 h-5 text-gray-400 mr-3" />
-                  <span className="tesla-subheading">Private Marina Access</span>
+                  <Ship className="w-5 h-5 text-[#86868b] mr-3" />
+                  <span className="text-body">Private Marina Access</span>
                 </div>
-                <span className="text-xl font-light">Direct</span>
+                <span className="text-title">Direct</span>
               </div>
             </div>
           </div>
 
           {/* Island Features */}
-          <div className="animate-fade-in-up">
+          <div className="card-feature animate-fade-in-up">
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 glass-dark rounded-xl flex items-center justify-center mr-4">
                 <Waves className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl tesla-heading" id="island-features">Island Features</h3>
+              <h3 className="text-title" id="island-features">Island Features</h3>
             </div>
-            <p className="tesla-subheading text-lg leading-relaxed mb-12">
+            <p className="text-body mb-12">
               Four interconnected islands designed for luxury living, world-class hospitality, and premium entertainment experiences.
             </p>
 
             {/* Tesla-style feature list */}
             <div className="space-y-8">
               <div>
-                <h4 className="text-lg font-medium text-black mb-3">Al Marjan Island 1</h4>
-                <p className="tesla-subheading text-sm">Luxury hotels and resorts including Waldorf Astoria and DoubleTree by Hilton</p>
+                <h4 className="text-body font-semibold text-[#1d1d1f] mb-3">Al Marjan Island 1</h4>
+                <p className="text-caption">Luxury hotels and resorts including Waldorf Astoria and DoubleTree by Hilton</p>
               </div>
               <div>
-                <h4 className="text-lg font-medium text-black mb-3">Al Marjan Island 2</h4>
-                <p className="tesla-subheading text-sm">Premium residential developments and the upcoming Wynn Resort & Casino</p>
+                <h4 className="text-body font-semibold text-[#1d1d1f] mb-3">Al Marjan Island 2</h4>
+                <p className="text-caption">Premium residential developments and the upcoming Wynn Resort & Casino</p>
               </div>
               <div>
-                <h4 className="text-lg font-medium text-black mb-3">Al Marjan Island 3</h4>
-                <p className="tesla-subheading text-sm">Mixed-use developments with retail, dining, and entertainment venues</p>
+                <h4 className="text-body font-semibold text-[#1d1d1f] mb-3">Al Marjan Island 3</h4>
+                <p className="text-caption">Mixed-use developments with retail, dining, and entertainment venues</p>
               </div>
               <div>
-                <h4 className="text-lg font-medium text-black mb-3">Al Marjan Island 4</h4>
-                <p className="tesla-subheading text-sm">Exclusive beachfront villas and luxury residential communities</p>
+                <h4 className="text-body font-semibold text-[#1d1d1f] mb-3">Al Marjan Island 4</h4>
+                <p className="text-caption">Exclusive beachfront villas and luxury residential communities</p>
               </div>
             </div>
           </div>
@@ -148,11 +148,11 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
 
         {/* Tesla-style archipelago investment section */}
         <div className="mb-32">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl md:text-4xl lg:text-5xl tesla-heading mb-8" id="artificial-archipelago">
+          <div className="container-narrow text-center">
+            <h3 className="text-headline mb-8" id="artificial-archipelago">
               An Artificial Archipelago with Unique Investment Prospects
             </h3>
-            <div className="text-lg tesla-subheading leading-relaxed space-y-6">
+            <div className="text-body space-y-6">
               <p>
                 The Al Marjan Island archipelago, consisting of four artificial islands, is part of the Emirate of Ras Al Khaimah – a 45-minute drive from Dubai. It is an elite resort with plenty of entertainment facilities, impeccable white-sand beaches, and breathtaking views of the azure sea.
               </p>
@@ -165,36 +165,36 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
             </div>
             
             {/* Tesla-style key highlights */}
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="grid-minimal grid-3 mt-16">
+              <div className="card-minimal text-center">
+                <div className="w-16 h-16 glass-dark rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
-                <h4 className="text-lg font-medium text-black mb-2">Four Artificial Islands</h4>
-                <p className="tesla-subheading text-sm">Interconnected coral islands spanning 2.7M sqm</p>
+                <h4 className="text-body font-semibold text-[#1d1d1f] mb-2">Four Artificial Islands</h4>
+                <p className="text-caption">Interconnected coral islands spanning 2.7M sqm</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="card-minimal text-center">
+                <div className="w-16 h-16 glass-dark rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h4 className="text-lg font-medium text-black mb-2">Strategic Location</h4>
-                <p className="tesla-subheading text-sm">45 minutes from Dubai, Ras Al Khaimah</p>
+                <h4 className="text-body font-semibold text-[#1d1d1f] mb-2">Strategic Location</h4>
+                <p className="text-caption">45 minutes from Dubai, Ras Al Khaimah</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="card-minimal text-center">
+                <div className="w-16 h-16 glass-dark rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
                 </div>
-                <h4 className="text-lg font-medium text-black mb-2">First UAE Casino</h4>
-                <p className="tesla-subheading text-sm">Wynn Resorts opening 2027</p>
+                <h4 className="text-body font-semibold text-[#1d1d1f] mb-2">First UAE Casino</h4>
+                <p className="text-caption">Wynn Resorts opening 2027</p>
               </div>
             </div>
             
@@ -202,7 +202,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
             <div className="mt-16">
               <a 
                 href="#contact" 
-                className="tesla-btn-primary"
+                className="btn-primary"
                 onClick={() => {
                   if (typeof gtag !== 'undefined') {
                     gtag('event', 'click', { 
@@ -224,35 +224,35 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         </div>
 
         {/* Tesla-style vision section */}
-        <div className="bg-black text-white px-8 py-16 lg:px-16 lg:py-24">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="card-dark text-center">
+          <div className="container-narrow">
             <div className="flex items-center justify-center mb-6">
               <Building2 className="w-8 h-8 text-white mr-3" />
-              <h3 className="text-2xl md:text-3xl font-inter font-light tracking-tight" id="master-plan">
+              <h3 className="text-title text-white" id="master-plan">
                 Master Plan Vision 2030
               </h3>
             </div>
-            <p className="text-lg text-gray-300 mb-12 leading-relaxed font-light max-w-3xl mx-auto">
+            <p className="text-body text-white/80 mb-12">
               Al Marjan Island's comprehensive master plan transforms the destination into the Middle East's premier luxury tourism and residential hub, anchored by world-class developments and the iconic Wynn Resort & Casino.
             </p>
             
             {/* Tesla-style stats grid */}
-            <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div className="grid-minimal grid-4 text-center">
               <div className="animate-fade-in-up">
-                <div className="text-3xl font-light mb-2">50+</div>
-                <div className="text-sm text-gray-300">Luxury Hotels & Resorts</div>
+                <div className="text-title text-white mb-2">50+</div>
+                <div className="text-caption text-white/70">Luxury Hotels & Resorts</div>
               </div>
               <div className="animate-fade-in-up">
-                <div className="text-3xl font-light mb-2">10,000+</div>
-                <div className="text-sm text-gray-300">Residential Units</div>
+                <div className="text-title text-white mb-2">10,000+</div>
+                <div className="text-caption text-white/70">Residential Units</div>
               </div>
               <div className="animate-fade-in-up">
-                <div className="text-3xl font-light mb-2">200+</div>
-                <div className="text-sm text-gray-300">Dining & Retail Outlets</div>
+                <div className="text-title text-white mb-2">200+</div>
+                <div className="text-caption text-white/70">Dining & Retail Outlets</div>
               </div>
               <div className="animate-fade-in-up">
-                <div className="text-3xl font-light mb-2">5M+</div>
-                <div className="text-sm text-gray-300">Annual Visitors by 2030</div>
+                <div className="text-title text-white mb-2">5M+</div>
+                <div className="text-caption text-white/70">Annual Visitors by 2030</div>
               </div>
             </div>
           </div>
@@ -261,74 +261,74 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
       </section>
 
       {/* Tesla-style comprehensive investment section */}
-      <section className="tesla-section bg-gray-50">
-      <div className="tesla-container">
+      <section className="section-feature">
+      <div className="container-minimal">
         {/* Types of Housing */}
         <div className="mb-32">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="housing-types">
+            <h2 className="text-display mb-8" id="housing-types">
               Types of Housing in Al Marjan Island
             </h2>
-            <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
+            <p className="text-body max-w-4xl mx-auto">
               Apartments, Villas, and Townhouses
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div className="animate-slide-in">
-              <p className="text-lg tesla-subheading leading-relaxed mb-8">
+          <div className="grid-minimal grid-2 items-center mb-16">
+            <div className="card-minimal animate-slide-in">
+              <p className="text-body mb-8">
                 You still have time to <strong>invest in off-plan properties in Al Marjan Island</strong> – the archipelago continues to develop. 
                 But there are also ready-made options available for immediate investment.
               </p>
               
               {/* Tesla-style pricing grid */}
               <div className="space-y-6">
-                <div className="flex items-center justify-between py-4 border-b border-gray-200">
+                <div className="flex items-center justify-between py-4 border-b border-white/20">
                   <div>
-                    <span className="font-medium text-black">Studios</span>
-                    <div className="text-sm tesla-subheading">Compact luxury living</div>
+                    <span className="text-body font-semibold text-[#1d1d1f]">Studios</span>
+                    <div className="text-caption">Compact luxury living</div>
                   </div>
-                  <span className="text-xl font-light">$150,000</span>
+                  <span className="text-title">$150,000</span>
                 </div>
-                <div className="flex items-center justify-between py-4 border-b border-gray-200">
+                <div className="flex items-center justify-between py-4 border-b border-white/20">
                   <div>
-                    <span className="font-medium text-black">2BR Apartments</span>
-                    <div className="text-sm tesla-subheading">130-150 m², 3 bathrooms</div>
+                    <span className="text-body font-semibold text-[#1d1d1f]">2BR Apartments</span>
+                    <div className="text-caption">130-150 m², 3 bathrooms</div>
                   </div>
-                  <span className="text-xl font-light">$340,000</span>
+                  <span className="text-title">$340,000</span>
                 </div>
-                <div className="flex items-center justify-between py-4 border-b border-gray-200">
+                <div className="flex items-center justify-between py-4 border-b border-white/20">
                   <div>
-                    <span className="font-medium text-black">Villas</span>
-                    <div className="text-sm tesla-subheading">Private luxury homes</div>
+                    <span className="text-body font-semibold text-[#1d1d1f]">Villas</span>
+                    <div className="text-caption">Private luxury homes</div>
                   </div>
-                  <span className="text-xl font-light">$800K - $7.5M</span>
+                  <span className="text-title">$800K - $7.5M</span>
                 </div>
-                <div className="flex items-center justify-between py-4 border-b border-gray-200">
+                <div className="flex items-center justify-between py-4 border-b border-white/20">
                   <div>
-                    <span className="font-medium text-black">Townhouses</span>
-                    <div className="text-sm tesla-subheading">Family-oriented living</div>
+                    <span className="text-body font-semibold text-[#1d1d1f]">Townhouses</span>
+                    <div className="text-caption">Family-oriented living</div>
                   </div>
-                  <span className="text-xl font-light">$740K - $2.8M</span>
+                  <span className="text-title">$740K - $2.8M</span>
                 </div>
               </div>
             </div>
             
-            <div className="animate-fade-in-up">
-              <div className="bg-black text-white p-8 lg:p-12">
-                <h3 className="text-2xl font-inter font-light mb-6">Investment Opportunity</h3>
-                <p className="text-gray-300 mb-8 leading-relaxed">
+            <div className="card-dark animate-fade-in-up">
+              <div>
+                <h3 className="text-title text-white mb-6">Investment Opportunity</h3>
+                <p className="text-body text-white/80 mb-8">
                   <strong>Off-plan properties Al Marjan Island</strong> offer the best value with flexible payment plans 
                   and guaranteed appreciation before completion.
                 </p>
                 <div className="grid grid-cols-2 gap-6 text-center">
                   <div>
-                    <div className="text-2xl font-light mb-2">10%</div>
-                    <div className="text-sm text-gray-300">Down Payment</div>
+                    <div className="text-title text-white mb-2">10%</div>
+                    <div className="text-caption text-white/70">Down Payment</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-light mb-2">5 Years</div>
-                    <div className="text-sm text-gray-300">Payment Plan</div>
+                    <div className="text-title text-white mb-2">5 Years</div>
+                    <div className="text-caption text-white/70">Payment Plan</div>
                   </div>
                 </div>
               </div>
@@ -339,46 +339,46 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         {/* Benefits of Owning Property */}
         <div className="mb-32">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl tesla-heading mb-8" id="property-benefits">
+            <h2 className="text-display mb-8" id="property-benefits">
               Benefits of Owning Property in Al Marjan Island
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="animate-fade-in-up">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="grid-minimal grid-3">
+            <div className="card-minimal animate-fade-in-up text-center">
+              <div className="w-16 h-16 glass-dark rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h3 className="text-xl tesla-heading mb-4 text-center">Wynn Resort Proximity</h3>
-              <p className="tesla-subheading text-center leading-relaxed">
+              <h3 className="text-title mb-4">Wynn Resort Proximity</h3>
+              <p className="text-body">
                 <strong>Properties near Wynn Resort in Al Marjan Island</strong> inevitably increase in price with each passing day. 
                 After the 2027 opening, management plans to attract 5.5 million tourists by 2030.
               </p>
             </div>
             
-            <div className="animate-fade-in-up">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="card-minimal animate-fade-in-up text-center">
+              <div className="w-16 h-16 glass-dark rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
-              <h3 className="text-xl tesla-heading mb-4 text-center">Freehold Ownership</h3>
-              <p className="tesla-subheading text-center leading-relaxed">
+              <h3 className="text-title mb-4">Freehold Ownership</h3>
+              <p className="text-body">
                 Foreign investors can <strong>buy Al Marjan Island property</strong> without restrictions. 
                 This freehold zone has no taxes on personal income, maximizing your investment returns.
               </p>
             </div>
             
-            <div className="animate-fade-in-up">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="card-minimal animate-fade-in-up text-center">
+              <div className="w-16 h-16 glass-dark rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
               </div>
-              <h3 className="text-xl tesla-heading mb-4 text-center">Family-Friendly Living</h3>
-              <p className="tesla-subheading text-center leading-relaxed">
+              <h3 className="text-title mb-4">Family-Friendly Living</h3>
+              <p className="text-body">
                 <strong>Al Marjan Island luxury homes</strong> occupy most of the coastline with first-class infrastructure 
                 tailored for family vacations and year-round living.
               </p>
@@ -387,75 +387,75 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         {/* Why Buy Property */}
         <div className="mb-32">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl tesla-heading mb-8" id="why-buy-property">
+            <h2 className="text-display mb-8" id="why-buy-property">
               Why Buy a Property in Al Marjan Island
             </h2>
-            <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
+            <p className="text-body max-w-4xl mx-auto">
               Choose <strong>high-ROI properties in Al Marjan Island</strong> for the area's developed resort infrastructure
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div className="animate-slide-in">
-              <h3 className="text-2xl tesla-heading mb-8">Resort Infrastructure</h3>
+          <div className="grid-minimal grid-2">
+            <div className="card-minimal animate-slide-in">
+              <h3 className="text-title mb-8">Resort Infrastructure</h3>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-[#1d1d1f] rounded-full mt-3 mr-4 flex-shrink-0"></div>
                   <div>
-                    <span className="font-medium text-black">Water park near Hilton hotel</span>
-                    <p className="tesla-subheading text-sm mt-1">Family entertainment facilities</p>
+                    <span className="text-body font-semibold text-[#1d1d1f]">Water park near Hilton hotel</span>
+                    <p className="text-caption mt-1">Family entertainment facilities</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-[#1d1d1f] rounded-full mt-3 mr-4 flex-shrink-0"></div>
                   <div>
-                    <span className="font-medium text-black">Water sports complexes</span>
-                    <p className="tesla-subheading text-sm mt-1">Marine activities and recreation</p>
+                    <span className="text-body font-semibold text-[#1d1d1f]">Water sports complexes</span>
+                    <p className="text-caption mt-1">Marine activities and recreation</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-[#1d1d1f] rounded-full mt-3 mr-4 flex-shrink-0"></div>
                   <div>
-                    <span className="font-medium text-black">Green walking routes and parks</span>
-                    <p className="tesla-subheading text-sm mt-1">Landscaped outdoor spaces</p>
+                    <span className="text-body font-semibold text-[#1d1d1f]">Green walking routes and parks</span>
+                    <p className="text-caption mt-1">Landscaped outdoor spaces</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-[#1d1d1f] rounded-full mt-3 mr-4 flex-shrink-0"></div>
                   <div>
-                    <span className="font-medium text-black">Bars, restaurants, cafes</span>
-                    <p className="tesla-subheading text-sm mt-1">Diverse dining and entertainment</p>
+                    <span className="text-body font-semibold text-[#1d1d1f]">Bars, restaurants, cafes</span>
+                    <p className="text-caption mt-1">Diverse dining and entertainment</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-[#1d1d1f] rounded-full mt-3 mr-4 flex-shrink-0"></div>
                   <div>
-                    <span className="font-medium text-black">8 km of well-maintained beaches</span>
-                    <p className="tesla-subheading text-sm mt-1">Pristine coastline access</p>
+                    <span className="text-body font-semibold text-[#1d1d1f]">8 km of well-maintained beaches</span>
+                    <p className="text-caption mt-1">Pristine coastline access</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="animate-fade-in-up">
-              <h3 className="text-2xl tesla-heading mb-8">Upcoming Projects</h3>
-              <div className="bg-gray-100 p-8 mb-8">
-                <h4 className="text-lg font-medium text-black mb-4">Major Developments</h4>
+            <div className="card-minimal animate-fade-in-up">
+              <h3 className="text-title mb-8">Upcoming Projects</h3>
+              <div className="glass-secondary p-8 mb-8 rounded-2xl">
+                <h4 className="text-body font-semibold text-[#1d1d1f] mb-4">Major Developments</h4>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="tesla-subheading">Wynn Al Marjan Island Resort</span>
-                    <span className="text-sm font-medium text-black">2027</span>
+                    <span className="text-body">Wynn Al Marjan Island Resort</span>
+                    <span className="text-caption font-semibold text-[#1d1d1f]">2027</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="tesla-subheading">Marina for 300 yachts</span>
-                    <span className="text-sm font-medium text-black">2026</span>
+                    <span className="text-body">Marina for 300 yachts</span>
+                    <span className="text-caption font-semibold text-[#1d1d1f]">2026</span>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-black text-white p-8">
-                <h4 className="text-lg font-medium mb-4">Existing Amenities</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
+              <div className="card-dark">
+                <h4 className="text-body font-semibold text-white mb-4">Existing Amenities</h4>
+                <p className="text-caption text-white/80">
                   Al Hamra Mall is an 8-minute drive away. The archipelago already has everything needed for life 
                   thanks to five-star hotels, including supermarkets, pharmacies, car rentals, and more.
                 </p>
@@ -465,20 +465,20 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         </div>
         </div>
         {/* How to Invest */}
-        <div className="bg-black text-white px-8 py-16 lg:px-16 lg:py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-inter font-light mb-8" id="how-to-invest">
+        <div className="card-dark text-center">
+          <div className="container-narrow">
+            <h2 className="text-headline text-white mb-8" id="how-to-invest">
               How to Invest in Al Marjan Island Real Estate
             </h2>
-            <p className="text-lg text-gray-300 mb-12 leading-relaxed font-light max-w-3xl mx-auto">
+            <p className="text-body text-white/80 mb-12">
               Contact Palm Signature Real Estate to choose <strong>affordable waterfront housing in Al Marjan Island</strong>. 
               Our experienced specialists will accompany the transaction from beginning to end.
             </p>
             
-            <div className="grid md:grid-cols-2 gap-12 mb-12">
+            <div className="grid-minimal grid-2 mb-12 text-left">
               <div className="text-left">
-                <h3 className="text-xl font-medium mb-6">Our Investment Approach</h3>
-                <div className="space-y-4 text-gray-300">
+                <h3 className="text-title text-white mb-6">Our Investment Approach</h3>
+                <div className="space-y-4 text-white/80">
                   <p className="flex items-start">
                     <span className="w-2 h-2 bg-white rounded-full mt-3 mr-4 flex-shrink-0"></span>
                     Our main goal is not to sell real estate but to organize profitable investments for all clients
@@ -495,8 +495,8 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               </div>
               
               <div className="text-left">
-                <h3 className="text-xl font-medium mb-6">Additional Services</h3>
-                <div className="space-y-4 text-gray-300">
+                <h3 className="text-title text-white mb-6">Additional Services</h3>
+                <div className="space-y-4 text-white/80">
                   <p className="flex items-start">
                     <span className="w-2 h-2 bg-white rounded-full mt-3 mr-4 flex-shrink-0"></span>
                     Relocation assistance and moving support
@@ -515,7 +515,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
             
             <a 
               href="#contact" 
-              className="tesla-btn-secondary-white"
+              className="btn-hero-secondary"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'click', { 

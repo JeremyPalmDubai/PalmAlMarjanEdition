@@ -40,9 +40,9 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
   };
 
   return (
-    <footer className="bg-black text-white py-16">
-      <div className="tesla-container">
-        <div className="grid md:grid-cols-4 gap-12">
+    <footer className="section-dark">
+      <div className="container-minimal">
+        <div className="grid-minimal grid-4">
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
@@ -57,12 +57,12 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
                 </div>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md font-light leading-relaxed">
+            <p className="text-body text-white/80 mb-6 max-w-md">
               {t.footer.description}
             </p>
             
             {/* Legal Information */}
-            <div className="text-xs text-gray-400 mb-4 space-y-1">
+            <div className="text-caption text-white/60 mb-4 space-y-1">
               <div>{t.footer.legal.company}</div>
               <div>{t.footer.legal.license}</div>
               <div>{t.footer.legal.rera}</div>
@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
               href="https://invest-almarjanisland.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-gray-300 font-medium"
+              className="text-white hover:text-white/80 font-medium transition-colors"
             >
               invest-almarjanisland.com
             </a>
@@ -80,21 +80,21 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-medium mb-6">{t.footer.quickLinks.title}</h4>
+            <h4 className="text-body font-semibold text-white mb-6">{t.footer.quickLinks.title}</h4>
             <ul className="space-y-3">
-              <li><a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="text-gray-300 hover:text-white font-light">{t.footer.quickLinks.opportunity}</a></li>
-              <li><a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="text-gray-300 hover:text-white font-light">{t.footer.quickLinks.wynn}</a></li>
-              <li><a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="text-gray-300 hover:text-white font-light">{t.footer.quickLinks.roi}</a></li>
-              <li><a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="text-gray-300 hover:text-white font-light">{t.footer.quickLinks.developments}</a></li>
-              <li><a href="#lifestyle" onClick={(e) => handleNavClick(e, 'lifestyle')} className="text-gray-300 hover:text-white font-light">{t.footer.quickLinks.lifestyle}</a></li>
-              <li><a href="/sitemap" onClick={(e) => handlePageNavigation(e, 'sitemap')} className="text-gray-300 hover:text-white font-light">Sitemap</a></li>
+              <li><a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="nav-item text-white/70 hover:text-white">{t.footer.quickLinks.opportunity}</a></li>
+              <li><a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="nav-item text-white/70 hover:text-white">{t.footer.quickLinks.wynn}</a></li>
+              <li><a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="nav-item text-white/70 hover:text-white">{t.footer.quickLinks.roi}</a></li>
+              <li><a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="nav-item text-white/70 hover:text-white">{t.footer.quickLinks.developments}</a></li>
+              <li><a href="#lifestyle" onClick={(e) => handleNavClick(e, 'lifestyle')} className="nav-item text-white/70 hover:text-white">{t.footer.quickLinks.lifestyle}</a></li>
+              <li><a href="/sitemap" onClick={(e) => handlePageNavigation(e, 'sitemap')} className="nav-item text-white/70 hover:text-white">Sitemap</a></li>
             </ul>
           </div>
 
           {/* Investment Benefits */}
           <div>
-            <h4 className="text-lg font-medium mb-6">Investment Advantages</h4>
-            <div className="space-y-3 text-gray-300 font-light">
+            <h4 className="text-body font-semibold text-white mb-6">Investment Advantages</h4>
+            <div className="space-y-3 text-white/70">
               <p>✓ 0% Tax on Capital Gains</p>
               <p>✓ 100% Freehold Ownership</p>
               <p>✓ 5-Year Payment Plans</p>
@@ -103,108 +103,108 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-center md:text-left font-light">
+        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-caption text-white/60 text-center md:text-left">
             &copy; 2025 Palm Signature Real Estate. {t.footer.rights}
           </p>
           
           
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="/privacy" onClick={(e) => handlePageNavigation(e, 'privacy')} className="text-gray-400 hover:text-white font-light text-sm">
+            <a href="/privacy" onClick={(e) => handlePageNavigation(e, 'privacy')} className="nav-item text-white/60 hover:text-white text-caption">
               {t.footer.privacy}
             </a>
-            <a href="/terms" onClick={(e) => handlePageNavigation(e, 'terms')} className="text-gray-400 hover:text-white font-light text-sm">
+            <a href="/terms" onClick={(e) => handlePageNavigation(e, 'terms')} className="nav-item text-white/60 hover:text-white text-caption">
               {t.footer.terms}
             </a>
           </div>
         </div>
         
         {/* Designed by credit - Below copyright */}
-        <div className="mt-6 pt-4 border-t border-gray-800">
+        <div className="mt-6 pt-4 border-t border-white/20">
           {/* SEO Keywords Section - Discreet */}
           <div className="text-center mb-6">
-            <div className="text-xs text-gray-600 leading-relaxed max-w-6xl mx-auto">
-              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="hover:text-gray-400 transition-colors mr-2">Invest Al Marjan</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="hover:text-gray-400 transition-colors mr-2">Invest Al Marjan Island</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="hover:text-gray-400 transition-colors mr-2">Al Marjan real estate</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="hover:text-gray-400 transition-colors mr-2">Al Marjan Island real estate</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="hover:text-gray-400 transition-colors mr-2">invest near Wynn Casino</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="hover:text-gray-400 transition-colors mr-2">Wynn Casino 2027</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="hover:text-gray-400 transition-colors mr-2">UAE real estate investment</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="hover:text-gray-400 transition-colors mr-2">tax-free property UAE</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="hover:text-gray-400 transition-colors mr-2">luxury real estate Dubai</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="hover:text-gray-400 transition-colors mr-2">Ras Al Khaimah investment</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="hover:text-gray-400 transition-colors mr-2">beachfront properties UAE</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="hover:text-gray-400 transition-colors mr-2">off-plan properties Al Marjan Island</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-gray-400 transition-colors mr-2">5-year payment plans</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="hover:text-gray-400 transition-colors mr-2">100% freehold ownership</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="hover:text-gray-400 transition-colors mr-2">capital appreciation UAE</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="hover:text-gray-400 transition-colors mr-2">rental yields Al Marjan Island</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-gray-400 transition-colors mr-2">Palm Signature Real Estate</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#ceo" onClick={(e) => handleNavClick(e, 'ceo')} className="hover:text-gray-400 transition-colors mr-2">Gabriella Magalhaes CEO</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="hover:text-gray-400 transition-colors mr-2">luxury developments UAE</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#lifestyle" onClick={(e) => handleNavClick(e, 'lifestyle')} className="hover:text-gray-400 transition-colors mr-2">beachfront investment UAE</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="hover:text-gray-400 transition-colors mr-2">Wynn Casino investment</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="hover:text-gray-400 transition-colors mr-2">33.3% property appreciation</a>
-              <span className="text-gray-700 mx-1">•</span>
-              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="hover:text-gray-400 transition-colors">0% capital gains tax</a>
+            <div className="text-caption text-white/40 leading-relaxed max-w-6xl mx-auto">
+              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="nav-item hover:text-white/60 mr-2">Invest Al Marjan</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="nav-item hover:text-white/60 mr-2">Invest Al Marjan Island</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="nav-item hover:text-white/60 mr-2">Al Marjan real estate</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="nav-item hover:text-white/60 mr-2">Al Marjan Island real estate</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="nav-item hover:text-white/60 mr-2">invest near Wynn Casino</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="nav-item hover:text-white/60 mr-2">Wynn Casino 2027</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="nav-item hover:text-white/60 mr-2">UAE real estate investment</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="nav-item hover:text-white/60 mr-2">tax-free property UAE</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="nav-item hover:text-white/60 mr-2">luxury real estate Dubai</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="nav-item hover:text-white/60 mr-2">Ras Al Khaimah investment</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="nav-item hover:text-white/60 mr-2">beachfront properties UAE</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="nav-item hover:text-white/60 mr-2">off-plan properties Al Marjan Island</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="nav-item hover:text-white/60 mr-2">5-year payment plans</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="nav-item hover:text-white/60 mr-2">100% freehold ownership</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="nav-item hover:text-white/60 mr-2">capital appreciation UAE</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="nav-item hover:text-white/60 mr-2">rental yields Al Marjan Island</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="nav-item hover:text-white/60 mr-2">Palm Signature Real Estate</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#ceo" onClick={(e) => handleNavClick(e, 'ceo')} className="nav-item hover:text-white/60 mr-2">Gabriella Magalhaes CEO</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="nav-item hover:text-white/60 mr-2">luxury developments UAE</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#lifestyle" onClick={(e) => handleNavClick(e, 'lifestyle')} className="nav-item hover:text-white/60 mr-2">beachfront investment UAE</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="nav-item hover:text-white/60 mr-2">Wynn Casino investment</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="nav-item hover:text-white/60 mr-2">33.3% property appreciation</a>
+              <span className="text-white/30 mx-1">•</span>
+              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="nav-item hover:text-white/60">0% capital gains tax</a>
             </div>
             
             {/* SEO Phrases Section */}
-            <div className="text-xs text-gray-500 leading-relaxed max-w-6xl mx-auto mt-4">
-              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="hover:text-gray-400 transition-colors mr-3">Best Al Marjan Island investment opportunities</a>
-              <span className="text-gray-600 mx-1">•</span>
-              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="hover:text-gray-400 transition-colors mr-3">Luxury real estate near Wynn Casino</a>
-              <span className="text-gray-600 mx-1">•</span>
-              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="hover:text-gray-400 transition-colors mr-3">Highest ROI real estate UAE</a>
-              <span className="text-gray-600 mx-1">•</span>
-              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="hover:text-gray-400 transition-colors mr-3">Premium beachfront properties Ras Al Khaimah</a>
-              <span className="text-gray-600 mx-1">•</span>
-              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-gray-400 transition-colors mr-3">Interest-free payment plans UAE property</a>
-              <span className="text-gray-600 mx-1">•</span>
-              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="hover:text-gray-400 transition-colors mr-3">Tax-free real estate investment Dubai</a>
-              <span className="text-gray-600 mx-1">•</span>
-              <a href="#lifestyle" onClick={(e) => handleNavClick(e, 'lifestyle')} className="hover:text-gray-400 transition-colors mr-3">Luxury lifestyle Al Marjan Island</a>
-              <span className="text-gray-600 mx-1">•</span>
-              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="hover:text-gray-400 transition-colors mr-3">Property investment before Wynn Casino opening</a>
-              <span className="text-gray-600 mx-1">•</span>
-              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="hover:text-gray-400 transition-colors mr-3">400% market outperformance real estate</a>
-              <span className="text-gray-600 mx-1">•</span>
-              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="hover:text-gray-400 transition-colors">World-class developments Al Marjan Island</a>
+            <div className="text-caption text-white/30 leading-relaxed max-w-6xl mx-auto mt-4">
+              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="nav-item hover:text-white/50 mr-3">Best Al Marjan Island investment opportunities</a>
+              <span className="text-white/20 mx-1">•</span>
+              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="nav-item hover:text-white/50 mr-3">Luxury real estate near Wynn Casino</a>
+              <span className="text-white/20 mx-1">•</span>
+              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="nav-item hover:text-white/50 mr-3">Highest ROI real estate UAE</a>
+              <span className="text-white/20 mx-1">•</span>
+              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="nav-item hover:text-white/50 mr-3">Premium beachfront properties Ras Al Khaimah</a>
+              <span className="text-white/20 mx-1">•</span>
+              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="nav-item hover:text-white/50 mr-3">Interest-free payment plans UAE property</a>
+              <span className="text-white/20 mx-1">•</span>
+              <a href="#opportunity" onClick={(e) => handleNavClick(e, 'opportunity')} className="nav-item hover:text-white/50 mr-3">Tax-free real estate investment Dubai</a>
+              <span className="text-white/20 mx-1">•</span>
+              <a href="#lifestyle" onClick={(e) => handleNavClick(e, 'lifestyle')} className="nav-item hover:text-white/50 mr-3">Luxury lifestyle Al Marjan Island</a>
+              <span className="text-white/20 mx-1">•</span>
+              <a href="#wynn-effect" onClick={(e) => handleNavClick(e, 'wynn-effect')} className="nav-item hover:text-white/50 mr-3">Property investment before Wynn Casino opening</a>
+              <span className="text-white/20 mx-1">•</span>
+              <a href="#roi-metrics" onClick={(e) => handleNavClick(e, 'roi-metrics')} className="nav-item hover:text-white/50 mr-3">400% market outperformance real estate</a>
+              <span className="text-white/20 mx-1">•</span>
+              <a href="#developments" onClick={(e) => handleNavClick(e, 'developments')} className="nav-item hover:text-white/50">World-class developments Al Marjan Island</a>
             </div>
           </div>
           
           {/* Designed by credit */}
           <div className="flex justify-center items-center">
-          <span className="text-gray-400 text-sm font-light mr-2">Designed by</span>
+          <span className="text-caption text-white/60 mr-2">Designed by</span>
           <a 
             href="https://ioagency.ae" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-all duration-300"
           >
-            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 1306 250" preserveAspectRatio="xMidYMid meet" className="fill-gray-400 hover:fill-white transition-colors">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 1306 250" preserveAspectRatio="xMidYMid meet" className="fill-white/60 hover:fill-white transition-all duration-300">
               <g>
                 <path d="M226.1 204 c-12.6 -1.8 -26.8 -7 -36.7 -13.6 -43 -28.5 -48.4 -87.5 -11.2 -121.9 26.2 -24.3 65.9 -30.1 98.7 -14.4 30.9 14.7 48.4 42.3 46.8 73.9 -0.7 12.6 -2.5 19.9 -7.8 30.6 -13 26.5 -41.7 44.4 -73.8 45.8 -5.3 0.3 -12.5 0.1 -16 -0.4z m23.7 -28.5 c23.5 -5.6 40.2 -26.7 40.2 -51 0 -14.6 -5.3 -26.8 -16 -36.9 -30.8 -29 -80.1 -11.8 -86.2 30 -3.5 24.2 10.9 48.3 33.7 56.2 10 3.5 18.4 4 28.3 1.7z"></path>
                 <path d="M693.6 203.9 c-31.4 -4.3 -59.1 -26.7 -68.1 -55.1 -11.2 -35.4 2.3 -70.8 34.6 -90.7 30.5 -18.8 72.4 -16.5 101 5.5 14.3 10.9 26.1 29 29.4 44.9 6.5 31.1 -6.8 63 -33.9 80.9 -18.1 12.1 -41.5 17.5 -63 14.5z m24.2 -28.4 c10.2 -2.4 17 -6.3 24.8 -14 10.7 -10.6 15.4 -21.8 15.4 -37.1 0 -22.5 -13.9 -41.5 -36 -49 -8.3 -2.8 -24.5 -2.5 -32.5 0.6 -11.6 4.5 -19.1 10.4 -25.6 20.4 -11.3 17.2 -11.1 40.5 0.5 58 11.6 17.3 33.1 25.9 53.4 21.1z"></path>
