@@ -65,6 +65,9 @@ function App() {
     setCurrentPage(page);
     if (lang) setCurrentLanguage(lang);
     window.history.pushState({}, '', url);
+    
+    // Scroll to top when navigating to a new page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Language change handler
@@ -79,6 +82,9 @@ function App() {
     }
     
     window.history.pushState({}, '', url);
+    
+    // Scroll to top when changing language
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Handle browser back/forward buttons
@@ -107,6 +113,9 @@ function App() {
       } else {
         setCurrentPage('home');
       }
+      
+      // Scroll to top when using browser navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     window.addEventListener('popstate', handlePopState);

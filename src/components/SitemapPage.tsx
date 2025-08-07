@@ -27,6 +27,9 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({ currentLanguage }) => 
   const handleHomeNavigation = (e: React.MouseEvent) => {
     e.preventDefault();
     navigation.navigate('home');
+    
+    // Scroll to top when navigating home
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const sitemapSections = [

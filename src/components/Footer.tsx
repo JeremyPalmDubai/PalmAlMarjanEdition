@@ -34,6 +34,9 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
   const handlePageNavigation = (e: React.MouseEvent, page: string) => {
     e.preventDefault();
     navigation.navigate(page);
+    
+    // Scroll to top when navigating to page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

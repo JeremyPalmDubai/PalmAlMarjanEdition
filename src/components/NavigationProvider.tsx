@@ -22,6 +22,11 @@ interface NavigationProviderProps {
 export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children, onNavigate }) => {
   const navigate = (page: string) => {
     onNavigate(page);
+    
+    // Ensure scroll to top on navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
   };
 
   return (

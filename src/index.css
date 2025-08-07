@@ -9,6 +9,15 @@ html {
   font-family: 'Inter', sans-serif;
 }
 
+/* Ensure smooth scrolling for all scroll operations */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced scroll behavior for page transitions */
+body {
+  scroll-behavior: smooth;
+}
 /* Custom scrollbar - Tesla style */
 ::-webkit-scrollbar {
   width: 4px;

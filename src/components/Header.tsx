@@ -56,6 +56,9 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
     navigation.navigate('home');
+    
+    // Scroll to top when clicking logo
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNavClick = (e: React.MouseEvent, sectionId: string) => {
