@@ -87,6 +87,11 @@ function App() {
     
     // Update page title and meta tags for new language
     document.documentElement.lang = lang;
+    
+    // Add page_url parameter for Tally form
+    const newUrl = new URL(window.location.href);
+    newUrl.searchParams.set("page_url", window.location.href);
+    window.history.replaceState({}, '', newUrl);
   };
 
   // Handle browser back/forward buttons
