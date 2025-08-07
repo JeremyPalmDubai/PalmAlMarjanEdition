@@ -69,6 +69,22 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
 
   const developments = [
     {
+      name: "JW Marriott Al Marjan Island",
+      developer: "Marriott International",
+      image: "https://www.jwmarriot-almarjan.com/VueCielJWetCasinoenface.jpeg",
+      description: "Luxury beachfront resort with world-class amenities and stunning Arabian Gulf views, just minutes from the upcoming Wynn Casino.",
+      price: "2,900,000 AED",
+      availability: "Available Now",
+      availabilityColor: "text-green-600",
+      deliveryDate: currentLanguage === 'fr' ? "Livraison 2028" : 
+                   currentLanguage === 'es' ? "Entrega 2028" :
+                   currentLanguage === 'nl' ? "Oplevering 2028" : "Handover 2028",
+      wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
+                   currentLanguage === 'es' ? "5 min del Wynn Casino" :
+                   currentLanguage === 'nl' ? "5 min van Wynn Casino" : "5 mins from Wynn Casino",
+      websiteUrl: "https://www.jwmarriot-almarjan.com/en"
+    },
+    {
       name: "W Al Marjan Island",
       developer: "Marriott International",
       image: "https://palmdubai.fr/uploads/posts/2025-07/1178d03d12_w.webp",
@@ -370,6 +386,32 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   ) : (
                     <a href="#contact" className="tesla-btn-primary text-sm px-6 py-2">
                       {t.developments.learnMore}
+                    </a>
+                  )}
+                  
+                  {development.websiteUrl && (
+                    <a 
+                      href={development.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="tesla-btn-secondary text-sm px-4 py-2 ml-2 flex items-center justify-center"
+                      onClick={() => {
+                        if (typeof gtag !== 'undefined') {
+                          gtag('event', 'click', { 
+                            event_category: 'External Link',
+                            event_label: development.name + ' Website'
+                          });
+                        }
+                        if (typeof fbq !== 'undefined') {
+                          fbq('track', 'ViewContent', {
+                            content_name: development.name + ' Website'
+                          });
+                        }
+                      }}
+                    >
+                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
                     </a>
                   )}
                 </div>
