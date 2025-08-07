@@ -223,29 +223,29 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
         <div className="mb-16">
           {/* Enhanced Featured Projects Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black rounded-full mb-4 font-medium text-sm tracking-wider uppercase">
-              ⭐ Premium Selection
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-900 to-black text-white rounded-full mb-6 font-medium text-sm tracking-wider uppercase shadow-lg">
+              ◆ Premium Selection
             </div>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl tesla-heading mb-4 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl tesla-heading mb-6 bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">
               Featured Projects
             </h3>
-            <p className="text-lg tesla-subheading max-w-2xl mx-auto">
-              Exclusive luxury developments with exceptional investment potential
+            <p className="text-lg tesla-subheading max-w-3xl mx-auto leading-relaxed">
+              Exclusive luxury developments curated for discerning investors seeking exceptional returns
             </p>
           </div>
           
           {/* Enhanced Featured Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8">
           {featuredDevelopments.map((development, index) => (
-            <div key={index} className="bg-white tesla-hover animate-fade-in-up relative overflow-hidden border-2 border-transparent hover:border-yellow-400 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+            <div key={index} className="bg-white tesla-hover animate-fade-in-up relative overflow-hidden border border-gray-100 hover:border-black transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl">
               {/* Premium Badge */}
-              <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                🏆 FEATURED
+              <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-black to-gray-800 text-white px-3 py-1 rounded-sm text-xs font-bold shadow-lg tracking-wider uppercase">
+                ◆ Premium
               </div>
               
               {/* Special badge for profit achievement */}
               {development.profitBadge && (
-                <div className="absolute top-16 left-4 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg">
+                <div className="absolute top-16 left-4 z-10 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-2 py-1 rounded-sm text-xs font-bold shadow-lg">
                     🚀 {development.profitBadge}
                 </div>
               )}
@@ -269,20 +269,20 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   />
               </div>
               
-              <div className="p-4 sm:p-6 lg:p-8 bg-gradient-to-b from-white to-gray-50">
+              <div className="p-4 sm:p-6 lg:p-8 bg-white">
                 <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
                     {development.developer}
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl tesla-heading mb-3 sm:mb-4 line-clamp-2 font-semibold">{development.name}</h3>
+                <h3 className="text-lg sm:text-xl lg:text-2xl tesla-heading mb-3 sm:mb-4 line-clamp-2 font-medium">{development.name}</h3>
                 <p className="tesla-subheading text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3">{development.description}</p>
                   
                 {/* Pricing and Info */}
                 {(development.price || development.deliveryDate || development.wynnDistance) && (
-                  <div className="mb-4 sm:mb-6 space-y-2 bg-gray-50 p-3 rounded-lg border">
+                  <div className="mb-4 sm:mb-6 space-y-2 bg-gray-50 p-4 border-l-4 border-black">
                       {development.price && (
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">From:</span>
-                          <span className="text-sm sm:text-lg font-bold text-black">{development.price}</span>
+                          <span className="text-sm sm:text-lg font-semibold text-black">{development.price}</span>
                         </div>
                       )}
                       {development.paymentPlan && (
@@ -293,14 +293,14 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       )}
                       {development.deliveryDate && (
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-medium text-blue-600 tracking-wider uppercase">Delivery:</span>
-                          <span className="text-sm font-medium text-blue-600">{development.deliveryDate}</span>
+                          <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Delivery:</span>
+                          <span className="text-sm font-medium text-gray-700">{development.deliveryDate}</span>
                         </div>
                       )}
                       {development.wynnDistance && (
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-medium text-purple-600 tracking-wider uppercase">Wynn:</span>
-                          <span className="text-sm font-medium text-purple-600">{development.wynnDistance}</span>
+                          <span className="text-xs font-medium text-black tracking-wider uppercase">Wynn:</span>
+                          <span className="text-sm font-medium text-black font-semibold">{development.wynnDistance}</span>
                         </div>
                       )}
                   </div>
@@ -308,23 +308,23 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   
                 <div className="flex gap-2">
                       {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                        <div className="flex-1 tesla-btn-primary opacity-50 cursor-not-allowed text-xs sm:text-sm py-2 text-center font-bold">
+                        <div className="flex-1 bg-gray-400 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium cursor-not-allowed">
                           SOLD OUT
                         </div>
                       ) : development.availabilityColor === 'text-orange-600' ? (
-                        <a href="#contact" className="flex-1 tesla-btn-primary bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-xs sm:text-sm py-2 text-center font-bold shadow-lg">
+                        <a href="#contact" className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
                           {t.developments.lastUnits}
                         </a>
                       ) : development.availabilityColor === 'text-green-600' ? (
-                        <a href="#contact" className="flex-1 tesla-btn-primary bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-xs sm:text-sm py-2 text-center font-bold shadow-lg">
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
                           {t.developments.learnMore}
                         </a>
                       ) : development.availabilityColor === 'text-blue-600' ? (
-                        <a href="#contact" className="flex-1 tesla-btn-primary bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-xs sm:text-sm py-2 text-center font-bold shadow-lg">
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
                           {t.developments.learnMore}
                         </a>
                       ) : (
-                        <a href="#contact" className="flex-1 tesla-btn-primary bg-gradient-to-r from-black to-gray-800 hover:from-gray-800 hover:to-black text-xs sm:text-sm py-2 text-center font-bold shadow-lg">
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
                           {t.developments.learnMore}
                         </a>
                       )}
@@ -334,7 +334,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                           href={development.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-12 sm:w-16 tesla-btn-secondary border-2 hover:border-yellow-400 text-xs sm:text-sm py-2 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+                          className="w-12 sm:w-14 md:w-16 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 text-xs sm:text-sm py-2 flex items-center justify-center transition-all duration-300"
                           onClick={() => {
                             if (typeof gtag !== 'undefined') {
                               gtag('event', 'click', { 
@@ -349,7 +349,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                             }
                           }}
                         >
-                          <svg className="w-4 h-4 text-gray-700 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
                         </a>
@@ -450,7 +450,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       href={development.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 sm:w-16 tesla-btn-secondary text-xs sm:text-sm py-2 flex items-center justify-center"
+                      className="w-12 sm:w-14 md:w-16 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 text-xs sm:text-sm py-2 flex items-center justify-center transition-all duration-300"
                       onClick={() => {
                         if (typeof gtag !== 'undefined') {
                           gtag('event', 'click', { 
@@ -465,7 +465,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                         }
                       }}
                     >
-                      <svg className="w-4 h-4 text-gray-700 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
