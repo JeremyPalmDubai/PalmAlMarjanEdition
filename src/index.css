@@ -77,16 +77,16 @@ body {
 
 /* Tesla-inspired button styles */
 .tesla-btn-primary {
-  @apply bg-black text-white px-8 py-4 rounded-lg font-medium text-sm tracking-wide;
-  @apply hover:bg-gray-800 hover:scale-105 transition-all duration-500;
+  @apply bg-black text-white px-6 py-3 rounded-none font-medium text-sm tracking-wide;
+  @apply hover:bg-gray-800 transition-all duration-300;
   @apply focus:outline-none focus:ring-2 focus:ring-gray-500;
   border: none;
-  backdrop-filter: blur(10px);
+  box-shadow: none;
 }
 
 .tesla-btn-secondary {
-  @apply bg-white/10 backdrop-blur-md text-black px-8 py-4 rounded-lg font-medium text-sm tracking-wide;
-  @apply border border-black/20 hover:bg-black hover:text-white hover:scale-105 transition-all duration-500;
+  @apply bg-transparent text-black px-4 py-3 rounded-none font-medium text-sm tracking-wide;
+  @apply border border-black hover:bg-black hover:text-white transition-all duration-300;
   @apply focus:outline-none focus:ring-2 focus:ring-gray-500;
 }
 
@@ -124,98 +124,9 @@ body {
   animation: scaleIn 0.8s ease-out;
 }
 
-.tesla-btn-secondary-white {
-  @apply bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-lg font-medium text-sm tracking-wide;
-  @apply border border-white/30 hover:bg-white hover:text-black hover:scale-105 transition-all duration-500;
-  @apply focus:outline-none focus:ring-2 focus:ring-gray-500;
-}
-
-/* Tesla-style hero buttons */
-.tesla-btn-primary-hero {
-  @apply bg-white text-black px-12 py-4 rounded-lg font-medium text-sm tracking-wide;
-  @apply hover:bg-gray-100 hover:scale-105 transition-all duration-500;
-  @apply focus:outline-none focus:ring-2 focus:ring-white;
-  backdrop-filter: blur(10px);
-}
-
-.tesla-btn-secondary-hero {
-  @apply bg-white/10 backdrop-blur-md text-white px-12 py-4 rounded-lg font-medium text-sm tracking-wide;
-  @apply border border-white/40 hover:bg-white hover:text-black hover:scale-105 transition-all duration-500;
-  @apply focus:outline-none focus:ring-2 focus:ring-white;
-}
-
-/* Luxury beach color palette */
-:root {
-  --luxury-sand: rgba(248, 243, 235, 1);
-  --luxury-ocean: #007aff;
-  --luxury-charcoal: rgb(44, 44, 44);
-  --luxury-white: #ffffff;
-  --luxury-glass: rgba(255, 255, 255, 0.1);
-}
-
-/* Glass morphism effects */
-.glass-morphism {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.glass-dark {
-  background: rgba(44, 44, 44, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Luxury gradient backgrounds */
-.luxury-gradient {
-  background: linear-gradient(135deg, var(--luxury-sand) 0%, var(--luxury-white) 100%);
-}
-
-.ocean-gradient {
-  background: linear-gradient(135deg, var(--luxury-ocean) 0%, #0056b3 100%);
-}
-
-/* Tesla-style sections with consistent spacing */
+/* Tesla-style section spacing */
 .tesla-section {
-  @apply py-32 md:py-40;
-}
-
-/* Immersive scroll experience */
-.immersive-section {
-  @apply min-h-screen flex items-center justify-center relative overflow-hidden;
-  scroll-snap-align: start;
-}
-
-/* Enhanced typography with luxury colors */
-.luxury-heading {
-  @apply font-inter font-light tracking-tight;
-  color: var(--luxury-charcoal);
-  letter-spacing: -0.02em;
-}
-
-.luxury-subheading {
-  @apply font-inter font-normal tracking-normal;
-  color: rgba(44, 44, 44, 0.7);
-  letter-spacing: -0.01em;
-}
-
-/* Accent colors for bold text */
-.text-ocean {
-  color: var(--luxury-ocean);
-}
-
-.text-luxury-charcoal {
-  color: var(--luxury-charcoal);
-}
-
-/* Card styles without shadows */
-.luxury-card {
-  @apply bg-white rounded-xl border border-gray-100;
-  @apply hover:border-gray-300 transition-all duration-500;
-  @apply transform hover:-translate-y-2;
-  backdrop-filter: blur(10px);
+  @apply py-24 md:py-32;
 }
 
 /* Tesla-style hero background */

@@ -238,41 +238,41 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
         <div className="mb-16">
           {/* Enhanced Featured Projects Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center px-6 py-3 bg-black text-white mb-6 font-medium text-sm tracking-wider uppercase">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-900 to-black text-white rounded-full mb-6 font-medium text-sm tracking-wider uppercase shadow-lg">
               ◆ Premium Selection
             </div>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-inter font-light text-black mb-6 tracking-tight">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl tesla-heading mb-6 bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">
               Featured Projects
             </h3>
-            <p className="text-lg font-inter font-normal text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg tesla-subheading max-w-3xl mx-auto leading-relaxed">
               Exclusive luxury developments curated for discerning investors seeking exceptional returns
             </p>
           </div>
           
           {/* Enhanced Featured Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {featuredDevelopments.map((development, index) => (
-            <div key={index} className="bg-white relative overflow-hidden border border-gray-100 hover:border-black transition-colors duration-300">
+            <div key={index} className="bg-white animate-fade-in-up relative overflow-hidden border border-gray-200 hover:border-black transition-all duration-300">
               {/* Premium Badge */}
-              <div className="absolute top-3 left-3 z-20 bg-black text-white px-2 py-1 text-xs font-medium tracking-wider uppercase">
+              <div className="absolute top-4 left-4 z-20 bg-black text-white px-3 py-1 text-xs font-medium tracking-wider uppercase">
                 ◆ Premium
               </div>
               
               {/* Special badge for profit achievement */}
               {development.profitBadge && (
-                <div className="absolute top-12 left-3 z-10 bg-green-600 text-white px-2 py-1 text-xs font-medium">
+                <div className="absolute top-16 left-4 z-10 bg-green-600 text-white px-2 py-1 text-xs font-medium">
                     🚀 {development.profitBadge}
                 </div>
               )}
               
-              <div className="h-48 overflow-hidden relative">
+              <div className="h-64 overflow-hidden relative">
                 {development.availability && (
-                  <div className={`absolute top-3 right-3 z-10 px-2 py-1 text-xs font-medium ${
-                    development.availabilityColor === 'text-red-600' ? 'bg-red-50 text-red-600 border border-red-200' :
-                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-50 text-orange-600 border border-orange-200' :
-                    development.availabilityColor === 'text-green-600' ? 'bg-green-50 text-green-600 border border-green-200' :
-                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-50 text-blue-600 border border-blue-200' :
-                    'bg-red-50 text-red-600 border border-red-200'
+                  <div className={`absolute top-4 right-4 z-10 px-3 py-1 text-xs font-medium ${
+                    development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
+                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-100 text-orange-600' :
+                    development.availabilityColor === 'text-green-600' ? 'bg-green-100 text-green-600' :
+                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-100 text-blue-600' :
+                    'bg-red-100 text-red-600'
                   }`}>
                     {development.availability}
                   </div>
@@ -280,66 +280,66 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                   <img
                     src={development.image}
                     alt={development.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
               </div>
               
-              <div className="p-4 bg-white">
-                <div className="text-xs font-normal text-gray-400 tracking-wide uppercase mb-2">
+              <div className="p-6 bg-white">
+                <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-3">
                     {development.developer}
                 </div>
-                <h3 className="text-lg font-inter font-light text-black mb-3 tracking-tight">{development.name}</h3>
-                <p className="font-inter font-normal text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">{development.description}</p>
+                <h3 className="text-xl tesla-heading mb-4 font-light">{development.name}</h3>
+                <p className="tesla-subheading text-sm leading-relaxed mb-6 line-clamp-2">{development.description}</p>
                   
                 {/* Pricing and Info */}
                 {(development.price || development.deliveryDate || development.wynnDistance) && (
-                  <div className="mb-4 space-y-2 border-t border-gray-100 pt-3">
+                  <div className="mb-6 space-y-3 border-t border-gray-100 pt-4">
                       {development.price && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">From</span>
-                          <span className="text-sm font-light text-black">{development.price}</span>
+                        <div className="flex items-center justify-between py-1">
+                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">From</span>
+                          <span className="text-lg font-light text-black">{development.price}</span>
                         </div>
                       )}
                       {development.paymentPlan && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Payment</span>
-                          <span className="text-xs font-light text-black">{development.paymentPlan}</span>
+                        <div className="flex items-center justify-between py-1">
+                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Payment</span>
+                          <span className="text-sm font-light text-black">{development.paymentPlan}</span>
                         </div>
                       )}
                       {development.deliveryDate && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Handover</span>
-                          <span className="text-xs font-light text-black">{development.deliveryDate}</span>
+                        <div className="flex items-center justify-between py-1">
+                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Handover</span>
+                          <span className="text-sm font-light text-black">{development.deliveryDate}</span>
                         </div>
                       )}
                       {development.wynnDistance && (
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Wynn</span>
-                          <span className="text-xs font-medium text-black">{development.wynnDistance}</span>
+                        <div className="flex items-center justify-between py-1">
+                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Wynn</span>
+                          <span className="text-sm font-medium text-black">{development.wynnDistance}</span>
                         </div>
                       )}
                   </div>
                 )}
                   
-                <div className="flex gap-2">
+                <div className="flex gap-3">
                       {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                        <div className="flex-1 bg-gray-100 text-gray-500 px-3 py-2 text-xs text-center font-medium cursor-not-allowed">
+                        <div className="flex-1 bg-gray-300 text-gray-600 px-4 py-3 text-sm text-center font-medium cursor-not-allowed">
                           SOLD OUT
                         </div>
                       ) : development.availabilityColor === 'text-orange-600' ? (
-                        <a href="#contact" className="flex-1 bg-orange-600 hover:bg-orange-700 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
+                        <a href="#contact" className="flex-1 bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
                           {t.developments.lastUnits}
                         </a>
                       ) : development.availabilityColor === 'text-green-600' ? (
-                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
                           {t.developments.learnMore}
                         </a>
                       ) : development.availabilityColor === 'text-blue-600' ? (
-                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
                           {t.developments.learnMore}
                         </a>
                       ) : (
-                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
                           {t.developments.learnMore}
                         </a>
                       )}
@@ -349,7 +349,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                           href={development.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-8 border border-gray-200 hover:border-black bg-white hover:bg-gray-50 py-2 flex items-center justify-center transition-colors duration-300"
+                          className="w-12 border border-gray-200 hover:border-black bg-white hover:bg-gray-50 py-3 flex items-center justify-center transition-colors duration-300"
                           onClick={() => {
                             if (typeof gtag !== 'undefined') {
                               gtag('event', 'click', { 
@@ -364,7 +364,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                             }
                           }}
                         >
-                          <svg className="w-3 h-3 text-gray-400 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                          <svg className="w-4 h-4 text-gray-400 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
                         </a>
@@ -379,83 +379,83 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
         {/* All Other Developments - Now Always Visible */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-inter font-light text-gray-700 mb-4 tracking-tight">
+            <h3 className="text-2xl md:text-3xl tesla-heading mb-4 text-gray-700">
             All Projects
             </h3>
-            <p className="text-base font-inter font-normal text-gray-600 max-w-xl mx-auto">
+            <p className="text-base tesla-subheading max-w-xl mx-auto">
               Complete portfolio of luxury developments
             </p>
           </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {developments.map((development, index) => (
-            <div key={index} className="bg-white border border-gray-100 hover:border-black transition-colors duration-300">
+            <div key={index} className="bg-white animate-fade-in-up border border-gray-200 hover:border-black transition-colors duration-300">
               {/* Status badge */}
               {development.availability && (
-                <div className={`absolute top-3 right-3 z-10 px-2 py-1 text-xs font-medium ${
-                  development.availabilityColor === 'text-red-600' ? 'bg-red-50 text-red-600 border border-red-200' :
-                  development.availabilityColor === 'text-orange-600' ? 'bg-orange-50 text-orange-600 border border-orange-200' :
-                  development.availabilityColor === 'text-green-600' ? 'bg-green-50 text-green-600 border border-green-200' :
-                  development.availabilityColor === 'text-blue-600' ? 'bg-blue-50 text-blue-600 border border-blue-200' :
-                  'bg-red-50 text-red-600 border border-red-200'
+                <div className={`absolute top-4 right-4 z-10 px-3 py-1 text-xs font-medium ${
+                  development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
+                  development.availabilityColor === 'text-orange-600' ? 'bg-orange-100 text-orange-600' :
+                  development.availabilityColor === 'text-green-600' ? 'bg-green-100 text-green-600' :
+                  development.availabilityColor === 'text-blue-600' ? 'bg-blue-100 text-blue-600' :
+                  'bg-red-100 text-red-600'
                 }`}>
                   {development.availability}
                 </div>
               )}
               
-              <div className="h-48 overflow-hidden relative">
+              <div className="h-64 overflow-hidden relative">
                 <img
                   src={development.image}
                   alt={development.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
               
-              <div className="p-4">
-                <div className="text-xs font-normal text-gray-400 tracking-wide uppercase mb-2">
+              <div className="p-6">
+                <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-3">
                   {development.developer}
                 </div>
-                <h3 className="text-lg font-inter font-light text-black mb-3 tracking-tight line-clamp-2">{development.name}</h3>
-                <p className="font-inter font-normal text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">{development.description}</p>
+                <h3 className="text-xl tesla-heading mb-4 font-light line-clamp-2">{development.name}</h3>
+                <p className="tesla-subheading text-sm leading-relaxed mb-6 line-clamp-2">{development.description}</p>
                 
                 {/* Pricing and Availability */}
                 {(development.price || development.deliveryDate || development.paymentPlan) && (
-                  <div className="mb-4 space-y-2 border-t border-gray-100 pt-3">
+                  <div className="mb-6 space-y-3 border-t border-gray-100 pt-4">
                     {development.price && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">From</span>
-                        <span className="text-sm font-light text-black">{development.price}</span>
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">From</span>
+                        <span className="text-lg font-light text-black">{development.price}</span>
                       </div>
                     )}
                     {development.paymentPlan && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Payment</span>
-                        <span className="text-xs font-light text-black">{development.paymentPlan}</span>
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Payment</span>
+                        <span className="text-sm font-light text-black">{development.paymentPlan}</span>
                       </div>
                     )}
                     {development.deliveryDate && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-normal text-gray-400 tracking-wide uppercase">Handover</span>
-                        <span className="text-xs font-light text-black">{development.deliveryDate}</span>
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Handover</span>
+                        <span className="text-sm font-light text-black">{development.deliveryDate}</span>
                       </div>
                     )}
                   </div>
                 )}
                 
-                <div className="flex gap-2">
+                <div className="flex gap-3">
                   {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                    <div className="flex-1 bg-gray-100 text-gray-500 px-3 py-2 text-xs text-center font-medium cursor-not-allowed">
+                    <div className="flex-1 bg-gray-300 text-gray-600 px-4 py-3 text-sm text-center font-medium cursor-not-allowed">
                       SOLD OUT
                     </div>
                   ) : development.availabilityColor === 'text-orange-600' ? (
-                    <a href="#contact" className="flex-1 bg-orange-600 hover:bg-orange-700 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
+                    <a href="#contact" className="flex-1 bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
                       {t.developments.lastUnits}
                     </a>
                   ) : development.availabilityColor === 'text-green-600' ? (
-                    <a href="#contact" className="flex-1 bg-green-600 hover:bg-green-700 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
+                    <a href="#contact" className="flex-1 bg-green-600 hover:bg-green-700 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
                       {t.developments.learnMore}
                     </a>
                   ) : (
-                    <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-3 py-2 text-xs text-center font-medium transition-colors duration-300">
+                    <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
                       {t.developments.learnMore}
                     </a>
                   )}
@@ -465,7 +465,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       href={development.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 border border-gray-200 hover:border-black bg-white hover:bg-gray-50 py-2 flex items-center justify-center transition-colors duration-300"
+                      className="w-12 border border-gray-200 hover:border-black bg-white hover:bg-gray-50 py-3 flex items-center justify-center transition-colors duration-300"
                       onClick={() => {
                         if (typeof gtag !== 'undefined') {
                           gtag('event', 'click', { 
@@ -480,7 +480,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                         }
                       }}
                     >
-                      <svg className="w-3 h-3 text-gray-400 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <svg className="w-4 h-4 text-gray-400 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -494,44 +494,44 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
 
         {/* Tesla-style developer logos */}
         <div className="text-center">
-          <h3 className="text-3xl md:text-4xl font-inter font-light text-black mb-16 tracking-tight">{t.developments.trustedPartners}</h3>
+          <h3 className="text-3xl md:text-4xl tesla-heading mb-16">{t.developments.trustedPartners}</h3>
           
           {/* Tesla-style grid layout for partners */}
           <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
             
             {/* Development Companies */}
-            <div className="bg-white p-8 border border-gray-100">
+            <div className="bg-white p-8 tesla-shadow tesla-hover">
               <div className="flex items-center justify-center mb-8">
                 <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
-                <h4 className="text-xl font-inter font-light text-black tracking-tight">Development Partners</h4>
+                <h4 className="text-xl tesla-heading">Development Partners</h4>
               </div>
               
               <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                   <div className="text-lg font-medium text-gray-800 mb-1">EMAAR</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wide">Premium Developer</div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                   <div className="text-lg font-medium text-gray-800 mb-1">DECA</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wide">Luxury Projects</div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                   <div className="text-lg font-medium text-gray-800 mb-1">DAMAC</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wide">Iconic Developments</div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                   <div className="text-lg font-medium text-gray-800 mb-1">ELLINGTON</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wide">Coastal Living</div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                   <div className="text-lg font-medium text-gray-800 mb-1">RICHMIND</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wide">Innovative Design</div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                   <div className="text-lg font-medium text-gray-800 mb-1">BABOLEX</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wide">Contemporary Style</div>
                 </div>
@@ -539,7 +539,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
             </div>
             
             {/* Prestige Brands */}
-            <div className="bg-black text-white p-8">
+            <div className="bg-black text-white p-8 tesla-shadow tesla-hover">
               <div className="flex items-center justify-center mb-8">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -550,27 +550,27 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
               </div>
               
               <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
                   <div className="text-lg font-medium text-white mb-1">MARRIOTT</div>
                   <div className="text-xs text-gray-300 uppercase tracking-wide">W Hotels</div>
                 </div>
-                <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
                   <div className="text-lg font-medium text-white mb-1">HILTON</div>
                   <div className="text-xs text-gray-300 uppercase tracking-wide">Luxury Hospitality</div>
                 </div>
-                <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
                   <div className="text-lg font-medium text-white mb-1">ELIE SAAB</div>
                   <div className="text-xs text-gray-300 uppercase tracking-wide">Haute Couture</div>
                 </div>
-                <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
                   <div className="text-lg font-medium text-white mb-1">WYNN</div>
                   <div className="text-xs text-gray-300 uppercase tracking-wide">Casino Resort</div>
                 </div>
-                <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
                   <div className="text-lg font-medium text-white mb-1">NIKKI BEACH</div>
                   <div className="text-xs text-gray-300 uppercase tracking-wide">Beach Club</div>
                 </div>
-                <div className="text-center p-4 bg-white/10 hover:bg-white/20 transition-colors">
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
                   <div className="text-lg font-medium text-white mb-1">NOBU</div>
                   <div className="text-xs text-gray-300 uppercase tracking-wide">Fine Dining</div>
                 </div>
