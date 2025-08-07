@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
         inThrottle = true;
         setTimeout(() => inThrottle = false, limit);
       }
-    }
+    };
   };
 
   const handleLogoClick = (e: React.MouseEvent) => {
@@ -264,13 +264,6 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
             </nav>
           </div>
         )}
-      </div>
-    </header>
-  );
-};
-          
-          <LanguageSelector currentLanguage={currentLanguage} onLanguageChange={onLanguageChange} />
-        </div>
       </div>
     </header>
   );
