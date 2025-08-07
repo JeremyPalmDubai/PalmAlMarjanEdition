@@ -9,35 +9,35 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
   const t = translations[currentLanguage];
 
   return (
-    <section id="contact" className="section-feature">
-      <div className="container-minimal">
+    <section id="contact" className="tesla-section bg-gray-50">
+      <div className="tesla-container">
         <div className="text-center mb-20">
-          <h2 className="text-display mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
             {t.contact.title}
           </h2>
-          <p className="text-body max-w-4xl mx-auto">
+          <p className="text-xl tesla-subheading max-w-3xl mx-auto">
             {t.contact.description}
           </p>
         </div>
 
-        <div className="grid-minimal grid-2">
+        <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Information */}
-          <div className="card-minimal animate-slide-in">
-            <h3 className="text-title mb-12">{t.contact.info.title}</h3>
+          <div className="animate-slide-in">
+            <h3 className="text-2xl tesla-heading mb-12">{t.contact.info.title}</h3>
             
             <div className="space-y-8">
               <div className="flex items-start">
-                <div className="w-12 h-12 glass-dark rounded-2xl flex items-center justify-center mr-4 mt-1">
+                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4 mt-1">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-body font-semibold text-[#1d1d1f] mb-1">{t.contact.info.phone.label}</div>
-                  <div className="text-body">
+                  <div className="font-medium text-black mb-1">{t.contact.info.phone.label}</div>
+                  <div className="tesla-subheading">
                     <a 
                       href={`tel:${t.contact.info.phone.value}`} 
-                      className="hover:text-[#1d1d1f] transition-colors"
+                      className="hover:text-black"
                       onClick={() => {
                         if (typeof gtag !== 'undefined') {
                           gtag('event', 'contact', { method: 'phone' });
@@ -54,17 +54,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               </div>
               
               <div className="flex items-start">
-                <div className="w-12 h-12 glass-dark rounded-2xl flex items-center justify-center mr-4 mt-1">
+                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4 mt-1">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-body font-semibold text-[#1d1d1f] mb-1">{t.contact.info.email.label}</div>
-                  <div className="text-body">
+                  <div className="font-medium text-black mb-1">{t.contact.info.email.label}</div>
+                  <div className="tesla-subheading">
                     <a 
                       href={`mailto:${t.contact.info.email.value}`} 
-                      className="hover:text-[#1d1d1f] transition-colors"
+                      className="hover:text-black"
                       onClick={() => {
                         if (typeof gtag !== 'undefined') {
                           gtag('event', 'contact', { method: 'email' });
@@ -81,19 +81,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               </div>
               
               <div className="flex items-start">
-                <div className="w-12 h-12 glass-dark rounded-2xl flex items-center justify-center mr-4 mt-1">
+                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4 mt-1">
                   <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
                   </svg>
                 </div>
                 <div>
-                  <div className="text-body font-semibold text-[#1d1d1f] mb-1">WhatsApp Gabriella</div>
-                  <div className="text-body">
+                  <div className="font-medium text-black mb-1">WhatsApp Gabriella</div>
+                  <div className="tesla-subheading">
                     <a 
                       href={`https://wa.me/${t.contact.whatsapp.gabriella.replace(/\D/g, '')}?text=Hello Gabriella, I'm interested in Al Marjan Island investment opportunities.`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-[#1d1d1f] transition-colors"
+                      className="hover:text-black"
                       onClick={() => {
                         if (typeof gtag !== 'undefined') {
                           gtag('event', 'contact', { method: 'whatsapp' });
@@ -111,7 +111,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
             </div>
 
             {/* About Palm Signature */}
-            <div className="mt-16 card-dark">
+            <div className="mt-16 bg-black text-white p-8">
               <div className="flex items-center mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4477 3718" fill="none" className="h-6 w-auto mr-3">
                   <path d="M984.944 895.681C656.599 1175.61 447.7 1567.75 447.7 2016.48C447.7 2374.02 582.103 2696.97 803.26 2955.38C862.303 3024.58 927.492 3089.09 997.89 3148.27L998.095 3148.03C1060.97 3200.83 1128.04 3249.52 1198.67 3293.7C1097.14 3405.06 996.699 3517.51 897.433 3630.95C821.7 3580 749.576 3524.8 681.537 3465.7L680.721 3464.99C675.559 3460.49 670.399 3455.99 665.286 3451.44C633.948 3423.67 603.501 3395.05 573.994 3365.64C566.949 3358.61 559.958 3351.54 553.021 3344.43C213.408 2996.15 3.67405 2539.33 0.0484313 2029.91L0 2016.48C0 1447.53 256.997 943.355 665.366 581.444C670.457 576.915 675.595 572.436 680.735 567.955L681.536 567.256C1088.34 213.893 1641.14 0 2238.5 0C2835.86 0 3388.66 213.893 3795.46 567.257L3796.34 568.025C3801.46 572.484 3806.62 576.982 3811.68 581.488C4220.02 943.396 4477 1447.55 4477 2016.48C4477 2531.63 4266.31 2993.67 3923.33 3345.1C3916.61 3351.99 3909.83 3358.83 3903.01 3365.64C3873.51 3395.04 3843.08 3423.64 3811.76 3451.4C3806.37 3456.2 3800.94 3460.98 3795.49 3465.73C3727.22 3525.04 3654.83 3580.41 3578.81 3631.51C3479.64 3518.33 3379.12 3405.94 3277.33 3294.43C3348.32 3250.08 3415.74 3201.14 3478.92 3148.05L3479.11 3148.27C3556.69 3083.05 3627.95 3011.35 3691.63 2934.05C3902.06 2679.25 4029.3 2364.12 4029.3 2016.48C4029.3 1567.74 3820.4 1175.61 3492.05 895.674C3487.75 891.991 3483.44 888.329 3479.11 884.686C3438.19 850.49 3395.43 818.054 3351.07 787.405C3048.85 576.304 2664.71 448.106 2238.5 448.106C1809.47 448.106 1423.06 577.98 1119.94 791.567C1077.72 820.989 1037 852.073 997.924 884.726C993.589 888.37 989.24 891.996 984.944 895.681Z" fill="#ffffff"></path>
@@ -124,10 +124,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                   </div>
                 </div>
               </div>
-              <p className="text-body text-white/80 mb-4">{t.contact.about.description}</p>
+              <p className="text-gray-300 mb-4 font-light">{t.contact.about.description}</p>
               
               {/* Legal Information */}
-              <div className="text-caption text-white/60 mb-4 space-y-1">
+              <div className="text-xs text-gray-400 mb-4 space-y-1">
                 <div>{t.contact.legal.company}</div>
                 <div>{t.contact.legal.license}</div>
                 <div>{t.contact.legal.rera}</div>
@@ -137,7 +137,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                 href="https://invest-almarjanisland.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-white/80 font-medium transition-colors"
+                className="text-white hover:text-gray-300 font-medium"
               >
                 invest-almarjanisland.com
               </a>
@@ -145,9 +145,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
           </div>
 
           {/* Tally Form */}
-          <div className="card-minimal animate-fade-in-up">
-            <div className="overflow-hidden">
-              <h3 className="text-title mb-8 text-center">
+          <div className="animate-fade-in-up">
+            <div className="bg-white tesla-shadow overflow-hidden p-4 sm:p-6 lg:p-8">
+              <h3 className="text-xl sm:text-2xl tesla-heading mb-6 sm:mb-8 text-center">
                 {t.contact.form.title}
               </h3>
               

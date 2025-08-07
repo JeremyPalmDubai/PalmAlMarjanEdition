@@ -279,10 +279,10 @@ function App() {
         <Footer currentLanguage={currentLanguage} />
         
         {/* Mobile Navigation */}
-        <nav className="mobile-nav lg:hidden">
-          <div className="mobile-nav-container">
+        <nav className="tesla-mobile-nav lg:hidden">
+          <div className="tesla-mobile-nav-container">
             <button 
-              className="mobile-nav-item"
+              className="tesla-nav-item"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -292,7 +292,7 @@ function App() {
             </button>
             
             <button 
-              className="mobile-nav-item"
+              className="tesla-nav-item"
               onClick={() => {
                 const element = document.getElementById('wynn-effect');
                 if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -305,7 +305,7 @@ function App() {
             </button>
             
             <button 
-              className="mobile-nav-item"
+              className="tesla-nav-item"
               onClick={() => {
                 const element = document.getElementById('roi-metrics');
                 if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -318,7 +318,7 @@ function App() {
             </button>
             
             <button 
-              className="mobile-nav-item"
+              className="tesla-nav-item"
               onClick={() => {
                 const element = document.getElementById('developments');
                 if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -332,7 +332,7 @@ function App() {
             
             <a 
               href="#contact"
-              className="mobile-contact-btn"
+              className="tesla-contact-btn"
               onClick={() => {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
