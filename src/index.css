@@ -142,7 +142,7 @@ body {
 .tesla-card {
   @apply bg-white rounded-none shadow-sm border-0;
   @apply hover:shadow-xl transition-all duration-500;
-  @apply transform hover:-translate-y-2 hover:scale-102;
+  @apply transform hover:-translate-y-2 hover:scale-105;
   position: relative;
   overflow: hidden;
 }

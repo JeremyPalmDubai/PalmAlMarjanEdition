@@ -218,11 +218,9 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
               </g>
             </svg>
             <div className="ml-3 flex flex-col justify-center h-6 hover:scale-105 transition-transform duration-300">
+        </a>
         </div>
         </div>
       </div>
     </footer>
   );
-};
-  )
-}
