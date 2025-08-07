@@ -11,9 +11,9 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
 
   return (
     <>
-      {/* Hero Section with Large Image */}
+      {/* Tesla-style Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="h-[80vh] relative">
+        <div className="h-screen relative">
           <img
             src="https://palmdubai.fr/uploads/posts/2025-08/54b41babe6_2.webp"
             alt="Al Marjan Island aerial view"
@@ -25,7 +25,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
             <div className="w-full p-8 lg:p-16">
               <div className="max-w-7xl mx-auto">
                 <div className="max-w-3xl text-white">
-                  <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                  <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-sm mb-6">
                     <span className="text-sm font-medium">INVEST AL MARJAN ISLAND • AL MARJAN REAL ESTATE</span>
                   </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 leading-tight">
@@ -60,12 +60,12 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         </div>
       </section>
 
-      {/* About District Section */}
+      {/* Tesla-style About District Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-block bg-gray-100 px-4 py-2 rounded-full mb-6">
+              <div className="inline-block bg-gray-100 px-4 py-2 rounded-sm mb-6">
                 <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">About District</span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-8 leading-tight">
@@ -90,26 +90,26 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               </div>
               
               <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-4 bg-gray-50 rounded-sm">
+                  <div className="w-12 h-12 bg-blue-100 rounded-sm flex items-center justify-center mx-auto mb-3">
                     <Car className="w-6 h-6 text-blue-600" />
                   </div>
                   <div className="text-sm font-medium text-gray-900">EV Ready</div>
-                  <div className="text-xs text-gray-500">Charging Stations</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Charging Stations</div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-4 bg-gray-50 rounded-sm">
+                  <div className="w-12 h-12 bg-green-100 rounded-sm flex items-center justify-center mx-auto mb-3">
                     <Building2 className="w-6 h-6 text-green-600" />
                   </div>
                   <div className="text-sm font-medium text-gray-900">Mixed-Use</div>
-                  <div className="text-xs text-gray-500">Complete District</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Complete District</div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-4 bg-gray-50 rounded-sm">
+                  <div className="w-12 h-12 bg-purple-100 rounded-sm flex items-center justify-center mx-auto mb-3">
                     <MapPin className="w-6 h-6 text-purple-600" />
                   </div>
                   <div className="text-sm font-medium text-gray-900">Strategic</div>
-                  <div className="text-xs text-gray-500">45min to Dubai</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">45min to Dubai</div>
                 </div>
               </div>
             </div>
@@ -118,19 +118,19 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               <img
                 src="https://palmdubai.fr/uploads/posts/2025-08/5c6f6a92e6_1734349387_0248704.webp"
                 alt="Al Marjan Island district overview"
-                className="w-full h-[600px] object-cover rounded-2xl shadow-2xl"
+                className="w-full h-[600px] object-cover rounded-sm"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-sm"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Exceptional Benefits Section */}
+      {/* Tesla-style Exceptional Benefits Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block bg-white px-4 py-2 rounded-full mb-6">
+            <div className="inline-block bg-white px-4 py-2 rounded-sm mb-6">
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Investment Benefits</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-8 leading-tight">
@@ -142,16 +142,16 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
             <img
               src="https://palmdubai.fr/uploads/posts/2025-08/4e0ac26c71_1734349387_025459.webp"
               alt="Al Marjan Island benefits overview"
-              className="w-full h-[500px] object-cover rounded-2xl"
+              className="w-full h-[500px] object-cover rounded-sm"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent rounded-sm"></div>
             
             <div className="absolute inset-0 flex items-center">
               <div className="max-w-3xl p-8 lg:p-16 text-white">
                 <h3 className="text-2xl md:text-3xl font-light mb-8">Key Investment Advantages</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-sm flex items-center justify-center flex-shrink-0">
                       <Waves className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -161,7 +161,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
                   </div>
                   
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-sm flex items-center justify-center flex-shrink-0">
                       <Star className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -171,7 +171,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
                   </div>
                   
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-sm flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -181,7 +181,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
                   </div>
                   
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-sm flex items-center justify-center flex-shrink-0">
                       <Home className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -195,7 +195,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center bg-yellow-400 text-black px-6 py-3 rounded-full font-medium">
+            <div className="inline-flex items-center bg-yellow-400 text-black px-6 py-3 rounded-sm font-medium">
               <Star className="w-5 h-5 mr-2" />
               First Casino Resort in the UAE
             </div>
@@ -203,11 +203,11 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         </div>
       </section>
 
-      {/* Housing Types Section */}
+      {/* Tesla-style Housing Types Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block bg-gray-100 px-4 py-2 rounded-full mb-6">
+            <div className="inline-block bg-gray-100 px-4 py-2 rounded-sm mb-6">
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Property Types</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-8 leading-tight">
@@ -227,7 +227,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               </p>
               
               <div className="space-y-6">
-                <div className="bg-gray-50 p-6 rounded-xl">
+                <div className="bg-gray-50 p-6 rounded-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <h4 className="text-lg font-medium text-gray-900">Studios</h4>
@@ -240,7 +240,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-6 rounded-xl">
+                <div className="bg-gray-50 p-6 rounded-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <h4 className="text-lg font-medium text-gray-900">2BR Apartments</h4>
@@ -253,7 +253,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-6 rounded-xl">
+                <div className="bg-gray-50 p-6 rounded-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <h4 className="text-lg font-medium text-gray-900">Villas</h4>
@@ -266,7 +266,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-6 rounded-xl">
+                <div className="bg-gray-50 p-6 rounded-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <h4 className="text-lg font-medium text-gray-900">Townhouses</h4>
@@ -281,7 +281,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-gray-900 to-black text-white p-8 lg:p-12 rounded-2xl">
+            <div className="bg-gradient-to-br from-gray-900 to-black text-white p-8 lg:p-12 rounded-sm">
               <h3 className="text-2xl font-light mb-6">Investment Opportunity</h3>
               <p className="text-gray-300 mb-8 leading-relaxed">
                 <strong>Off-plan properties Al Marjan Island</strong> offer exceptional value with 
@@ -297,7 +297,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
                   <div className="text-sm text-gray-300">Payment Plan</div>
                 </div>
               </div>
-              <button className="w-full bg-white text-black py-3 px-6 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+              <button className="w-full bg-white text-black py-3 px-6 rounded-sm font-medium hover:bg-gray-100 transition-colors">
                 Explore Payment Options
               </button>
             </div>
@@ -305,11 +305,11 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         </div>
       </section>
 
-      {/* Benefits of Ownership */}
+      {/* Tesla-style Benefits of Ownership */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block bg-white px-4 py-2 rounded-full mb-6">
+            <div className="inline-block bg-white px-4 py-2 rounded-sm mb-6">
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Ownership Benefits</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-8 leading-tight">
@@ -318,8 +318,8 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+            <div className="bg-white p-8 rounded-sm">
+              <div className="w-16 h-16 bg-yellow-100 rounded-sm flex items-center justify-center mb-6">
                 <TrendingUp className="w-8 h-8 text-yellow-600" />
               </div>
               <h3 className="text-xl font-medium text-gray-900 mb-4">Wynn Resort Proximity</h3>
@@ -329,8 +329,8 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               </p>
             </div>
             
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+            <div className="bg-white p-8 rounded-sm">
+              <div className="w-16 h-16 bg-green-100 rounded-sm flex items-center justify-center mb-6">
                 <Shield className="w-8 h-8 text-green-600" />
               </div>
               <h3 className="text-xl font-medium text-gray-900 mb-4">Freehold Ownership</h3>
@@ -340,8 +340,8 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               </p>
             </div>
             
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+            <div className="bg-white p-8 rounded-sm">
+              <div className="w-16 h-16 bg-blue-100 rounded-sm flex items-center justify-center mb-6">
                 <Home className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-medium text-gray-900 mb-4">Family-Friendly Living</h3>
@@ -354,11 +354,11 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         </div>
       </section>
 
-      {/* Why Buy Property */}
+      {/* Tesla-style Why Buy Property */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block bg-gray-100 px-4 py-2 rounded-full mb-6">
+            <div className="inline-block bg-gray-100 px-4 py-2 rounded-sm mb-6">
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Investment Reasons</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-8 leading-tight">
@@ -374,35 +374,35 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               <h3 className="text-2xl font-light text-gray-900 mb-8">Resort Infrastructure</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-3 h-3 bg-blue-500 rounded-sm mt-2 flex-shrink-0"></div>
                   <div>
                     <div className="font-medium text-gray-900 mb-1">Water park near Hilton hotel</div>
                     <div className="text-sm text-gray-600">Family entertainment facilities</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-3 h-3 bg-blue-500 rounded-sm mt-2 flex-shrink-0"></div>
                   <div>
                     <div className="font-medium text-gray-900 mb-1">Water sports complexes</div>
                     <div className="text-sm text-gray-600">Marine activities and recreation</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-3 h-3 bg-blue-500 rounded-sm mt-2 flex-shrink-0"></div>
                   <div>
                     <div className="font-medium text-gray-900 mb-1">Green walking routes and parks</div>
                     <div className="text-sm text-gray-600">Landscaped outdoor spaces</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-3 h-3 bg-blue-500 rounded-sm mt-2 flex-shrink-0"></div>
                   <div>
                     <div className="font-medium text-gray-900 mb-1">Bars, restaurants, cafes</div>
                     <div className="text-sm text-gray-600">Diverse dining and entertainment</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-3 h-3 bg-blue-500 rounded-sm mt-2 flex-shrink-0"></div>
                   <div>
                     <div className="font-medium text-gray-900 mb-1">8 km of well-maintained beaches</div>
                     <div className="text-sm text-gray-600">Pristine coastline access</div>
@@ -413,21 +413,21 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
             
             <div>
               <h3 className="text-2xl font-light text-gray-900 mb-8">Upcoming Projects</h3>
-              <div className="bg-gray-50 p-8 rounded-2xl mb-8">
+              <div className="bg-gray-50 p-8 rounded-sm mb-8">
                 <h4 className="text-lg font-medium text-gray-900 mb-6">Major Developments</h4>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Wynn Al Marjan Island Resort</span>
-                    <span className="text-sm font-medium text-gray-900 bg-yellow-100 px-3 py-1 rounded-full">2027</span>
+                    <span className="text-sm font-medium text-gray-900 bg-yellow-100 px-3 py-1 rounded-sm">2027</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Marina for 300 yachts</span>
-                    <span className="text-sm font-medium text-gray-900 bg-blue-100 px-3 py-1 rounded-full">2026</span>
+                    <span className="text-sm font-medium text-gray-900 bg-blue-100 px-3 py-1 rounded-sm">2026</span>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-gray-900 to-black text-white p-8 rounded-2xl">
+              <div className="bg-gradient-to-br from-gray-900 to-black text-white p-8 rounded-sm">
                 <h4 className="text-lg font-medium mb-4">Existing Amenities</h4>
                 <p className="text-gray-300 text-sm leading-relaxed">
                   Al Hamra Mall is an 8-minute drive away. The archipelago already has everything needed for life 
@@ -439,11 +439,11 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
         </div>
       </section>
 
-      {/* How to Invest */}
+      {/* Tesla-style How to Invest */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+            <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-sm mb-6">
               <span className="text-sm font-medium text-white/80 uppercase tracking-wide">Investment Process</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-8 leading-tight">
@@ -460,15 +460,15 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               <h3 className="text-xl font-medium mb-6">Our Investment Approach</h3>
               <div className="space-y-4 text-gray-300">
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-white rounded-sm mt-3 flex-shrink-0"></div>
                   <p>Our main goal is not to sell real estate but to organize profitable investments for all clients</p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-white rounded-sm mt-3 flex-shrink-0"></div>
                   <p>We select properties carefully so apartments and villas bring high profits to their owners</p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-white rounded-sm mt-3 flex-shrink-0"></div>
                   <p>Full transaction support from property selection to ownership transfer</p>
                 </div>
               </div>
@@ -478,15 +478,15 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               <h3 className="text-xl font-medium mb-6">Additional Services</h3>
               <div className="space-y-4 text-gray-300">
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-white rounded-sm mt-3 flex-shrink-0"></div>
                   <p>Relocation assistance and moving support</p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-white rounded-sm mt-3 flex-shrink-0"></div>
                   <p>UAE visa application guidance</p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-white rounded-sm mt-3 flex-shrink-0"></div>
                   <p>Bank account opening assistance</p>
                 </div>
               </div>
@@ -496,7 +496,7 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
           <div className="text-center">
             <a 
               href="#contact" 
-              className="inline-flex items-center bg-white text-black px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center bg-white text-black px-8 py-4 rounded-sm font-medium hover:bg-gray-100 transition-colors"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'click', { 
