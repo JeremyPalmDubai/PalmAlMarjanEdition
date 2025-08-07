@@ -9,77 +9,176 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
   const t = translations[currentLanguage];
 
   return (
-    <section id="wynn-effect" className="tesla-fullscreen-section relative overflow-hidden">
-      {/* Tesla-style full-screen background */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp"
-          alt="Wynn Resort Al Marjan Island"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
-      </div>
-      
-      {/* Tesla-style content overlay */}
-      <div className="relative z-10 flex items-center min-h-screen">
-        <div className="tesla-container text-center">
-          <div className="max-w-5xl mx-auto">
-            {/* Enhanced badge with glow effect */}
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 backdrop-blur-md border border-yellow-400/30 rounded-full mb-8 shadow-2xl">
-              <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 animate-pulse"></div>
-              <span className="text-yellow-400 text-sm font-medium tracking-wider uppercase">
-                INVEST NEAR WYNN CASINO • WYNN CASINO 2027
-              </span>
+    <section id="wynn-effect" className="tesla-section bg-white">
+      <div className="tesla-container">
+        {/* Tesla-style minimal header */}
+        <div className="text-center mb-20">
+          <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-4">
+            INVEST NEAR WYNN CASINO • WYNN CASINO 2027
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8" id="invest-near-wynn-casino" itemProp="headline">
+            {t.wynnEffect.title}
+          </h2>
+          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed" itemProp="description">
+            {t.wynnEffect.description}
+          </p>
+        </div>
+
+        {/* Tesla-style hero image with overlay content */}
+        <div className="relative mb-32">
+          <div className="h-[70vh] min-h-[600px] relative overflow-hidden bg-black">
+            <img
+              src="https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp"
+              alt="Wynn Resort Al Marjan Island aerial view"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20"></div>
+            
+            {/* Tesla-style overlay content */}
+            <div className="absolute inset-0 flex items-end">
+              <div className="w-full p-8 lg:p-16">
+                <div className="max-w-2xl">
+                  <h3 className="text-3xl md:text-4xl font-inter font-light text-white mb-6 tracking-tight">
+                    $3.9 Billion Investment Transforming Al Marjan Island
+                  </h3>
+                  <p className="text-lg text-white/90 mb-8 font-light leading-relaxed">
+                    The Wynn Resort & Casino will be the first casino resort in the UAE, creating unprecedented demand for Al Marjan Island real estate.
+                  </p>
+                  <div className="grid grid-cols-2 gap-6 text-white">
+                    <div>
+                      <div className="text-2xl font-light mb-1">{t.wynnEffect.resort.stats.investment}</div>
+                      <div className="text-sm text-white/70">{t.wynnEffect.resort.stats.investmentLabel}</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-light mb-1">{t.wynnEffect.resort.stats.opening}</div>
+                      <div className="text-sm text-white/70">{t.wynnEffect.resort.stats.openingLabel}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            {/* Redesigned heading with gradient */}
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-inter font-light text-white mb-8 tracking-tighter leading-tight" id="invest-near-wynn-casino" itemProp="headline">
-              The <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Wynn</span> Effect
-            </h2>
-            
-            {/* Enhanced description with better typography */}
-            <p className="text-xl md:text-2xl text-white/90 mb-16 leading-relaxed font-light max-w-4xl mx-auto" itemProp="description">
-              <strong>Invest near Wynn Casino</strong> on Al Marjan Island. The $3.9 billion Wynn Resort & Casino transforms 
-              <strong className="text-yellow-400"> Al Marjan real estate</strong> into the Middle East's premier luxury destination. 
-              <strong className="text-yellow-400"> Al Marjan Island real estate</strong> values will surge with the Wynn effect in 2027.
+          </div>
+        </div>
+
+        {/* Tesla-style features grid */}
+        <div className="grid lg:grid-cols-2 gap-24 mb-32">
+          {/* Wynn Impact */}
+          <div className="animate-slide-in">
+            <div className="flex items-center mb-8">
+              <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl tesla-heading">The Wynn Effect on Property Values</h3>
+            </div>
+            <p className="tesla-subheading text-lg leading-relaxed mb-12">
+              Historical data shows that luxury casino resorts create significant property appreciation in surrounding areas. The Wynn brand is synonymous with ultra-luxury and exclusivity.
             </p>
             
-            {/* Redesigned metrics with cards */}
-            <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-2xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-5xl md:text-6xl font-inter font-light text-yellow-400 mb-4">
-                  {t.wynnEffect.resort.stats.investment}
+            {/* Tesla-style impact metrics */}
+            <div className="space-y-6">
+              <div className="flex items-center justify-between py-4 border-b border-gray-100">
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                  <span className="tesla-subheading">Expected Property Appreciation</span>
                 </div>
-                <div className="text-sm text-white/80 tracking-wide uppercase font-medium">
-                  {t.wynnEffect.resort.stats.investmentLabel}
-                </div>
+                <span className="text-xl font-light">500%+</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-5xl md:text-6xl font-inter font-light text-yellow-400 mb-4">
-                  {t.wynnEffect.resort.stats.opening}
+              <div className="flex items-center justify-between py-4 border-b border-gray-100">
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  <span className="tesla-subheading">Annual Visitors by 2030</span>
                 </div>
-                <div className="text-sm text-white/80 tracking-wide uppercase font-medium">
-                  {t.wynnEffect.resort.stats.openingLabel}
+                <span className="text-xl font-light">5.5M</span>
+              </div>
+              <div className="flex items-center justify-between py-4 border-b border-gray-100">
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                  <span className="tesla-subheading">Hotel Rooms & Suites</span>
                 </div>
+                <span className="text-xl font-light">1,500+</span>
               </div>
             </div>
+          </div>
 
-            {/* Enhanced CTA with glow effect */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#contact" 
-                className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-8 py-4 rounded-full font-medium text-lg tracking-wide hover:from-yellow-300 hover:to-yellow-500 transition-all duration-300 shadow-2xl hover:shadow-yellow-400/25 transform hover:scale-105" 
-                aria-label="Invest near Wynn Casino - Contact us"
-              >
-                {t.wynnEffect.benefits.returns.title}
-              </a>
-              <a 
-                href="#developments" 
-                className="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-full font-medium text-lg tracking-wide hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-md"
-              >
-                View Properties
-              </a>
+          {/* Investment Opportunity */}
+          <div className="animate-fade-in-up">
+            <div className="flex items-center mb-8">
+              <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                </svg>
+              </div>
+              <h3 className="text-2xl tesla-heading">Investment Window</h3>
             </div>
+            <p className="tesla-subheading text-lg leading-relaxed mb-12">
+              Invest now before the Wynn Casino opens in 2027. Early investors will benefit from the maximum appreciation potential as the resort approaches completion.
+            {/* Tesla-style timeline */}
+            <div className="space-y-8">
+              <div>
+                <h4 className="text-lg font-medium text-black mb-3">2025-2026: Construction Phase</h4>
+                <p className="tesla-subheading text-sm">Optimal investment window with pre-opening pricing</p>
+              </div>
+              <div>
+                <h4 className="text-lg font-medium text-black mb-3">2027: Grand Opening</h4>
+                <p className="tesla-subheading text-sm">First casino resort in UAE begins operations</p>
+              </div>
+              <div>
+                <h4 className="text-lg font-medium text-black mb-3">2028-2030: Market Maturation</h4>
+                <p className="tesla-subheading text-sm">Property values reach peak appreciation levels</p>
+              </div>
+            </div>
+          </div>
+        </div>
+            </p>
+        {/* Tesla-style CTA section */}
+        <div className="text-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="#contact" 
+              className="tesla-btn-primary"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Wynn Investment CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'InitiateCheckout', {
+                    content_name: 'Wynn Investment'
+                  });
+                }
+              }}
+            >
+              {t.wynnEffect.benefits.returns.title}
+            </a>
+            <a 
+              href="#developments" 
+              className="tesla-btn-secondary"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'View Properties CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'ViewContent', {
+                    content_name: 'Properties'
+                  });
+                }
+              }}
+            >
+              View Properties
+            </a>
           </div>
         </div>
       </div>
