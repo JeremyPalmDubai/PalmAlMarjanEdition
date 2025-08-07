@@ -184,3 +184,4 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
       </div>
     </section>
   );
+}
