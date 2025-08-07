@@ -72,6 +72,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
       price: null,
       availability: "Almost Sold Out",
       availabilityColor: "text-orange-600",
+      deliveryDate: currentLanguage === 'fr' ? "Livraison 2028" : 
+                   currentLanguage === 'es' ? "Entrega 2028" :
+                   currentLanguage === 'nl' ? "Oplevering 2028" : "Handover 2028",
       wynnDistance: currentLanguage === 'fr' ? "5 min du Wynn Casino" :
                    currentLanguage === 'es' ? "5 min del Wynn Casino" :
                    currentLanguage === 'nl' ? "5 min van Wynn Casino" : "5 mins from Wynn Casino",
