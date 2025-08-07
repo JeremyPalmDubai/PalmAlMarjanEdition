@@ -1,4 +1,5 @@
 import React from 'react';
+import { Building2, ExternalLink, ArrowRight, CheckCircle, Clock, XCircle } from 'lucide-react';
 import { translations } from '../data/translations';
 
 interface DevelopmentsSectionProps {
@@ -222,153 +223,158 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     }
   ];
 
+  const getAvailabilityIcon = (availability: string | null, availabilityColor: string) => {
+    if (!availability) return null;
+    
+    if (availabilityColor === 'text-red-600') {
+      return <XCircle className="w-4 h-4 mr-2" />;
+    } else if (availabilityColor === 'text-orange-600') {
+      return <Clock className="w-4 h-4 mr-2" />;
+    } else {
+      return <CheckCircle className="w-4 h-4 mr-2" />;
+    }
+  };
+
   return (
-    <section id="developments" className="tesla-section bg-gray-50">
+    <section id="developments" className="tesla-section tesla-section-beige">
       <div className="tesla-container">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
+        {/* Section Header */}
+        <div className="text-center mb-24">
+          <div className="tesla-badge-solid mb-8">
+            <Building2 className="w-4 h-4 mr-2" />
+            <span className="tracking-widest">LUXURY DEVELOPMENTS</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8 text-balance">
             {t.developments.title}
           </h2>
-          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed text-pretty">
             {t.developments.description}
           </p>
         </div>
 
-        {/* Featured Developments - Priority on Mobile */}
-        <div className="mb-16">
-          {/* Enhanced Featured Projects Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-900 to-black text-white rounded-full mb-6 font-medium text-sm tracking-wider uppercase shadow-lg">
-              ◆ Premium Selection
+        {/* Featured Developments */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <div className="tesla-badge-accent mb-6">
+              <span className="tracking-widest">PREMIUM SELECTION</span>
             </div>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl tesla-heading mb-6 bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">
+            <h3 className="text-3xl md:text-4xl tesla-heading mb-6">
               Featured Projects
             </h3>
-            <p className="text-lg tesla-subheading max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg tesla-subheading max-w-3xl mx-auto leading-relaxed text-pretty">
               Exclusive luxury developments curated for discerning investors seeking exceptional returns
             </p>
           </div>
           
-          {/* Enhanced Featured Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {/* Featured Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredDevelopments.map((development, index) => (
-            <div key={index} className="bg-white animate-fade-in-up relative overflow-hidden border border-gray-200 hover:border-black transition-all duration-300">
+            <div key={index} className="tesla-card hover-lift animate-fade-in-up relative overflow-hidden" style={{ animationDelay: `${index * 0.2}s` }}>
               {/* Premium Badge */}
-              <div className="absolute top-4 left-4 z-20 bg-black text-white px-3 py-1 text-xs font-medium tracking-wider uppercase">
-                ◆ Premium
+              <div className="absolute top-4 left-4 z-20 tesla-badge-solid">
+                <span className="text-xs">PREMIUM</span>
               </div>
               
               {/* Special badge for profit achievement */}
               {development.profitBadge && (
-                <div className="absolute top-16 left-4 z-10 bg-green-600 text-white px-2 py-1 text-xs font-medium">
-                    🚀 {development.profitBadge}
+                <div className="absolute top-16 left-4 z-10 tesla-badge-accent">
+                  <TrendingUp className="w-3 h-3 mr-1" />
+                  <span className="text-xs">{development.profitBadge}</span>
                 </div>
               )}
               
-              <div className="h-64 overflow-hidden relative">
+              {/* Image */}
+              <div className="h-64 overflow-hidden relative rounded-t-tesla">
                 {development.availability && (
-                  <div className={`absolute top-4 right-4 z-10 px-3 py-1 text-xs font-medium ${
-                    development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
-                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-100 text-orange-600' :
-                    development.availabilityColor === 'text-green-600' ? 'bg-green-100 text-green-600' :
-                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-100 text-blue-600' :
-                    'bg-red-100 text-red-600'
-                  }`}>
-                    {development.availability}
+                  <div className={`absolute top-4 right-4 z-10 tesla-card-glass px-3 py-1 text-xs font-medium flex items-center ${development.availabilityColor}`}>
+                    {getAvailabilityIcon(development.availability, development.availabilityColor)}
+                    <span>{development.availability}</span>
                   </div>
                 )}
-                  <img
-                    src={development.image}
-                    alt={development.name}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
+                <img
+                  src={development.image}
+                  alt={development.name}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
               </div>
               
-              <div className="p-6 bg-white">
-                <div className="text-xs font-medium text-gray-400 tracking-wider uppercase mb-3">
-                    {development.developer}
+              {/* Content */}
+              <div className="p-6">
+                <div className="text-xs font-medium tesla-subheading tracking-wider uppercase mb-3">
+                  {development.developer}
                 </div>
-                <h3 className="text-xl tesla-heading mb-4 font-light">{development.name}</h3>
-                <p className="tesla-subheading text-sm leading-relaxed mb-6 line-clamp-2">{development.description}</p>
+                <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
+                <p className="tesla-subheading text-sm leading-relaxed mb-6 text-pretty">{development.description}</p>
                   
-                {/* Pricing and Info */}
+                {/* Property Details */}
                 {(development.price || development.deliveryDate || development.wynnDistance) && (
-                  <div className="mb-6 space-y-3 border-t border-gray-100 pt-4">
-                      {development.price && (
-                        <div className="flex items-center justify-between py-1">
-                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">From</span>
-                          <span className="text-lg font-light text-black">{development.price}</span>
-                        </div>
-                      )}
-                      {development.paymentPlan && (
-                        <div className="flex items-center justify-between py-1">
-                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Payment</span>
-                          <span className="text-sm font-light text-black">{development.paymentPlan}</span>
-                        </div>
-                      )}
-                      {development.deliveryDate && (
-                        <div className="flex items-center justify-between py-1">
-                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Handover</span>
-                          <span className="text-sm font-light text-black">{development.deliveryDate}</span>
-                        </div>
-                      )}
-                      {development.wynnDistance && (
-                        <div className="flex items-center justify-between py-1">
-                          <span className="text-xs font-medium text-gray-400 tracking-wider uppercase">Wynn</span>
-                          <span className="text-sm font-medium text-black">{development.wynnDistance}</span>
-                        </div>
-                      )}
+                  <div className="mb-6 space-y-3 border-t border-tesla pt-4">
+                    {development.price && (
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">From</span>
+                        <span className="text-lg font-light tesla-heading">{development.price}</span>
+                      </div>
+                    )}
+                    {development.paymentPlan && (
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Payment</span>
+                        <span className="text-sm font-light tesla-heading">{development.paymentPlan}</span>
+                      </div>
+                    )}
+                    {development.deliveryDate && (
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Handover</span>
+                        <span className="text-sm font-light tesla-heading">{development.deliveryDate}</span>
+                      </div>
+                    )}
+                    {development.wynnDistance && (
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Wynn</span>
+                        <span className="text-sm font-medium text-premium-blue">{development.wynnDistance}</span>
+                      </div>
+                    )}
                   </div>
                 )}
                   
+                {/* Action Buttons */}
                 <div className="flex gap-3">
-                      {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                        <div className="flex-1 bg-gray-300 text-gray-600 px-4 py-3 text-sm text-center font-medium cursor-not-allowed">
-                          SOLD OUT
-                        </div>
-                      ) : development.availabilityColor === 'text-orange-600' ? (
-                        <a href="#contact" className="flex-1 bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
-                          {t.developments.lastUnits}
-                        </a>
-                      ) : development.availabilityColor === 'text-green-600' ? (
-                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
-                          {t.developments.learnMore}
-                        </a>
-                      ) : development.availabilityColor === 'text-blue-600' ? (
-                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
-                          {t.developments.learnMore}
-                        </a>
-                      ) : (
-                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-300">
-                          {t.developments.learnMore}
-                        </a>
-                      )}
-                      
-                      {development.websiteUrl && (
-                        <a 
-                          href={development.websiteUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-12 border border-gray-200 hover:border-black bg-white hover:bg-gray-50 py-3 flex items-center justify-center transition-colors duration-300"
-                          onClick={() => {
-                            if (typeof gtag !== 'undefined') {
-                              gtag('event', 'click', { 
-                                event_category: 'External Link',
-                                event_label: development.name + ' Website'
-                              });
-                            }
-                            if (typeof fbq !== 'undefined') {
-                              fbq('track', 'ViewContent', {
-                                content_name: development.name + ' Website'
-                              });
-                            }
-                          }}
-                        >
-                          <svg className="w-4 h-4 text-gray-400 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      )}
+                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                    <div className="flex-1 bg-gray-300 text-gray-600 px-4 py-3 text-sm text-center font-medium cursor-not-allowed rounded-tesla">
+                      SOLD OUT
+                    </div>
+                  ) : development.availabilityColor === 'text-orange-600' ? (
+                    <a href="#contact" className="flex-1 bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-400 rounded-tesla">
+                      {t.developments.lastUnits}
+                    </a>
+                  ) : (
+                    <a href="#contact" className="flex-1 tesla-btn-primary text-sm py-3">
+                      {t.developments.learnMore}
+                    </a>
+                  )}
+                  
+                  {development.websiteUrl && (
+                    <a 
+                      href={development.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 border-tesla hover:border-tesla-accent bg-white hover:bg-light-beige py-3 flex items-center justify-center transition-colors duration-400 rounded-tesla"
+                      onClick={() => {
+                        if (typeof gtag !== 'undefined') {
+                          gtag('event', 'click', { 
+                            event_category: 'External Link',
+                            event_label: development.name + ' Website'
+                          });
+                        }
+                        if (typeof fbq !== 'undefined') {
+                          fbq('track', 'ViewContent', {
+                            content_name: development.name + ' Website'
+                          });
+                        }
+                      }}
+                    >
+                      <ExternalLink className="w-4 h-4 tesla-icon hover:tesla-icon-accent transition-colors" />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -376,20 +382,200 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           </div>
         </div>
 
-        {/* All Other Developments - Now Always Visible */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl tesla-heading mb-4 text-gray-700">
-            All Projects
+        {/* All Other Developments */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h3 className="text-2xl md:text-3xl tesla-heading mb-4">
+              All Projects
             </h3>
-            <p className="text-base tesla-subheading max-w-xl mx-auto">
+            <p className="text-base tesla-subheading max-w-xl mx-auto text-pretty">
               Complete portfolio of luxury developments
             </p>
           </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {developments.map((development, index) => (
-            <div key={index} className="bg-white animate-fade-in-up border border-gray-200 hover:border-black transition-colors duration-300">
-              {/* Status badge */}
+            <div key={index} className="tesla-card hover-lift animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              {/* Image */}
+              <div className="h-64 overflow-hidden relative rounded-t-tesla">
+                {/* Status badge */}
+                {development.availability && (
+                  <div className={`absolute top-4 right-4 z-10 tesla-card-glass px-3 py-1 text-xs font-medium flex items-center ${development.availabilityColor}`}>
+                    {getAvailabilityIcon(development.availability, development.availabilityColor)}
+                    <span>{development.availability}</span>
+                  </div>
+                )}
+                
+                <img
+                  src={development.image}
+                  alt={development.name}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              
+              {/* Content */}
+              <div className="p-6">
+                <div className="text-xs font-medium tesla-subheading tracking-wider uppercase mb-3">
+                  {development.developer}
+                </div>
+                <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
+                <p className="tesla-subheading text-sm leading-relaxed mb-6 text-pretty">{development.description}</p>
+                
+                {/* Property Details */}
+                {(development.price || development.deliveryDate || development.paymentPlan) && (
+                  <div className="mb-6 space-y-3 border-t border-tesla pt-4">
+                    {development.price && (
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">From</span>
+                        <span className="text-lg font-light tesla-heading">{development.price}</span>
+                      </div>
+                    )}
+                    {development.paymentPlan && (
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Payment</span>
+                        <span className="text-sm font-light tesla-heading">{development.paymentPlan}</span>
+                      </div>
+                    )}
+                    {development.deliveryDate && (
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Handover</span>
+                        <span className="text-sm font-light tesla-heading">{development.deliveryDate}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+                
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                    <div className="flex-1 bg-gray-300 text-gray-600 px-4 py-3 text-sm text-center font-medium cursor-not-allowed rounded-tesla">
+                      SOLD OUT
+                    </div>
+                  ) : development.availabilityColor === 'text-orange-600' ? (
+                    <a href="#contact" className="flex-1 bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-400 rounded-tesla">
+                      {t.developments.lastUnits}
+                    </a>
+                  ) : development.availabilityColor === 'text-green-600' ? (
+                    <a href="#contact" className="flex-1 bg-green-600 hover:bg-green-700 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-400 rounded-tesla">
+                      {t.developments.learnMore}
+                    </a>
+                  ) : (
+                    <a href="#contact" className="flex-1 tesla-btn-secondary text-sm py-3">
+                      {t.developments.learnMore}
+                    </a>
+                  )}
+                  
+                  {development.websiteUrl && (
+                    <a 
+                      href={development.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 border-tesla hover:border-tesla-accent bg-white hover:bg-light-beige py-3 flex items-center justify-center transition-colors duration-400 rounded-tesla"
+                      onClick={() => {
+                        if (typeof gtag !== 'undefined') {
+                          gtag('event', 'click', { 
+                            event_category: 'External Link',
+                            event_label: development.name + ' Website'
+                          });
+                        }
+                        if (typeof fbq !== 'undefined') {
+                          fbq('track', 'ViewContent', {
+                            content_name: development.name + ' Website'
+                          });
+                        }
+                      }}
+                    >
+                      <ExternalLink className="w-4 h-4 tesla-icon hover:tesla-icon-accent transition-colors" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        </div>
+
+        {/* Trusted Partners */}
+        <div className="bg-deep-gray rounded-tesla-lg p-12 lg:p-16 text-white">
+          <h3 className="text-3xl md:text-4xl font-inter font-light text-center mb-16 text-white">
+            {t.developments.trustedPartners}
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            {/* Development Companies */}
+            <div className="tesla-card-glass p-8">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-12 h-12 bg-premium-blue rounded-tesla flex items-center justify-center mr-4">
+                  <Building2 className="tesla-icon-white" />
+                </div>
+                <h4 className="text-xl font-inter font-light text-white">Development Partners</h4>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                {['EMAAR', 'DECA', 'DAMAC', 'ELLINGTON', 'RICHMIND', 'BABOLEX'].map((partner, index) => (
+                  <div key={index} className="text-center p-4 bg-white/10 rounded-tesla hover:bg-white/20 transition-colors duration-400">
+                    <div className="text-lg font-medium text-white mb-1">{partner}</div>
+                    <div className="text-xs text-white/70 uppercase tracking-wide">Premium Developer</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Prestige Brands */}
+            <div className="tesla-card-glass p-8">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-12 h-12 bg-premium-blue rounded-tesla flex items-center justify-center mr-4">
+                  <Star className="tesla-icon-white" />
+                </div>
+                <h4 className="text-xl font-inter font-light text-white">Prestige Brands</h4>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { name: 'MARRIOTT', sub: 'W Hotels' },
+                  { name: 'HILTON', sub: 'Luxury Hospitality' },
+                  { name: 'ELIE SAAB', sub: 'Haute Couture' },
+                  { name: 'WYNN', sub: 'Casino Resort' },
+                  { name: 'NIKKI BEACH', sub: 'Beach Club' },
+                  { name: 'NOBU', sub: 'Fine Dining' }
+                ].map((brand, index) => (
+                  <div key={index} className="text-center p-4 bg-white/10 rounded-tesla hover:bg-white/20 transition-colors duration-400">
+                    <div className="text-lg font-medium text-white mb-1">{brand.name}</div>
+                    <div className="text-xs text-white/70 uppercase tracking-wide">{brand.sub}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <a 
+              href="#contact" 
+              className="tesla-btn-glass group"
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'click', { 
+                    event_category: 'CTA',
+                    event_label: 'Developments CTA'
+                  });
+                }
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'InitiateCheckout', {
+                    content_name: 'Development Portfolio'
+                  });
+                }
+              }}
+            >
+              <span>Explore All Developments</span>
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
               {development.availability && (
                 <div className={`absolute top-4 right-4 z-10 px-3 py-1 text-xs font-medium ${
                   development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
