@@ -54,13 +54,14 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
               />
               <img
                 src="https://palmdubai.fr/uploads/posts/2025-08/5c6f6a92e6_1734349387_0248704.webp?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-                alt="Al Marjan Island aerial view showing four coral islands with luxury developments, pristine beaches, and world-class resorts in Ras Al Khaimah UAE"
-                title="Al Marjan Island Real Estate - Four Coral Islands Luxury Investment Destination"
+                alt="Al Marjan Island four coral islands aerial view with luxury developments and beaches"
+                title="Al Marjan Island Real Estate - Four Coral Islands Investment Destination"
                 className="w-full h-full object-cover"
                 width="1920"
                 height="1080"
                 loading="lazy"
                 decoding="async"
+                data-seo-filename="al-marjan-island-four-coral-islands-aerial-luxury-developments.webp"
               />
             </picture>
             <div className="absolute inset-0 bg-black/20"></div>

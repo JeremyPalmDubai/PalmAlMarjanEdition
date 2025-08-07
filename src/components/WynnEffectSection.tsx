@@ -43,13 +43,14 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
               />
               <img
                 src="https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-                alt="Wynn Resort Casino Al Marjan Island aerial view showing $3.9 billion luxury development with marina estates and beachfront location"
-                title="Invest Near Wynn Casino Al Marjan Island - $3.9B Resort Opening 2027"
+                alt="Wynn Resort Al Marjan Island aerial view showing luxury marina estates development"
+                title="Wynn Casino Al Marjan Island - $3.9B Resort Opening 2027"
                 className="w-full h-full object-cover"
                 width="1920"
                 height="1080"
                 loading="lazy"
                 decoding="async"
+                data-seo-filename="wynn-resort-casino-al-marjan-island-aerial-marina-estates.webp"
               />
             </picture>
             <div className="absolute inset-0 bg-black/20"></div>

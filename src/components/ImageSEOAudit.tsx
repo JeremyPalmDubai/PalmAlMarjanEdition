@@ -24,66 +24,77 @@ export const ImageSEOAudit: React.FC = () => {
       images.forEach((img) => {
         const imageIssues: string[] = [];
         
-        // Check alt text
-        if (!img.alt || img.alt.trim() === '') {
+        // Enhanced alt text analysis
+        const altText = img.alt || '';
+        
+        if (!altText.trim()) {
           imageIssues.push('Missing alt text');
-        } else if (img.alt.length < 10) {
-          imageIssues.push(`Alt text too short (${img.alt.length} chars)`);
-        } else if (img.alt.length > 125) {
-          imageIssues.push(`Alt text too long (${img.alt.length} chars)`);
+        } else if (altText.length < 10) {
+          imageIssues.push(`Alt text too short (${altText.length} chars) - Should be 10-125 chars`);
+        } else if (altText.length > 125) {
+          imageIssues.push(`Alt text too long (${altText.length} chars) - Should be under 125 chars`);
         }
         
-        // Check if alt text contains keywords
-        const hasKeywords = /invest|al marjan|luxury|real estate|property|wynn|casino/i.test(img.alt);
-        if (!hasKeywords && img.alt.length > 0) {
-          imageIssues.push('Alt text missing relevant keywords');
+        // Enhanced keyword analysis
+        const keywords = ['al marjan', 'luxury', 'real estate', 'investment', 'wynn', 'casino', 'property', 'development'];
+        const hasKeywords = keywords.some(keyword => altText.toLowerCase().includes(keyword));
+        if (!hasKeywords && altText.length > 0) {
+          imageIssues.push('Alt text missing relevant SEO keywords (Al Marjan, luxury, real estate, etc.)');
         }
         
-        // Check dimensions
+        // Technical attributes check
         if (!img.width || !img.height) {
-          imageIssues.push('Missing width/height attributes');
+          imageIssues.push('Missing width/height attributes - Required for CLS prevention');
         }
         
-        // Check loading attribute
         if (!img.loading) {
-          imageIssues.push('Missing loading attribute');
+          imageIssues.push('Missing loading attribute - Add loading="lazy" or loading="eager"');
         }
         
-        // Check srcset for responsive images
+        // Responsive images check
         if (!img.srcset && (img.width > 400 || img.naturalWidth > 400)) {
-          imageIssues.push('Large image missing srcset for responsive design');
+          imageIssues.push('Large image missing srcset - Add responsive image sources');
         }
         
-        // Check file naming
+        // SEO filename check
         const filename = img.src.split('/').pop() || '';
-        const hasDescriptiveName = /invest|al-marjan|luxury|property|wynn|casino|development/i.test(filename);
+        const hasDescriptiveName = /al-marjan|luxury|property|wynn|casino|development|investment/i.test(filename);
         if (!hasDescriptiveName) {
-          imageIssues.push('Filename not SEO-friendly or descriptive');
+          imageIssues.push('Filename not SEO-friendly - Use descriptive names with keywords');
         }
         
-        // Check image format
-        if (!img.src.includes('.webp') && !img.src.includes('auto=compress')) {
-          imageIssues.push('Image not optimized (consider WebP format)');
+        // Format and compression check
+        if (!img.src.includes('.webp') && !img.src.includes('fm=webp') && !img.src.includes('auto=compress')) {
+          imageIssues.push('Image not optimized - Use WebP format and compression');
         }
         
-        // Check title attribute
-        if (!img.title && img.alt.length > 0) {
-          imageIssues.push('Missing title attribute for better accessibility');
+        // Accessibility enhancements
+        if (!img.title && altText.length > 0) {
+          imageIssues.push('Missing title attribute - Improves accessibility and SEO');
         }
         
-        // Check if image is above the fold
+        // Performance checks
+        if (!img.decoding) {
+          imageIssues.push('Missing decoding="async" attribute - Improves performance');
+        }
+        
         const rect = img.getBoundingClientRect();
         const isAboveFold = rect.top < window.innerHeight;
         if (isAboveFold && img.loading === 'lazy') {
-          imageIssues.push('Above-fold image should not be lazy loaded');
+          imageIssues.push('Above-fold image should use loading="eager" for better LCP');
+        }
+        
+        // Sizes attribute check
+        if (img.srcset && !img.sizes) {
+          imageIssues.push('Missing sizes attribute - Required when using srcset');
         }
         
         if (imageIssues.length > 0) {
           issues.push({
             element: img,
             issues: imageIssues,
-            src: img.src,
-            alt: img.alt || 'No alt text'
+            src: img.src.substring(0, 50) + '...',
+            alt: altText || 'No alt text'
           });
         }
       });

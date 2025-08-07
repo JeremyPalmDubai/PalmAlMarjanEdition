@@ -383,14 +383,21 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                 )}
                 
                 <img
-                  src={development.image}
-                  alt={development.name}
-                  title={`${development.name} - ${development.description}`}
+                  src={`${development.image}?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop`}
+                  srcSet={`${development.image}?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop 400w,
+                           ${development.image}?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop 800w,
+                           ${development.image}?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop 1200w`}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  alt={`${development.name} luxury Al Marjan Island development ${development.category === 'available' ? 'available for investment' : 'sold out project'} near Wynn Casino`}
+                  title={`${development.name} Al Marjan Island - ${development.description.substring(0, 60)}...`}
                   className={`w-full h-full object-cover ${
                     development.category === 'sold-out' ? 'grayscale' : ''
                   }`}
+                  width="800"
+                  height="600"
                   loading="lazy"
                   decoding="async"
+                  data-seo-filename={`${development.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}-al-marjan-island-luxury-development.webp`}
                 />
               </div>
               

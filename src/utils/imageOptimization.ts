@@ -1,4 +1,4 @@
-// Image optimization utilities for SEO and performance
+// Enhanced image optimization utilities for comprehensive SEO
 
 export interface ImageSEOConfig {
   src: string;
@@ -8,36 +8,67 @@ export interface ImageSEOConfig {
   height?: number;
   priority?: boolean;
   quality?: number;
+  format?: 'webp' | 'jpg' | 'png';
 }
 
 // Generate SEO-friendly filename from alt text
 export const generateSEOFilename = (altText: string, originalSrc: string): string => {
-  const extension = originalSrc.split('.').pop() || 'jpg';
+  const extension = originalSrc.includes('.webp') ? 'webp' : 
+                   originalSrc.includes('.jpg') || originalSrc.includes('.jpeg') ? 'jpg' : 
+                   originalSrc.includes('.png') ? 'png' : 'webp';
+  
   const seoName = altText
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
     .replace(/\s+/g, '-') // Replace spaces with hyphens
     .replace(/-+/g, '-') // Remove multiple hyphens
-    .substring(0, 50) // Limit length
+    .substring(0, 50) // Limit length for SEO
     .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
   
   return `${seoName}.${extension}`;
 };
 
-// Generate responsive image srcset
+// Optimize alt text for SEO and accessibility
+export const optimizeAltText = (originalAlt: string, context?: string): string => {
+  // Ensure alt text is between 10-125 characters
+  let optimized = originalAlt.trim();
+  
+  // Add context if missing and alt is too short
+  if (optimized.length < 10 && context) {
+    optimized = `${optimized} ${context}`;
+  }
+  
+  // Truncate if too long
+  if (optimized.length > 125) {
+    optimized = optimized.substring(0, 122) + '...';
+  }
+  
+  // Ensure it contains relevant keywords
+  const keywords = ['Al Marjan Island', 'luxury', 'real estate', 'investment', 'Wynn Casino'];
+  const hasKeywords = keywords.some(keyword => 
+    optimized.toLowerCase().includes(keyword.toLowerCase())
+  );
+  
+  if (!hasKeywords && optimized.length < 100) {
+    optimized += ' Al Marjan Island luxury real estate';
+  }
+  
+  return optimized;
+};
+
+// Generate responsive image srcset with optimization
 export const generateResponsiveSrcSet = (
   baseSrc: string, 
-  breakpoints: number[] = [400, 800, 1200, 1600, 2000]
+  breakpoints: number[] = [400, 600, 800, 1200, 1600, 2000],
+  quality: number = 85,
+  format: string = 'webp'
 ): string => {
   const baseUrl = baseSrc.split('?')[0];
-  const existingParams = baseSrc.includes('?') ? baseSrc.split('?')[1] : '';
   
   return breakpoints
     .map(width => {
-      const params = existingParams 
-        ? `auto=compress&cs=tinysrgb&w=${width}&${existingParams}`
-        : `auto=compress&cs=tinysrgb&w=${width}`;
-      return `${baseUrl}?${params} ${width}w`;
+      const height = Math.round(width * 0.75); // 4:3 aspect ratio default
+      return `${baseUrl}?auto=compress&cs=tinysrgb&w=${width}&h=${height}&fit=crop&fm=${format}&q=${quality} ${width}w`;
     })
     .join(', ');
 };
@@ -57,7 +88,7 @@ export const generateSizesAttribute = (
   return [...conditions, defaultSize].join(', ');
 };
 
-// Compress image URL with quality settings
+// Compress image URL with advanced options
 export const compressImageUrl = (
   src: string, 
   options: {
@@ -66,20 +97,36 @@ export const compressImageUrl = (
     quality?: number;
     format?: 'webp' | 'jpg' | 'png';
     fit?: 'crop' | 'scale' | 'fill';
+    blur?: number;
+    brightness?: number;
+    contrast?: number;
   } = {}
 ): string => {
-  const { width, height, quality = 85, format, fit = 'crop' } = options;
-  const baseUrl = src.split('?')[0];
+  const { 
+    width, 
+    height, 
+    quality = 85, 
+    format = 'webp', 
+    fit = 'crop',
+    blur,
+    brightness,
+    contrast
+  } = options;
   
+  const baseUrl = src.split('?')[0];
   const params = new URLSearchParams();
+  
   params.set('auto', 'compress');
   params.set('cs', 'tinysrgb');
   
   if (width) params.set('w', width.toString());
   if (height) params.set('h', height.toString());
   if (quality !== 85) params.set('q', quality.toString());
-  if (format) params.set('fm', format);
+  if (format !== 'webp') params.set('fm', format);
   if (fit !== 'crop') params.set('fit', fit);
+  if (blur) params.set('blur', blur.toString());
+  if (brightness) params.set('brightness', brightness.toString());
+  if (contrast) params.set('contrast', contrast.toString());
   
   return `${baseUrl}?${params.toString()}`;
 };
@@ -94,7 +141,7 @@ export const generateImageStructuredData = (config: ImageSEOConfig) => {
     "description": config.title || config.alt,
     "width": config.width,
     "height": config.height,
-    "encodingFormat": getImageFormat(config.src),
+    "encodingFormat": `image/${config.format || 'webp'}`,
     "author": {
       "@type": "Organization",
       "name": "Palm Signature Real Estate"
@@ -104,109 +151,207 @@ export const generateImageStructuredData = (config: ImageSEOConfig) => {
       "name": "Palm Signature Real Estate"
     },
     "license": "https://invest-almarjanisland.com/terms",
-    "acquireLicensePage": "https://invest-almarjanisland.com/terms"
+    "acquireLicensePage": "https://invest-almarjanisland.com/terms",
+    "creditText": "Palm Signature Real Estate",
+    "creator": {
+      "@type": "Organization",
+      "name": "Palm Signature Real Estate"
+    }
   };
 };
 
-// Detect image format from URL
-const getImageFormat = (src: string): string => {
-  if (src.includes('.webp')) return 'image/webp';
-  if (src.includes('.jpg') || src.includes('.jpeg')) return 'image/jpeg';
-  if (src.includes('.png')) return 'image/png';
-  if (src.includes('.svg')) return 'image/svg+xml';
-  return 'image/jpeg'; // default
-};
-
-// Generate preload link for critical images
-export const generatePreloadLink = (
-  src: string, 
-  srcSet?: string, 
-  sizes?: string
-): string => {
-  const attributes = [
-    'rel="preload"',
-    'as="image"',
-    `href="${src}"`
-  ];
-  
-  if (srcSet) attributes.push(`imagesrcset="${srcSet}"`);
-  if (sizes) attributes.push(`imagesizes="${sizes}"`);
-  
-  return `<link ${attributes.join(' ')} />`;
-};
-
-// Image SEO audit function
+// Advanced image SEO audit function
 export const auditImageSEO = (images: NodeListOf<HTMLImageElement>) => {
-  const issues: string[] = [];
+  const issues: Array<{
+    element: HTMLImageElement;
+    issues: string[];
+    severity: 'critical' | 'warning' | 'info';
+    recommendations: string[];
+  }> = [];
   
   images.forEach((img, index) => {
-    // Check alt text
+    const imageIssues: string[] = [];
+    const recommendations: string[] = [];
+    let severity: 'critical' | 'warning' | 'info' = 'info';
+    
+    // Alt text analysis
     if (!img.alt || img.alt.trim() === '') {
-      issues.push(`Image ${index + 1}: Missing alt text`);
+      imageIssues.push('Missing alt text');
+      recommendations.push('Add descriptive alt text (10-125 characters)');
+      severity = 'critical';
     } else if (img.alt.length < 10) {
-      issues.push(`Image ${index + 1}: Alt text too short (${img.alt.length} chars)`);
+      imageIssues.push(`Alt text too short (${img.alt.length} chars)`);
+      recommendations.push('Expand alt text to be more descriptive');
+      severity = 'warning';
     } else if (img.alt.length > 125) {
-      issues.push(`Image ${index + 1}: Alt text too long (${img.alt.length} chars)`);
+      imageIssues.push(`Alt text too long (${img.alt.length} chars)`);
+      recommendations.push('Shorten alt text to under 125 characters');
+      severity = 'warning';
     }
     
-    // Check dimensions
+    // Keyword analysis
+    const keywords = ['al marjan', 'luxury', 'real estate', 'investment', 'wynn', 'casino', 'property'];
+    const hasKeywords = keywords.some(keyword => 
+      img.alt.toLowerCase().includes(keyword)
+    );
+    if (!hasKeywords && img.alt.length > 0) {
+      imageIssues.push('Alt text missing relevant keywords');
+      recommendations.push('Include relevant keywords like "Al Marjan Island", "luxury real estate"');
+      severity = severity === 'critical' ? 'critical' : 'warning';
+    }
+    
+    // Technical attributes
     if (!img.width || !img.height) {
-      issues.push(`Image ${index + 1}: Missing width/height attributes`);
+      imageIssues.push('Missing width/height attributes');
+      recommendations.push('Add explicit width and height attributes');
+      severity = severity === 'critical' ? 'critical' : 'warning';
     }
     
-    // Check loading attribute
     if (!img.loading) {
-      issues.push(`Image ${index + 1}: Missing loading attribute`);
+      imageIssues.push('Missing loading attribute');
+      recommendations.push('Add loading="lazy" for below-fold images');
     }
     
-    // Check srcset for responsive images
-    if (!img.srcset && img.width > 400) {
-      issues.push(`Image ${index + 1}: Large image missing srcset`);
+    // Responsive images
+    if (!img.srcset && (img.width > 400 || img.naturalWidth > 400)) {
+      imageIssues.push('Large image missing srcset for responsive design');
+      recommendations.push('Add srcset with multiple image sizes');
+      severity = severity === 'critical' ? 'critical' : 'warning';
     }
     
-    // Check file naming
+    // File naming
     const filename = img.src.split('/').pop() || '';
-    if (!/^[a-z0-9-]+\.(jpg|jpeg|png|webp)$/i.test(filename)) {
-      issues.push(`Image ${index + 1}: Non-SEO friendly filename`);
+    const hasDescriptiveName = /al-marjan|luxury|property|wynn|casino|development|investment/i.test(filename);
+    if (!hasDescriptiveName) {
+      imageIssues.push('Filename not SEO-friendly or descriptive');
+      recommendations.push('Use descriptive filenames with keywords');
+    }
+    
+    // Format optimization
+    if (!img.src.includes('.webp') && !img.src.includes('fm=webp')) {
+      imageIssues.push('Image not optimized (consider WebP format)');
+      recommendations.push('Use WebP format for better compression');
+    }
+    
+    // Accessibility
+    if (!img.title && img.alt.length > 0) {
+      imageIssues.push('Missing title attribute for better accessibility');
+      recommendations.push('Add title attribute for tooltip information');
+    }
+    
+    // Performance
+    const rect = img.getBoundingClientRect();
+    const isAboveFold = rect.top < window.innerHeight;
+    if (isAboveFold && img.loading === 'lazy') {
+      imageIssues.push('Above-fold image should not be lazy loaded');
+      recommendations.push('Use loading="eager" for above-fold images');
+      severity = 'warning';
+    }
+    
+    if (imageIssues.length > 0) {
+      issues.push({
+        element: img,
+        issues: imageIssues,
+        severity,
+        recommendations
+      });
     }
   });
   
   return issues;
 };
 
-// Performance monitoring for images
+// Generate preload links for critical images
+export const generatePreloadLinks = (criticalImages: ImageSEOConfig[]): string => {
+  return criticalImages.map(img => {
+    const optimizedSrc = compressImageUrl(img.src, { 
+      width: img.width, 
+      height: img.height, 
+      quality: img.quality,
+      format: img.format 
+    });
+    const srcSet = generateResponsiveSrcSet(img.src);
+    const sizes = generateSizesAttribute();
+    
+    return `<link rel="preload" as="image" href="${optimizedSrc}" imagesrcset="${srcSet}" imagesizes="${sizes}" />`;
+  }).join('\n');
+};
+
+// Image performance monitoring
 export const trackImagePerformance = (img: HTMLImageElement, alt: string) => {
   const startTime = performance.now();
   
-  img.onload = () => {
-    const loadTime = performance.now() - startTime;
-    
-    // Track with Google Analytics
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'image_load_time', {
-        event_category: 'Performance',
-        event_label: alt,
-        value: Math.round(loadTime),
-        custom_map: {
-          image_size: img.naturalWidth * img.naturalHeight,
-          image_format: getImageFormat(img.src)
+  const observer = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      if (entry.element === img) {
+        const loadTime = performance.now() - startTime;
+        
+        // Track with Google Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'image_performance', {
+            event_category: 'Performance',
+            event_label: alt,
+            value: Math.round(loadTime),
+            custom_map: {
+              image_size: img.naturalWidth * img.naturalHeight,
+              image_format: getImageFormat(img.src),
+              loading_method: img.loading || 'auto'
+            }
+          });
         }
-      });
+        
+        // Log performance issues
+        if (loadTime > 3000) {
+          console.warn(`Slow loading image: ${alt} (${Math.round(loadTime)}ms)`);
+        }
+      }
+    }
+  });
+  
+  observer.observe({ entryTypes: ['element'] });
+};
+
+// Detect image format from URL
+const getImageFormat = (src: string): string => {
+  if (src.includes('.webp') || src.includes('fm=webp')) return 'webp';
+  if (src.includes('.jpg') || src.includes('.jpeg')) return 'jpeg';
+  if (src.includes('.png')) return 'png';
+  if (src.includes('.svg')) return 'svg';
+  return 'webp'; // default to webp
+};
+
+// Batch image optimization for existing images
+export const batchOptimizeImages = (images: NodeListOf<HTMLImageElement>) => {
+  images.forEach((img, index) => {
+    // Add missing attributes
+    if (!img.loading) {
+      const isAboveFold = img.getBoundingClientRect().top < window.innerHeight;
+      img.loading = isAboveFold ? 'eager' : 'lazy';
     }
     
-    // Log slow loading images
-    if (loadTime > 3000) {
-      console.warn(`Slow loading image: ${alt} (${Math.round(loadTime)}ms)`);
+    if (!img.decoding) {
+      img.decoding = 'async';
     }
-  };
-  
-  img.onerror = () => {
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'image_error', {
-        event_category: 'Error',
-        event_label: alt,
-        value: 1
-      });
+    
+    // Add SEO filename data attribute
+    if (!img.dataset.seoFilename && img.alt) {
+      img.dataset.seoFilename = generateSEOFilename(img.alt, img.src);
     }
-  };
+    
+    // Track performance
+    trackImagePerformance(img, img.alt || `Image ${index + 1}`);
+  });
+};
+
+// Generate image sitemap entries
+export const generateImageSitemapEntries = (images: ImageSEOConfig[]): string => {
+  return images.map(img => `
+    <image:image>
+      <image:loc>${compressImageUrl(img.src, { quality: img.quality, format: img.format })}</image:loc>
+      <image:title>${img.alt}</image:title>
+      <image:caption>${img.title || img.alt}</image:caption>
+      <image:geo_location>Al Marjan Island, Ras Al Khaimah, UAE</image:geo_location>
+      <image:license>https://invest-almarjanisland.com/terms</image:license>
+    </image:image>
+  `).join('');
 };

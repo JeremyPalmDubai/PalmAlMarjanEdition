@@ -37,13 +37,18 @@ export const LifestyleSection: React.FC<LifestyleSectionProps> = ({ currentLangu
               />
               <img
                 src="https://palmalmarjan.com/public/assets/img/wrapper-bg.png?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
-                alt="Paradise beaches Al Marjan Island with crystal clear waters, white sand beaches, and luxury beachfront resorts perfect for family vacations"
-                title="Al Marjan Island Paradise Beaches - Luxury Lifestyle Destination"
+                srcSet="https://palmalmarjan.com/public/assets/img/wrapper-bg.png?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop 600w,
+                        https://palmalmarjan.com/public/assets/img/wrapper-bg.png?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop 1200w,
+                        https://palmalmarjan.com/public/assets/img/wrapper-bg.png?auto=compress&cs=tinysrgb&w=1800&h=1200&fit=crop 1800w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                alt="Al Marjan Island paradise beaches with crystal clear waters and luxury resorts"
+                title="Al Marjan Island Paradise Beaches - Luxury Lifestyle"
                 className="w-full h-96 lg:h-[500px] object-cover tesla-shadow"
                 width="1200"
                 height="800"
                 loading="lazy"
                 decoding="async"
+                data-seo-filename="al-marjan-island-paradise-beaches-crystal-clear-waters-luxury-resorts.webp"
               />
             </picture>
           </div>
