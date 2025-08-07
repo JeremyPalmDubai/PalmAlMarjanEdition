@@ -90,6 +90,14 @@ body {
   @apply focus:outline-none focus:ring-2 focus:ring-gray-500;
 }
 
+.tesla-btn-secondary svg {
+  transition: color 0.3s ease;
+}
+
+.tesla-btn-secondary:hover svg {
+  color: white;
+}
+
 .tesla-btn-secondary-white {
   @apply bg-transparent text-white px-12 py-4 rounded-none font-medium text-sm tracking-wide;
   @apply border border-white hover:bg-white hover:text-black transition-all duration-300;
