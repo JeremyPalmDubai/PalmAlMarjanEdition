@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TrendingUp, Building, DollarSign, MapPin, MessageSquare } from 'lucide-react';
+import { Home, TrendingUp, Building, DollarSign, MessageSquare } from 'lucide-react';
 import { useNavigation } from './NavigationProvider';
 
 interface MobileNavigationProps {
@@ -54,32 +54,31 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ currentLangu
   };
 
   const navItems = [
-    { id: 'al-marjan-island', icon: MapPin, label: 'Island' },
+    { id: 'al-marjan-island', icon: Home, label: 'Island' },
     { id: 'wynn-effect', icon: TrendingUp, label: 'Wynn' },
     { id: 'roi-metrics', icon: DollarSign, label: 'ROI' },
-    { id: 'developments', icon: Building, label: 'Properties' },
-    { id: 'lifestyle', icon: MapPin, label: 'Lifestyle' }
+    { id: 'developments', icon: Building, label: 'Invest' }
   ];
 
   return (
-    <nav className="ios26-tabbar">
-      <div className="ios26-tabbar-container">
+    <nav className="tesla-mobile-nav">
+      <div className="tesla-mobile-nav-container">
         {/* Navigation Items */}
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
-            className={`ios26-tab-item ${activeSection === item.id ? 'active' : ''}`}
+            className={`tesla-nav-item ${activeSection === item.id ? 'active' : ''}`}
           >
-            <item.icon className="tab-icon" />
-            <span className="tab-label">{item.label}</span>
+            <item.icon className="nav-icon" />
+            <span className="nav-label">{item.label}</span>
           </button>
         ))}
         
-        {/* Contact Button - Remplace la loupe */}
+        {/* Contact Button */}
         <button
           onClick={() => scrollToSection('contact')}
-          className="ios26-contact-btn"
+          className="tesla-contact-btn"
           aria-label="Contact"
         >
           <MessageSquare className="contact-icon" />
