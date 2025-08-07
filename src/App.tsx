@@ -273,22 +273,16 @@ function App() {
         <Header currentLanguage={currentLanguage} onLanguageChange={handleLanguageChange} />
         <main id="main-content" tabIndex={-1}>
           <HeroSection currentLanguage={currentLanguage} />
-        <AlMarjanIslandSection currentLanguage={currentLanguage} />
-        <OpportunitySection currentLanguage={currentLanguage} />
-        <TestimonialsSection currentLanguage={currentLanguage} />
-        <UrgencySection currentLanguage={currentLanguage} />
-        <InteractiveMapSection currentLanguage={currentLanguage} />
-        <ExplosiveGrowthSection currentLanguage={currentLanguage} />
-        <WynnEffectSection currentLanguage={currentLanguage} />
-        <ROIMetricsSection currentLanguage={currentLanguage} />
-        <ComparisonSection currentLanguage={currentLanguage} />
-        <DevelopmentsSection currentLanguage={currentLanguage} />
-        <SocialProofSection currentLanguage={currentLanguage} />
-        <FAQSection currentLanguage={currentLanguage} />
-        <WhyPalmSignatureSection currentLanguage={currentLanguage} />
-        <CEOSection currentLanguage={currentLanguage} />
-        <LifestyleSection currentLanguage={currentLanguage} />
-        <ContactSection currentLanguage={currentLanguage} />
+          <AlMarjanIslandSection currentLanguage={currentLanguage} />
+          <OpportunitySection currentLanguage={currentLanguage} />
+          <ExplosiveGrowthSection currentLanguage={currentLanguage} />
+          <WynnEffectSection currentLanguage={currentLanguage} />
+          <ROIMetricsSection currentLanguage={currentLanguage} />
+          <DevelopmentsSection currentLanguage={currentLanguage} />
+          <LifestyleSection currentLanguage={currentLanguage} />
+          <WhyPalmSignatureSection currentLanguage={currentLanguage} />
+          <CEOSection currentLanguage={currentLanguage} />
+          <ContactSection currentLanguage={currentLanguage} />
         </main>
         <Footer currentLanguage={currentLanguage} id="main-footer" />
         
