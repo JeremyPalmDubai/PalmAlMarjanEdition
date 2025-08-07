@@ -1,5 +1,4 @@
 import React from 'react';
-import { Building2, ExternalLink, ArrowRight, CheckCircle, Clock, XCircle, TrendingUp, Star } from 'lucide-react';
 import { translations } from '../data/translations';
 
 interface DevelopmentsSectionProps {
@@ -223,158 +222,153 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     }
   ];
 
-  const getAvailabilityIcon = (availability: string | null, availabilityColor: string) => {
-    if (!availability) return null;
-    
-    if (availabilityColor === 'text-red-600') {
-      return <XCircle className="w-4 h-4 mr-2" />;
-    } else if (availabilityColor === 'text-orange-600') {
-      return <Clock className="w-4 h-4 mr-2" />;
-    } else {
-      return <CheckCircle className="w-4 h-4 mr-2" />;
-    }
-  };
-
   return (
-    <section id="developments" className="tesla-section tesla-section-beige">
+    <section id="developments" className="tesla-section bg-gray-50">
       <div className="tesla-container">
-        {/* Section Header */}
-        <div className="text-center mb-24">
-          <div className="tesla-badge-solid mb-8">
-            <Building2 className="w-4 h-4 mr-2" />
-            <span className="tracking-widest">LUXURY DEVELOPMENTS</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8 text-balance">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8">
             {t.developments.title}
           </h2>
-          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed text-pretty">
+          <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
             {t.developments.description}
           </p>
         </div>
 
-        {/* Featured Developments */}
-        <div className="mb-24">
-          <div className="text-center mb-16">
-            <div className="tesla-badge-accent mb-6">
-              <span className="tracking-widest">PREMIUM SELECTION</span>
+        {/* Featured Developments - Priority on Mobile */}
+        <div className="mb-16">
+          {/* Enhanced Featured Projects Header */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-900 to-black text-white rounded-full mb-6 font-medium text-sm tracking-wider uppercase shadow-lg">
+              ◆ Premium Selection
             </div>
-            <h3 className="text-3xl md:text-4xl tesla-heading mb-6">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl tesla-heading mb-6 bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">
               Featured Projects
             </h3>
-            <p className="text-lg tesla-subheading max-w-3xl mx-auto leading-relaxed text-pretty">
+            <p className="text-lg tesla-subheading max-w-3xl mx-auto leading-relaxed">
               Exclusive luxury developments curated for discerning investors seeking exceptional returns
             </p>
           </div>
           
-          {/* Featured Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Enhanced Featured Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8">
           {featuredDevelopments.map((development, index) => (
-            <div key={index} className="tesla-card hover-lift animate-fade-in-up relative overflow-hidden" style={{ animationDelay: `${index * 0.2}s` }}>
+            <div key={index} className="bg-white tesla-hover animate-fade-in-up relative overflow-hidden border border-gray-100 hover:border-black transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl">
               {/* Premium Badge */}
-              <div className="absolute top-4 left-4 z-20 tesla-badge-solid">
-                <span className="text-xs">PREMIUM</span>
+              <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-black to-gray-800 text-white px-3 py-1 rounded-sm text-xs font-bold shadow-lg tracking-wider uppercase">
+                ◆ Premium
               </div>
               
               {/* Special badge for profit achievement */}
               {development.profitBadge && (
-                <div className="absolute top-16 left-4 z-10 tesla-badge-accent">
-                  <TrendingUp className="w-3 h-3 mr-1" />
-                  <span className="text-xs">{development.profitBadge}</span>
+                <div className="absolute top-16 left-4 z-10 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-2 py-1 rounded-sm text-xs font-bold shadow-lg">
+                    🚀 {development.profitBadge}
                 </div>
               )}
               
-              {/* Image */}
-              <div className="h-64 overflow-hidden relative rounded-t-tesla">
+              <div className="h-48 sm:h-56 lg:h-64 overflow-hidden relative">
                 {development.availability && (
-                  <div className={`absolute top-4 right-4 z-10 tesla-card-glass px-3 py-1 text-xs font-medium flex items-center ${development.availabilityColor}`}>
-                    {getAvailabilityIcon(development.availability, development.availabilityColor)}
-                    <span>{development.availability}</span>
+                  <div className={`absolute top-4 right-4 z-10 px-3 py-1 rounded-full text-xs font-bold shadow-lg ${
+                    development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
+                    development.availabilityColor === 'text-orange-600' ? 'bg-orange-100 text-orange-600' :
+                    development.availabilityColor === 'text-green-600' ? 'bg-green-100 text-green-600' :
+                    development.availabilityColor === 'text-blue-600' ? 'bg-blue-100 text-blue-600' :
+                    'bg-red-100 text-red-600'
+                  }`}>
+                    {development.availability}
                   </div>
                 )}
-                <img
-                  src={development.image}
-                  alt={development.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
+                  <img
+                    src={development.image}
+                    alt={development.name}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  />
               </div>
               
-              {/* Content */}
-              <div className="p-6">
-                <div className="text-xs font-medium tesla-subheading tracking-wider uppercase mb-3">
-                  {development.developer}
+              <div className="p-4 sm:p-6 lg:p-8 bg-white">
+                <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
+                    {development.developer}
                 </div>
-                <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
-                <p className="tesla-subheading text-sm leading-relaxed mb-6 text-pretty">{development.description}</p>
+                <h3 className="text-lg sm:text-xl lg:text-2xl tesla-heading mb-3 sm:mb-4 line-clamp-2 font-medium">{development.name}</h3>
+                <p className="tesla-subheading text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3">{development.description}</p>
                   
-                {/* Property Details */}
+                {/* Pricing and Info */}
                 {(development.price || development.deliveryDate || development.wynnDistance) && (
-                  <div className="mb-6 space-y-3 border-t border-tesla pt-4">
-                    {development.price && (
-                      <div className="flex items-center justify-between py-1">
-                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">From</span>
-                        <span className="text-lg font-light tesla-heading">{development.price}</span>
-                      </div>
-                    )}
-                    {development.paymentPlan && (
-                      <div className="flex items-center justify-between py-1">
-                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Payment</span>
-                        <span className="text-sm font-light tesla-heading">{development.paymentPlan}</span>
-                      </div>
-                    )}
-                    {development.deliveryDate && (
-                      <div className="flex items-center justify-between py-1">
-                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Handover</span>
-                        <span className="text-sm font-light tesla-heading">{development.deliveryDate}</span>
-                      </div>
-                    )}
-                    {development.wynnDistance && (
-                      <div className="flex items-center justify-between py-1">
-                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Wynn</span>
-                        <span className="text-sm font-medium text-premium-blue">{development.wynnDistance}</span>
-                      </div>
-                    )}
+                  <div className="mb-4 sm:mb-6 space-y-2 bg-gray-50 p-4 border-l-4 border-black">
+                      {development.price && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">From:</span>
+                          <span className="text-sm sm:text-lg font-semibold text-black">{development.price}</span>
+                        </div>
+                      )}
+                      {development.paymentPlan && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">Payment:</span>
+                          <span className="text-sm font-medium text-black">{development.paymentPlan}</span>
+                        </div>
+                      )}
+                      {development.deliveryDate && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Handover:</span>
+                          <span className="text-sm font-medium text-gray-700">{development.deliveryDate}</span>
+                        </div>
+                      )}
+                      {development.wynnDistance && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-black tracking-wider uppercase">Wynn:</span>
+                          <span className="text-sm font-medium text-black font-semibold">{development.wynnDistance}</span>
+                        </div>
+                      )}
                   </div>
                 )}
                   
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                    <div className="flex-1 bg-gray-300 text-gray-600 px-4 py-3 text-sm text-center font-medium cursor-not-allowed rounded-tesla">
-                      SOLD OUT
-                    </div>
-                  ) : development.availabilityColor === 'text-orange-600' ? (
-                    <a href="#contact" className="flex-1 bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-400 rounded-tesla">
-                      {t.developments.lastUnits}
-                    </a>
-                  ) : (
-                    <a href="#contact" className="flex-1 tesla-btn-primary text-sm py-3">
-                      {t.developments.learnMore}
-                    </a>
-                  )}
-                  
-                  {development.websiteUrl && (
-                    <a 
-                      href={development.websiteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 border-tesla hover:border-tesla-accent bg-white hover:bg-light-beige py-3 flex items-center justify-center transition-colors duration-400 rounded-tesla"
-                      onClick={() => {
-                        if (typeof gtag !== 'undefined') {
-                          gtag('event', 'click', { 
-                            event_category: 'External Link',
-                            event_label: development.name + ' Website'
-                          });
-                        }
-                        if (typeof fbq !== 'undefined') {
-                          fbq('track', 'ViewContent', {
-                            content_name: development.name + ' Website'
-                          });
-                        }
-                      }}
-                    >
-                      <ExternalLink className="w-4 h-4 tesla-icon hover:tesla-icon-accent transition-colors" />
-                    </a>
-                  )}
+                <div className="flex gap-2">
+                      {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
+                        <div className="flex-1 bg-gray-400 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium cursor-not-allowed">
+                          SOLD OUT
+                        </div>
+                      ) : development.availabilityColor === 'text-orange-600' ? (
+                        <a href="#contact" className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
+                          {t.developments.lastUnits}
+                        </a>
+                      ) : development.availabilityColor === 'text-green-600' ? (
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
+                          {t.developments.learnMore}
+                        </a>
+                      ) : development.availabilityColor === 'text-blue-600' ? (
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
+                          {t.developments.learnMore}
+                        </a>
+                      ) : (
+                        <a href="#contact" className="flex-1 bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm text-center font-medium transition-all duration-300">
+                          {t.developments.learnMore}
+                        </a>
+                      )}
+                      
+                      {development.websiteUrl && (
+                        <a 
+                          href={development.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-12 sm:w-14 md:w-16 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 text-xs sm:text-sm py-2 flex items-center justify-center transition-all duration-300"
+                          onClick={() => {
+                            if (typeof gtag !== 'undefined') {
+                              gtag('event', 'click', { 
+                                event_category: 'External Link',
+                                event_label: development.name + ' Website'
+                              });
+                            }
+                            if (typeof fbq !== 'undefined') {
+                              fbq('track', 'ViewContent', {
+                                content_name: development.name + ' Website'
+                              });
+                            }
+                          }}
+                        >
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      )}
                 </div>
               </div>
             </div>
@@ -382,85 +376,86 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
           </div>
         </div>
 
-        {/* All Other Developments */}
-        <div className="mb-24">
-          <div className="text-center mb-16">
-            <h3 className="text-2xl md:text-3xl tesla-heading mb-4">
-              All Projects
+        {/* All Other Developments - Now Always Visible */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl tesla-heading mb-4 text-gray-700">
+            All Projects
             </h3>
-            <p className="text-base tesla-subheading max-w-xl mx-auto text-pretty">
+            <p className="text-base tesla-subheading max-w-xl mx-auto">
               Complete portfolio of luxury developments
             </p>
           </div>
-          
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
           {developments.map((development, index) => (
-            <div key={index} className="tesla-card hover-lift animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-              {/* Image */}
-              <div className="h-64 overflow-hidden relative rounded-t-tesla">
-                {/* Status badge */}
-                {development.availability && (
-                  <div className={`absolute top-4 right-4 z-10 tesla-card-glass px-3 py-1 text-xs font-medium flex items-center ${development.availabilityColor}`}>
-                    {getAvailabilityIcon(development.availability, development.availabilityColor)}
-                    <span>{development.availability}</span>
-                  </div>
-                )}
-                
+            <div key={index} className="bg-white tesla-hover animate-fade-in-up">
+              {/* Status badge */}
+              {development.availability && (
+                <div className={`absolute top-2 right-2 z-10 px-2 py-1 rounded-full text-xs font-bold ${
+                  development.availabilityColor === 'text-red-600' ? 'bg-red-100 text-red-600' :
+                  development.availabilityColor === 'text-orange-600' ? 'bg-orange-100 text-orange-600' :
+                  development.availabilityColor === 'text-green-600' ? 'bg-green-100 text-green-600' :
+                  development.availabilityColor === 'text-blue-600' ? 'bg-blue-100 text-blue-600' :
+                  'bg-red-100 text-red-600'
+                }`}>
+                  {development.availability}
+                </div>
+              )}
+              
+              <div className="h-48 sm:h-56 lg:h-64 overflow-hidden">
                 <img
                   src={development.image}
                   alt={development.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
               
-              {/* Content */}
-              <div className="p-6">
-                <div className="text-xs font-medium tesla-subheading tracking-wider uppercase mb-3">
+              <div className="p-4 sm:p-6 lg:p-8">
+                <div className="text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
                   {development.developer}
                 </div>
-                <h3 className="text-xl tesla-heading mb-4">{development.name}</h3>
-                <p className="tesla-subheading text-sm leading-relaxed mb-6 text-pretty">{development.description}</p>
+                <h3 className="text-lg sm:text-xl tesla-heading mb-3 sm:mb-4 line-clamp-2">{development.name}</h3>
+                <p className="tesla-subheading text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3">{development.description}</p>
                 
-                {/* Property Details */}
+                {/* Pricing and Availability */}
                 {(development.price || development.deliveryDate || development.paymentPlan) && (
-                  <div className="mb-6 space-y-3 border-t border-tesla pt-4">
+                  <div className="mb-4 sm:mb-6 space-y-2">
                     {development.price && (
-                      <div className="flex items-center justify-between py-1">
-                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">From</span>
-                        <span className="text-lg font-light tesla-heading">{development.price}</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">From:</span>
+                        <span className="text-sm sm:text-lg font-semibold text-black">{development.price}</span>
                       </div>
                     )}
                     {development.paymentPlan && (
-                      <div className="flex items-center justify-between py-1">
-                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Payment</span>
-                        <span className="text-sm font-light tesla-heading">{development.paymentPlan}</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium text-gray-500 tracking-wider uppercase">Payment:</span>
+                        <span className="text-sm font-medium text-black">{development.paymentPlan}</span>
                       </div>
                     )}
                     {development.deliveryDate && (
-                      <div className="flex items-center justify-between py-1">
-                        <span className="text-xs font-medium tesla-subheading tracking-wider uppercase">Handover</span>
-                        <span className="text-sm font-light tesla-heading">{development.deliveryDate}</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium text-blue-600 tracking-wider uppercase">Handover:</span>
+                        <span className="text-sm font-medium text-blue-600">{development.deliveryDate}</span>
                       </div>
                     )}
                   </div>
                 )}
                 
-                {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className="flex gap-2">
                   {development.availability === "SOLD OUT" || development.availabilityColor === 'text-red-600' ? (
-                    <div className="flex-1 bg-gray-300 text-gray-600 px-4 py-3 text-sm text-center font-medium cursor-not-allowed rounded-tesla">
+                    <div className="flex-1 tesla-btn-primary opacity-50 cursor-not-allowed text-xs sm:text-sm py-2 text-center">
                       SOLD OUT
                     </div>
                   ) : development.availabilityColor === 'text-orange-600' ? (
-                    <a href="#contact" className="flex-1 bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-400 rounded-tesla">
+                    <a href="#contact" className="flex-1 tesla-btn-primary bg-orange-600 hover:bg-orange-700 text-xs sm:text-sm py-2 text-center">
                       {t.developments.lastUnits}
                     </a>
                   ) : development.availabilityColor === 'text-green-600' ? (
-                    <a href="#contact" className="flex-1 bg-green-600 hover:bg-green-700 text-white px-4 py-3 text-sm text-center font-medium transition-colors duration-400 rounded-tesla">
+                    <a href="#contact" className="flex-1 tesla-btn-primary bg-green-600 hover:bg-green-700 text-xs sm:text-sm py-2 text-center">
                       {t.developments.learnMore}
                     </a>
                   ) : (
-                    <a href="#contact" className="flex-1 tesla-btn-secondary text-sm py-3">
+                    <a href="#contact" className="flex-1 tesla-btn-primary text-xs sm:text-sm py-2 text-center">
                       {t.developments.learnMore}
                     </a>
                   )}
@@ -470,7 +465,7 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                       href={development.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 border-tesla hover:border-tesla-accent bg-white hover:bg-light-beige py-3 flex items-center justify-center transition-colors duration-400 rounded-tesla"
+                      className="w-12 sm:w-14 md:w-16 border border-gray-300 hover:border-black bg-white hover:bg-gray-50 text-xs sm:text-sm py-2 flex items-center justify-center transition-all duration-300"
                       onClick={() => {
                         if (typeof gtag !== 'undefined') {
                           gtag('event', 'click', { 
@@ -485,7 +480,9 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
                         }
                       }}
                     >
-                      <ExternalLink className="w-4 h-4 tesla-icon hover:tesla-icon-accent transition-colors" />
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
                     </a>
                   )}
                 </div>
@@ -495,81 +492,90 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
         </div>
         </div>
 
-        {/* Trusted Partners */}
-        <div className="bg-deep-gray rounded-tesla-lg p-12 lg:p-16 text-white">
-          <h3 className="text-3xl md:text-4xl font-inter font-light text-center mb-16 text-white">
-            {t.developments.trustedPartners}
-          </h3>
+        {/* Tesla-style developer logos */}
+        <div className="text-center">
+          <h3 className="text-3xl md:text-4xl tesla-heading mb-16">{t.developments.trustedPartners}</h3>
           
+          {/* Tesla-style grid layout for partners */}
           <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            
             {/* Development Companies */}
-            <div className="tesla-card-glass p-8">
+            <div className="bg-white p-8 tesla-shadow tesla-hover">
               <div className="flex items-center justify-center mb-8">
-                <div className="w-12 h-12 bg-premium-blue rounded-tesla flex items-center justify-center mr-4">
-                  <Building2 className="tesla-icon-white" />
+                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
                 </div>
-                <h4 className="text-xl font-inter font-light text-white">Development Partners</h4>
+                <h4 className="text-xl tesla-heading">Development Partners</h4>
               </div>
               
               <div className="grid grid-cols-2 gap-6">
-                {['EMAAR', 'DECA', 'DAMAC', 'ELLINGTON', 'RICHMIND', 'BABOLEX'].map((partner, index) => (
-                  <div key={index} className="text-center p-4 bg-white/10 rounded-tesla hover:bg-white/20 transition-colors duration-400">
-                    <div className="text-lg font-medium text-white mb-1">{partner}</div>
-                    <div className="text-xs text-white/70 uppercase tracking-wide">Premium Developer</div>
-                  </div>
-                ))}
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">EMAAR</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Premium Developer</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">DECA</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Luxury Projects</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">DAMAC</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Iconic Developments</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">ELLINGTON</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Coastal Living</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">RICHMIND</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Innovative Design</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="text-lg font-medium text-gray-800 mb-1">BABOLEX</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Contemporary Style</div>
+                </div>
               </div>
             </div>
             
             {/* Prestige Brands */}
-            <div className="tesla-card-glass p-8">
+            <div className="bg-black text-white p-8 tesla-shadow tesla-hover">
               <div className="flex items-center justify-center mb-8">
-                <div className="w-12 h-12 bg-premium-blue rounded-tesla flex items-center justify-center mr-4">
-                  <Star className="tesla-icon-white" />
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
                 </div>
-                <h4 className="text-xl font-inter font-light text-white">Prestige Brands</h4>
+                <h4 className="text-xl font-inter font-light">Prestige Brands</h4>
               </div>
               
               <div className="grid grid-cols-2 gap-6">
-                {[
-                  { name: 'MARRIOTT', sub: 'W Hotels' },
-                  { name: 'HILTON', sub: 'Luxury Hospitality' },
-                  { name: 'ELIE SAAB', sub: 'Haute Couture' },
-                  { name: 'WYNN', sub: 'Casino Resort' },
-                  { name: 'NIKKI BEACH', sub: 'Beach Club' },
-                  { name: 'NOBU', sub: 'Fine Dining' }
-                ].map((brand, index) => (
-                  <div key={index} className="text-center p-4 bg-white/10 rounded-tesla hover:bg-white/20 transition-colors duration-400">
-                    <div className="text-lg font-medium text-white mb-1">{brand.name}</div>
-                    <div className="text-xs text-white/70 uppercase tracking-wide">{brand.sub}</div>
-                  </div>
-                ))}
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">MARRIOTT</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">W Hotels</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">HILTON</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Luxury Hospitality</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">ELIE SAAB</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Haute Couture</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">WYNN</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Casino Resort</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">NIKKI BEACH</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Beach Club</div>
+                </div>
+                <div className="text-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <div className="text-lg font-medium text-white mb-1">NOBU</div>
+                  <div className="text-xs text-gray-300 uppercase tracking-wide">Fine Dining</div>
+                </div>
               </div>
             </div>
-          </div>
-          
-          {/* CTA */}
-          <div className="text-center mt-12">
-            <a 
-              href="#contact" 
-              className="tesla-btn-glass group"
-              onClick={() => {
-                if (typeof gtag !== 'undefined') {
-                  gtag('event', 'click', { 
-                    event_category: 'CTA',
-                    event_label: 'Developments CTA'
-                  });
-                }
-                if (typeof fbq !== 'undefined') {
-                  fbq('track', 'InitiateCheckout', {
-                    content_name: 'Development Portfolio'
-                  });
-                }
-              }}
-            >
-              <span>Explore All Developments</span>
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
           </div>
         </div>
       </div>
