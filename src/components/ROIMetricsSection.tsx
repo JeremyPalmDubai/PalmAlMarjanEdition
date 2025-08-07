@@ -17,7 +17,9 @@ export const ROIMetricsSection: React.FC<ROIMetricsSectionProps> = ({ currentLan
             {t.roiMetrics.title}
           </h2>
           <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed">
-            {t.roiMetrics.description}
+            Al Marjan Island delivers superior investment returns compared to traditional global markets. 
+            Properties consistently outperform international real estate benchmarks. 
+            The upcoming Wynn Casino development enhances long-term appreciation potential.
           </p>
         </div>
 

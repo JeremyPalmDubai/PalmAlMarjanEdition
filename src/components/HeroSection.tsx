@@ -42,8 +42,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           
           {/* SEO-optimized description */}
           <p className="text-sm sm:text-base md:text-lg font-inter font-light text-white/80 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
-            Invest Al Marjan Island luxury real estate with 33.3% appreciation. Al Marjan real estate near Wynn Casino opening 2027. 
-            100% freehold ownership, 0% capital gains tax, 5-year payment plans. Invest near Wynn Casino for maximum ROI.
+            Discover luxury real estate investment opportunities on Al Marjan Island. Properties show 33.3% annual appreciation. 
+            The new Wynn Casino opens in 2027. Enjoy 100% freehold ownership with zero capital gains tax. 
+            Flexible 5-year payment plans available. Start your investment journey today.
           </p>
           
           {/* Tesla-style CTAs */}

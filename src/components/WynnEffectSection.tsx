@@ -20,7 +20,8 @@ export const WynnEffectSection: React.FC<WynnEffectSectionProps> = ({ currentLan
             {t.wynnEffect.title}
           </h2>
           <p className="text-xl tesla-subheading max-w-4xl mx-auto leading-relaxed" itemProp="description">
-            {t.wynnEffect.description}
+            The upcoming Wynn Resort & Casino will transform Al Marjan Island into the Middle East's premier luxury destination. 
+            This $3.9 billion investment will drive unprecedented property value appreciation. Early investors benefit from maximum growth potential.
           </p>
         </div>
 

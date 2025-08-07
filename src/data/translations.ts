@@ -35,15 +35,15 @@ export const translations = {
       badge: 'AL MARJAN ISLAND',
       title: 'Unlock Exponential Returns',
       subtitle: 'Al Marjan Island Investment Opportunity',
-      description: 'Invest in luxury real estate on Al Marjan Island. Get 5-year interest-free payment plans. Enjoy 33.3% property appreciation. The Wynn Casino opens in 2027.',
+      description: 'Discover luxury real estate investment opportunities on Al Marjan Island. Benefit from 5-year interest-free payment plans. Properties show 33.3% annual appreciation. The Wynn Casino opens in 2027.',
       cta: {
         primary: 'Secure Your Investment',
         secondary: 'Learn More'
       }
     },
     opportunity: {
-      title: 'The Ultimate Investment Opportunity',
-      description: 'Al Marjan Island is the top luxury real estate investment in the UAE. It offers amazing growth potential. You get world-class amenities.',
+      title: 'Premier Investment Opportunity',
+      description: 'Al Marjan Island offers exceptional luxury real estate investment opportunities in the UAE. The destination provides outstanding growth potential with world-class amenities.',
       features: {
         strategic: {
           title: 'Strategic Location',

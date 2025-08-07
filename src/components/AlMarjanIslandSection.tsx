@@ -28,10 +28,10 @@ export const AlMarjanIslandSection: React.FC<AlMarjanIslandSectionProps> = ({ cu
           {/* SEO-rich description */}
           <div className="mt-8 max-w-5xl mx-auto">
             <p className="text-lg tesla-subheading leading-relaxed">
-              <strong>Invest Al Marjan Island</strong> in the UAE's most promising luxury destination. 
-              <strong>Al Marjan real estate</strong> offers world-class developments by international brands. 
-              <strong>Al Marjan Island real estate</strong> features pristine beaches, luxury amenities, and the upcoming 
-              <strong>Wynn Casino</strong> opening in 2027. <strong>Invest near Wynn Casino</strong> for exceptional appreciation potential.
+              Al Marjan Island represents the UAE's most promising luxury investment destination. 
+              World-class developments by international brands define the landscape. 
+              Pristine beaches and luxury amenities create an exclusive environment. 
+              The upcoming Wynn Casino opening in 2027 offers exceptional appreciation potential.
             </p>
           </div>
         </div>
