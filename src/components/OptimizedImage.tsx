@@ -149,8 +149,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
               "@type": "Organization", 
               "name": "Palm Signature Real Estate"
             },
-            "license": "https://invest-almarjanisland.com/terms",
-            "acquireLicensePage": "https://invest-almarjanisland.com/terms"
+            "license": "https://investalmarjanisland.com/terms",
+            "acquireLicensePage": "https://investalmarjanisland.com/terms"
           })
         }}
       />

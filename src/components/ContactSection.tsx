@@ -134,12 +134,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               </div>
               
               <a
-                href="https://invest-almarjanisland.com"
+                href="https://investalmarjanisland.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-300 font-medium"
               >
-                invest-almarjanisland.com
+                investalmarjanisland.com
               </a>
             </div>
           </div>

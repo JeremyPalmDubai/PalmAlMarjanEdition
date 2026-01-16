@@ -37,7 +37,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
   };
 
   const getCanonicalUrl = () => {
-    const baseUrl = 'https://invest-almarjanisland.com';
+    const baseUrl = 'https://investalmarjanisland.com';
     if (currentPage === 'home') {
       return currentLanguage === 'en' ? baseUrl : `${baseUrl}/${currentLanguage}`;
     }
@@ -45,7 +45,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
   };
 
   const getHrefLangUrls = () => {
-    const baseUrl = 'https://invest-almarjanisland.com';
+    const baseUrl = 'https://investalmarjanisland.com';
     const urls = {
       en: currentPage === 'home' ? baseUrl : `${baseUrl}/${currentPage}`,
       fr: currentPage === 'home' ? `${baseUrl}/fr` : `${baseUrl}/fr/${currentPage}`,
@@ -236,19 +236,19 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://invest-almarjanisland.com"
+              "item": "https://investalmarjanisland.com"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Invest Al Marjan Island",
-              "item": "https://invest-almarjanisland.com/invest-al-marjan-island"
+              "item": "https://investalmarjanisland.com/invest-al-marjan-island"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": "Al Marjan Real Estate",
-              "item": "https://invest-almarjanisland.com/al-marjan-real-estate"
+              "item": "https://investalmarjanisland.com/al-marjan-real-estate"
             }
           ]
         })}

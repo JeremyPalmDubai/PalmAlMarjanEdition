@@ -150,8 +150,8 @@ export const generateImageStructuredData = (config: ImageSEOConfig) => {
       "@type": "Organization",
       "name": "Palm Signature Real Estate"
     },
-    "license": "https://invest-almarjanisland.com/terms",
-    "acquireLicensePage": "https://invest-almarjanisland.com/terms",
+    "license": "https://investalmarjanisland.com/terms",
+    "acquireLicensePage": "https://investalmarjanisland.com/terms",
     "creditText": "Palm Signature Real Estate",
     "creator": {
       "@type": "Organization",
@@ -351,7 +351,7 @@ export const generateImageSitemapEntries = (images: ImageSEOConfig[]): string =>
       <image:title>${img.alt}</image:title>
       <image:caption>${img.title || img.alt}</image:caption>
       <image:geo_location>Al Marjan Island, Ras Al Khaimah, UAE</image:geo_location>
-      <image:license>https://invest-almarjanisland.com/terms</image:license>
+      <image:license>https://investalmarjanisland.com/terms</image:license>
     </image:image>
   `).join('');
 };

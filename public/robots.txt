@@ -1,54 +1,79 @@
 # https://www.robotstxt.org/robotstxt.html
+# Invest Al Marjan Island - Premium Real Estate Investment Opportunities
+# Updated: 2026-01-16
+
 User-agent: *
+Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.env
 Disallow: /api/
 Disallow: /temp/
 Disallow: /cache/
-Allow: /
-Allow: /invest-al-marjan
-Allow: /invest-al-marjan-island
-Allow: /al-marjan-real-estate
-Allow: /al-marjan-island-real-estate
-Allow: /invest-near-wynn-casino
 
 # Sitemap
-Sitemap: https://invest-almarjanisland.com/sitemap.xml
-Sitemap: https://invest-almarjanisland.com/sitemap-images.xml
+Sitemap: https://investalmarjanisland.com/sitemap.xml
+Sitemap: https://investalmarjanisland.com/sitemap-images.xml
 
 # Crawl delay
-Crawl-delay: 0.5
+Crawl-delay: 0
 
 # Specific instructions for major search engines
 User-agent: Googlebot
+Allow: /
 Disallow: /admin/
 Disallow: /private/
-Crawl-delay: 0.2
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
 Allow: /
 
 User-agent: Bingbot
+Allow: /
 Disallow: /admin/
 Disallow: /private/
-Crawl-delay: 0.5
-Allow: /
+Crawl-delay: 0
 
 User-agent: Slurp
+Allow: /
 Disallow: /admin/
 Disallow: /private/
-Crawl-delay: 1
-Allow: /
 
 User-agent: DuckDuckBot
+Allow: /
 Disallow: /admin/
 Disallow: /private/
-Allow: /
 
 User-agent: facebookexternalhit
-Disallow: /admin/
-Disallow: /private/
 Allow: /
 
 User-agent: Twitterbot
-Disallow: /admin/
-Disallow: /private/
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Host
+Host: https://investalmarjanisland.com
