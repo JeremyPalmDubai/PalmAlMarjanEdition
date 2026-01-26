@@ -71,12 +71,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           
           {/* Tesla-style CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="tesla-btn-primary-hero w-full sm:w-auto group relative overflow-hidden"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
-                  gtag('event', 'click', { 
+                  gtag('event', 'click', {
                     event_category: 'CTA',
                     event_label: 'Hero Primary CTA'
                   });
@@ -94,16 +94,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
-              Invest Al Marjan Island
+                <span className="hidden sm:inline">Invest Al Marjan Island</span>
+                <span className="sm:hidden">Start Investing</span>
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </a>
             <a
-              href="#contact" 
+              href="#contact"
               className="tesla-btn-secondary-hero w-full sm:w-auto group"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
-                  gtag('event', 'click', { 
+                  gtag('event', 'click', {
                     event_category: 'CTA',
                     event_label: 'Hero Secondary CTA'
                   });
