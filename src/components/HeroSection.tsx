@@ -70,7 +70,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           </p>
           
           {/* Tesla-style CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center px-4 sm:px-0">
             <a
               href="#contact"
               className="tesla-btn-primary-hero w-full sm:w-auto group relative overflow-hidden"
@@ -90,7 +90,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 }
               }}
             >
-              <span className="relative z-10 flex items-center justify-center">
+              <span className="relative z-10 flex items-center justify-center w-full">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
@@ -116,11 +116,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
                 }
               }}
             >
-              <span className="flex items-center justify-center">
+              <span className="flex items-center justify-center w-full">
                 <svg className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-              {t.hero.cta.primary}
+                <span>{t.hero.cta.primary}</span>
               </span>
             </a>
           </div>

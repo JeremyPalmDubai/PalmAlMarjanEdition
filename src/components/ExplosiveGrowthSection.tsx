@@ -101,13 +101,13 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
 
         {/* Tesla-style CTA section */}
         <div className="text-center">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="#contact" 
-              className="tesla-btn-primary"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center px-4 sm:px-0">
+            <a
+              href="#contact"
+              className="tesla-btn-primary w-full sm:w-auto flex items-center justify-center"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
-                  gtag('event', 'click', { 
+                  gtag('event', 'click', {
                     event_category: 'CTA',
                     event_label: 'Secure Investment CTA'
                   });
@@ -121,14 +121,14 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
                 }
               }}
             >
-              Secure Your Investment
+              <span className="text-center">Secure Your Investment</span>
             </a>
-            <a 
+            <a
               href="#contact"
-              className="tesla-btn-secondary"
+              className="tesla-btn-secondary w-full sm:w-auto flex items-center justify-center"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
-                  gtag('event', 'click', { 
+                  gtag('event', 'click', {
                     event_category: 'CTA',
                     event_label: 'Contact Form CTA'
                   });
@@ -140,7 +140,7 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
                 }
               }}
             >
-              Get Information
+              <span className="text-center">Get Information</span>
             </a>
           </div>
         </div>

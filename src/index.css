@@ -830,6 +830,10 @@ body {
   @apply w-6 h-6 text-black;
   flex-shrink: 0;
   stroke-width: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 375px) {
