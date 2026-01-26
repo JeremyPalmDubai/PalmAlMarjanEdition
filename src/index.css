@@ -331,10 +331,14 @@ body {
   @apply px-4 py-2 rounded-lg;
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation - Enhanced Touch Targets */
 .tesla-mobile-nav-item {
-  @apply block py-3 px-4 text-gray-700 hover:text-black hover:bg-gray-50;
-  @apply font-medium text-sm transition-all duration-200 rounded-lg;
+  @apply block py-4 px-5 text-gray-700 hover:text-black hover:bg-gray-50;
+  @apply font-medium text-base transition-all duration-200 rounded-lg;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  touch-action: manipulation;
 }
 
 /* Tesla-style form elements */
@@ -568,17 +572,142 @@ body {
     min-height: 100vh;
     min-height: 100dvh; /* Dynamic viewport height for mobile only */
   }
-  
+
   .tesla-hero-section,
   .tesla-fullscreen-section {
     min-height: 100vh;
     min-height: 100dvh;
   }
-  
-  /* Responsive Tesla buttons */
+
+  /* Responsive Tesla buttons with enhanced touch targets */
   .tesla-btn-primary-hero,
   .tesla-btn-secondary-hero {
-    @apply px-8 py-3 text-sm w-full sm:w-auto;
+    @apply px-8 py-4 text-base w-full sm:w-auto;
+    min-height: 52px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Enhanced Mobile UX - Touch-friendly interface */
+@media (max-width: 640px) {
+  /* Improved typography for mobile readability */
+  h1 {
+    @apply text-3xl sm:text-4xl leading-tight;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl leading-snug;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl leading-snug;
+  }
+
+  /* Enhanced button touch targets - minimum 48px height for accessibility */
+  .tesla-btn-primary,
+  .tesla-btn-secondary,
+  .tesla-btn-secondary-white {
+    @apply px-6 py-3.5 text-base;
+    min-height: 48px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Improved spacing for mobile sections */
+  .tesla-section {
+    @apply py-16 md:py-24;
+  }
+
+  /* Better container padding on mobile */
+  .tesla-container {
+    @apply px-5 sm:px-6;
+  }
+
+  /* Enhanced card padding and touch targets on mobile */
+  .tesla-card {
+    @apply p-6;
+    transition: transform 0.2s ease;
+  }
+
+  .tesla-card:active {
+    transform: scale(0.98);
+  }
+
+  /* Mobile-optimized forms with better touch targets */
+  .tesla-form input,
+  .tesla-form select,
+  .tesla-form textarea {
+    @apply text-base py-3.5 px-4;
+    min-height: 48px;
+  }
+
+  /* Prevent zoom on input focus iOS Safari */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search"],
+  input[type="url"],
+  select,
+  textarea {
+    font-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Better link touch targets */
+  a:not(.tesla-btn-primary):not(.tesla-btn-secondary) {
+    padding: 8px 0;
+    display: inline-block;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Improved mobile metric display */
+  .tesla-metric {
+    @apply text-3xl md:text-4xl;
+  }
+
+  /* Better mobile heading spacing */
+  .tesla-heading {
+    @apply mb-4;
+  }
+
+  /* Mobile-optimized shadows - lighter for performance */
+  .tesla-shadow {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Reduce animations on mobile for better performance */
+  .tesla-card,
+  .interactive-hover {
+    transition: transform 0.2s ease;
+  }
+
+  /* Safe area spacing for notched devices */
+  .tesla-mobile-nav {
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Tablet-specific optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Optimal touch targets for tablets */
+  .tesla-btn-primary,
+  .tesla-btn-secondary {
+    min-height: 44px;
+  }
+
+  /* Better typography for tablet screens */
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
   }
 }
 
@@ -607,13 +736,16 @@ body {
 
 .tesla-nav-item {
   @apply flex flex-col items-center justify-center relative;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border: none;
   background: transparent;
   color: #666;
   transition: all 0.3s ease;
   border-radius: 12px;
-  min-width: 48px;
+  min-width: 52px;
+  min-height: 52px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
 }
