@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { translations } from '../data/translations';
 
 interface ContactSectionProps {
@@ -7,6 +7,30 @@ interface ContactSectionProps {
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage }) => {
   const t = translations[currentLanguage];
+
+  useEffect(() => {
+    const tallyWidgetUrl = "https://tally.so/widgets/embed.js";
+
+    const loadTallyEmbeds = () => {
+      if (typeof (window as any).Tally !== 'undefined') {
+        (window as any).Tally.loadEmbeds();
+      } else {
+        document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach((iframe: any) => {
+          iframe.src = iframe.dataset.tallySrc;
+        });
+      }
+    };
+
+    if (typeof (window as any).Tally !== 'undefined') {
+      loadTallyEmbeds();
+    } else if (!document.querySelector(`script[src="${tallyWidgetUrl}"]`)) {
+      const script = document.createElement('script');
+      script.src = tallyWidgetUrl;
+      script.onload = loadTallyEmbeds;
+      script.onerror = loadTallyEmbeds;
+      document.body.appendChild(script);
+    }
+  }, []);
 
   return (
     <section id="contact" className="tesla-section bg-gray-50">
@@ -62,30 +86,29 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               <h3 className="text-xl sm:text-2xl tesla-heading mb-6 sm:mb-8 text-center">
                 {t.contact.form.title}
               </h3>
-              
-              <div className="w-full" style={{ minHeight: '404px' }}>
+
+              <div className="w-full" style={{ minHeight: '424px' }}>
                 <iframe
-                  src="https://tally.so/embed/mZDk45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&source=investalmarjanisland"
+                  data-tally-src="https://tally.so/embed/J9Oojr?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                   loading="lazy"
                   width="100%"
-                  height="404"
+                  height="424"
                   frameBorder="0"
                   marginHeight={0}
                   marginWidth={0}
-                  title="Lead Form Palm Signature"
+                  title="Palm INVEST AL MARJAN"
                   className="w-full"
-                  style={{ 
+                  style={{
                     border: 'none',
-                    minHeight: '404px',
+                    minHeight: '424px',
                     backgroundColor: 'transparent'
                   }}
                   onLoad={() => {
-                    // Track form view
-                    if (typeof gtag !== 'undefined') {
-                      gtag('event', 'form_view', { form_name: 'Lead Form' });
+                    if (typeof (window as any).gtag !== 'undefined') {
+                      (window as any).gtag('event', 'form_view', { form_name: 'Palm INVEST AL MARJAN' });
                     }
-                    if (typeof fbq !== 'undefined') {
-                      fbq('track', 'ViewContent', { content_name: 'Lead Form' });
+                    if (typeof (window as any).fbq !== 'undefined') {
+                      (window as any).fbq('track', 'ViewContent', { content_name: 'Palm INVEST AL MARJAN' });
                     }
                   }}
                 ></iframe>
