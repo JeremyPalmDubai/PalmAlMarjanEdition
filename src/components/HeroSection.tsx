@@ -43,29 +43,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
       </div>
 
       {/* Tesla-style content overlay */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="text-center max-w-3xl mx-auto px-4">
+      <div className="relative z-10 flex items-center justify-center min-h-screen py-20 sm:py-0">
+        <div className="text-center max-w-3xl mx-auto px-5 sm:px-4">
           {/* Tesla-style badge */}
-          <div className="inline-flex items-center px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-12">
-            <span className="text-white text-sm font-medium tracking-wider uppercase">
+          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8 sm:mb-12">
+            <span className="text-white text-xs sm:text-sm font-medium tracking-wider uppercase">
               {t.hero.badge}
             </span>
           </div>
 
           {/* Tesla-style main heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter font-light text-white mb-6 sm:mb-8 tracking-tighter leading-tight" id="invest-al-marjan-island" itemProp="headline">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter font-light text-white mb-5 sm:mb-6 md:mb-8 tracking-tighter leading-tight" id="invest-al-marjan-island" itemProp="headline">
             {t.hero.title}
           </h1>
-          
+
           {/* Tesla-style subtitle */}
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-inter font-light text-white/90 mb-8 sm:mb-12 md:mb-16 tracking-tight leading-tight" itemProp="description">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-inter font-light text-white/90 mb-6 sm:mb-8 md:mb-12 lg:mb-16 tracking-tight leading-tight" itemProp="description">
             {t.hero.subtitle}
           </p>
-          
+
           {/* SEO-optimized description */}
-          <p className="text-sm sm:text-base md:text-lg font-inter font-light text-white/80 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
-            Discover luxury real estate investment opportunities on Al Marjan Island. Properties show 33.3% annual appreciation. 
-            The new Wynn Casino opens in 2027. Enjoy 100% freehold ownership with zero capital gains tax. 
+          <p className="text-sm sm:text-base md:text-lg font-inter font-light text-white/80 mb-8 sm:mb-10 md:mb-16 max-w-4xl mx-auto leading-relaxed">
+            Discover luxury real estate investment opportunities on Al Marjan Island. Properties show 33.3% annual appreciation.
+            The new Wynn Casino opens in 2027. Enjoy 100% freehold ownership with zero capital gains tax.
             Flexible 5-year payment plans available. Start your investment journey today.
           </p>
           
@@ -126,18 +126,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
           </div>
           
           {/* Trust indicators */}
-          <div className="mt-8 sm:mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-white/70 text-xs sm:text-sm px-4 sm:px-0 animate-fade-in-up">
+          <div className="mt-8 sm:mt-10 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-white/70 text-sm animate-fade-in-up">
             <div className="flex items-center">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-              100% Freehold Ownership
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2.5 animate-pulse"></span>
+              <span className="font-medium">100% Freehold Ownership</span>
             </div>
             <div className="flex items-center">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-              0% Capital Gains Tax
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2.5 animate-pulse"></span>
+              <span className="font-medium">0% Capital Gains Tax</span>
             </div>
             <div className="flex items-center">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-              5-Year Payment Plans
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2.5 animate-pulse"></span>
+              <span className="font-medium">5-Year Payment Plans</span>
             </div>
           </div>
         </div>

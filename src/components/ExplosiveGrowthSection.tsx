@@ -45,23 +45,23 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
     <section className="tesla-section bg-white">
       <div className="tesla-container">
         {/* Tesla-style header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl tesla-heading mb-8 animate-fade-in-up" id="explosive-growth">
+        <div className="text-center mb-12 sm:mb-20 px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tesla-heading mb-6 sm:mb-8 animate-fade-in-up" id="explosive-growth">
             {t.explosiveGrowth.title}
           </h2>
-          <p className="text-xl tesla-subheading max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
+          <p className="text-lg sm:text-xl tesla-subheading max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
             {t.explosiveGrowth.subtitle}
           </p>
         </div>
 
         {/* Tesla-style metrics grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-24 px-4 sm:px-0">
           {metrics.map((metric, index) => (
-            <div key={index} className="text-center animate-scale-in bg-gray-50 p-8 tesla-hover">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-                <metric.icon className="w-8 h-8 text-white" />
+            <div key={index} className="text-center animate-scale-in bg-gray-50 p-6 sm:p-8 tesla-hover">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <metric.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </div>
-              <div className={`tesla-metric ${metric.color} mb-4`}>
+              <div className={`tesla-metric ${metric.color} mb-3 sm:mb-4`}>
                 <CounterAnimation end={metric.value} suffix={metric.suffix} />
               </div>
               <div className="tesla-metric-label mb-2">{metric.label}</div>
@@ -70,15 +70,15 @@ export const ExplosiveGrowthSection: React.FC<ExplosiveGrowthSectionProps> = ({ 
         </div>
 
         {/* Tesla-style comparison section */}
-        <div className="bg-black text-white px-8 py-16 lg:px-16 lg:py-24 mb-24">
+        <div className="bg-black text-white px-5 sm:px-8 py-12 sm:py-16 lg:px-16 lg:py-24 mb-16 sm:mb-24">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <Target className="w-8 h-8 text-white mr-3" />
-              <h3 className="text-2xl md:text-3xl font-inter font-light tracking-tight" id="growth-trajectory">
+            <div className="flex items-center justify-center mb-5 sm:mb-6">
+              <Target className="w-7 h-7 sm:w-8 sm:h-8 text-white mr-2 sm:mr-3" />
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-inter font-light tracking-tight" id="growth-trajectory">
                 {t.explosiveGrowth.metrics.trajectory.title}
               </h3>
             </div>
-            <p className="text-lg text-gray-300 text-center mb-12 leading-relaxed font-light max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-300 text-center mb-10 sm:mb-12 leading-relaxed font-light max-w-3xl mx-auto">
               Following the success story of Palm Jumeirah, which saw property values increase by 400% over the past decade, Al Marjan Island is positioned to deliver similar exceptional returns to early investors.
             </p>
             

@@ -612,24 +612,25 @@ body {
     @apply text-xl sm:text-2xl leading-snug;
   }
 
-  /* Enhanced button touch targets - minimum 48px height for accessibility */
+  /* Enhanced button touch targets - minimum 52px height for accessibility */
   .tesla-btn-primary,
   .tesla-btn-secondary,
   .tesla-btn-secondary-white {
-    @apply px-6 py-3.5 text-base;
-    min-height: 48px;
+    @apply px-8 py-4 text-base;
+    min-height: 52px;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    font-weight: 600;
   }
 
-  /* Improved spacing for mobile sections */
+  /* Improved spacing for mobile sections - more breathing room */
   .tesla-section {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-24;
   }
 
-  /* Better container padding on mobile */
+  /* Better container padding on mobile - more generous */
   .tesla-container {
-    @apply px-5 sm:px-6;
+    @apply px-6 sm:px-6;
   }
 
   /* Enhanced card padding and touch targets on mobile */
@@ -674,12 +675,29 @@ body {
 
   /* Improved mobile metric display */
   .tesla-metric {
-    @apply text-3xl md:text-4xl;
+    @apply text-4xl;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
   }
 
   /* Better mobile heading spacing */
   .tesla-heading {
-    @apply mb-4;
+    @apply mb-6;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  /* Mobile subheading improvements */
+  .tesla-subheading {
+    @apply text-base leading-relaxed;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Better mobile metric labels */
+  .tesla-metric-label {
+    @apply text-sm font-semibold mb-2;
+    letter-spacing: 0.02em;
   }
 
   /* Mobile-optimized shadows - lighter for performance */
