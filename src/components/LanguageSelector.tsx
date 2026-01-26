@@ -31,12 +31,12 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-2 sm:px-4 py-2 hover:bg-gray-100 transition-colors font-inter font-medium text-sm"
+        className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors font-inter font-medium text-sm"
       >
-        <Globe className="w-4 h-4 text-gray-600 sm:hidden" />
-        <span className="text-sm hidden sm:inline">{currentLang.flag}</span>
-        <span className="text-gray-700 hidden sm:inline">{currentLang.name}</span>
-        <svg className={`w-4 h-4 text-gray-500 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600 sm:hidden" />
+        <span className="text-xs sm:text-sm hidden sm:inline">{currentLang.flag}</span>
+        <span className="text-gray-700 text-xs sm:text-sm hidden sm:inline">{currentLang.name}</span>
+        <svg className={`w-3 h-3 sm:w-4 sm:h-4 text-gray-500 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
