@@ -74,19 +74,24 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
       
       {/* Enhanced SEO Meta Tags */}
       <meta name="language" content={currentLanguage} />
-      <meta name="revisit-after" content="7 days" />
+      <meta name="revisit-after" content="3 days" />
       <meta name="distribution" content="global" />
       <meta name="rating" content="general" />
       <meta name="theme-color" content="#000000" />
       <meta name="classification" content="Real Estate Investment" />
       <meta name="category" content="Luxury Real Estate" />
       <meta name="coverage" content="Worldwide" />
-      <meta name="target" content="Investors, Real Estate Buyers" />
+      <meta name="target" content="Investors, Real Estate Buyers, High Net Worth Individuals" />
       <meta name="HandheldFriendly" content="True" />
       <meta name="MobileOptimized" content="320" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="format-detection" content="telephone=yes" />
+      <meta name="geo.region" content="AE-RK" />
+      <meta name="geo.placename" content="Al Marjan Island, Ras Al Khaimah" />
+      <meta name="geo.position" content="25.6845;55.7755" />
+      <meta name="ICBM" content="25.6845, 55.7755" />
+      <meta name="keywords" content="invest al marjan island, al marjan real estate, wynn casino al marjan, ras al khaimah property, luxury villas uae, beachfront property dubai, tax free property uae, freehold property ras al khaimah, al marjan island apartments, off plan properties uae" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={getCanonicalUrl()} />
@@ -251,6 +256,169 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
               "item": "https://investalmarjanisland.com/al-marjan-real-estate"
             }
           ]
+        })}
+      </script>
+
+      {/* Place Schema - Al Marjan Island */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Place",
+          "name": "Al Marjan Island",
+          "description": "Luxury beachfront real estate investment destination in Ras Al Khaimah, UAE featuring world-class developments and the upcoming Wynn Casino",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "25.6845",
+            "longitude": "55.7755"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ras Al Khaimah",
+            "addressRegion": "Ras Al Khaimah Emirate",
+            "addressCountry": "AE"
+          },
+          "hasMap": "https://goo.gl/maps/AlMarjanIsland",
+          "image": "https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp",
+          "amenityFeature": [
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Wynn Resort & Casino",
+              "value": "$3.9B Opening 2027"
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Private Beaches",
+              "value": "Pristine coastline"
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "World-Class Developments",
+              "value": "Luxury properties"
+            }
+          ]
+        })}
+      </script>
+
+      {/* RealEstateListing Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "RealEstateListing",
+          "name": "Al Marjan Island Luxury Real Estate Investment Opportunities",
+          "description": "Invest in Al Marjan Island luxury properties with 33.3% year-over-year appreciation, tax-free ownership, and proximity to Wynn Casino opening 2027",
+          "url": getCanonicalUrl(),
+          "image": "https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp",
+          "datePosted": "2025-01-26",
+          "validThrough": "2027-12-31",
+          "price": "From AED 750,000",
+          "priceCurrency": "AED",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Al Marjan Island",
+            "addressRegion": "Ras Al Khaimah",
+            "addressCountry": "AE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "25.6845",
+            "longitude": "55.7755"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Property Type",
+              "value": "Beachfront Villas, Apartments, Townhouses"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Ownership",
+              "value": "100% Freehold"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Tax Benefits",
+              "value": "0% Property Tax, 0% Capital Gains Tax"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Payment Plan",
+              "value": "5-Year Interest-Free Available"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "ROI",
+              "value": "33.3% Year-over-Year Appreciation"
+            }
+          ]
+        })}
+      </script>
+
+      {/* Service Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Real Estate Investment Consulting",
+          "provider": {
+            "@type": "Organization",
+            "name": "Palm Signature Real Estate",
+            "telephone": "+971-58-247-4950",
+            "email": "hello@palmsignature.ae"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Al Marjan Island, Ras Al Khaimah, UAE"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Al Marjan Island Properties",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Luxury Beachfront Villas"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Waterfront Apartments"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Designer Penthouses"
+                }
+              }
+            ]
+          },
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://investalmarjanisland.com",
+            "servicePhone": "+971-58-247-4950",
+            "availableLanguage": ["en", "fr", "es", "nl"]
+          }
+        })}
+      </script>
+
+      {/* WebSite Schema with SearchAction */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Invest Al Marjan Island",
+          "alternateName": "Al Marjan Island Real Estate Investment",
+          "url": "https://investalmarjanisland.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://investalmarjanisland.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          },
+          "inLanguage": ["en", "fr", "es", "nl"]
         })}
       </script>
     </Helmet>

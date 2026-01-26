@@ -1,6 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 # Invest Al Marjan Island - Premium Real Estate Investment Opportunities
-# Updated: 2026-01-16
+# Updated: 2025-01-26
 
 User-agent: *
 Allow: /
@@ -10,12 +10,23 @@ Disallow: /.env
 Disallow: /api/
 Disallow: /temp/
 Disallow: /cache/
+Disallow: /*?*utm_*
+Disallow: /*?*ref=*
+Disallow: /*?*session*
+
+# Allow important directories for SEO
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.webp
+Allow: /*.jpg
+Allow: /*.png
 
 # Sitemap
 Sitemap: https://investalmarjanisland.com/sitemap.xml
 Sitemap: https://investalmarjanisland.com/sitemap-images.xml
 
-# Crawl delay
+# Crawl delay - Optimized for fast indexing
 Crawl-delay: 0
 
 # Specific instructions for major search engines
