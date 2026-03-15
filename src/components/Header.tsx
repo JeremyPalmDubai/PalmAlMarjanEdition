@@ -63,6 +63,23 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
 
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
+
+    // Track conversion event
+    if (typeof (window as any).gtag !== 'undefined') {
+      (window as any).gtag('event', 'generate_lead', {
+        event_category: 'Lead Generation',
+        event_label: 'Header CTA Click',
+        value: 180000,
+        currency: 'AED'
+      });
+    }
+    if (typeof (window as any).fbq !== 'undefined') {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Header Contact Button',
+        content_category: 'Navigation CTA'
+      });
+    }
+
     // If we're not on home page, navigate to home first
     if (window.location.pathname !== '/') {
       navigation.navigate('home');

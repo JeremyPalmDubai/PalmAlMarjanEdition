@@ -87,28 +87,43 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                 {t.contact.form.title}
               </h3>
 
-              <div className="w-full" style={{ minHeight: '424px' }}>
+              <div className="w-full" style={{ minHeight: '500px' }}>
                 <iframe
                   data-tally-src="https://tally.so/embed/J9Oojr?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                   loading="lazy"
                   width="100%"
-                  height="424"
+                  height="500"
                   frameBorder="0"
                   marginHeight={0}
                   marginWidth={0}
-                  title="Palm INVEST AL MARJAN"
+                  title="Al Marjan Island Investment Contact Form - Get Your Free Property Guide"
                   className="w-full"
                   style={{
                     border: 'none',
-                    minHeight: '424px',
+                    minHeight: '500px',
                     backgroundColor: 'transparent'
                   }}
                   onLoad={() => {
                     if (typeof (window as any).gtag !== 'undefined') {
-                      (window as any).gtag('event', 'form_view', { form_name: 'Palm INVEST AL MARJAN' });
+                      (window as any).gtag('event', 'generate_lead', {
+                        event_category: 'Lead Generation',
+                        event_label: 'Contact Form View',
+                        value: 250000,
+                        currency: 'AED'
+                      });
+                      (window as any).gtag('event', 'form_view', {
+                        form_name: 'Al Marjan Investment Contact Form',
+                        form_type: 'Lead Generation',
+                        form_location: 'Contact Section'
+                      });
                     }
                     if (typeof (window as any).fbq !== 'undefined') {
-                      (window as any).fbq('track', 'ViewContent', { content_name: 'Palm INVEST AL MARJAN' });
+                      (window as any).fbq('track', 'Lead', {
+                        content_name: 'Al Marjan Investment Contact Form',
+                        content_category: 'Lead Form View',
+                        value: 250000,
+                        currency: 'AED'
+                      });
                     }
                   }}
                 ></iframe>

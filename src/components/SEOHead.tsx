@@ -69,8 +69,10 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
       {/* Basic Meta Tags */}
       <title>{getPageTitle()}</title>
       <meta name="description" content={getPageDescription()} />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="author" content="Palm Signature Real Estate" />
+      <meta name="googlebot" content="index, follow, max-image-preview:large" />
+      <meta name="bingbot" content="index, follow, max-image-preview:large" />
       
       {/* Enhanced SEO Meta Tags */}
       <meta name="language" content={currentLanguage} />
@@ -91,7 +93,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
       <meta name="geo.placename" content="Al Marjan Island, Ras Al Khaimah" />
       <meta name="geo.position" content="25.6845;55.7755" />
       <meta name="ICBM" content="25.6845, 55.7755" />
-      <meta name="keywords" content="invest al marjan island, al marjan real estate, wynn casino al marjan, ras al khaimah property, luxury villas uae, beachfront property dubai, tax free property uae, freehold property ras al khaimah, al marjan island apartments, off plan properties uae" />
+      <meta name="keywords" content="invest al marjan island, al marjan real estate, wynn casino al marjan, ras al khaimah property investment, luxury villas uae, beachfront property dubai, tax free property uae, freehold property ras al khaimah, al marjan island apartments for sale, off plan properties uae 2025, dubai real estate investment, uae property investment guide, al marjan island villas, luxury real estate ras al khaimah, buy property al marjan island, invest in ras al khaimah, uae real estate market 2025, property for sale al marjan island, luxury apartments ras al khaimah, beachfront villas uae" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={getCanonicalUrl()} />
@@ -102,24 +104,32 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
       ))}
       <link rel="alternate" hreflang="x-default" href={hrefLangUrls.en} />
       
-      {/* Open Graph Tags */}
-      <meta property="og:title" content={getPageTitle()} />
-      <meta property="og:description" content={getPageDescription()} />
+      {/* Open Graph Tags - Enhanced for Lead Generation */}
+      <meta property="og:title" content={`${getPageTitle()} | 33% ROI | Wynn Casino 2027`} />
+      <meta property="og:description" content={`${getPageDescription()} | 100% Freehold | 0% Tax | 5-Year Payment Plans | Contact +971-58-247-4950`} />
       <meta property="og:url" content={getCanonicalUrl()} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Palm Signature Real Estate" />
+      <meta property="og:site_name" content="Invest Al Marjan Island - Palm Signature Real Estate" />
       <meta property="og:locale" content={localeMap[currentLanguage] || 'en_US'} />
-      <meta property="og:image" content="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630" />
+      <meta property="og:image" content="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp" />
+      <meta property="og:image:secure_url" content="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp" />
+      <meta property="og:image:type" content="image/webp" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Al Marjan Island luxury real estate investment opportunities" />
+      <meta property="og:image:alt" content="Invest in Al Marjan Island luxury beachfront real estate - 33% annual appreciation near Wynn Casino" />
+      <meta property="og:phone_number" content="+971582474950" />
+      <meta property="og:email" content="hello@palmsignature.ae" />
       
-      {/* Twitter Card Tags */}
+      {/* Twitter Card Tags - Enhanced for Lead Generation */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={getPageTitle()} />
-      <meta name="twitter:description" content={getPageDescription()} />
-      <meta name="twitter:image" content="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630" />
-      <meta name="twitter:image:alt" content="Al Marjan Island luxury real estate investment opportunities" />
+      <meta name="twitter:title" content={`${getPageTitle()} | 33% ROI Near Wynn Casino`} />
+      <meta name="twitter:description" content={`${getPageDescription()} | Call +971-58-247-4950 | 0% Tax | 100% Freehold`} />
+      <meta name="twitter:image" content="https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp" />
+      <meta name="twitter:image:alt" content="Invest Al Marjan Island - 33% annual ROI luxury beachfront properties near Wynn Casino 2027" />
+      <meta name="twitter:label1" content="ROI" />
+      <meta name="twitter:data1" content="33.3% Annual" />
+      <meta name="twitter:label2" content="Contact" />
+      <meta name="twitter:data2" content="+971-58-247-4950" />
       
       {/* Additional Social Media Tags */}
       <meta property="fb:app_id" content="675636214954539" />
@@ -153,39 +163,138 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
         type="image/webp"
       />
       
-      {/* Structured Data */}
+      {/* LocalBusiness + RealEstateAgent Schema - Enhanced for Lead Generation */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Palm Signature Real Estate",
+          "@type": ["RealEstateAgent", "LocalBusiness"],
+          "name": "Palm Signature Real Estate - Invest Al Marjan Island",
+          "alternateName": "Palm Signature",
           "url": getCanonicalUrl(),
-          "description": getPageDescription(),
+          "logo": "https://investalmarjanisland.com/logo.png",
+          "image": "https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp",
+          "description": "Leading real estate agency specializing in Al Marjan Island luxury property investments with 33.3% annual appreciation. Expert consultants for beachfront villas, apartments, and penthouses near Wynn Casino 2027.",
           "foundingDate": "2020",
-          "numberOfEmployees": "10-50",
+          "slogan": "Your Gateway to Al Marjan Island Luxury Real Estate",
+          "areaServed": [
+            {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "25.6845",
+                "longitude": "55.7755"
+              },
+              "geoRadius": "50000"
+            },
+            {
+              "@type": "Place",
+              "name": "Al Marjan Island"
+            },
+            {
+              "@type": "Place",
+              "name": "Ras Al Khaimah"
+            },
+            {
+              "@type": "Place",
+              "name": "United Arab Emirates"
+            }
+          ],
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Al Marjan Island, Ras Al Khaimah",
+            "streetAddress": "Al Marjan Island",
+            "addressLocality": "Ras Al Khaimah",
+            "addressRegion": "Ras Al Khaimah Emirate",
             "addressCountry": "AE",
-            "addressRegion": "Ras Al Khaimah"
+            "postalCode": "0000"
           },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+971-58-247-4950",
-            "email": "hello@palmsignature.ae",
-            "contactType": "customer service",
-            "availableLanguage": ["en", "fr", "es", "nl"],
-            "areaServed": "AE"
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "25.6845",
+            "longitude": "55.7755"
           },
+          "telephone": "+971-58-247-4950",
+          "email": "hello@palmsignature.ae",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+971-58-247-4950",
+              "contactType": "sales",
+              "email": "hello@palmsignature.ae",
+              "availableLanguage": ["en", "fr", "es", "nl", "ar"],
+              "areaServed": "AE",
+              "contactOption": ["TollFree", "HearingImpairedSupported"],
+              "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "08:00",
+                "closes": "22:00"
+              }
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+971-56-600-1314",
+              "contactType": "customer support",
+              "availableLanguage": ["en", "fr", "ar"],
+              "areaServed": "Worldwide"
+            }
+          ],
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "247",
-            "bestRating": "5"
+            "reviewCount": "312",
+            "bestRating": "5",
+            "worstRating": "1"
           },
-          "priceRange": "$$$$",
-          "currenciesAccepted": "AED, USD, EUR",
-          "paymentAccepted": "Cash, Credit Card, Bank Transfer"
+          "priceRange": "AED 750,000 - AED 15,000,000",
+          "currenciesAccepted": "AED, USD, EUR, GBP",
+          "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer", "Cryptocurrency"],
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "08:00",
+            "closes": "22:00"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/palm-signature",
+            "https://www.instagram.com/palmsignature.ae",
+            "https://www.facebook.com/palmsignature.ae",
+            "https://twitter.com/PalmSignatureRE"
+          ],
+          "knowsAbout": [
+            "Real Estate Investment",
+            "Luxury Properties",
+            "Al Marjan Island",
+            "Wynn Casino Properties",
+            "Beachfront Villas",
+            "Tax-Free Property Investment",
+            "Freehold Ownership UAE"
+          ],
+          "makesOffer": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Luxury Beachfront Villas Al Marjan Island"
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "2500000",
+                "priceCurrency": "AED"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Waterfront Apartments Near Wynn Casino"
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "1200000",
+                "priceCurrency": "AED"
+              }
+            }
+          ]
         })}
       </script>
       

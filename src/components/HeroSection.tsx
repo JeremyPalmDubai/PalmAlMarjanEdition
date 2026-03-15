@@ -69,58 +69,72 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLanguage }) => 
             Flexible 5-year payment plans available. Start your investment journey today.
           </p>
           
-          {/* Tesla-style CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center px-4 sm:px-0">
+          {/* Tesla-style CTAs - Optimized for Conversions */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
             <a
               href="#contact"
-              className="tesla-btn-primary-hero w-full sm:w-auto group relative overflow-hidden"
-              onClick={() => {
+              className="tesla-btn-primary-hero w-full sm:w-auto group relative overflow-hidden active:scale-95 transform transition-transform"
+              onClick={(e) => {
+                e.preventDefault();
                 if (typeof gtag !== 'undefined') {
-                  gtag('event', 'click', {
-                    event_category: 'CTA',
-                    event_label: 'Hero Primary CTA'
+                  gtag('event', 'generate_lead', {
+                    event_category: 'Lead Generation',
+                    event_label: 'Hero Primary CTA - Contact Form',
+                    value: 200000,
+                    currency: 'AED'
                   });
                 }
                 if (typeof fbq !== 'undefined') {
-                  fbq('track', 'InitiateCheckout', {
-                    content_name: 'Investment Interest',
+                  fbq('track', 'Lead', {
+                    content_name: 'Investment Interest - Hero CTA',
+                    content_category: 'Real Estate Investment',
                     value: 200000,
-                    currency: 'USD'
+                    currency: 'AED'
                   });
+                }
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}
             >
-              <span className="relative z-10 flex items-center justify-center w-full">
+              <span className="relative z-10 flex items-center justify-center w-full font-bold">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
-                <span className="hidden sm:inline">Invest Al Marjan Island</span>
-                <span className="sm:hidden">Start Investing</span>
+                <span className="hidden sm:inline">Get Investment Details</span>
+                <span className="sm:hidden">Get Details</span>
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </a>
             <a
-              href="#contact"
-              className="tesla-btn-secondary-hero w-full sm:w-auto group"
+              href="https://wa.me/971582474950?text=Hello%2C%20I%27m%20interested%20in%20Al%20Marjan%20Island%20properties.%20Can%20you%20provide%20more%20information%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tesla-btn-secondary-hero w-full sm:w-auto group active:scale-95 transform transition-transform"
               onClick={() => {
                 if (typeof gtag !== 'undefined') {
-                  gtag('event', 'click', {
-                    event_category: 'CTA',
-                    event_label: 'Hero Secondary CTA'
+                  gtag('event', 'generate_lead', {
+                    event_category: 'Lead Generation',
+                    event_label: 'Hero WhatsApp CTA',
+                    value: 150000,
+                    currency: 'AED'
                   });
                 }
                 if (typeof fbq !== 'undefined') {
-                  fbq('track', 'ViewContent', {
-                    content_name: 'Investment Opportunity'
+                  fbq('track', 'Contact', {
+                    content_name: 'WhatsApp Contact - Hero',
+                    content_category: 'Instant Messaging'
                   });
                 }
               }}
             >
-              <span className="flex items-center justify-center w-full">
-                <svg className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <span className="flex items-center justify-center w-full font-bold">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-2">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
-                <span>{t.hero.cta.primary}</span>
+                <span className="hidden sm:inline">WhatsApp Us Now</span>
+                <span className="sm:hidden">WhatsApp</span>
               </span>
             </a>
           </div>
