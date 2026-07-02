@@ -65,7 +65,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
               {/* Legal Information */}
               <div className="text-xs text-gray-400 mb-4 space-y-1">
                 <div>{t.contact.legal.company}</div>
-                <div>{t.contact.legal.license}</div>
                 <div>{t.contact.legal.rera}</div>
               </div>
               

@@ -44,14 +44,14 @@ export const CEOSection: React.FC<CEOSectionProps> = ({ currentLanguage }) => {
               >
                 {t.ceoSection.cta}
               </a>
-              <a 
-                href="https://www.instagram.com/invest.dubai_property/"
+              <a
+                href="https://www.instagram.com/gabriellamagalhaes_realty/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="tesla-btn-secondary-white flex items-center justify-center"
                 onClick={() => {
                   if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', { 
+                    gtag('event', 'click', {
                       event_category: 'Social',
                       event_label: 'Instagram Follow'
                     });

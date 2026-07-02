@@ -180,7 +180,6 @@ export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = ({ currentL
                   <p>Email: hello@palmsignature.ae</p>
                   <p>Phone: +971 58 247 4950</p>
                   <p>Address: Al Marjan Island, Ras Al Khaimah, UAE</p>
-                  <p>RERA License: [License Number]</p>
                 </div>
               </div>
             </section>

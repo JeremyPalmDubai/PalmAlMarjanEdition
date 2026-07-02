@@ -256,7 +256,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
           },
           "sameAs": [
             "https://www.linkedin.com/company/palm-signature",
-            "https://www.instagram.com/palmsignature.ae",
+            "https://www.instagram.com/gabriellamagalhaes_realty/",
             "https://www.facebook.com/palmsignature.ae",
             "https://twitter.com/PalmSignatureRE"
           ],
