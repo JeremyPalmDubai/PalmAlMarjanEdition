@@ -530,6 +530,49 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentLanguage, currentPage }
           "inLanguage": ["en", "fr", "es", "nl"]
         })}
       </script>
+
+      {/* Article Schema for Blog Section */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Al Marjan Island Investment Blog Articles",
+          "description": "Expert analysis and investment guides for Al Marjan Island real estate",
+          "numberOfItems": 6,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Article",
+                "headline": "Wynn Casino Al Marjan Island 2027: Complete Investment Guide",
+                "description": "The $3.9 billion Wynn Resort & Casino opening in 2027 is transforming Al Marjan Island into the next Dubai Marina.",
+                "image": "https://palmdubai.fr/uploads/17f993c922_wynn_al_marjan_island-aerial_view-marina_estates.webp",
+                "datePublished": "2025-07-01",
+                "author": {
+                  "@type": "Person",
+                  "name": "Gabriella Magalhaes"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Palm Signature Real Estate"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Article",
+                "headline": "Al Marjan Island vs Palm Jumeirah: ROI Comparison 2025",
+                "description": "Historical data shows Palm Jumeirah properties appreciated 400% since launch.",
+                "image": "https://palmdubai.fr/uploads/posts/2025-04/709292a07f_capture-decran-2025-04-22-a-23_13_25.webp",
+                "datePublished": "2025-06-28"
+              }
+            }
+          ]
+        })}
+      </script>
     </Helmet>
   );
 };

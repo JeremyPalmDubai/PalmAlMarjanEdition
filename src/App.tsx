@@ -11,6 +11,7 @@ import { LifestyleSection } from './components/LifestyleSection';
 import { WhyPalmSignatureSection } from './components/WhyPalmSignatureSection';
 import { CEOSection } from './components/CEOSection';
 import { ContactSection } from './components/ContactSection';
+import { BlogSection } from './components/BlogSection';
 import { Footer } from './components/Footer';
 import { SitemapPage } from './components/SitemapPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
@@ -281,6 +282,7 @@ function App() {
           <DevelopmentsSection currentLanguage={currentLanguage} />
           <LifestyleSection currentLanguage={currentLanguage} />
           <WhyPalmSignatureSection currentLanguage={currentLanguage} />
+          <BlogSection currentLanguage={currentLanguage} />
           <CEOSection currentLanguage={currentLanguage} />
           <ContactSection currentLanguage={currentLanguage} />
         </main>
