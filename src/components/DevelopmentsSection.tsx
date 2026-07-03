@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { translations } from '../data/translations';
-import { MapPin, Calendar, Building2, ExternalLink } from 'lucide-react';
+import { MapPin, Building2, ExternalLink } from 'lucide-react';
 
 interface DevelopmentsSectionProps {
   currentLanguage: string;
@@ -120,20 +120,6 @@ export const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = ({ curren
     if (activeTab === 'all') return otherDevelopments;
     return otherDevelopments.filter(dev => dev.category === activeTab);
   };
-
-  // Filter developments based on active tab
-  const getFilteredDevelopments = () => {
-    switch (activeTab) {
-      case 'available':
-        return allDevelopments.filter(dev => dev.category === 'available');
-      case 'sold-out':
-        return allDevelopments.filter(dev => dev.category === 'sold-out');
-      default:
-        return allDevelopments;
-    }
-  };
-
-  const filteredDevelopments = getFilteredDevelopments();
 
   // Tab labels based on language
   const getTabLabels = () => {

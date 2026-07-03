@@ -27,8 +27,6 @@ export const AccessibleTabs: React.FC<AccessibleTabsProps> = ({
   const tabListRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
 
-  const activeTabData = tabs.find(tab => tab.id === activeTab);
-
   // Handle tab change
   const handleTabChange = (tabId: string) => {
     const tab = tabs.find(t => t.id === tabId);

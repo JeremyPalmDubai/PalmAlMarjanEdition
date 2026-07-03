@@ -56,9 +56,9 @@ export const PerformanceMonitor: React.FC = () => {
     // Network information monitoring
     const monitorNetworkInfo = () => {
       if ('connection' in navigator) {
-        const connection = (navigator as any).connection;
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'network_info', {
+        const connection = (navigator as { connection?: { effectiveType?: string; downlink?: number; rtt?: number } }).connection;
+        if (connection && typeof window.gtag !== 'undefined') {
+          window.gtag('event', 'network_info', {
             effective_type: connection.effectiveType,
             downlink: connection.downlink,
             rtt: connection.rtt
@@ -70,9 +70,9 @@ export const PerformanceMonitor: React.FC = () => {
     // Memory usage monitoring
     const monitorMemoryUsage = () => {
       if ('memory' in performance) {
-        const memory = (performance as any).memory;
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'memory_usage', {
+        const memory = (performance as { memory?: { usedJSHeapSize?: number; totalJSHeapSize?: number; jsHeapSizeLimit?: number } }).memory;
+        if (memory && typeof window.gtag !== 'undefined') {
+          window.gtag('event', 'memory_usage', {
             used_js_heap_size: memory.usedJSHeapSize,
             total_js_heap_size: memory.totalJSHeapSize,
             js_heap_size_limit: memory.jsHeapSizeLimit

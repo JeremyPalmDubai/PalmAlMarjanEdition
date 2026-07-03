@@ -87,7 +87,7 @@ export const AccessibleInfiniteScroll: React.FC<AccessibleInfiniteScrollProps> =
         }
       }, 100);
       
-    } catch (err) {
+    } catch {
       setAnnounceText('Failed to load more items. Please try again.');
     }
   };

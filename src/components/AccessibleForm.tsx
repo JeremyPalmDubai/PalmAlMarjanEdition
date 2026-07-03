@@ -83,7 +83,7 @@ export const AccessibleForm: React.FC<AccessibleFormProps> = ({
       }
       
       if (field.type === 'tel' && value) {
-        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+        const phoneRegex = /^[+]?[1-9][\d]{0,15}$/;
         if (!phoneRegex.test(value.replace(/\s/g, ''))) {
           newErrors[field.id] = 'Please enter a valid phone number';
         }
@@ -123,7 +123,7 @@ export const AccessibleForm: React.FC<AccessibleFormProps> = ({
       document.body.appendChild(announcement);
       setTimeout(() => document.body.removeChild(announcement), 3000);
       
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
       
       // Announce error to screen readers

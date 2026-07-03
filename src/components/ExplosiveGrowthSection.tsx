@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, Users, Building, Calendar, Target, ArrowRight } from 'lucide-react';
+import { TrendingUp, Users, Building, Calendar, Target } from 'lucide-react';
 import { CounterAnimation } from './CounterAnimation';
 import { translations } from '../data/translations';
 

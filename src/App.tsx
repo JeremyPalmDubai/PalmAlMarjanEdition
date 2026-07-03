@@ -19,9 +19,7 @@ import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { NavigationProvider } from './components/NavigationProvider';
 import { SEOHead } from './components/SEOHead';
 import { PerformanceMonitor } from './components/PerformanceMonitor';
-import { ImageSEOAudit } from './components/ImageSEOAudit';
 import { AccessibilityProvider } from './components/AccessibilityProvider';
-import { AccessibilityPanel } from './components/AccessibilityPanel';
 import { SkipLinks } from './components/SkipLinks';
 
 function App() {

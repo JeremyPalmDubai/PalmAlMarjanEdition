@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { auditImageSEO } from '../utils/imageOptimization';
 
 interface ImageIssue {
   element: HTMLImageElement;

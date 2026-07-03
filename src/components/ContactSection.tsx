@@ -12,16 +12,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
     const tallyWidgetUrl = "https://tally.so/widgets/embed.js";
 
     const loadTallyEmbeds = () => {
-      if (typeof (window as any).Tally !== 'undefined') {
-        (window as any).Tally.loadEmbeds();
+      if (typeof window.Tally !== 'undefined') {
+        window.Tally.loadEmbeds();
       } else {
-        document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach((iframe: any) => {
-          iframe.src = iframe.dataset.tallySrc;
+        document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach((iframe) => {
+          const el = iframe as HTMLIFrameElement;
+          el.src = el.dataset.tallySrc || '';
         });
       }
     };
 
-    if (typeof (window as any).Tally !== 'undefined') {
+    if (typeof window.Tally !== 'undefined') {
       loadTallyEmbeds();
     } else if (!document.querySelector(`script[src="${tallyWidgetUrl}"]`)) {
       const script = document.createElement('script');
@@ -103,21 +104,21 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLanguage 
                     backgroundColor: 'transparent'
                   }}
                   onLoad={() => {
-                    if (typeof (window as any).gtag !== 'undefined') {
-                      (window as any).gtag('event', 'generate_lead', {
+                    if (typeof window.gtag !== 'undefined') {
+                      window.gtag('event', 'generate_lead', {
                         event_category: 'Lead Generation',
                         event_label: 'Contact Form View',
                         value: 250000,
                         currency: 'AED'
                       });
-                      (window as any).gtag('event', 'form_view', {
+                      window.gtag('event', 'form_view', {
                         form_name: 'Al Marjan Investment Contact Form',
                         form_type: 'Lead Generation',
                         form_location: 'Contact Section'
                       });
                     }
-                    if (typeof (window as any).fbq !== 'undefined') {
-                      (window as any).fbq('track', 'Lead', {
+                    if (typeof window.fbq !== 'undefined') {
+                      window.fbq('track', 'Lead', {
                         content_name: 'Al Marjan Investment Contact Form',
                         content_category: 'Lead Form View',
                         value: 250000,

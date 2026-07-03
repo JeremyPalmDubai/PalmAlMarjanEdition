@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, CreditCard, FileText, Globe2 } from 'lucide-react';
+import { CreditCard, FileText, Globe as Globe2 } from 'lucide-react';
 import { translations } from '../data/translations';
 
 interface InvestmentSectionProps {

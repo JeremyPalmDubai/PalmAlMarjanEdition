@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Globe } from 'lucide-react';
 import { LanguageSelector } from './LanguageSelector';
 import { useNavigation } from './NavigationProvider';
 import { translations } from '../data/translations';
@@ -42,11 +41,11 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
   }, [lastScrollY]);
 
   // Fonction throttle pour optimiser les performances
-  const throttle = (func: Function, limit: number) => {
+  const throttle = (func: () => void, limit: number) => {
     let inThrottle: boolean;
-    return function(this: any, ...args: any[]) {
+    return () => {
       if (!inThrottle) {
-        func.apply(this, args);
+        func();
         inThrottle = true;
         setTimeout(() => inThrottle = false, limit);
       }
@@ -65,16 +64,16 @@ export const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageChang
     e.preventDefault();
 
     // Track conversion event
-    if (typeof (window as any).gtag !== 'undefined') {
-      (window as any).gtag('event', 'generate_lead', {
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('event', 'generate_lead', {
         event_category: 'Lead Generation',
         event_label: 'Header CTA Click',
         value: 180000,
         currency: 'AED'
       });
     }
-    if (typeof (window as any).fbq !== 'undefined') {
-      (window as any).fbq('track', 'Lead', {
+    if (typeof window.fbq !== 'undefined') {
+      window.fbq('track', 'Lead', {
         content_name: 'Header Contact Button',
         content_category: 'Navigation CTA'
       });

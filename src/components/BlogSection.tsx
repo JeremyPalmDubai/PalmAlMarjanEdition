@@ -1,5 +1,4 @@
 import React from 'react';
-import { translations } from '../data/translations';
 import { Calendar, Clock, ArrowRight, TrendingUp, Building2, MapPin, DollarSign } from 'lucide-react';
 
 interface BlogSectionProps {
@@ -7,8 +6,6 @@ interface BlogSectionProps {
 }
 
 export const BlogSection: React.FC<BlogSectionProps> = ({ currentLanguage }) => {
-  const t = translations[currentLanguage];
-
   const blogArticles = [
     {
       id: 'wynn-casino-2027-investment-guide',
@@ -170,7 +167,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ currentLanguage }) => 
 
         {/* Featured Articles */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {blogArticles.filter(a => a.featured).map((article, index) => {
+          {blogArticles.filter(a => a.featured).map((article) => {
             const IconComponent = article.icon;
             return (
               <article

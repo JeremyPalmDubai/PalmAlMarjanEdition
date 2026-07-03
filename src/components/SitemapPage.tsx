@@ -1,14 +1,12 @@
 import React from 'react';
 import { MapPin, Building, TrendingUp, Users, Phone, Mail } from 'lucide-react';
 import { useNavigation } from './NavigationProvider';
-import { translations } from '../data/translations';
 
 interface SitemapPageProps {
-  currentLanguage: string;
+  currentLanguage?: string;
 }
 
-export const SitemapPage: React.FC<SitemapPageProps> = ({ currentLanguage }) => {
-  const t = translations[currentLanguage];
+export const SitemapPage: React.FC<SitemapPageProps> = () => {
   const navigation = useNavigation();
 
   const handleNavClick = (e: React.MouseEvent, sectionId: string) => {

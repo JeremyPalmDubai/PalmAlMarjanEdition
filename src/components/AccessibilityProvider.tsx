@@ -130,7 +130,7 @@ export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({ ch
       try {
         const parsedSettings = JSON.parse(saved);
         setSettings(prev => ({ ...prev, ...parsedSettings }));
-      } catch (error) {
+      } catch {
         console.warn('Failed to parse saved accessibility settings');
       }
     }

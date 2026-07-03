@@ -1,13 +1,10 @@
 import React from 'react';
-import { translations } from '../data/translations';
 
 interface TermsOfServicePageProps {
-  currentLanguage: string;
+  currentLanguage?: string;
 }
 
-export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = ({ currentLanguage }) => {
-  const t = translations[currentLanguage];
-
+export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = () => {
   return (
     <div className="min-h-screen bg-white py-24">
       <div className="tesla-container">

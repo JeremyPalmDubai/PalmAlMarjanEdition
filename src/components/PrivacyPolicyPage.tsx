@@ -1,13 +1,10 @@
 import React from 'react';
-import { translations } from '../data/translations';
 
 interface PrivacyPolicyPageProps {
-  currentLanguage: string;
+  currentLanguage?: string;
 }
 
-export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLanguage }) => {
-  const t = translations[currentLanguage];
-
+export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = () => {
   return (
     <div className="min-h-screen bg-white py-24">
       <div className="tesla-container">

@@ -169,7 +169,7 @@ export const auditImageSEO = (images: NodeListOf<HTMLImageElement>) => {
     recommendations: string[];
   }> = [];
   
-  images.forEach((img, index) => {
+  images.forEach((img) => {
     const imageIssues: string[] = [];
     const recommendations: string[] = [];
     let severity: 'critical' | 'warning' | 'info' = 'info';
@@ -322,7 +322,7 @@ const getImageFormat = (src: string): string => {
 
 // Batch image optimization for existing images
 export const batchOptimizeImages = (images: NodeListOf<HTMLImageElement>) => {
-  images.forEach((img, index) => {
+  images.forEach((img) => {
     // Add missing attributes
     if (!img.loading) {
       const isAboveFold = img.getBoundingClientRect().top < window.innerHeight;
